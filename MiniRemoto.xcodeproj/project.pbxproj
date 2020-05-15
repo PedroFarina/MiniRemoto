@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -203,13 +203,13 @@
 /* Begin PBXShellScriptBuildPhase section */
 		028A724D246F135B006F4B17 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/UberRides.framework",
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/UberRides.framework",
 			);
 			name = "Run Script";
 			outputFileListPaths = (
