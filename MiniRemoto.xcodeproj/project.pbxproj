@@ -13,7 +13,26 @@
 		0274827E246F086A0059876D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0274827D246F086A0059876D /* Assets.xcassets */; };
 		02748281246F086A0059876D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0274827F246F086A0059876D /* LaunchScreen.storyboard */; };
 		0274828D246F0A1D0059876D /* EventsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0274828B246F0A1D0059876D /* EventsModel.xcdatamodeld */; };
+		028A7246246F130D006F4B17 /* UberCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7245246F130D006F4B17 /* UberCore.framework */; };
+		028A7247246F130D006F4B17 /* UberCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7245246F130D006F4B17 /* UberCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		028A724A246F130F006F4B17 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7249246F130F006F4B17 /* UberRides.framework */; };
+		028A724B246F130F006F4B17 /* UberRides.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7249246F130F006F4B17 /* UberRides.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		028A7248246F130D006F4B17 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				028A724B246F130F006F4B17 /* UberRides.framework in Embed Frameworks */,
+				028A7247246F130D006F4B17 /* UberCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02748271246F08680059876D /* MiniRemoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniRemoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +43,8 @@
 		02748280246F086A0059876D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02748282246F086A0059876D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0274828C246F0A1D0059876D /* EventsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsModel.xcdatamodel; sourceTree = "<group>"; };
+		028A7245246F130D006F4B17 /* UberCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberCore.framework; path = Carthage/Build/iOS/UberCore.framework; sourceTree = "<group>"; };
+		028A7249246F130F006F4B17 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028A724A246F130F006F4B17 /* UberRides.framework in Frameworks */,
+				028A7246246F130D006F4B17 /* UberCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +65,7 @@
 			children = (
 				02748273246F08680059876D /* MiniRemoto */,
 				02748272246F08680059876D /* Products */,
+				028A7244246F130D006F4B17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +123,15 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
+		028A7244246F130D006F4B17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				028A7249246F130F006F4B17 /* UberRides.framework */,
+				028A7245246F130D006F4B17 /* UberCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +142,8 @@
 				0274826D246F08680059876D /* Sources */,
 				0274826E246F08680059876D /* Frameworks */,
 				0274826F246F08680059876D /* Resources */,
+				028A7248246F130D006F4B17 /* Embed Frameworks */,
+				028A724D246F135B006F4B17 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -164,6 +199,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		028A724D246F135B006F4B17 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/UberRides.framework",
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0274826D246F08680059876D /* Sources */ = {
@@ -318,6 +375,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BVZY57RJZG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MiniRemoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -336,6 +397,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BVZY57RJZG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = MiniRemoto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
