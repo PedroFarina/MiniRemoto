@@ -10,4 +10,12 @@ import UIKit
 
 public class ColorCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var colorView: RoundView!
+    public var color: UIColor? {
+        get  {
+            return colorView.backgroundColor
+        }
+        set {
+            colorView.backgroundColor = newValue
+        }
+    }
 }
