@@ -15,12 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddButton" translatesAutoresizingMaskIntoConstraints="NO" id="Cba-h4-vPZ">
-                                <rect key="frame" x="312" y="515" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Cba-h4-vPZ" secondAttribute="height" multiplier="1:1" id="xYb-aP-dc6"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zY0-71-AQo">
                                 <rect key="frame" x="0.0" y="182.66666666666669" width="294" height="595.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -29,16 +23,27 @@
                                 <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="121.66666666666669"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNf-GY-n9P">
+                                <rect key="frame" x="312" y="515" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CNf-GY-n9P" secondAttribute="height" multiplier="1:1" id="t6D-kL-9T5"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="AddButton"/>
+                                <connections>
+                                    <segue destination="9po-dr-EPe" kind="presentation" id="5Bx-Jo-SsO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cba-h4-vPZ" secondAttribute="trailing" constant="15" id="DSG-0Y-ywK"/>
-                            <constraint firstItem="Cba-h4-vPZ" firstAttribute="leading" secondItem="zY0-71-AQo" secondAttribute="trailing" constant="18" id="Dlb-4Y-ZAg"/>
                             <constraint firstItem="Rit-du-t9a" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="E1X-7t-j2H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zY0-71-AQo" secondAttribute="bottom" id="O8Y-Rd-s24"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cba-h4-vPZ" secondAttribute="bottom" constant="215" id="RdR-Zx-gwh"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uhh-bf-N4B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CNf-GY-n9P" secondAttribute="bottom" constant="215" id="VwB-iA-WZS"/>
+                            <constraint firstItem="CNf-GY-n9P" firstAttribute="leading" secondItem="zY0-71-AQo" secondAttribute="trailing" constant="18" id="ZNn-d4-GQV"/>
                             <constraint firstItem="Rit-du-t9a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zrf-HP-Yqo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CNf-GY-n9P" secondAttribute="trailing" constant="15" id="bfS-ge-Yqn"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="top" secondItem="Rit-du-t9a" secondAttribute="bottom" constant="17" id="cRS-tc-J29"/>
                             <constraint firstItem="Rit-du-t9a" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="knH-k3-wO6"/>
                             <constraint firstItem="Rit-du-t9a" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pz4-r3-yDo"/>
@@ -50,13 +55,13 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--AddEvent-->
         <scene sceneID="m81-hv-I4i">
             <objects>
-                <viewControllerPlaceholder id="9po-dr-EPe" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="AddEvent" id="9po-dr-EPe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciH-X0-Ure" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1133" y="92"/>
+            <point key="canvasLocation" x="1138" y="129"/>
         </scene>
     </scenes>
     <resources>
