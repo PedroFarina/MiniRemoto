@@ -9,6 +9,8 @@
 import UIKit
 
 public protocol Module {
+    var addImage: UIImage? { get }
+    var removeImage: UIImage? { get }
     var image: UIImage? { get }
     var title: String? { get }
     var subtitle: String? { get }
