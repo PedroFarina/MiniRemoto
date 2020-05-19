@@ -17,6 +17,15 @@
 		028A7247246F130D006F4B17 /* UberCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7245246F130D006F4B17 /* UberCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		028A724A246F130F006F4B17 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7249246F130F006F4B17 /* UberRides.framework */; };
 		028A724B246F130F006F4B17 /* UberRides.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7249246F130F006F4B17 /* UberRides.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0292E5FE24744DF1002B5362 /* AddEvent.storyboard */; };
+		0292E601247452C8002B5362 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E600247452C8002B5362 /* RoundView.swift */; };
+		0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E60424745682002B5362 /* ColorCollectionViewCell.swift */; };
+		0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E6072474597E002B5362 /* SlashedTextField.swift */; };
+		0292E60F24745EC3002B5362 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0292E60D24745E6B002B5362 /* Montserrat-Medium.ttf */; };
+		0292E61024745EC3002B5362 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0292E60E24745E88002B5362 /* Montserrat-Regular.ttf */; };
+		0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0292E60C24745E58002B5362 /* Montserrat-SemiBold.ttf */; };
+		0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */; };
+		0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E61424746B20002B5362 /* ModuleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +54,15 @@
 		0274828C246F0A1D0059876D /* EventsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EventsModel.xcdatamodel; sourceTree = "<group>"; };
 		028A7245246F130D006F4B17 /* UberCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberCore.framework; path = Carthage/Build/iOS/UberCore.framework; sourceTree = "<group>"; };
 		028A7249246F130F006F4B17 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
+		0292E5FE24744DF1002B5362 /* AddEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEvent.storyboard; sourceTree = "<group>"; };
+		0292E600247452C8002B5362 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		0292E60424745682002B5362 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		0292E6072474597E002B5362 /* SlashedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlashedTextField.swift; sourceTree = "<group>"; };
+		0292E60C24745E58002B5362 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		0292E60D24745E6B002B5362 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		0292E60E24745E88002B5362 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
+		0292E61424746B20002B5362 /* ModuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +113,7 @@
 		02748288246F09E50059876D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0292E60924745DC5002B5362 /* Font */,
 				0274828E246F0A280059876D /* Core Data */,
 			);
 			path = Model;
@@ -103,6 +122,8 @@
 		02748289246F09EA0059876D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0292E60324745659002B5362 /* UIViews */,
+				0292E6022474564D002B5362 /* Adding Event */,
 				0274827A246F08690059876D /* Main.storyboard */,
 			);
 			path = View;
@@ -111,6 +132,7 @@
 		0274828A246F09EE0059876D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0292E6062474580A002B5362 /* Adding Event */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -130,6 +152,43 @@
 				028A7245246F130D006F4B17 /* UberCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0292E6022474564D002B5362 /* Adding Event */ = {
+			isa = PBXGroup;
+			children = (
+				0292E5FE24744DF1002B5362 /* AddEvent.storyboard */,
+				0292E60424745682002B5362 /* ColorCollectionViewCell.swift */,
+				0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */,
+				0292E61424746B20002B5362 /* ModuleTableViewCell.swift */,
+			);
+			path = "Adding Event";
+			sourceTree = "<group>";
+		};
+		0292E60324745659002B5362 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				0292E600247452C8002B5362 /* RoundView.swift */,
+				0292E6072474597E002B5362 /* SlashedTextField.swift */,
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		0292E6062474580A002B5362 /* Adding Event */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Adding Event";
+			sourceTree = "<group>";
+		};
+		0292E60924745DC5002B5362 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				0292E60D24745E6B002B5362 /* Montserrat-Medium.ttf */,
+				0292E60E24745E88002B5362 /* Montserrat-Regular.ttf */,
+				0292E60C24745E58002B5362 /* Montserrat-SemiBold.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +251,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0292E61024745EC3002B5362 /* Montserrat-Regular.ttf in Resources */,
 				02748281246F086A0059876D /* LaunchScreen.storyboard in Resources */,
+				0292E60F24745EC3002B5362 /* Montserrat-Medium.ttf in Resources */,
+				0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */,
+				0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */,
 				0274827E246F086A0059876D /* Assets.xcassets in Resources */,
 				0274827C246F08690059876D /* Main.storyboard in Resources */,
 			);
@@ -227,7 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
+				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
+				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
+				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
+				0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */,
 				0274828D246F0A1D0059876D /* EventsModel.xcdatamodeld in Sources */,
 				02748277246F08690059876D /* SceneDelegate.swift in Sources */,
 			);
