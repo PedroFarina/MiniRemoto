@@ -20,6 +20,7 @@
 		0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0292E5FE24744DF1002B5362 /* AddEvent.storyboard */; };
 		0292E601247452C8002B5362 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E600247452C8002B5362 /* RoundView.swift */; };
 		0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E60424745682002B5362 /* ColorCollectionViewCell.swift */; };
+		0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E6072474597E002B5362 /* SlashedTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		0292E5FE24744DF1002B5362 /* AddEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEvent.storyboard; sourceTree = "<group>"; };
 		0292E600247452C8002B5362 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		0292E60424745682002B5362 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		0292E6072474597E002B5362 /* SlashedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlashedTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		02748288246F09E50059876D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0292E60924745DC5002B5362 /* Font */,
 				0274828E246F0A280059876D /* Core Data */,
 			);
 			path = Model;
@@ -119,6 +122,7 @@
 		0274828A246F09EE0059876D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0292E6062474580A002B5362 /* Adding Event */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -153,8 +157,23 @@
 			isa = PBXGroup;
 			children = (
 				0292E600247452C8002B5362 /* RoundView.swift */,
+				0292E6072474597E002B5362 /* SlashedTextField.swift */,
 			);
 			path = UIViews;
+			sourceTree = "<group>";
+		};
+		0292E6062474580A002B5362 /* Adding Event */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Adding Event";
+			sourceTree = "<group>";
+		};
+		0292E60924745DC5002B5362 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,

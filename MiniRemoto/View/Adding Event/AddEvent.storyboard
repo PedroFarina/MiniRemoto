@@ -31,49 +31,61 @@
                                     <color key="titleColor" name="Action Color"/>
                                 </state>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lnn-yy-WJZ">
-                                <rect key="frame" x="15" y="125" width="384" height="128"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lnn-yy-WJZ">
+                                <rect key="frame" x="15" y="145" width="384" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wNI-Rc-AfH">
-                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="itemSize" width="56" height="47"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dP3-a3-dqm">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="colorCell" id="dP3-a3-dqm" customClass="ColorCollectionViewCell" customModule="MiniRemoto" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RjM-Ee-sYS">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RjM-Ee-sYS" customClass="RoundView" customModule="MiniRemoto" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7yI-My-dZj" customClass="RoundView" customModule="MiniRemoto" customModuleProvider="target">
-                                                    <rect key="frame" x="19" y="18" width="90" height="92"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                                            <color key="value" name="Action Color"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isCircled" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                            </subviews>
+                                            <color key="backgroundColor" red="0.67843137249999996" green="0.2274509804" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCircled" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="40" height="40"/>
+                                        <connections>
+                                            <outlet property="colorView" destination="RjM-Ee-sYS" id="ebj-7q-JjX"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome do evento" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEp-5C-2Vz" customClass="SlashedTextField" customModule="MiniRemoto" customModuleProvider="target">
+                                <rect key="frame" x="15" y="195" width="384" height="22"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crie seu evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbe-UB-qoW">
+                                <rect key="frame" x="15" y="102" width="195.5" height="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" name="Label Gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Lnn-yy-WJZ" firstAttribute="top" secondItem="X5R-YA-L9R" secondAttribute="bottom" constant="10" id="8te-Zy-scc"/>
                             <constraint firstItem="X5R-YA-L9R" firstAttribute="top" secondItem="iF5-LE-pcd" secondAttribute="top" constant="15" id="BKf-qg-ynm"/>
                             <constraint firstItem="Lnn-yy-WJZ" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="Cwv-yw-nBd"/>
+                            <constraint firstItem="YEp-5C-2Vz" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="DGM-I6-yU4"/>
+                            <constraint firstItem="Pbe-UB-qoW" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="EBg-yF-MG5"/>
                             <constraint firstItem="ahs-18-etK" firstAttribute="top" secondItem="iF5-LE-pcd" secondAttribute="top" constant="15" id="Eyd-RD-jLk"/>
+                            <constraint firstItem="YEp-5C-2Vz" firstAttribute="top" secondItem="Lnn-yy-WJZ" secondAttribute="bottom" constant="10" id="GCC-tu-Dqr"/>
+                            <constraint firstItem="Pbe-UB-qoW" firstAttribute="top" secondItem="X5R-YA-L9R" secondAttribute="bottom" constant="10" id="HVW-bK-0KY"/>
+                            <constraint firstItem="Lnn-yy-WJZ" firstAttribute="height" secondItem="kmD-3i-MuO" secondAttribute="height" multiplier="0.0446429" id="Umf-gp-jN4"/>
                             <constraint firstItem="X5R-YA-L9R" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="aGR-dt-YHB"/>
                             <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="ahs-18-etK" secondAttribute="trailing" constant="15" id="hqE-hK-8zH"/>
+                            <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="YEp-5C-2Vz" secondAttribute="trailing" constant="15" id="lLB-AK-0cT"/>
                             <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="Lnn-yy-WJZ" secondAttribute="trailing" constant="15" id="skR-IL-W7W"/>
+                            <constraint firstItem="Lnn-yy-WJZ" firstAttribute="top" secondItem="Pbe-UB-qoW" secondAttribute="bottom" constant="10" id="yyG-T2-CKw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iF5-LE-pcd"/>
                     </view>
@@ -104,6 +116,9 @@
     <resources>
         <namedColor name="Action Color">
             <color red="0.43137254901960786" green="0.30980392156862746" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Label Gray">
+            <color red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

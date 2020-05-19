@@ -6,4 +6,8 @@
 //  Copyright © 2020 Pedro Giuliano Farina. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public class ColorCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var colorView: RoundView!
+}
