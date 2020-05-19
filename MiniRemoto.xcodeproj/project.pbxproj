@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0260CE7824748B9100E16149 /* MockupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7724748B9100E16149 /* MockupData.swift */; };
+		0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */; };
+		0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */; };
+		0260CE7F24748C7000E16149 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7B24748C7000E16149 /* AddEventViewController.swift */; };
+		0260CE8024748C7000E16149 /* ModuleStateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */; };
 		02748275246F08690059876D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02748274246F08690059876D /* AppDelegate.swift */; };
 		02748277246F08690059876D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02748276246F08690059876D /* SceneDelegate.swift */; };
 		0274827C246F08690059876D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0274827A246F08690059876D /* Main.storyboard */; };
@@ -26,9 +31,6 @@
 		0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */; };
 		0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E61424746B20002B5362 /* ModuleTableViewCell.swift */; };
 		0292E61D24746E3B002B5362 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E61C24746E3B002B5362 /* Module.swift */; };
-		02B01ECE24746FBC0054587A /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B01ECD24746FBC0054587A /* AddEventViewController.swift */; };
-		02B01ED024746FCE0054587A /* ModuleCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B01ECF24746FCE0054587A /* ModuleCollectionDelegate.swift */; };
-		02B01ED224746FDC0054587A /* ModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B01ED124746FDC0054587A /* ModuleTableDelegate.swift */; };
 		02B01ED5247470310054587A /* ModuleCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B01ED4247470310054587A /* ModuleCollectionDataSource.swift */; };
 		02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B01ED6247470800054587A /* ModuleTableDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +51,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0260CE7724748B9100E16149 /* MockupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockupData.swift; sourceTree = "<group>"; };
+		0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionDelegate.swift; sourceTree = "<group>"; };
+		0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTableDelegate.swift; sourceTree = "<group>"; };
+		0260CE7B24748C7000E16149 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleStateDelegate.swift; sourceTree = "<group>"; };
 		02748271246F08680059876D /* MiniRemoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniRemoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02748274246F08690059876D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02748276246F08690059876D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,9 +75,6 @@
 		0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
 		0292E61424746B20002B5362 /* ModuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTableViewCell.swift; sourceTree = "<group>"; };
 		0292E61C24746E3B002B5362 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
-		02B01ECD24746FBC0054587A /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
-		02B01ECF24746FCE0054587A /* ModuleCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCollectionDelegate.swift; sourceTree = "<group>"; };
-		02B01ED124746FDC0054587A /* ModuleTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTableDelegate.swift; sourceTree = "<group>"; };
 		02B01ED4247470310054587A /* ModuleCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCollectionDataSource.swift; sourceTree = "<group>"; };
 		02B01ED6247470800054587A /* ModuleTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTableDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +127,7 @@
 		02748288246F09E50059876D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0260CE7724748B9100E16149 /* MockupData.swift */,
 				02B01ED32474701F0054587A /* Adding Event */,
 				0292E61B24746E1C002B5362 /* Entities */,
 				0292E60924745DC5002B5362 /* Font */,
@@ -180,9 +185,10 @@
 		0292E6062474580A002B5362 /* Adding Event */ = {
 			isa = PBXGroup;
 			children = (
-				02B01ECD24746FBC0054587A /* AddEventViewController.swift */,
-				02B01ECF24746FCE0054587A /* ModuleCollectionDelegate.swift */,
-				02B01ED124746FDC0054587A /* ModuleTableDelegate.swift */,
+				0260CE7B24748C7000E16149 /* AddEventViewController.swift */,
+				0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */,
+				0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */,
+				0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */,
 			);
 			path = "Adding Event";
 			sourceTree = "<group>";
@@ -321,17 +327,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0260CE7824748B9100E16149 /* MockupData.swift in Sources */,
 				02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */,
+				0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */,
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
-				02B01ED224746FDC0054587A /* ModuleTableDelegate.swift in Sources */,
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
 				0292E61D24746E3B002B5362 /* Module.swift in Sources */,
+				0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */,
+				0260CE8024748C7000E16149 /* ModuleStateDelegate.swift in Sources */,
 				0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */,
-				02B01ECE24746FBC0054587A /* AddEventViewController.swift in Sources */,
-				02B01ED024746FCE0054587A /* ModuleCollectionDelegate.swift in Sources */,
+				0260CE7F24748C7000E16149 /* AddEventViewController.swift in Sources */,
 				02748277246F08690059876D /* SceneDelegate.swift in Sources */,
 				02B01ED5247470310054587A /* ModuleCollectionDataSource.swift in Sources */,
 			);

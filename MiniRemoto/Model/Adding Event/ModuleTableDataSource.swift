@@ -9,11 +9,35 @@
 import UIKit
 
 public class ModuleTableViewDataSource: NSObject, UITableViewDataSource {
+
+    private var modules: [Module] = []
+
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return modules.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let moduleCell = tableView.dequeueReusableCell(withIdentifier: "moduleCell") as? ModuleTableViewCell {
+            moduleCell.img = modules[indexPath.row].image
+            moduleCell.title = modules[indexPath.row].title
+            moduleCell.subtitle = modules[indexPath.row].subtitle
+
+            return moduleCell
+        }
         return UITableViewCell()
+    }
+
+    public func didAdd(_ module: Module) {
+        modules.append(module)
+    }
+
+    public func didRemove(_ module: Module) {
+        if let index = modules.firstIndex(where: { $0.title == module.title }) {
+            modules.remove(at: index)
+        }
     }
 }

@@ -9,11 +9,17 @@
 import UIKit
 
 public class ModuleCollectionViewDataSource: NSObject, UICollectionViewDataSource {
+    var modules: [Module] = [MockUpData.calendarModule]
+
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return modules.count
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let moduleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "moduleCell", for: indexPath) as? ModuleCollectionViewCell {
+            moduleCell.module = modules[indexPath.row]
+            return moduleCell
+        }
         return UICollectionViewCell()
     }
 
