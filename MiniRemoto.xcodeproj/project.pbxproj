@@ -25,6 +25,7 @@
 		0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0292E60C24745E58002B5362 /* Montserrat-SemiBold.ttf */; };
 		0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */; };
 		0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E61424746B20002B5362 /* ModuleTableViewCell.swift */; };
+		0292E61D24746E3B002B5362 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E61C24746E3B002B5362 /* Module.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +62,7 @@
 		0292E60E24745E88002B5362 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
 		0292E61424746B20002B5362 /* ModuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTableViewCell.swift; sourceTree = "<group>"; };
+		0292E61C24746E3B002B5362 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		02748288246F09E50059876D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0292E61B24746E1C002B5362 /* Entities */,
 				0292E60924745DC5002B5362 /* Font */,
 			);
 			path = Model;
@@ -178,6 +181,22 @@
 				0292E60C24745E58002B5362 /* Montserrat-SemiBold.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		0292E61B24746E1C002B5362 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				0292E61E24746EC6002B5362 /* Modules */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		0292E61E24746EC6002B5362 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0292E61C24746E3B002B5362 /* Module.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +303,7 @@
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
+				0292E61D24746E3B002B5362 /* Module.swift in Sources */,
 				0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */,
 				02748277246F08690059876D /* SceneDelegate.swift in Sources */,
 			);
