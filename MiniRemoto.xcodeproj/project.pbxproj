@@ -18,6 +18,8 @@
 		028A724A246F130F006F4B17 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7249246F130F006F4B17 /* UberRides.framework */; };
 		028A724B246F130F006F4B17 /* UberRides.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7249246F130F006F4B17 /* UberRides.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0292E5FE24744DF1002B5362 /* AddEvent.storyboard */; };
+		0292E601247452C8002B5362 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E600247452C8002B5362 /* RoundView.swift */; };
+		0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E60424745682002B5362 /* ColorCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,8 @@
 		028A7245246F130D006F4B17 /* UberCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberCore.framework; path = Carthage/Build/iOS/UberCore.framework; sourceTree = "<group>"; };
 		028A7249246F130F006F4B17 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
 		0292E5FE24744DF1002B5362 /* AddEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEvent.storyboard; sourceTree = "<group>"; };
+		0292E600247452C8002B5362 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		0292E60424745682002B5362 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +109,9 @@
 		02748289246F09EA0059876D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0292E60324745659002B5362 /* UIViews */,
+				0292E6022474564D002B5362 /* Adding Event */,
 				0274827A246F08690059876D /* Main.storyboard */,
-				0292E5FE24744DF1002B5362 /* AddEvent.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +138,23 @@
 				028A7245246F130D006F4B17 /* UberCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0292E6022474564D002B5362 /* Adding Event */ = {
+			isa = PBXGroup;
+			children = (
+				0292E5FE24744DF1002B5362 /* AddEvent.storyboard */,
+				0292E60424745682002B5362 /* ColorCollectionViewCell.swift */,
+			);
+			path = "Adding Event";
+			sourceTree = "<group>";
+		};
+		0292E60324745659002B5362 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				0292E600247452C8002B5362 /* RoundView.swift */,
+			);
+			path = UIViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
+				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
 				0274828D246F0A1D0059876D /* EventsModel.xcdatamodeld in Sources */,
 				02748277246F08690059876D /* SceneDelegate.swift in Sources */,
