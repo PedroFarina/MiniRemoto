@@ -9,7 +9,7 @@
 import UIKit
 
 public class ModuleCollectionViewCell: UICollectionViewCell {
-    public var image: UIImage? {
+    public var img: UIImage? {
         get {
             return imgView.image
         }

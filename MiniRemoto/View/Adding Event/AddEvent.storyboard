@@ -12,6 +12,9 @@
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
         <array key="Montserrat-SemiBold.ttf">
             <string>Montserrat-SemiBold</string>
         </array>
@@ -40,36 +43,8 @@
                                     <color key="titleShadowColor" name="Action Color"/>
                                 </state>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lnn-yy-WJZ">
-                                <rect key="frame" x="15" y="141.5" width="384" height="40"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wNI-Rc-AfH">
-                                    <size key="itemSize" width="56" height="47"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="colorCell" id="dP3-a3-dqm" customClass="ColorCollectionViewCell" customModule="MiniRemoto" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RjM-Ee-sYS" customClass="RoundView" customModule="MiniRemoto" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.67843137249999996" green="0.2274509804" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isCircled" value="YES"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="40" height="40"/>
-                                        <connections>
-                                            <outlet property="colorView" destination="RjM-Ee-sYS" id="ebj-7q-JjX"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome do evento" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEp-5C-2Vz" customClass="SlashedTextField" customModule="MiniRemoto" customModuleProvider="target">
-                                <rect key="frame" x="15" y="191.5" width="384" height="26"/>
+                                <rect key="frame" x="15" y="140" width="384" height="25"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
@@ -79,15 +54,15 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crie seu evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbe-UB-qoW">
-                                <rect key="frame" x="15" y="102" width="191" height="29.5"/>
+                                <rect key="frame" x="15" y="102" width="168" height="28"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
                                 <color key="textColor" name="Label Gray"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yWD-VG-AUd">
-                                <rect key="frame" x="15" y="227.5" width="384" height="54"/>
+                                <rect key="frame" x="15" y="175" width="384" height="54"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L30-MU-yZw">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L30-MU-yZw">
                                     <size key="itemSize" width="54" height="54"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -119,26 +94,76 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S6r-U4-Roc">
+                                <rect key="frame" x="15" y="239" width="384" height="608"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="58" id="Ua7-SH-Ba6" customClass="ModuleTableViewCell" customModule="MiniRemoto" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="384" height="58"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ua7-SH-Ba6" id="qek-0v-WC6">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sa4-3J-FmB">
+                                                    <rect key="frame" x="10" y="2" width="54" height="54"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Sa4-3J-FmB" secondAttribute="height" multiplier="1:1" id="Vje-ir-GaR"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mw-B8-ddi">
+                                                    <rect key="frame" x="72" y="7.5" width="304" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitulo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrd-43-tZc">
+                                                    <rect key="frame" x="72" y="32.5" width="304" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zrd-43-tZc" firstAttribute="leading" secondItem="Sa4-3J-FmB" secondAttribute="trailing" constant="8" id="3xf-8k-Z5D"/>
+                                                <constraint firstItem="5mw-B8-ddi" firstAttribute="leading" secondItem="Sa4-3J-FmB" secondAttribute="trailing" constant="8" id="8y8-pK-Hrq"/>
+                                                <constraint firstItem="Sa4-3J-FmB" firstAttribute="leading" secondItem="qek-0v-WC6" secondAttribute="leading" constant="10" id="Be6-1t-Gs1"/>
+                                                <constraint firstAttribute="bottom" secondItem="Sa4-3J-FmB" secondAttribute="bottom" constant="2" id="Pjx-rQ-AkO"/>
+                                                <constraint firstAttribute="trailing" secondItem="zrd-43-tZc" secondAttribute="trailing" constant="8" id="W1l-6q-Thn"/>
+                                                <constraint firstItem="zrd-43-tZc" firstAttribute="top" secondItem="5mw-B8-ddi" secondAttribute="bottom" constant="5" id="XfU-Eb-fcY"/>
+                                                <constraint firstItem="Sa4-3J-FmB" firstAttribute="top" secondItem="qek-0v-WC6" secondAttribute="top" constant="2" id="hV0-Sc-YRd"/>
+                                                <constraint firstAttribute="trailing" secondItem="5mw-B8-ddi" secondAttribute="trailing" constant="8" id="qIi-AH-Znt"/>
+                                                <constraint firstItem="5mw-B8-ddi" firstAttribute="centerY" secondItem="Sa4-3J-FmB" secondAttribute="centerY" multiplier="0.6" id="y5v-n5-a5b"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgView" destination="Sa4-3J-FmB" id="OZ0-Ir-O9o"/>
+                                            <outlet property="lblSubtitle" destination="zrd-43-tZc" id="ndU-Ok-QmO"/>
+                                            <outlet property="lblTitle" destination="5mw-B8-ddi" id="ulp-0t-y1w"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yWD-VG-AUd" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="0wy-28-aPw"/>
                             <constraint firstItem="X5R-YA-L9R" firstAttribute="top" secondItem="iF5-LE-pcd" secondAttribute="top" constant="15" id="BKf-qg-ynm"/>
-                            <constraint firstItem="Lnn-yy-WJZ" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="Cwv-yw-nBd"/>
                             <constraint firstItem="YEp-5C-2Vz" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="DGM-I6-yU4"/>
                             <constraint firstItem="Pbe-UB-qoW" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="EBg-yF-MG5"/>
                             <constraint firstItem="ahs-18-etK" firstAttribute="top" secondItem="iF5-LE-pcd" secondAttribute="top" constant="15" id="Eyd-RD-jLk"/>
-                            <constraint firstItem="YEp-5C-2Vz" firstAttribute="top" secondItem="Lnn-yy-WJZ" secondAttribute="bottom" constant="10" id="GCC-tu-Dqr"/>
                             <constraint firstItem="Pbe-UB-qoW" firstAttribute="top" secondItem="X5R-YA-L9R" secondAttribute="bottom" constant="10" id="HVW-bK-0KY"/>
-                            <constraint firstItem="Lnn-yy-WJZ" firstAttribute="height" secondItem="kmD-3i-MuO" secondAttribute="height" multiplier="0.0446429" id="Umf-gp-jN4"/>
+                            <constraint firstItem="YEp-5C-2Vz" firstAttribute="top" secondItem="Pbe-UB-qoW" secondAttribute="bottom" constant="10" id="Q9M-ms-qOt"/>
+                            <constraint firstItem="iF5-LE-pcd" firstAttribute="bottom" secondItem="S6r-U4-Roc" secondAttribute="bottom" constant="15" id="RjI-Vc-lv9"/>
                             <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="yWD-VG-AUd" secondAttribute="trailing" constant="15" id="Z07-nZ-pWM"/>
                             <constraint firstItem="X5R-YA-L9R" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="aGR-dt-YHB"/>
                             <constraint firstItem="yWD-VG-AUd" firstAttribute="top" secondItem="YEp-5C-2Vz" secondAttribute="bottom" constant="10" id="acU-wa-Vcc"/>
+                            <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="S6r-U4-Roc" secondAttribute="trailing" constant="15" id="ans-z7-NrB"/>
                             <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="ahs-18-etK" secondAttribute="trailing" constant="15" id="hqE-hK-8zH"/>
                             <constraint firstItem="yWD-VG-AUd" firstAttribute="height" secondItem="kmD-3i-MuO" secondAttribute="height" multiplier="0.0602679" id="kQB-5Q-MaE"/>
                             <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="YEp-5C-2Vz" secondAttribute="trailing" constant="15" id="lLB-AK-0cT"/>
-                            <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="Lnn-yy-WJZ" secondAttribute="trailing" constant="15" id="skR-IL-W7W"/>
-                            <constraint firstItem="Lnn-yy-WJZ" firstAttribute="top" secondItem="Pbe-UB-qoW" secondAttribute="bottom" constant="10" id="yyG-T2-CKw"/>
+                            <constraint firstItem="S6r-U4-Roc" firstAttribute="top" secondItem="yWD-VG-AUd" secondAttribute="bottom" constant="10" id="nh3-gh-ul2"/>
+                            <constraint firstItem="S6r-U4-Roc" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="r8p-xf-iM9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iF5-LE-pcd"/>
                     </view>

@@ -25,6 +25,7 @@
 		0292E61024745EC3002B5362 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0292E60E24745E88002B5362 /* Montserrat-Regular.ttf */; };
 		0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0292E60C24745E58002B5362 /* Montserrat-SemiBold.ttf */; };
 		0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */; };
+		0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E61424746B20002B5362 /* ModuleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,6 +62,7 @@
 		0292E60D24745E6B002B5362 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		0292E60E24745E88002B5362 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCollectionViewCell.swift; sourceTree = "<group>"; };
+		0292E61424746B20002B5362 /* ModuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				0292E5FE24744DF1002B5362 /* AddEvent.storyboard */,
 				0292E60424745682002B5362 /* ColorCollectionViewCell.swift */,
 				0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */,
+				0292E61424746B20002B5362 /* ModuleTableViewCell.swift */,
 			);
 			path = "Adding Event";
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
+				0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */,
 				0274828D246F0A1D0059876D /* EventsModel.xcdatamodeld in Sources */,
 				02748277246F08690059876D /* SceneDelegate.swift in Sources */,
 			);
