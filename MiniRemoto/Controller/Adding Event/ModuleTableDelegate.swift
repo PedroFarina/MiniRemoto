@@ -10,4 +10,7 @@ import UIKit
 
 public class ModuleTableViewDelegate: NSObject, UITableViewDelegate {
 
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 }

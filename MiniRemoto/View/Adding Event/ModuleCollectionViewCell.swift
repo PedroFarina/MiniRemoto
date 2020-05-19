@@ -9,6 +9,22 @@
 import UIKit
 
 public class ModuleCollectionViewCell: UICollectionViewCell {
+    public var module: Module? {
+        didSet {
+            img = module?.addImage
+        }
+    }
+
+    public func switchImage() -> Bool {
+        if img === module?.addImage {
+            img = module?.removeImage
+            return true
+        } else {
+            img = module?.addImage
+            return false
+        }
+    }
+
     public var img: UIImage? {
         get {
             return imgView.image

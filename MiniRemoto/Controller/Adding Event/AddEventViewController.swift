@@ -8,18 +8,35 @@
 
 import UIKit
 
-public class AddEventViewController: UIViewController {
+public class AddEventViewController: UIViewController, ModuleStateDelegate {
+
     @IBOutlet weak var txtEventName: SlashedTextField!
 
     @IBOutlet weak var moduleCollectionView: UICollectionView!
     let collectionDelegate = ModuleCollectionViewDelegate()
     let collectionDataSource = ModuleCollectionViewDataSource()
-    @IBOutlet weak var moduleTableViewCell: UITableView!
+    @IBOutlet weak var moduleTableView: UITableView!
     let tableDelegate = ModuleTableViewDelegate()
     let tableDataSource = ModuleTableViewDataSource()
 
     public override func viewDidLoad() {
+        moduleCollectionView.delegate = collectionDelegate
+        moduleCollectionView.dataSource = collectionDataSource
+        moduleTableView.delegate = tableDelegate
+        moduleTableView.dataSource = tableDataSource
+        
+        moduleTableView.tableFooterView = UIView()
+        collectionDelegate.delegate = self
+    }
 
+    public func didAdd(_ module: Module) {
+        tableDataSource.didAdd(module)
+        moduleTableView.reloadData()
+    }
+
+    public func didRemove(_ module: Module) {
+        tableDataSource.didRemove(module)
+        moduleTableView.reloadData()
     }
 
     @IBAction func nextTap(_ sender: Any) {
