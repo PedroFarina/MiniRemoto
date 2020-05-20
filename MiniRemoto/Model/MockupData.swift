@@ -20,7 +20,7 @@ public class MockUpData {
 
 import UIKit
 
-public struct CalendarModule: Module {
+public class CalendarModule: Module {
     public var addImage: UIImage? = UIImage(named: "CalendarAddModule")
 
     public var removeImage: UIImage? = UIImage(named: "CalendarRemoveModule")

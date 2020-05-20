@@ -9,7 +9,7 @@
 import UIKit
 
 public class ModuleCollectionViewCell: UICollectionViewCell {
-    public var module: Module? {
+    public weak var module: Module? {
         didSet {
             img = module?.addImage
         }
