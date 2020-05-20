@@ -22,9 +22,7 @@ public class ModuleTableViewDataSource: NSObject, UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let moduleCell = tableView.dequeueReusableCell(withIdentifier: "moduleCell") as? ModuleTableViewCell {
-            moduleCell.img = modules[indexPath.row].image
-            moduleCell.title = modules[indexPath.row].title
-            moduleCell.subtitle = modules[indexPath.row].subtitle
+            moduleCell.module = modules[indexPath.row]
 
             return moduleCell
         }

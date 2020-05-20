@@ -13,6 +13,14 @@ public class ModuleTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblSubtitle: UILabel!
 
+    public weak var module: Module? {
+        didSet {
+            img = module?.image
+            title = module?.title
+            subtitle = module?.subtitle
+        }
+    }
+
     public var img: UIImage? {
         get {
             return imgView.image

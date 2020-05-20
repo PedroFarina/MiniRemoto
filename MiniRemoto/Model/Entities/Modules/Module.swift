@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol Module {
+public protocol Module: class {
     var addImage: UIImage? { get }
     var removeImage: UIImage? { get }
     var image: UIImage? { get }

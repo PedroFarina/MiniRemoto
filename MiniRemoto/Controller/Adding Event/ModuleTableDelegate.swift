@@ -11,6 +11,10 @@ import UIKit
 public class ModuleTableViewDelegate: NSObject, UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+        if let moduleCell = tableView.cellForRow(at: indexPath) as? ModuleTableViewCell,
+            let module = moduleCell.module {
+            //TODO: Abrir o modal do módulo selecionado e passar ele pra próxima tela preencher
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
