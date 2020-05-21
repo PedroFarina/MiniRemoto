@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CKDataConnector",
+        "repositoryURL": "https://github.com/PedroFarina/CKDataConnector.git",
+        "state": {
+          "branch": null,
+          "revision": "e687ee82cefdc6d0a2202b0bc9344f6abecea3cf",
+          "version": "1.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
