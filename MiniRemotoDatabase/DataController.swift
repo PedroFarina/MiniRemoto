@@ -21,7 +21,5 @@ public class DataController {
         return _shared
     }
 
-    internal func getEntityByID(_ id: CKRecord.ID) -> EntityObject? {
-        return nil
-    }
+    public private(set) var user: User?
 }
