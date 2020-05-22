@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "CKDataConnector",
-        "repositoryURL": "https://github.com/PedroFarina/CKDataConnector.git",
+        "package": "EndpointsRequests",
+        "repositoryURL": "https://github.com/PedroFarina/Endpoints-Requests.git",
         "state": {
           "branch": null,
-          "revision": "e687ee82cefdc6d0a2202b0bc9344f6abecea3cf",
-          "version": "1.0.1"
+          "revision": "918c8c624707fe6c94bde7f9d5ae11ab9bfaf7bf",
+          "version": "1.1.21"
         }
       }
     ]

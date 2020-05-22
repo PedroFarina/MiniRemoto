@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0215236F2476FCC3001CABFF /* ReferenceField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215236E2476FCC3001CABFF /* ReferenceField.swift */; };
+		0217DAD4247834C7003B6286 /* EndpointsRequests in Frameworks */ = {isa = PBXBuildFile; productRef = 0217DAD3247834C7003B6286 /* EndpointsRequests */; };
 		0260CE7824748B9100E16149 /* MockupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7724748B9100E16149 /* MockupData.swift */; };
 		0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */; };
 		0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */; };
@@ -37,10 +37,7 @@
 		02E8FCAE2476FAB8002B942D /* MiniRemotoDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 02E8FCAC2476FAB8002B942D /* MiniRemotoDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02E8FCB12476FAB8002B942D /* MiniRemotoDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E8FCAA2476FAB8002B942D /* MiniRemotoDatabase.framework */; };
 		02E8FCB22476FAB8002B942D /* MiniRemotoDatabase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02E8FCAA2476FAB8002B942D /* MiniRemotoDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		02E8FCB92476FAE2002B942D /* CKDataConnector in Frameworks */ = {isa = PBXBuildFile; productRef = 02E8FCB82476FAE2002B942D /* CKDataConnector */; };
 		02E8FCBB2476FAEE002B942D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8FCBA2476FAEE002B942D /* DataController.swift */; };
-		02E8FCBD2476FAF5002B942D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8FCBC2476FAF5002B942D /* User.swift */; };
-		02E8FCBF2476FB3F002B942D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8FCBE2476FB3F002B942D /* Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +67,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0215236E2476FCC3001CABFF /* ReferenceField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceField.swift; sourceTree = "<group>"; };
 		0260CE7724748B9100E16149 /* MockupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockupData.swift; sourceTree = "<group>"; };
 		0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionDelegate.swift; sourceTree = "<group>"; };
 		0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTableDelegate.swift; sourceTree = "<group>"; };
@@ -101,8 +97,6 @@
 		02E8FCAC2476FAB8002B942D /* MiniRemotoDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniRemotoDatabase.h; sourceTree = "<group>"; };
 		02E8FCAD2476FAB8002B942D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02E8FCBA2476FAEE002B942D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		02E8FCBC2476FAF5002B942D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		02E8FCBE2476FB3F002B942D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02E8FCB92476FAE2002B942D /* CKDataConnector in Frameworks */,
+				0217DAD4247834C7003B6286 /* EndpointsRequests in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				02E8FCBA2476FAEE002B942D /* DataController.swift */,
-				0215236E2476FCC3001CABFF /* ReferenceField.swift */,
 				02E8FCB62476FACE002B942D /* Entities */,
 				02E8FCAC2476FAB8002B942D /* MiniRemotoDatabase.h */,
 				02E8FCAD2476FAB8002B942D /* Info.plist */,
@@ -273,8 +266,6 @@
 		02E8FCB62476FACE002B942D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				02E8FCBC2476FAF5002B942D /* User.swift */,
-				02E8FCBE2476FB3F002B942D /* Event.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -328,7 +319,7 @@
 			);
 			name = MiniRemotoDatabase;
 			packageProductDependencies = (
-				02E8FCB82476FAE2002B942D /* CKDataConnector */,
+				0217DAD3247834C7003B6286 /* EndpointsRequests */,
 			);
 			productName = MiniRemotoDatabase;
 			productReference = 02E8FCAA2476FAB8002B942D /* MiniRemotoDatabase.framework */;
@@ -363,7 +354,7 @@
 			);
 			mainGroup = 02748268246F08680059876D;
 			packageReferences = (
-				02E8FCB72476FAE2002B942D /* XCRemoteSwiftPackageReference "CKDataConnector" */,
+				0217DAD2247834C7003B6286 /* XCRemoteSwiftPackageReference "Endpoints-Requests" */,
 			);
 			productRefGroup = 02748272246F08680059876D /* Products */;
 			projectDirPath = "";
@@ -448,9 +439,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02E8FCBD2476FAF5002B942D /* User.swift in Sources */,
-				02E8FCBF2476FB3F002B942D /* Event.swift in Sources */,
-				0215236F2476FCC3001CABFF /* ReferenceField.swift in Sources */,
 				02E8FCBB2476FAEE002B942D /* DataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -737,21 +725,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		02E8FCB72476FAE2002B942D /* XCRemoteSwiftPackageReference "CKDataConnector" */ = {
+		0217DAD2247834C7003B6286 /* XCRemoteSwiftPackageReference "Endpoints-Requests" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/PedroFarina/CKDataConnector.git";
+			repositoryURL = "https://github.com/PedroFarina/Endpoints-Requests.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.1;
+				minimumVersion = 1.1.21;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		02E8FCB82476FAE2002B942D /* CKDataConnector */ = {
+		0217DAD3247834C7003B6286 /* EndpointsRequests */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 02E8FCB72476FAE2002B942D /* XCRemoteSwiftPackageReference "CKDataConnector" */;
-			productName = CKDataConnector;
+			package = 0217DAD2247834C7003B6286 /* XCRemoteSwiftPackageReference "Endpoints-Requests" */;
+			productName = EndpointsRequests;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
