@@ -10,6 +10,9 @@
 		02046F9A247C4C0600620FA9 /* Modules.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02046F99247C4C0600620FA9 /* Modules.xcassets */; };
 		02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046F9E247C4E6000620FA9 /* StringExtension.swift */; };
 		02046FA0247C4F2700620FA9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046F9E247C4E6000620FA9 /* StringExtension.swift */; };
+		02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FA1247C4F8200620FA9 /* InviteData.swift */; };
+		02046FA4247C4FC800620FA9 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FA3247C4FC800620FA9 /* LocationData.swift */; };
+		02046FA6247C500F00620FA9 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FA5247C500F00620FA9 /* ListData.swift */; };
 		0217DAD4247834C7003B6286 /* EndpointsRequests in Frameworks */ = {isa = PBXBuildFile; productRef = 0217DAD3247834C7003B6286 /* EndpointsRequests */; };
 		0217DAD624783EF7003B6286 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD524783EF7003B6286 /* User.swift */; };
 		0217DAD8247845BF003B6286 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD7247845BF003B6286 /* Event.swift */; };
@@ -76,6 +79,9 @@
 /* Begin PBXFileReference section */
 		02046F99247C4C0600620FA9 /* Modules.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Modules.xcassets; sourceTree = "<group>"; };
 		02046F9E247C4E6000620FA9 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		02046FA1247C4F8200620FA9 /* InviteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteData.swift; sourceTree = "<group>"; };
+		02046FA3247C4FC800620FA9 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		02046FA5247C500F00620FA9 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
 		0217DAD524783EF7003B6286 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0217DAD7247845BF003B6286 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0217DAD924784607003B6286 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -258,9 +264,12 @@
 		0292E61E24746EC6002B5362 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0292E61C24746E3B002B5362 /* Module.swift */,
 				02046F99247C4C0600620FA9 /* Modules.xcassets */,
 				0260CE7724748B9100E16149 /* CalendarData.swift */,
-				0292E61C24746E3B002B5362 /* Module.swift */,
+				02046FA1247C4F8200620FA9 /* InviteData.swift */,
+				02046FA3247C4FC800620FA9 /* LocationData.swift */,
+				02046FA5247C500F00620FA9 /* ListData.swift */,
 			);
 			name = Modules;
 			path = Entities/Modules;
@@ -445,9 +454,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02046FA4247C4FC800620FA9 /* LocationData.swift in Sources */,
 				0260CE7824748B9100E16149 /* CalendarData.swift in Sources */,
 				02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */,
 				0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */,
+				02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */,
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
 				02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
@@ -461,6 +472,7 @@
 				0260CE7F24748C7000E16149 /* AddEventViewController.swift in Sources */,
 				02748277246F08690059876D /* SceneDelegate.swift in Sources */,
 				02B01ED5247470310054587A /* ModuleCollectionDataSource.swift in Sources */,
+				02046FA6247C500F00620FA9 /* ListData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
