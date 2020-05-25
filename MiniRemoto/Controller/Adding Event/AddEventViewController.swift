@@ -39,9 +39,26 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate {
         moduleTableView.reloadData()
     }
 
-    @IBAction func nextTap(_ sender: Any) {
-        //TODO: Next step
-        #warning("Next step not implemented yet")
+    var failAlert: UIAlertController {
+        let alert: UIAlertController
+        if moduleTableView.visibleCells.count == 0 {
+            alert = UIAlertController(title: "Oops!".localized(), message: "Para criar seu evento, é necessário adicionar módulos.".localized(), preferredStyle: .alert)
+        } else {
+            alert = UIAlertController(title: "Oops!".localized(), message: "Toque nos módulos adicionados para preenchê-los".localized(), preferredStyle: .alert)
+        }
+        alert.view.tintColor = UIColor(named: "Action Color")
+
+        let action = UIAlertAction(title: "OK".localized(), style: .default)
+        alert.addAction(action)
+        return alert
+    }
+
+    @IBAction func fallbackTap(_ sender: Any) {
+        self.present(failAlert, animated: true)
+    }
+    @IBAction func doneTap(_ sender: Any) {
+        //TODO: Save event
+        #warning("Save event not implemented yet")
     }
     @IBAction func cancelTap(_ sender: Any) {
         self.dismiss(animated: true)

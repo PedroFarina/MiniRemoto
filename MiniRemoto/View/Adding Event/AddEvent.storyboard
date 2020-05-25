@@ -15,9 +15,6 @@
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
         </array>
-        <array key="Montserrat-SemiBold.ttf">
-            <string>Montserrat-SemiBold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Add Event View Controller-->
@@ -31,23 +28,33 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5R-YA-L9R">
                                 <rect key="frame" x="15" y="59" width="68" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Cancelar">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <state key="normal" title="Cancelar"/>
                                 <connections>
                                     <action selector="cancelTap:" destination="BI3-Ku-TrH" eventType="touchUpInside" id="e1m-aA-Z1x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahs-18-etK">
-                                <rect key="frame" x="337" y="59" width="62" height="33"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Próximo">
-                                    <color key="titleColor" name="Action Color"/>
-                                    <color key="titleShadowColor" name="Action Color"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lha-Kw-BXU">
+                                <rect key="frame" x="369" y="59" width="30" height="33"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <state key="normal" title=" ">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="fallbackTap:" destination="BI3-Ku-TrH" eventType="touchUpInside" id="woE-ML-KsZ"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome do evento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEp-5C-2Vz" customClass="SlashedTextField" customModule="MiniRemoto" customModuleProvider="target">
-                                <rect key="frame" x="15" y="140" width="384" height="25"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahs-18-etK">
+                                <rect key="frame" x="369" y="59" width="30" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="doneTap:" destination="BI3-Ku-TrH" eventType="touchUpInside" id="uw2-gI-BAa"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Título do evento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEp-5C-2Vz" customClass="SlashedTextField" customModule="MiniRemoto" customModuleProvider="target">
+                                <rect key="frame" x="15" y="107" width="384" height="25"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
@@ -56,14 +63,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crie seu evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbe-UB-qoW">
-                                <rect key="frame" x="15" y="102" width="168" height="28"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="24"/>
-                                <color key="textColor" name="Label Gray"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yWD-VG-AUd">
-                                <rect key="frame" x="15" y="175" width="384" height="60"/>
+                                <rect key="frame" x="15" y="142" width="384" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="47E-gS-Akx"/>
@@ -101,7 +102,7 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S6r-U4-Roc">
-                                <rect key="frame" x="15" y="245" width="384" height="602"/>
+                                <rect key="frame" x="15" y="212" width="384" height="635"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moduleCell" rowHeight="58" id="Ua7-SH-Ba6" customClass="ModuleTableViewCell" customModule="MiniRemoto" customModuleProvider="target">
@@ -156,19 +157,21 @@
                             <constraint firstItem="yWD-VG-AUd" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="0wy-28-aPw"/>
                             <constraint firstItem="X5R-YA-L9R" firstAttribute="top" secondItem="iF5-LE-pcd" secondAttribute="top" constant="15" id="BKf-qg-ynm"/>
                             <constraint firstItem="YEp-5C-2Vz" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="DGM-I6-yU4"/>
-                            <constraint firstItem="Pbe-UB-qoW" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="EBg-yF-MG5"/>
+                            <constraint firstItem="lha-Kw-BXU" firstAttribute="centerX" secondItem="ahs-18-etK" secondAttribute="centerX" id="EcS-t1-XmT"/>
                             <constraint firstItem="ahs-18-etK" firstAttribute="top" secondItem="iF5-LE-pcd" secondAttribute="top" constant="15" id="Eyd-RD-jLk"/>
-                            <constraint firstItem="Pbe-UB-qoW" firstAttribute="top" secondItem="X5R-YA-L9R" secondAttribute="bottom" constant="10" id="HVW-bK-0KY"/>
-                            <constraint firstItem="YEp-5C-2Vz" firstAttribute="top" secondItem="Pbe-UB-qoW" secondAttribute="bottom" constant="10" id="Q9M-ms-qOt"/>
                             <constraint firstItem="iF5-LE-pcd" firstAttribute="bottom" secondItem="S6r-U4-Roc" secondAttribute="bottom" constant="15" id="RjI-Vc-lv9"/>
                             <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="yWD-VG-AUd" secondAttribute="trailing" constant="15" id="Z07-nZ-pWM"/>
                             <constraint firstItem="X5R-YA-L9R" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="aGR-dt-YHB"/>
                             <constraint firstItem="yWD-VG-AUd" firstAttribute="top" secondItem="YEp-5C-2Vz" secondAttribute="bottom" constant="10" id="acU-wa-Vcc"/>
                             <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="S6r-U4-Roc" secondAttribute="trailing" constant="15" id="ans-z7-NrB"/>
                             <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="ahs-18-etK" secondAttribute="trailing" constant="15" id="hqE-hK-8zH"/>
+                            <constraint firstItem="YEp-5C-2Vz" firstAttribute="top" secondItem="X5R-YA-L9R" secondAttribute="bottom" constant="15" id="i4X-7p-fbF"/>
                             <constraint firstItem="iF5-LE-pcd" firstAttribute="trailing" secondItem="YEp-5C-2Vz" secondAttribute="trailing" constant="15" id="lLB-AK-0cT"/>
+                            <constraint firstItem="lha-Kw-BXU" firstAttribute="height" secondItem="ahs-18-etK" secondAttribute="height" id="nU9-OE-4oe"/>
                             <constraint firstItem="S6r-U4-Roc" firstAttribute="top" secondItem="yWD-VG-AUd" secondAttribute="bottom" constant="10" id="nh3-gh-ul2"/>
                             <constraint firstItem="S6r-U4-Roc" firstAttribute="leading" secondItem="iF5-LE-pcd" secondAttribute="leading" constant="15" id="r8p-xf-iM9"/>
+                            <constraint firstItem="lha-Kw-BXU" firstAttribute="centerY" secondItem="ahs-18-etK" secondAttribute="centerY" id="v3c-Be-JKm"/>
+                            <constraint firstItem="lha-Kw-BXU" firstAttribute="width" secondItem="ahs-18-etK" secondAttribute="width" id="vUb-yi-R6B"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iF5-LE-pcd"/>
                     </view>
@@ -201,6 +204,7 @@
             <point key="canvasLocation" x="34.782608695652179" y="168.75"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="Action Color"/>
     <resources>
         <namedColor name="Action Color">
             <color red="0.4309999942779541" green="0.31000000238418579" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
