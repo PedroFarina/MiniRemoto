@@ -37,7 +37,7 @@ public class ModuleCollectionViewDelegate: NSObject, UICollectionViewDelegate, U
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+        return UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 19)
     }
 
     public func collectionView(_ collectionView: UICollectionView,
