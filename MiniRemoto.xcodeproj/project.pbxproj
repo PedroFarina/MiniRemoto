@@ -13,6 +13,11 @@
 		02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FA1247C4F8200620FA9 /* InviteData.swift */; };
 		02046FA4247C4FC800620FA9 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FA3247C4FC800620FA9 /* LocationData.swift */; };
 		02046FA6247C500F00620FA9 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FA5247C500F00620FA9 /* ListData.swift */; };
+		02046FA9247C603F00620FA9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FA8247C603F00620FA9 /* CardView.swift */; };
+		02046FAB247C60C000620FA9 /* CardsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FAA247C60C000620FA9 /* CardsController.swift */; };
+		02046FAD247C60EF00620FA9 /* CardsControllerDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FAC247C60EF00620FA9 /* CardsControllerDataSet.swift */; };
+		02046FAF247C610000620FA9 /* CardsControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FAE247C610000620FA9 /* CardsControllerDelegate.swift */; };
+		02046FB2247C617300620FA9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FB1247C617300620FA9 /* MainViewController.swift */; };
 		0217DAD4247834C7003B6286 /* EndpointsRequests in Frameworks */ = {isa = PBXBuildFile; productRef = 0217DAD3247834C7003B6286 /* EndpointsRequests */; };
 		0217DAD624783EF7003B6286 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD524783EF7003B6286 /* User.swift */; };
 		0217DAD8247845BF003B6286 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD7247845BF003B6286 /* Event.swift */; };
@@ -82,6 +87,11 @@
 		02046FA1247C4F8200620FA9 /* InviteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteData.swift; sourceTree = "<group>"; };
 		02046FA3247C4FC800620FA9 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		02046FA5247C500F00620FA9 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
+		02046FA8247C603F00620FA9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		02046FAA247C60C000620FA9 /* CardsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsController.swift; sourceTree = "<group>"; };
+		02046FAC247C60EF00620FA9 /* CardsControllerDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsControllerDataSet.swift; sourceTree = "<group>"; };
+		02046FAE247C610000620FA9 /* CardsControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsControllerDelegate.swift; sourceTree = "<group>"; };
+		02046FB1247C617300620FA9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0217DAD524783EF7003B6286 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0217DAD7247845BF003B6286 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0217DAD924784607003B6286 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -148,6 +158,25 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		02046FA7247C602A00620FA9 /* Custom Cards */ = {
+			isa = PBXGroup;
+			children = (
+				02046FA8247C603F00620FA9 /* CardView.swift */,
+				02046FAA247C60C000620FA9 /* CardsController.swift */,
+				02046FAC247C60EF00620FA9 /* CardsControllerDataSet.swift */,
+				02046FAE247C610000620FA9 /* CardsControllerDelegate.swift */,
+			);
+			path = "Custom Cards";
+			sourceTree = "<group>";
+		};
+		02046FB0247C615F00620FA9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				02046FB1247C617300620FA9 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		02748268246F08680059876D = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +235,7 @@
 		0274828A246F09EE0059876D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				02046FB0247C615F00620FA9 /* Main */,
 				0292E6062474580A002B5362 /* Adding Event */,
 			);
 			path = Controller;
@@ -234,6 +264,7 @@
 		0292E60324745659002B5362 /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
+				02046FA7247C602A00620FA9 /* Custom Cards */,
 				0292E600247452C8002B5362 /* RoundView.swift */,
 				0292E6072474597E002B5362 /* SlashedTextField.swift */,
 			);
@@ -454,20 +485,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02046FAB247C60C000620FA9 /* CardsController.swift in Sources */,
 				02046FA4247C4FC800620FA9 /* LocationData.swift in Sources */,
 				0260CE7824748B9100E16149 /* CalendarData.swift in Sources */,
 				02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */,
 				0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */,
 				02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */,
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
+				02046FAF247C610000620FA9 /* CardsControllerDelegate.swift in Sources */,
 				02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
+				02046FAD247C60EF00620FA9 /* CardsControllerDataSet.swift in Sources */,
 				0292E61D24746E3B002B5362 /* Module.swift in Sources */,
+				02046FB2247C617300620FA9 /* MainViewController.swift in Sources */,
 				0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */,
 				0260CE8024748C7000E16149 /* ModuleStateDelegate.swift in Sources */,
+				02046FA9247C603F00620FA9 /* CardView.swift in Sources */,
 				0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */,
 				0260CE7F24748C7000E16149 /* AddEventViewController.swift in Sources */,
 				02748277246F08690059876D /* SceneDelegate.swift in Sources */,
