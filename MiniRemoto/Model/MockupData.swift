@@ -21,6 +21,7 @@ public class MockUpData {
 import UIKit
 
 public class CalendarModule: Module {
+    
     public var addImage: UIImage? = UIImage(named: "CalendarAddModule")
 
     public var removeImage: UIImage? = UIImage(named: "CalendarRemoveModule")

@@ -11,7 +11,6 @@ import UIKit
 public class AddEventViewController: UIViewController, ModuleStateDelegate {
 
     @IBOutlet weak var txtEventName: SlashedTextField!
-
     @IBOutlet weak var moduleCollectionView: UICollectionView!
     let collectionDelegate = ModuleCollectionViewDelegate()
     let collectionDataSource = ModuleCollectionViewDataSource()

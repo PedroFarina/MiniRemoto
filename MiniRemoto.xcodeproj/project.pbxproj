@@ -33,6 +33,11 @@
 		0292E61D24746E3B002B5362 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E61C24746E3B002B5362 /* Module.swift */; };
 		02B01ED5247470310054587A /* ModuleCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B01ED4247470310054587A /* ModuleCollectionDataSource.swift */; };
 		02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B01ED6247470800054587A /* ModuleTableDataSource.swift */; };
+		758B2A912475A9E6007F70D6 /* AddList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758B2A902475A9E6007F70D6 /* AddList.storyboard */; };
+		758B2A942475ADD7007F70D6 /* AddListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2A932475ADD7007F70D6 /* AddListViewController.swift */; };
+		758B2A962475B385007F70D6 /* AddListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2A952475B385007F70D6 /* AddListTableViewDataSource.swift */; };
+		758B2A982475B3A5007F70D6 /* AddListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2A972475B3A5007F70D6 /* AddListTableViewDelegate.swift */; };
+		758B2A9A2475B588007F70D6 /* AddListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2A992475B588007F70D6 /* AddListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +82,11 @@
 		0292E61C24746E3B002B5362 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		02B01ED4247470310054587A /* ModuleCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleCollectionDataSource.swift; sourceTree = "<group>"; };
 		02B01ED6247470800054587A /* ModuleTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleTableDataSource.swift; sourceTree = "<group>"; };
+		758B2A902475A9E6007F70D6 /* AddList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddList.storyboard; sourceTree = "<group>"; };
+		758B2A932475ADD7007F70D6 /* AddListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListViewController.swift; sourceTree = "<group>"; };
+		758B2A952475B385007F70D6 /* AddListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListTableViewDataSource.swift; sourceTree = "<group>"; };
+		758B2A972475B3A5007F70D6 /* AddListTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListTableViewDelegate.swift; sourceTree = "<group>"; };
+		758B2A992475B588007F70D6 /* AddListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +150,7 @@
 			children = (
 				0292E60324745659002B5362 /* UIViews */,
 				0292E6022474564D002B5362 /* Adding Event */,
+				758B2A922475A9ED007F70D6 /* Adding List */,
 				0274827A246F08690059876D /* Main.storyboard */,
 			);
 			path = View;
@@ -186,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				0260CE7B24748C7000E16149 /* AddEventViewController.swift */,
+				758B2A932475ADD7007F70D6 /* AddListViewController.swift */,
 				0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */,
 				0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */,
 				0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */,
@@ -226,6 +238,17 @@
 				02B01ED6247470800054587A /* ModuleTableDataSource.swift */,
 			);
 			path = "Adding Event";
+			sourceTree = "<group>";
+		};
+		758B2A922475A9ED007F70D6 /* Adding List */ = {
+			isa = PBXGroup;
+			children = (
+				758B2A902475A9E6007F70D6 /* AddList.storyboard */,
+				758B2A992475B588007F70D6 /* AddListTableViewCell.swift */,
+				758B2A952475B385007F70D6 /* AddListTableViewDataSource.swift */,
+				758B2A972475B3A5007F70D6 /* AddListTableViewDelegate.swift */,
+			);
+			path = "Adding List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +317,7 @@
 				0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */,
 				0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */,
 				0274827E246F086A0059876D /* Assets.xcassets in Resources */,
+				758B2A912475A9E6007F70D6 /* AddList.storyboard in Resources */,
 				0274827C246F08690059876D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,12 +357,16 @@
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
+				758B2A9A2475B588007F70D6 /* AddListTableViewCell.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
+				758B2A962475B385007F70D6 /* AddListTableViewDataSource.swift in Sources */,
 				0292E61D24746E3B002B5362 /* Module.swift in Sources */,
 				0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */,
+				758B2A942475ADD7007F70D6 /* AddListViewController.swift in Sources */,
 				0260CE8024748C7000E16149 /* ModuleStateDelegate.swift in Sources */,
 				0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */,
+				758B2A982475B3A5007F70D6 /* AddListTableViewDelegate.swift in Sources */,
 				0260CE7F24748C7000E16149 /* AddEventViewController.swift in Sources */,
 				02748277246F08690059876D /* SceneDelegate.swift in Sources */,
 				02B01ED5247470310054587A /* ModuleCollectionDataSource.swift in Sources */,
@@ -417,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -471,7 +499,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
