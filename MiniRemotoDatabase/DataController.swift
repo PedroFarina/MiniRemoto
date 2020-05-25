@@ -7,7 +7,6 @@
 //
 
 import CloudKit
-import CKDataConnector
 import EndpointsRequests
 
 internal struct Response: Codable {

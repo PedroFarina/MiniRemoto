@@ -12,7 +12,7 @@
 		0217DAD8247845BF003B6286 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD7247845BF003B6286 /* Event.swift */; };
 		0217DADA24784607003B6286 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD924784607003B6286 /* Location.swift */; };
 		0217DADC24784C11003B6286 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DADB24784C11003B6286 /* Item.swift */; };
-		0260CE7824748B9100E16149 /* MockupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7724748B9100E16149 /* MockupData.swift */; };
+		0260CE7824748B9100E16149 /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7724748B9100E16149 /* CalendarData.swift */; };
 		0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */; };
 		0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */; };
 		0260CE7F24748C7000E16149 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7B24748C7000E16149 /* AddEventViewController.swift */; };
@@ -75,7 +75,7 @@
 		0217DAD7247845BF003B6286 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0217DAD924784607003B6286 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0217DADB24784C11003B6286 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		0260CE7724748B9100E16149 /* MockupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockupData.swift; sourceTree = "<group>"; };
+		0260CE7724748B9100E16149 /* CalendarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarData.swift; sourceTree = "<group>"; };
 		0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionDelegate.swift; sourceTree = "<group>"; };
 		0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTableDelegate.swift; sourceTree = "<group>"; };
 		0260CE7B24748C7000E16149 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +166,6 @@
 		02748288246F09E50059876D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0260CE7724748B9100E16149 /* MockupData.swift */,
 				02B01ED32474701F0054587A /* Adding Event */,
 				0292E61E24746EC6002B5362 /* Modules */,
 				0292E60924745DC5002B5362 /* Font */,
@@ -245,6 +244,7 @@
 		0292E61E24746EC6002B5362 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0260CE7724748B9100E16149 /* CalendarData.swift */,
 				0292E61C24746E3B002B5362 /* Module.swift */,
 			);
 			name = Modules;
@@ -429,7 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0260CE7824748B9100E16149 /* MockupData.swift in Sources */,
+				0260CE7824748B9100E16149 /* CalendarData.swift in Sources */,
 				02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */,
 				0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */,
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
