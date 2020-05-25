@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02046F9A247C4C0600620FA9 /* Modules.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02046F99247C4C0600620FA9 /* Modules.xcassets */; };
 		0217DAD4247834C7003B6286 /* EndpointsRequests in Frameworks */ = {isa = PBXBuildFile; productRef = 0217DAD3247834C7003B6286 /* EndpointsRequests */; };
 		0217DAD624783EF7003B6286 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD524783EF7003B6286 /* User.swift */; };
 		0217DAD8247845BF003B6286 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD7247845BF003B6286 /* Event.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02046F99247C4C0600620FA9 /* Modules.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Modules.xcassets; sourceTree = "<group>"; };
 		0217DAD524783EF7003B6286 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0217DAD7247845BF003B6286 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0217DAD924784607003B6286 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		0292E61E24746EC6002B5362 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				02046F99247C4C0600620FA9 /* Modules.xcassets */,
 				0260CE7724748B9100E16149 /* CalendarData.swift */,
 				0292E61C24746E3B002B5362 /* Module.swift */,
 			);
@@ -388,6 +391,7 @@
 				0292E60F24745EC3002B5362 /* Montserrat-Medium.ttf in Resources */,
 				0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */,
 				0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */,
+				02046F9A247C4C0600620FA9 /* Modules.xcassets in Resources */,
 				0274827E246F086A0059876D /* Assets.xcassets in Resources */,
 				0274827C246F08690059876D /* Main.storyboard in Resources */,
 			);
