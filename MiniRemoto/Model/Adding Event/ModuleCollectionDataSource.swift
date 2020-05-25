@@ -9,7 +9,7 @@
 import UIKit
 
 public class ModuleCollectionViewDataSource: NSObject, UICollectionViewDataSource {
-    var modules: [Module] = [MockUpData.calendarModule]
+    var modules: [Module] = [CalendarData()]
 
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return modules.count
