@@ -38,7 +38,6 @@ class AddListTableViewDataSource: NSObject, UITableViewDataSource, ListProtocol 
     func add(item: String, in tableView: UITableView, with height: NSLayoutConstraint) {
         items.append(item)
         addRow(in: tableView, with: height)
-        print(items)
     }
 
     func update(item: String, at index: Int) {

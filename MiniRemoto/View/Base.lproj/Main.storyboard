@@ -30,7 +30,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="AddButton"/>
                                 <connections>
-                                    <segue destination="cpl-56-LXf" kind="presentation" id="jp2-cF-Quw"/>
+                                    <segue destination="Ogb-7Y-JpS" kind="show" id="j40-QN-q6I"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,21 +55,15 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
-        <!--AddEvent-->
-        <scene sceneID="m81-hv-I4i">
+        <!--AddGuests-->
+        <scene sceneID="BrZ-W6-n2y">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddEvent" id="9po-dr-EPe" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ciH-X0-Ure" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="AddGuests" id="Ogb-7Y-JpS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bwo-OU-EGO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kiy-PE-TOQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1138" y="129"/>
-        </scene>
-        <!--AddList-->
-        <scene sceneID="cK2-TR-vra">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddList" id="cpl-56-LXf" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z5I-ha-x3J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1040" y="227"/>
+            <point key="canvasLocation" x="934" y="107"/>
         </scene>
     </scenes>
     <resources>

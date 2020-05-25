@@ -38,6 +38,15 @@
 		758B2A962475B385007F70D6 /* AddListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2A952475B385007F70D6 /* AddListTableViewDataSource.swift */; };
 		758B2A982475B3A5007F70D6 /* AddListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2A972475B3A5007F70D6 /* AddListTableViewDelegate.swift */; };
 		758B2A9A2475B588007F70D6 /* AddListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2A992475B588007F70D6 /* AddListTableViewCell.swift */; };
+		758B2AA5247C42A4007F70D6 /* AddGuestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AA4247C42A4007F70D6 /* AddGuestsViewController.swift */; };
+		758B2AA8247C438B007F70D6 /* ContactCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AA7247C438B007F70D6 /* ContactCollectionViewCell.swift */; };
+		758B2AAA247C43C2007F70D6 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AA9247C43C2007F70D6 /* ContactsTableViewCell.swift */; };
+		758B2AAC247C4751007F70D6 /* ContactsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AAB247C4751007F70D6 /* ContactsTableViewDataSource.swift */; };
+		758B2AAE247C4784007F70D6 /* ContactsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AAD247C4784007F70D6 /* ContactsTableViewDelegate.swift */; };
+		758B2AB0247C47CE007F70D6 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AAF247C47CE007F70D6 /* ContactController.swift */; };
+		758B2AB4247C50F9007F70D6 /* AddGuests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758B2AB3247C50F9007F70D6 /* AddGuests.storyboard */; };
+		758B2AB6247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AB5247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift */; };
+		758B2AB8247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AB7247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,6 +96,15 @@
 		758B2A952475B385007F70D6 /* AddListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListTableViewDataSource.swift; sourceTree = "<group>"; };
 		758B2A972475B3A5007F70D6 /* AddListTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListTableViewDelegate.swift; sourceTree = "<group>"; };
 		758B2A992475B588007F70D6 /* AddListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListTableViewCell.swift; sourceTree = "<group>"; };
+		758B2AA4247C42A4007F70D6 /* AddGuestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuestsViewController.swift; sourceTree = "<group>"; };
+		758B2AA7247C438B007F70D6 /* ContactCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCollectionViewCell.swift; sourceTree = "<group>"; };
+		758B2AA9247C43C2007F70D6 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		758B2AAB247C4751007F70D6 /* ContactsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewDataSource.swift; sourceTree = "<group>"; };
+		758B2AAD247C4784007F70D6 /* ContactsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewDelegate.swift; sourceTree = "<group>"; };
+		758B2AAF247C47CE007F70D6 /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
+		758B2AB3247C50F9007F70D6 /* AddGuests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddGuests.storyboard; sourceTree = "<group>"; };
+		758B2AB5247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		758B2AB7247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				0260CE7724748B9100E16149 /* MockupData.swift */,
+				758B2AB9247C69A3007F70D6 /* Adding Guests */,
 				02B01ED32474701F0054587A /* Adding Event */,
 				0292E61B24746E1C002B5362 /* Entities */,
 				0292E60924745DC5002B5362 /* Font */,
@@ -149,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				0292E60324745659002B5362 /* UIViews */,
+				758B2AA1247C41C1007F70D6 /* Adding Guests */,
 				0292E6022474564D002B5362 /* Adding Event */,
 				758B2A922475A9ED007F70D6 /* Adding List */,
 				0274827A246F08690059876D /* Main.storyboard */,
@@ -159,6 +179,7 @@
 		0274828A246F09EE0059876D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				758B2AA6247C42B1007F70D6 /* Adding Guests */,
 				0292E6062474580A002B5362 /* Adding Event */,
 			);
 			path = Controller;
@@ -251,6 +272,36 @@
 			path = "Adding List";
 			sourceTree = "<group>";
 		};
+		758B2AA1247C41C1007F70D6 /* Adding Guests */ = {
+			isa = PBXGroup;
+			children = (
+				758B2AA9247C43C2007F70D6 /* ContactsTableViewCell.swift */,
+				758B2AB3247C50F9007F70D6 /* AddGuests.storyboard */,
+				758B2AA7247C438B007F70D6 /* ContactCollectionViewCell.swift */,
+			);
+			path = "Adding Guests";
+			sourceTree = "<group>";
+		};
+		758B2AA6247C42B1007F70D6 /* Adding Guests */ = {
+			isa = PBXGroup;
+			children = (
+				758B2AAF247C47CE007F70D6 /* ContactController.swift */,
+				758B2AA4247C42A4007F70D6 /* AddGuestsViewController.swift */,
+				758B2AB7247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift */,
+				758B2AAD247C4784007F70D6 /* ContactsTableViewDelegate.swift */,
+			);
+			path = "Adding Guests";
+			sourceTree = "<group>";
+		};
+		758B2AB9247C69A3007F70D6 /* Adding Guests */ = {
+			isa = PBXGroup;
+			children = (
+				758B2AAB247C4751007F70D6 /* ContactsTableViewDataSource.swift */,
+				758B2AB5247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift */,
+			);
+			path = "Adding Guests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +368,7 @@
 				0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */,
 				0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */,
 				0274827E246F086A0059876D /* Assets.xcassets in Resources */,
+				758B2AB4247C50F9007F70D6 /* AddGuests.storyboard in Resources */,
 				758B2A912475A9E6007F70D6 /* AddList.storyboard in Resources */,
 				0274827C246F08690059876D /* Main.storyboard in Resources */,
 			);
@@ -351,17 +403,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758B2AB6247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift in Sources */,
+				758B2AAA247C43C2007F70D6 /* ContactsTableViewCell.swift in Sources */,
 				0260CE7824748B9100E16149 /* MockupData.swift in Sources */,
+				758B2AAC247C4751007F70D6 /* ContactsTableViewDataSource.swift in Sources */,
 				02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */,
 				0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */,
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
+				758B2AA8247C438B007F70D6 /* ContactCollectionViewCell.swift in Sources */,
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
 				758B2A9A2475B588007F70D6 /* AddListTableViewCell.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
+				758B2AB8247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift in Sources */,
 				758B2A962475B385007F70D6 /* AddListTableViewDataSource.swift in Sources */,
 				0292E61D24746E3B002B5362 /* Module.swift in Sources */,
+				758B2AA5247C42A4007F70D6 /* AddGuestsViewController.swift in Sources */,
+				758B2AAE247C4784007F70D6 /* ContactsTableViewDelegate.swift in Sources */,
+				758B2AB0247C47CE007F70D6 /* ContactController.swift in Sources */,
 				0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */,
 				758B2A942475ADD7007F70D6 /* AddListViewController.swift in Sources */,
 				0260CE8024748C7000E16149 /* ModuleStateDelegate.swift in Sources */,
