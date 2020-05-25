@@ -267,8 +267,8 @@
 				0292E61C24746E3B002B5362 /* Module.swift */,
 				02046F99247C4C0600620FA9 /* Modules.xcassets */,
 				0260CE7724748B9100E16149 /* CalendarData.swift */,
-				02046FA1247C4F8200620FA9 /* InviteData.swift */,
 				02046FA3247C4FC800620FA9 /* LocationData.swift */,
+				02046FA1247C4F8200620FA9 /* InviteData.swift */,
 				02046FA5247C500F00620FA9 /* ListData.swift */,
 			);
 			name = Modules;

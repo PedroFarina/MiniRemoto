@@ -8,6 +8,7 @@
 import UIKit
 
 public class CalendarData: Module {
+    public static let preferredRow: Int = 0
     public var addImage: UIImage? = UIImage(named: "CalendarAddModule")
     public var removeImage: UIImage? = UIImage(named: "CalendarRemoveModule")
     public var image: UIImage? = UIImage(named: "CalendarModule")

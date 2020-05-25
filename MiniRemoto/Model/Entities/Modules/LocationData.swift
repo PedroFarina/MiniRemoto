@@ -9,6 +9,7 @@
 import UIKit
 
 public class LocationData: Module {
+    public static let preferredRow: Int = 1
     public var addImage: UIImage? = UIImage(named: "LocationAddModule")
     public var removeImage: UIImage? = UIImage(named: "LocationRemoveModule")
     public var image: UIImage? = UIImage(named: "LocationModule")

@@ -14,4 +14,6 @@ public protocol Module: class {
     var image: UIImage? { get }
     var title: String? { get }
     var subtitle: String? { get }
+
+    static var preferredRow: Int { get }
 }
