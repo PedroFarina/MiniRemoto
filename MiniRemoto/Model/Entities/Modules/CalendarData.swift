@@ -37,4 +37,5 @@ public class CalendarData: Module {
             }
         }
     }
+    public var allDay: Bool = false
 }

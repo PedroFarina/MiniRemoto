@@ -30,7 +30,7 @@ public class DataController {
     public private(set) var events: [Event] = []
 
     internal func fetchEvent(with id: String) {
-        EndpointsRequests.Requests.getRequest(url: "\(DataController.hostaddress)/getEvents/\(user?.id ?? "")", decodableType: Event.self) { (answer) in
+        EndpointsRequests.Requests.getRequest(url: "\(DataController.hostaddress)/getEvents/\(id)", decodableType: Event.self) { (answer) in
             //TODO: Feed events array
             switch answer {
             case .result(let result):
