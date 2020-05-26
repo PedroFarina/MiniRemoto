@@ -65,6 +65,7 @@ public class CardView: UIView {
         self.contentView.addSubview(lblDetail)
 
         self.contentView.addSubview(lblSubtitle)
+        
 
         self.lblDetail.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
         self.lblDetail.textAlignment = .center
@@ -201,10 +202,10 @@ public class CardView: UIView {
     }
 
     public override func removeFromSuperview() {
-        if fromTop {
-            removingFromTop()
-        } else {
+//        if fromTop {
+//            removingFromTop()
+//        } else {
             removingFromBottom()
-        }
+//        }
     }
 }
