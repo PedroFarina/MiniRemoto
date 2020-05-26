@@ -40,7 +40,7 @@ class CardsController: UIView {
                 direction = .downOnly
                 return
             }
-            if newValue > (dataSource?.numberOfRows() ?? 0) - numberOfVisibleCards  {
+            if newValue > (dataSource?.numberOfRows() ?? 0) - numberOfVisibleCards - 1  {
                 direction = .upOnly
                 return
             }
@@ -56,7 +56,7 @@ class CardsController: UIView {
             return
         }
 
-        for i in index ..< index + numberOfVisibleCards {
+        for i in index ..< index + min(numberOfVisibleCards, dataSource.numberOfRows()) {
             let card = dataSource.cardForIndex(i)
             card.frame = CGRect(x: 0, y: heightOffsetOfCards + (CGFloat(i) * heightOffsetOfCards), width: frame.width, height: frame.height)
             visibleCards.append(card)

@@ -11,41 +11,83 @@ import UIKit
 @IBDesignable
 public class CardView: UIView {
 
-    let titleLabel = UILabel()
-    let timeLabel = UILabel()
-    let ownerLabel = UILabel()
-    let viewLayer = CAShapeLayer()
-    let contentView = UIView()
+    private func makeLbl() -> UILabel {
+        let lbl = UILabel()
+        lbl.adjustsFontSizeToFitWidth = true
+        return lbl
+    }
+
+    private lazy var lblTitle: UILabel = {
+        let lbl = makeLbl()
+        lbl.font = UIFont(name: "Montserrat-SemiBold", size: 24)
+        return lbl
+    }()
+    public var title: String? {
+        get {
+            return lblTitle.text
+        }
+        set {
+            lblTitle.text = newValue
+        }
+    }
+    private lazy var lblDetail: UILabel = {
+        let lbl = makeLbl()
+        lbl.font = UIFont(name: "Montserrat-SemiBold", size: 12)
+        return lbl
+    }()
+    public var detail: String? {
+        get {
+            return lblDetail.text
+        }
+        set {
+            lblDetail.text = newValue
+        }
+    }
+    private lazy var lblSubtitle: UILabel = {
+        let lbl = makeLbl()
+        lbl.font = UIFont(name: "Montserrat-SemiBold", size: 14)
+        return lbl
+    }()
+    public var subtitle: String? {
+        get {
+            return lblSubtitle.text
+        }
+        set {
+            lblSubtitle.text = newValue
+        }
+    }
+    private let viewLayer = CAShapeLayer()
+    private let contentView = UIView()
 
     func setupView() {
-        self.contentView.addSubview(titleLabel)
+        self.contentView.addSubview(lblTitle)
 
-        self.contentView.addSubview(timeLabel)
+        self.contentView.addSubview(lblDetail)
 
-        self.contentView.addSubview(ownerLabel)
+        self.contentView.addSubview(lblSubtitle)
 
-        self.timeLabel.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
-        self.timeLabel.textAlignment = .center
-        self.timeLabel.alpha = 1
+        self.lblDetail.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
+        self.lblDetail.textAlignment = .center
+        self.lblDetail.alpha = 1
 
-        self.titleLabel.frame = CGRect(x: 0, y: 16, width: self.frame.width, height: 30)
-        self.titleLabel.textAlignment = .center
-        self.titleLabel.alpha = 1
+        self.lblTitle.frame = CGRect(x: 0, y: 16, width: self.frame.width, height: 30)
+        self.lblTitle.textAlignment = .center
+        self.lblTitle.alpha = 1
 
-        self.ownerLabel.frame = CGRect(x: 0, y: 36, width: self.frame.width, height: 30)
-        self.ownerLabel.textAlignment = .center
-        self.ownerLabel.alpha = 1
+        self.lblSubtitle.frame = CGRect(x: 0, y: 36, width: self.frame.width, height: 30)
+        self.lblSubtitle.textAlignment = .center
+        self.lblSubtitle.alpha = 1
     }
 
     func removeContent() {
         UIView.animate(withDuration: 0.1, animations: {
-            self.titleLabel.alpha = 0
-            self.ownerLabel.alpha = 0
-            self.timeLabel.alpha = 0
+            self.lblTitle.alpha = 0
+            self.lblSubtitle.alpha = 0
+            self.lblDetail.alpha = 0
         }) { (completion) in
-            self.titleLabel.removeFromSuperview()
-            self.timeLabel.removeFromSuperview()
-            self.ownerLabel.removeFromSuperview()
+            self.lblTitle.removeFromSuperview()
+            self.lblDetail.removeFromSuperview()
+            self.lblSubtitle.removeFromSuperview()
         }
     }
 

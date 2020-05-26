@@ -16,12 +16,15 @@ public class MainViewController: UIViewController, CardsControllerDataSource {
     }
 
     public func numberOfRows() -> Int {
-        return 5
+        return 10
     }
 
     public func cardForIndex(_ index: Int) -> CardView {
         let card = CardView()
         card.fillColor = .random()
+        card.detail = "13:00"
+        card.title = "Festa \(index + 1)"
+        card.subtitle = "Farina"
         return card
     }
 }
