@@ -14,11 +14,17 @@ public class CalendarModuleHourView: UIView {
         get {
             return txtStarts.text
         }
+        set {
+            txtStarts.text = newValue
+        }
     }
     @IBOutlet weak var txtEnds: SlashedTextField!
     public var endText: String? {
         get {
             return txtEnds.text
+        }
+        set {
+            txtEnds.text = newValue
         }
     }
 }
