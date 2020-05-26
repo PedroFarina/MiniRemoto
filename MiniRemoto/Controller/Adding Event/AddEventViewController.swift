@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AddEventViewController: UIViewController, ModuleStateDelegate {
+public class AddEventViewController: UIViewController, ModuleStateDelegate, ModuleSelectorDelegate {
 
     @IBOutlet weak var txtEventName: SlashedTextField!
 
@@ -27,6 +27,7 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate {
         
         moduleTableView.tableFooterView = UIView()
         collectionDelegate.delegate = self
+        tableDelegate.delegate = self
     }
 
     public func didAdd(_ module: Module) {
@@ -37,6 +38,14 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate {
     public func didRemove(_ module: Module) {
         tableDataSource.didRemove(module)
         moduleTableView.reloadData()
+    }
+
+    public func didSelect(_ module: Module) {
+        if let controller = UIStoryboard(name: type(of: module).storyboardName, bundle: nil).instantiateViewController(withIdentifier: "main") as? ModuleController {
+            controller.module = module
+            controller.tableView = moduleTableView
+            self.present(controller, animated: true)
+        }
     }
 
     var failAlert: UIAlertController {
