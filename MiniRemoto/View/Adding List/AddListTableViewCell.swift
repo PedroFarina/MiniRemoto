@@ -11,6 +11,7 @@ import UIKit
 class AddListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var txtItem: SlashedTextField!
+    var textChanged: ((String) -> Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +24,13 @@ class AddListTableViewCell: UITableViewCell {
     func setup(with delegate: UITextFieldDelegate) {
         txtItem.delegate = delegate
         txtItem.becomeFirstResponder()
+    }
+
+    func textChanged(action: @escaping (String) -> Void) {
+        self.textChanged = action
+    }
+
+    func textViewDidChange(_ textView: UITextView) {
+        textChanged?(textView.text)
     }
 }
