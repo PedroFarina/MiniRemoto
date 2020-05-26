@@ -47,6 +47,7 @@
 		758B2AB4247C50F9007F70D6 /* AddGuests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758B2AB3247C50F9007F70D6 /* AddGuests.storyboard */; };
 		758B2AB6247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AB5247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift */; };
 		758B2AB8247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AB7247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift */; };
+		758B2ABB247CDE38007F70D6 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2ABA247CDE38007F70D6 /* CustomSearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,6 +106,7 @@
 		758B2AB3247C50F9007F70D6 /* AddGuests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddGuests.storyboard; sourceTree = "<group>"; };
 		758B2AB5247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		758B2AB7247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		758B2ABA247CDE38007F70D6 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 			children = (
 				758B2AA9247C43C2007F70D6 /* ContactsTableViewCell.swift */,
 				758B2AA7247C438B007F70D6 /* ContactCollectionViewCell.swift */,
+				758B2ABA247CDE38007F70D6 /* CustomSearchBar.swift */,
 				758B2AB3247C50F9007F70D6 /* AddGuests.storyboard */,
 			);
 			path = "Adding Guests";
@@ -417,6 +420,7 @@
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
 				758B2AB8247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift in Sources */,
+				758B2ABB247CDE38007F70D6 /* CustomSearchBar.swift in Sources */,
 				758B2A962475B385007F70D6 /* AddListTableViewDataSource.swift in Sources */,
 				0292E61D24746E3B002B5362 /* Module.swift in Sources */,
 				758B2AA5247C42A4007F70D6 /* AddGuestsViewController.swift in Sources */,

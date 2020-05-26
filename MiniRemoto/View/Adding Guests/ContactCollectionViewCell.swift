@@ -19,6 +19,6 @@ class ContactCollectionViewCell: UICollectionViewCell {
         let familyNameInitial = String((contact.familyName).first ?? "A")
         initials.text = nameInitial+familyNameInitial
 
-        purpleView.layer.cornerRadius = 25.0
+        purpleView.layer.cornerRadius = self.frame.height/2
     }
 }

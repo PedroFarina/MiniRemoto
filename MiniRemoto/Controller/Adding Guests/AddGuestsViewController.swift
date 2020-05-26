@@ -12,7 +12,8 @@ class AddGuestsViewController: UIViewController {
     
     @IBOutlet weak var contactsCollectionView: UICollectionView!
     @IBOutlet weak var contactsTableView: UITableView!
-
+    @IBOutlet weak var searchBar: CustomSearchBar!
+    
     var tableViewDataSource: ContactsTableViewDataSource?
     var tableViewDelegate: ContactsTableViewDelegate?
     var collectionViewDataSource: ContactsCollectionViewDataSource?
@@ -20,11 +21,15 @@ class AddGuestsViewController: UIViewController {
 
     let contactsController = ContactsController()
     var contacts = [Contact]()
+    var searchResp = [Contact]()
+    var isSearching: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupContacts()
         setup()
+        searchBar.setup(contacts: contacts, tableView: contactsTableView)
+        searchBar.searchDelegate = tableViewDataSource
     }
     
     func setupContacts()  {
@@ -34,10 +39,12 @@ class AddGuestsViewController: UIViewController {
     
     func setup() {
         tableViewDataSource = ContactsTableViewDataSource(contacts: contacts)
-        tableViewDelegate = ContactsTableViewDelegate(contacts: contacts, collectionView: contactsCollectionView)
+
+        let sessions = tableViewDataSource?.getSections()
+        tableViewDelegate = ContactsTableViewDelegate(sections: sessions ?? [], collectionView: contactsCollectionView, textField: searchBar)
 
         collectionViewDataSource = ContactsCollectionViewDataSource()
-        collectionViewDelegate = ContactsCollectionViewDelegate()
+        collectionViewDelegate = ContactsCollectionViewDelegate(sections: sessions ?? [], tableView: contactsTableView)
 
         tableViewDelegate?.delegate = collectionViewDataSource
 
@@ -46,8 +53,9 @@ class AddGuestsViewController: UIViewController {
 
         contactsCollectionView.dataSource = collectionViewDataSource
         contactsCollectionView.delegate = collectionViewDelegate
+    }
 
-        contactsTableView.reloadData()
-        contactsCollectionView.reloadData()
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }

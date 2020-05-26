@@ -8,20 +8,22 @@
 
 import UIKit
 
-protocol PassContactThroughDataSourcesDelegate {
+protocol PassContactFromTableViewToCollectionView {
     func pass(_ contact: Contact)
     func remove(_ contact: Contact)
 }
 
 class ContactsTableViewDelegate: NSObject, UITableViewDelegate {
 
-    let contacts: [Contact]
-    var delegate: PassContactThroughDataSourcesDelegate?
+    var sections: [Section]
+    var delegate: PassContactFromTableViewToCollectionView?
     var collectionView: UICollectionView?
+    var textField: CustomSearchBar?
 
-    init(contacts: [Contact], collectionView: UICollectionView) {
+    init(sections: [Section], collectionView: UICollectionView, textField: CustomSearchBar) {
         self.collectionView = collectionView
-        self.contacts = contacts
+        self.sections = sections
+        self.textField = textField
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -32,18 +34,20 @@ class ContactsTableViewDelegate: NSObject, UITableViewDelegate {
         checkIfSelectionIsAvaliable(for: indexPath, in: tableView)
         tableView.reloadData()
         collectionView?.reloadData()
+        textField?.resignFirstResponder()
     }
 
     func checkIfSelectionIsAvaliable(for indexPath: IndexPath, in tableView: UITableView) {
 
         let cell = tableView.cellForRow(at: indexPath) as? ContactsTableViewCell
+        let section = sections[indexPath.section]
 
         if cell?.cellIsSelected == true {
             cell?.selectCell()
-            delegate?.remove(contacts[indexPath.row])
+            delegate?.remove(section.contacts[indexPath.row])
         } else {
             cell?.selectCell()
-            delegate?.pass(contacts[indexPath.row])
+            delegate?.pass(section.contacts[indexPath.row])
         }
     }
 }

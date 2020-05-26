@@ -28,7 +28,7 @@ class ContactsCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     }
 }
 
-extension ContactsCollectionViewDataSource: PassContactThroughDataSourcesDelegate {
+extension ContactsCollectionViewDataSource: PassContactFromTableViewToCollectionView {
 
     func remove(_ contact: Contact) {
         contacts.removeAll { $0.id == contact.id }
@@ -36,6 +36,5 @@ extension ContactsCollectionViewDataSource: PassContactThroughDataSourcesDelegat
 
     func pass(_ contact: Contact) {
         contacts.append(contact)
-        print(contacts)
     }
 }

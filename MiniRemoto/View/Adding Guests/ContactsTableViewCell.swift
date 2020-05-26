@@ -33,7 +33,7 @@ class ContactsTableViewCell: UITableViewCell {
 
         contatcName.text = contact.givenName + " " + contact.familyName
         contactEmail.text = contact.email
-        purpleView.layer.cornerRadius = 25.0
+        purpleView.layer.cornerRadius = self.frame.height/2
     }
 
     func selectCell() {
