@@ -15,6 +15,7 @@ struct Contact {
     let familyName: String
     let email: String
     let number: String
+    let id: String
 }
 
 class ContactsController: NSObject {
@@ -41,7 +42,8 @@ class ContactsController: NSObject {
         let key = [CNContactGivenNameKey,
                    CNContactFamilyNameKey,
                    CNContactEmailAddressesKey,
-                   CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+                   CNContactPhoneNumbersKey,
+            CNContactIdentifierKey] as [CNKeyDescriptor]
 
         let request = CNContactFetchRequest(keysToFetch: key)
 
@@ -51,6 +53,7 @@ class ContactsController: NSObject {
             let familyName = contact.familyName
             let contactEmail = contact.emailAddresses.first?.value
             let contactNumber = contact.phoneNumbers.first?.value.stringValue
+            let id = contact.identifier
 
             guard let email = contactEmail,
                 let number = contactNumber else { return }
@@ -58,7 +61,7 @@ class ContactsController: NSObject {
             let contact = Contact(givenName: name,
                                   familyName: familyName,
                                   email: email as String,
-                                  number: number)
+                                  number: number, id: id)
 
             contacts.append(contact)
         }

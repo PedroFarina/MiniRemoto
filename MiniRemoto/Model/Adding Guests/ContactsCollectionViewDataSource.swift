@@ -14,7 +14,7 @@ class ContactsCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     var contacts = [Contact]()
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 0
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -30,8 +30,12 @@ class ContactsCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
 extension ContactsCollectionViewDataSource: PassContactThroughDataSourcesDelegate {
 
+    func remove(_ contact: Contact) {
+        contacts.removeAll { $0.id == contact.id }
+    }
+
     func pass(_ contact: Contact) {
         contacts.append(contact)
-        print(contact.givenName)
+        print(contacts)
     }
 }

@@ -276,8 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				758B2AA9247C43C2007F70D6 /* ContactsTableViewCell.swift */,
-				758B2AB3247C50F9007F70D6 /* AddGuests.storyboard */,
 				758B2AA7247C438B007F70D6 /* ContactCollectionViewCell.swift */,
+				758B2AB3247C50F9007F70D6 /* AddGuests.storyboard */,
 			);
 			path = "Adding Guests";
 			sourceTree = "<group>";

@@ -10,6 +10,7 @@ import UIKit
 
 protocol PassContactThroughDataSourcesDelegate {
     func pass(_ contact: Contact)
+    func remove(_ contact: Contact)
 }
 
 class ContactsTableViewDelegate: NSObject, UITableViewDelegate {
@@ -28,7 +29,21 @@ class ContactsTableViewDelegate: NSObject, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.pass(contacts[indexPath.row])
+        checkIfSelectionIsAvaliable(for: indexPath, in: tableView)
+        tableView.reloadData()
         collectionView?.reloadData()
+    }
+
+    func checkIfSelectionIsAvaliable(for indexPath: IndexPath, in tableView: UITableView) {
+
+        let cell = tableView.cellForRow(at: indexPath) as? ContactsTableViewCell
+
+        if cell?.cellIsSelected == true {
+            cell?.selectCell()
+            delegate?.remove(contacts[indexPath.row])
+        } else {
+            cell?.selectCell()
+            delegate?.pass(contacts[indexPath.row])
+        }
     }
 }

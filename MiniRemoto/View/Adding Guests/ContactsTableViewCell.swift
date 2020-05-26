@@ -14,7 +14,10 @@ class ContactsTableViewCell: UITableViewCell {
     @IBOutlet weak var initials: UILabel!
     @IBOutlet weak var contatcName: UILabel!
     @IBOutlet weak var contactEmail: UILabel!
+    @IBOutlet weak var check: UIImageView!
 
+    var cellIsSelected: Bool = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -24,8 +27,17 @@ class ContactsTableViewCell: UITableViewCell {
     }
 
     func setup(for contact: Contact) {
-        contatcName.text = contact.givenName
+        let nameInitial = String((contact.givenName).first ?? "A")
+        let familyNameInitial = String((contact.familyName).first ?? "A")
+        initials.text = nameInitial+familyNameInitial
+
+        contatcName.text = contact.givenName + " " + contact.familyName
         contactEmail.text = contact.email
+        purpleView.layer.cornerRadius = 25.0
     }
 
+    func selectCell() {
+        cellIsSelected = !cellIsSelected
+        check.image = cellIsSelected ? UIImage(named: "Check") : UIImage(named: "Unselected")
+    }
 }

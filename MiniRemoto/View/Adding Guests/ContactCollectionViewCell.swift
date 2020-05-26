@@ -14,6 +14,11 @@ class ContactCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var initials: UILabel!
 
     func setup(for contact: Contact) {
-        initials.text = contact.givenName
+
+        let nameInitial = String((contact.givenName).first ?? "A")
+        let familyNameInitial = String((contact.familyName).first ?? "A")
+        initials.text = nameInitial+familyNameInitial
+
+        purpleView.layer.cornerRadius = 25.0
     }
 }
