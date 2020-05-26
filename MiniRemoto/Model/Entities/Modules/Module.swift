@@ -15,6 +15,8 @@ public protocol Module: class {
     var title: String? { get }
     var subtitle: String? { get }
 
+    func isFilled() -> Bool
+
     static var preferredRow: Int { get }
     static var storyboardName: String { get }
 }

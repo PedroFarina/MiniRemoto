@@ -177,6 +177,7 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="qfh-Z4-pLY"/>
                     <connections>
+                        <outlet property="btnDone" destination="ahs-18-etK" id="UVP-xq-mU5"/>
                         <outlet property="moduleCollectionView" destination="yWD-VG-AUd" id="Vnu-kQ-xVS"/>
                         <outlet property="moduleTableView" destination="S6r-U4-Roc" id="MmV-gU-d50"/>
                         <outlet property="txtEventName" destination="YEp-5C-2Vz" id="yjJ-hD-eF6"/>

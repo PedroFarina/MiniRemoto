@@ -16,4 +16,8 @@ public class LocationData: Module {
     public var image: UIImage? = UIImage(named: "LocationModule")
     public var title: String? = "Endereço".localized()
     public var subtitle: String? = "Complemento".localized()
+
+    public func isFilled() -> Bool {
+        return false
+    }
 }

@@ -16,4 +16,8 @@ public class InviteData: Module {
     public var image: UIImage? = UIImage(named: "InviteModule")
     public var title: String? = "Convidados".localized()
     public var subtitle: String?
+
+    public func isFilled() -> Bool {
+        return false
+    }
 }

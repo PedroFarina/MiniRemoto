@@ -16,4 +16,8 @@ public class ListData: Module {
     public var image: UIImage? = UIImage(named: "ListModule")
     public var title: String? = "Lista de compras".localized()
     public var subtitle: String?
+
+    public func isFilled() -> Bool {
+        return false
+    }
 }
