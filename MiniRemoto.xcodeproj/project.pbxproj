@@ -150,7 +150,6 @@
 			children = (
 				0292E60324745659002B5362 /* UIViews */,
 				0292E6022474564D002B5362 /* Adding Event */,
-				758B2A922475A9ED007F70D6 /* Adding List */,
 				0274827A246F08690059876D /* Main.storyboard */,
 			);
 			path = View;
@@ -176,6 +175,7 @@
 		0292E6022474564D002B5362 /* Adding Event */ = {
 			isa = PBXGroup;
 			children = (
+				758B2A922475A9ED007F70D6 /* Adding List */,
 				0292E5FE24744DF1002B5362 /* AddEvent.storyboard */,
 				0292E60424745682002B5362 /* ColorCollectionViewCell.swift */,
 				0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */,
@@ -196,8 +196,8 @@
 		0292E6062474580A002B5362 /* Adding Event */ = {
 			isa = PBXGroup;
 			children = (
+				02ED9BA6247DAB1700534FEE /* Adding List */,
 				0260CE7B24748C7000E16149 /* AddEventViewController.swift */,
-				758B2A932475ADD7007F70D6 /* AddListViewController.swift */,
 				0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */,
 				0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */,
 				0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */,
@@ -234,10 +234,28 @@
 		02B01ED32474701F0054587A /* Adding Event */ = {
 			isa = PBXGroup;
 			children = (
+				02ED9BA7247DAB2C00534FEE /* Adding List */,
 				02B01ED4247470310054587A /* ModuleCollectionDataSource.swift */,
 				02B01ED6247470800054587A /* ModuleTableDataSource.swift */,
 			);
 			path = "Adding Event";
+			sourceTree = "<group>";
+		};
+		02ED9BA6247DAB1700534FEE /* Adding List */ = {
+			isa = PBXGroup;
+			children = (
+				758B2A932475ADD7007F70D6 /* AddListViewController.swift */,
+				758B2A972475B3A5007F70D6 /* AddListTableViewDelegate.swift */,
+			);
+			path = "Adding List";
+			sourceTree = "<group>";
+		};
+		02ED9BA7247DAB2C00534FEE /* Adding List */ = {
+			isa = PBXGroup;
+			children = (
+				758B2A952475B385007F70D6 /* AddListTableViewDataSource.swift */,
+			);
+			path = "Adding List";
 			sourceTree = "<group>";
 		};
 		758B2A922475A9ED007F70D6 /* Adding List */ = {
@@ -245,8 +263,6 @@
 			children = (
 				758B2A902475A9E6007F70D6 /* AddList.storyboard */,
 				758B2A992475B588007F70D6 /* AddListTableViewCell.swift */,
-				758B2A952475B385007F70D6 /* AddListTableViewDataSource.swift */,
-				758B2A972475B3A5007F70D6 /* AddListTableViewDelegate.swift */,
 			);
 			path = "Adding List";
 			sourceTree = "<group>";
