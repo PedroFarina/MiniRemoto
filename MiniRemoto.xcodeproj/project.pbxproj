@@ -365,8 +365,8 @@
 		02ED9BA0247D9E7C00534FEE /* Calendar Module */ = {
 			isa = PBXGroup;
 			children = (
-				020690C8247DD4C5004C7150 /* CalendarModuleHourView.swift */,
 				02ED9BA1247D9E9F00534FEE /* CalendarModule.storyboard */,
+				020690C8247DD4C5004C7150 /* CalendarModuleHourView.swift */,
 			);
 			path = "Calendar Module";
 			sourceTree = "<group>";
