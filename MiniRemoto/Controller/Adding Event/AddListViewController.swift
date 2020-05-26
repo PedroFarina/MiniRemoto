@@ -64,7 +64,6 @@ extension AddListViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         shouldBeginCalledBeforeHand = false
     }
-
     func hideKeyboardWhenTappedAround() {
           let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
           tap.cancelsTouchesInView = false
