@@ -107,7 +107,7 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate, Mo
                 data.startDate = date
             }
         } else {
-            dateFormatter.dateFormat = "dd/MM/yyyy hh:mm"
+            dateFormatter.dateFormat = "dd/MM/yyyy hh:mm a"
             if let startDate = dateFormatter.date(from: "\(txtDate.text ?? "") \(hourView.startText ?? "")") {
                 data.startDate = startDate
             }
