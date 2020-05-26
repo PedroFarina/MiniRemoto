@@ -13,6 +13,10 @@ protocol GetSearchResponse {
     func changeSearchStatus(isSearching: Bool)
 }
 
+protocol PassSearchResponse {
+    func getSearchResponse(searchRes: [Contact], isSearching: Bool)
+}
+
 class CustomSearchBar: UITextField {
 
     var tableView: UITableView?
@@ -20,6 +24,7 @@ class CustomSearchBar: UITextField {
     var contacts: [Contact] = []
     var searching: Bool = false
     var searchDelegate: GetSearchResponse?
+    var passSearchRespDelegate: PassSearchResponse?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -65,6 +70,8 @@ extension CustomSearchBar: UITextFieldDelegate {
         }
 
         searchDelegate?.getSearchResponse(searchRes: searchRes, isSearching: searching)
+        passSearchRespDelegate?.getSearchResponse(searchRes: searchRes, isSearching: searching)
+
         tableView?.reloadData()
         return true
     }

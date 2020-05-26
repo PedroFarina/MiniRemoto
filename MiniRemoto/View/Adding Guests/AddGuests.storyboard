@@ -44,7 +44,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Busque um contato" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Loj-bG-MuJ" customClass="CustomSearchBar" customModule="MiniRemoto" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Busque um contato" textAlignment="natural" minimumFontSize="17" background="SearchBar" translatesAutoresizingMaskIntoConstraints="NO" id="Loj-bG-MuJ" customClass="CustomSearchBar" customModule="MiniRemoto" customModuleProvider="target">
                                 <rect key="frame" x="20" y="100" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="I02-5h-V3g"/>
@@ -193,7 +193,7 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iW8-bL-QhC" firstAttribute="trailing" secondItem="cW1-Ms-fFN" secondAttribute="trailing" id="1S0-sq-c7d"/>
                             <constraint firstItem="DND-5a-PGS" firstAttribute="top" secondItem="cW1-Ms-fFN" secondAttribute="top" constant="70" id="6Wn-kR-bXU"/>
@@ -224,6 +224,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SearchBar" width="335" height="40"/>
         <image name="Unselected" width="21" height="21"/>
         <image name="close" width="13" height="13"/>
         <namedColor name="Label Gray">

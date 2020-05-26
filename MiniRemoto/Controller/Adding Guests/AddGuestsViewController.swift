@@ -30,6 +30,7 @@ class AddGuestsViewController: UIViewController {
         setup()
         searchBar.setup(contacts: contacts, tableView: contactsTableView)
         searchBar.searchDelegate = tableViewDataSource
+        searchBar.passSearchRespDelegate = tableViewDelegate
     }
     
     func setupContacts()  {

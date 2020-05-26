@@ -103,13 +103,11 @@ extension ContactsTableViewDataSource: GetSearchResponse {
 
     func changeSearchStatus(isSearching: Bool) {
         self.isSearching = isSearching
-        print(self.isSearching)
     }
 
     func getSearchResponse(searchRes: [Contact], isSearching: Bool) {
         searchResp = searchRes
         self.isSearching = isSearching
-        print(self.isSearching)
     }
 }
 
