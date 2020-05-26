@@ -16,4 +16,5 @@ public protocol Module: class {
     var subtitle: String? { get }
 
     static var preferredRow: Int { get }
+    static var storyboardName: String { get }
 }

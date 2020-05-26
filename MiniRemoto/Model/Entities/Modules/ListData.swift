@@ -9,6 +9,7 @@
 import UIKit
 
 public class ListData: Module {
+    public static let storyboardName: String = "ListModule"
     public static let preferredRow: Int = 3
     public var addImage: UIImage? = UIImage(named: "ListAddModule")
     public var removeImage: UIImage? = UIImage(named: "ListRemoveModule")

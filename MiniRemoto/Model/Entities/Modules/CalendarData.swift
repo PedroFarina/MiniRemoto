@@ -8,6 +8,7 @@
 import UIKit
 
 public class CalendarData: Module {
+    public static let storyboardName: String = "CalendarModule"
     public static let preferredRow: Int = 0
     public var addImage: UIImage? = UIImage(named: "CalendarAddModule")
     public var removeImage: UIImage? = UIImage(named: "CalendarRemoveModule")
@@ -26,16 +27,21 @@ public class CalendarData: Module {
         return df
     }()
 
-    public var date: Date? {
+    public var startDate: Date? {
         didSet {
-            if let date = date {
+            if let date = startDate {
                 title = CalendarData.dateDF.string(from: date)
-                subtitle = CalendarData.hourDF.string(from: date)
+                if allDay {
+                    subtitle = "Dia todo".localized()
+                } else  {
+                    subtitle = CalendarData.hourDF.string(from: date)
+                }
             } else {
                 title = "Data".localized()
                 subtitle = "Horário".localized()
             }
         }
     }
+    public var endDate: Date?
     public var allDay: Bool = false
 }
