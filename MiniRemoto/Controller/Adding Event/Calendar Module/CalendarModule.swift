@@ -11,6 +11,10 @@ import UIKit
 public class CalendarModuleController: UIViewController, UITextFieldDelegate, ModuleController {
 
     @IBOutlet weak var btnSave: UIButton!
+    private func checkSave() {
+        btnSave.isEnabled = !(txtDate.text ?? "").isEmpty && ((!(hourView.startText ?? "").isEmpty && !(hourView.endText ?? "").isEmpty) || hourView.isHidden)
+    }
+    @IBOutlet weak var btnHour: UIButton!
 
     public weak var tableView: UITableView?
     public weak var module: Module?
@@ -28,6 +32,27 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate, Mo
         toolbar.sizeToFit()
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(toolbarDoneTap))
         toolbar.setItems([doneBtn], animated: false)
+
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        guard let module = module as? CalendarData,
+            let startDate = module.startDate else {
+            return
+        }
+        let firstDate = dateFormatter.string(from: startDate)
+        txtDate.text = firstDate
+        if !module.allDay {
+            dateFormatter.dateFormat = "hh:mm a"
+            hourTap(btnHour)
+            let startHour = dateFormatter.string(from: startDate)
+            var endHour: String? = nil
+            if let endDate = module.endDate {
+                endHour = dateFormatter.string(from: endDate)
+            }
+
+            hourView.startText = startHour
+            hourView.endText = endHour
+            checkSave()
+        }
     }
 
     @IBAction func hourTap(_ sender: UIButton) {
@@ -45,7 +70,7 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate, Mo
             sender.setTitle("Remover horário".localized(), for: .normal)
             sender.setTitleColor(UIColor(named: "Remove Color"), for: .normal)
         }
-        btnSave.isEnabled = !(txtDate.text ?? "").isEmpty && ((!(hourView.startText ?? "").isEmpty && !(hourView.endText ?? "").isEmpty) || hourView.isHidden)
+        checkSave()
     }
 
     weak var currentTextField: UITextField?
@@ -88,7 +113,7 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate, Mo
             textField.text = dateFormatter.string(from: picker.date)
         }
         currentTextField = nil
-        btnSave.isEnabled = !(txtDate.text ?? "").isEmpty && ((!(hourView.startText ?? "").isEmpty && !(hourView.endText ?? "").isEmpty) || hourView.isHidden)
+        checkSave()
         return true
     }
 

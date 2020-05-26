@@ -146,6 +146,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnHour" destination="g2a-hg-x22" id="uZm-MB-wLH"/>
                         <outlet property="btnSave" destination="5DT-aT-uIq" id="4BK-T7-5JE"/>
                         <outlet property="hourView" destination="pcl-Ji-XxW" id="CWh-u0-Vkb"/>
                         <outlet property="txtDate" destination="Maa-cj-bMv" id="mLf-HF-Xmx"/>
