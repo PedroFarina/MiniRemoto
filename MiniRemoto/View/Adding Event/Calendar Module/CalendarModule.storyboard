@@ -19,10 +19,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Calendar Module Controller-->
         <scene sceneID="nnn-aO-HwP">
             <objects>
-                <viewController id="XVB-YH-89O" sceneMemberID="viewController">
+                <viewController id="XVB-YH-89O" customClass="CalendarModuleController" customModule="MiniRemoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xUc-AY-z3N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,12 +58,71 @@
                                 <state key="normal" title="Adicionar horário" image="Plus">
                                     <color key="titleColor" name="Action Color"/>
                                 </state>
+                                <connections>
+                                    <action selector="hourTap:" destination="XVB-YH-89O" eventType="touchUpInside" id="gPb-wP-MLU"/>
+                                </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-Ji-XxW" customClass="CalendarModuleHourView" customModule="MiniRemoto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="196.5" width="414" height="166"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Começa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaE-RL-6HE">
+                                        <rect key="frame" x="15" y="15" width="64" height="20"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                        <color key="textColor" name="Action Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="13:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HE7-VZ-MSs" customClass="SlashedTextField" customModule="MiniRemoto" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="45" width="384" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" name="Action Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Termina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiW-ja-Ksj">
+                                        <rect key="frame" x="15" y="87.5" width="60" height="20"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                        <color key="textColor" name="Action Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="18:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdF-3W-0z0" customClass="SlashedTextField" customModule="MiniRemoto" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="117.5" width="384" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" name="Action Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="6L4-jA-wEY"/>
+                                    <constraint firstItem="HE7-VZ-MSs" firstAttribute="top" secondItem="aaE-RL-6HE" secondAttribute="bottom" constant="10" id="8LC-8h-tzv"/>
+                                    <constraint firstItem="zdF-3W-0z0" firstAttribute="top" secondItem="BiW-ja-Ksj" secondAttribute="bottom" constant="10" id="8Uy-6S-AZa"/>
+                                    <constraint firstItem="aaE-RL-6HE" firstAttribute="top" secondItem="pcl-Ji-XxW" secondAttribute="top" constant="15" id="8op-0x-NDY"/>
+                                    <constraint firstItem="aaE-RL-6HE" firstAttribute="leading" secondItem="pcl-Ji-XxW" secondAttribute="leading" constant="15" id="Dyc-FQ-iuJ"/>
+                                    <constraint firstItem="zdF-3W-0z0" firstAttribute="leading" secondItem="pcl-Ji-XxW" secondAttribute="leading" constant="15" id="nKm-qp-cqs"/>
+                                    <constraint firstItem="BiW-ja-Ksj" firstAttribute="top" secondItem="HE7-VZ-MSs" secondAttribute="bottom" constant="15" id="tX4-2F-lDV"/>
+                                    <constraint firstAttribute="trailing" secondItem="zdF-3W-0z0" secondAttribute="trailing" constant="15" id="tnZ-us-p5f"/>
+                                    <constraint firstAttribute="trailing" secondItem="HE7-VZ-MSs" secondAttribute="trailing" constant="15" id="x4b-oB-gHS"/>
+                                    <constraint firstItem="HE7-VZ-MSs" firstAttribute="leading" secondItem="pcl-Ji-XxW" secondAttribute="leading" constant="15" id="zV9-Up-BAa"/>
+                                    <constraint firstItem="BiW-ja-Ksj" firstAttribute="leading" secondItem="pcl-Ji-XxW" secondAttribute="leading" constant="15" id="zqw-e0-CzH"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="txtEnds" destination="zdF-3W-0z0" id="eY7-fm-acf"/>
+                                    <outlet property="txtStarts" destination="HE7-VZ-MSs" id="DgQ-gh-iij"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Maa-cj-bMv" firstAttribute="top" secondItem="UkS-gm-XMG" secondAttribute="bottom" constant="10" id="0Qg-o6-jb1"/>
                             <constraint firstItem="UkS-gm-XMG" firstAttribute="top" secondItem="4mF-Nq-SWE" secondAttribute="bottom" constant="15" id="430-Gc-SyD"/>
+                            <constraint firstItem="arZ-54-r60" firstAttribute="trailing" secondItem="pcl-Ji-XxW" secondAttribute="trailing" id="G5q-a8-SSr"/>
                             <constraint firstItem="g2a-hg-x22" firstAttribute="top" secondItem="Maa-cj-bMv" secondAttribute="bottom" constant="15" id="J4b-Uu-ehi"/>
                             <constraint firstItem="arZ-54-r60" firstAttribute="trailing" secondItem="5DT-aT-uIq" secondAttribute="trailing" constant="15" id="Jc3-oT-613"/>
                             <constraint firstItem="4mF-Nq-SWE" firstAttribute="leading" secondItem="arZ-54-r60" secondAttribute="leading" constant="15" id="KhN-dZ-63Q"/>
@@ -71,17 +130,23 @@
                             <constraint firstItem="arZ-54-r60" firstAttribute="trailing" secondItem="Maa-cj-bMv" secondAttribute="trailing" constant="15" id="WD4-2F-T4r"/>
                             <constraint firstItem="Maa-cj-bMv" firstAttribute="leading" secondItem="arZ-54-r60" secondAttribute="leading" constant="15" id="WS2-ZW-byz"/>
                             <constraint firstItem="4mF-Nq-SWE" firstAttribute="top" secondItem="arZ-54-r60" secondAttribute="top" constant="15" id="c9y-Jj-e6z"/>
+                            <constraint firstItem="pcl-Ji-XxW" firstAttribute="leading" secondItem="arZ-54-r60" secondAttribute="leading" id="dHk-Io-RXP"/>
                             <constraint firstItem="g2a-hg-x22" firstAttribute="leading" secondItem="arZ-54-r60" secondAttribute="leading" constant="20" id="eFg-Wp-rrV"/>
                             <constraint firstItem="UkS-gm-XMG" firstAttribute="leading" secondItem="arZ-54-r60" secondAttribute="leading" constant="15" id="trT-2h-4VH"/>
+                            <constraint firstItem="pcl-Ji-XxW" firstAttribute="top" secondItem="g2a-hg-x22" secondAttribute="bottom" id="ukm-oj-0PF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="arZ-54-r60"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="hourView" destination="pcl-Ji-XxW" id="CWh-u0-Vkb"/>
+                        <outlet property="txtDate" destination="Maa-cj-bMv" id="mLf-HF-Xmx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zhn-Qp-CQO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39" y="4"/>
+            <point key="canvasLocation" x="-39.130434782608695" y="3.3482142857142856"/>
         </scene>
     </scenes>
     <color key="tintColor" name="Action Color"/>

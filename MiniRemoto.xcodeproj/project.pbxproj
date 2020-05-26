@@ -13,6 +13,8 @@
 		02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FA1247C4F8200620FA9 /* InviteData.swift */; };
 		02046FA4247C4FC800620FA9 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FA3247C4FC800620FA9 /* LocationData.swift */; };
 		02046FA6247C500F00620FA9 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FA5247C500F00620FA9 /* ListData.swift */; };
+		020690BD247DB273004C7150 /* CalendarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020690BC247DB273004C7150 /* CalendarModule.swift */; };
+		020690BF247DB2CE004C7150 /* CalendarModuleHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020690BE247DB2CE004C7150 /* CalendarModuleHourView.swift */; };
 		0217DAD4247834C7003B6286 /* EndpointsRequests in Frameworks */ = {isa = PBXBuildFile; productRef = 0217DAD3247834C7003B6286 /* EndpointsRequests */; };
 		0217DAD624783EF7003B6286 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD524783EF7003B6286 /* User.swift */; };
 		0217DAD8247845BF003B6286 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD7247845BF003B6286 /* Event.swift */; };
@@ -84,6 +86,8 @@
 		02046FA1247C4F8200620FA9 /* InviteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteData.swift; sourceTree = "<group>"; };
 		02046FA3247C4FC800620FA9 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		02046FA5247C500F00620FA9 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
+		020690BC247DB273004C7150 /* CalendarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModule.swift; sourceTree = "<group>"; };
+		020690BE247DB2CE004C7150 /* CalendarModuleHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModuleHourView.swift; sourceTree = "<group>"; };
 		0217DAD524783EF7003B6286 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0217DAD7247845BF003B6286 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0217DAD924784607003B6286 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -150,6 +154,14 @@
 				02046F9E247C4E6000620FA9 /* StringExtension.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		020690BB247DB261004C7150 /* Calendar Module */ = {
+			isa = PBXGroup;
+			children = (
+				020690BC247DB273004C7150 /* CalendarModule.swift */,
+			);
+			path = "Calendar Module";
 			sourceTree = "<group>";
 		};
 		02748268246F08680059876D = {
@@ -249,6 +261,7 @@
 		0292E6062474580A002B5362 /* Adding Event */ = {
 			isa = PBXGroup;
 			children = (
+				020690BB247DB261004C7150 /* Calendar Module */,
 				0260CE7B24748C7000E16149 /* AddEventViewController.swift */,
 				0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */,
 				0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */,
@@ -316,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				02ED9BA1247D9E9F00534FEE /* CalendarModule.storyboard */,
+				020690BE247DB2CE004C7150 /* CalendarModuleHourView.swift */,
 			);
 			path = "Calendar Module";
 			sourceTree = "<group>";
@@ -477,7 +491,9 @@
 				02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */,
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
 				02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */,
+				020690BD247DB273004C7150 /* CalendarModule.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
+				020690BF247DB2CE004C7150 /* CalendarModuleHourView.swift in Sources */,
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
