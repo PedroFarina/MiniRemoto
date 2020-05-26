@@ -8,8 +8,12 @@
 
 import UIKit
 
-public class CalendarModuleController: UIViewController, UITextFieldDelegate {
+public class CalendarModuleController: UIViewController, UITextFieldDelegate, ModuleController {
 
+    @IBOutlet weak var btnSave: UIButton!
+
+    public weak var tableView: UITableView?
+    public weak var module: Module?
     let toolbar = UIToolbar()
     let picker = UIDatePicker()
     let dateFormatter: DateFormatter = DateFormatter()
@@ -41,6 +45,7 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate {
             sender.setTitle("Remover horário".localized(), for: .normal)
             sender.setTitleColor(UIColor(named: "Remove Color"), for: .normal)
         }
+        btnSave.isEnabled = !(txtDate.text ?? "").isEmpty && ((!(hourView.startText ?? "").isEmpty && !(hourView.endText ?? "").isEmpty) || hourView.isHidden)
     }
 
     weak var currentTextField: UITextField?
@@ -83,6 +88,34 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate {
             textField.text = dateFormatter.string(from: picker.date)
         }
         currentTextField = nil
+        btnSave.isEnabled = !(txtDate.text ?? "").isEmpty && ((!(hourView.startText ?? "").isEmpty && !(hourView.endText ?? "").isEmpty) || hourView.isHidden)
         return true
+    }
+
+
+    @IBAction func cancelTap(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    @IBAction func saveTap(_ sender: Any) {
+        guard let data = module as? CalendarData else  {
+            fatalError("Module was not Calendar Data")
+        }
+        data.allDay = hourView.isHidden
+        if data.allDay {
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            if let date = dateFormatter.date(from: "\(txtDate.text ?? "")") {
+                data.startDate = date
+            }
+        } else {
+            dateFormatter.dateFormat = "dd/MM/yyyy hh:mm"
+            if let startDate = dateFormatter.date(from: "\(txtDate.text ?? "") \(hourView.startText ?? "")") {
+                data.startDate = startDate
+            }
+            if let endDate = dateFormatter.date(from: "\(txtDate.text ?? "") \(hourView.endText ?? "")") {
+                data.endDate = endDate
+            }
+        }
+        tableView?.reloadData()
+        self.dismiss(animated: true)
     }
 }

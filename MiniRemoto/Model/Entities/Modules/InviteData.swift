@@ -9,6 +9,7 @@
 import UIKit
 
 public class InviteData: Module {
+    public static let storyboardName: String = "InviteModule"
     public static let preferredRow: Int = 2
     public var addImage: UIImage? = UIImage(named: "InviteAddModule")
     public var removeImage: UIImage? = UIImage(named: "InviteRemoveModule")

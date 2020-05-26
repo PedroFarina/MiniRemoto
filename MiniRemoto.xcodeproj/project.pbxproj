@@ -15,6 +15,8 @@
 		02046FA6247C500F00620FA9 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02046FA5247C500F00620FA9 /* ListData.swift */; };
 		020690BD247DB273004C7150 /* CalendarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020690BC247DB273004C7150 /* CalendarModule.swift */; };
 		020690BF247DB2CE004C7150 /* CalendarModuleHourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020690BE247DB2CE004C7150 /* CalendarModuleHourView.swift */; };
+		020690C1247DC935004C7150 /* ModuleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020690C0247DC935004C7150 /* ModuleController.swift */; };
+		020690C3247DCF15004C7150 /* ModuleSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020690C2247DCF15004C7150 /* ModuleSelectorDelegate.swift */; };
 		0217DAD4247834C7003B6286 /* EndpointsRequests in Frameworks */ = {isa = PBXBuildFile; productRef = 0217DAD3247834C7003B6286 /* EndpointsRequests */; };
 		0217DAD624783EF7003B6286 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD524783EF7003B6286 /* User.swift */; };
 		0217DAD8247845BF003B6286 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD7247845BF003B6286 /* Event.swift */; };
@@ -88,6 +90,8 @@
 		02046FA5247C500F00620FA9 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
 		020690BC247DB273004C7150 /* CalendarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModule.swift; sourceTree = "<group>"; };
 		020690BE247DB2CE004C7150 /* CalendarModuleHourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModuleHourView.swift; sourceTree = "<group>"; };
+		020690C0247DC935004C7150 /* ModuleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleController.swift; sourceTree = "<group>"; };
+		020690C2247DCF15004C7150 /* ModuleSelectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleSelectorDelegate.swift; sourceTree = "<group>"; };
 		0217DAD524783EF7003B6286 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0217DAD7247845BF003B6286 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0217DAD924784607003B6286 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -264,7 +268,6 @@
 				020690BB247DB261004C7150 /* Calendar Module */,
 				0260CE7B24748C7000E16149 /* AddEventViewController.swift */,
 				0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */,
-				0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */,
 				0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */,
 			);
 			path = "Adding Event";
@@ -284,6 +287,9 @@
 			isa = PBXGroup;
 			children = (
 				0292E61C24746E3B002B5362 /* Module.swift */,
+				020690C0247DC935004C7150 /* ModuleController.swift */,
+				0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */,
+				020690C2247DCF15004C7150 /* ModuleSelectorDelegate.swift */,
 				02046F99247C4C0600620FA9 /* Modules.xcassets */,
 				0260CE7724748B9100E16149 /* CalendarData.swift */,
 				02046FA3247C4FC800620FA9 /* LocationData.swift */,
@@ -489,6 +495,8 @@
 				02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */,
 				0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */,
 				02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */,
+				020690C1247DC935004C7150 /* ModuleController.swift in Sources */,
+				020690C3247DCF15004C7150 /* ModuleSelectorDelegate.swift in Sources */,
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
 				02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */,
 				020690BD247DB273004C7150 /* CalendarModule.swift in Sources */,

@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
-        <!--CalendarModule-->
+        <!--AddEvent-->
         <scene sceneID="m81-hv-I4i">
             <objects>
-                <viewControllerPlaceholder storyboardName="CalendarModule" id="9po-dr-EPe" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="AddEvent" id="9po-dr-EPe" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciH-X0-Ure" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1138" y="129"/>
