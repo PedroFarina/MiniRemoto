@@ -12,18 +12,7 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate {
 
     let toolbar = UIToolbar()
     let picker = UIDatePicker()
-    let dateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateFormat = "dd/MM/yyyy"
-
-        return df
-    }()
-    let hourFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateFormat = "hh:mm"
-
-        return df
-    }()
+    let dateFormatter: DateFormatter = DateFormatter()
     @IBOutlet weak var txtDate: SlashedTextField!
     @IBOutlet weak var hourView: CalendarModuleHourView!
 
@@ -38,6 +27,7 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func hourTap(_ sender: UIButton) {
+        currentTextField?.endEditing(true)
         if sender.currentImage == #imageLiteral(resourceName: "Remove") {
             hourView.isHidden = true
             hourView.startText = nil
@@ -57,12 +47,26 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate {
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         currentTextField = textField
         textField.inputAccessoryView = toolbar
+        picker.date = Date()
+        picker.minimumDate = nil
+        picker.maximumDate = nil
         if textField == txtDate {
             picker.datePickerMode = .date
         } else {
             picker.datePickerMode = .time
+            dateFormatter.dateFormat =  "ddMMyyyy"
+            let todayString = dateFormatter.string(from: Date())
+            dateFormatter.dateFormat = "ddMMyyyy hh:mm a"
+            if textField == hourView.txtStarts {
+                if let endDate = dateFormatter.date(from: "\(todayString) \(hourView.endText ?? "no")") {
+                    picker.maximumDate = endDate
+                }
+            } else {
+                if let startDate = dateFormatter.date(from: "\(todayString) \(hourView.startText ??  "no")") {
+                    picker.minimumDate = startDate
+                }
+            }
         }
-        picker.date = Date()
         textField.inputView = picker
     }
 
@@ -72,9 +76,11 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate {
 
     public func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField == txtDate {
+            dateFormatter.dateFormat = "dd/MM/yyyy"
             textField.text = dateFormatter.string(from: picker.date)
         } else {
-            textField.text = hourFormatter.string(from: picker.date)
+            dateFormatter.dateFormat = "hh:mm a"
+            textField.text = dateFormatter.string(from: picker.date)
         }
         currentTextField = nil
         return true
