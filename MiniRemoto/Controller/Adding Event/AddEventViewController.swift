@@ -10,6 +10,7 @@ import UIKit
 
 public class AddEventViewController: UIViewController, ModuleStateDelegate, ModuleSelectorDelegate {
 
+    @IBOutlet weak var btnDone: UIButton!
     @IBOutlet weak var txtEventName: SlashedTextField!
 
     @IBOutlet weak var moduleCollectionView: UICollectionView!
@@ -32,19 +33,32 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
 
     public func didAdd(_ module: Module) {
         tableDataSource.didAdd(module)
-        moduleTableView.reloadData()
+        reloadData()
     }
 
     public func didRemove(_ module: Module) {
         tableDataSource.didRemove(module)
-        moduleTableView.reloadData()
+        reloadData()
     }
 
     public func didSelect(_ module: Module) {
         if let controller = UIStoryboard(name: type(of: module).storyboardName, bundle: nil).instantiateViewController(withIdentifier: "main") as? ModuleController {
             controller.module = module
-            controller.tableView = moduleTableView
+            controller.reloadData = reloadData
             self.present(controller, animated: true)
+        }
+    }
+
+    private func reloadData() {
+        moduleTableView.reloadData()
+        var check: Bool = true
+        tableDataSource.modules.forEach { (mod) in
+            check = check && mod.isFilled()
+        }
+        if tableDataSource.modules.isEmpty {
+            btnDone.isEnabled = false
+        } else {
+            btnDone.isEnabled = check
         }
     }
 
@@ -68,6 +82,7 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
     @IBAction func doneTap(_ sender: Any) {
         //TODO: Save event
         #warning("Save event not implemented yet")
+        self.dismiss(animated: true)
     }
     @IBAction func cancelTap(_ sender: Any) {
         self.dismiss(animated: true)

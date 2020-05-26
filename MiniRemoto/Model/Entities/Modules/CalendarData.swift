@@ -16,6 +16,10 @@ public class CalendarData: Module {
     public var title: String? = "Data".localized()
     public var subtitle: String? = "Horário".localized()
 
+    public func isFilled() -> Bool {
+        return startDate != nil
+    }
+
     private static let hourDF: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat =  "HH:mm"

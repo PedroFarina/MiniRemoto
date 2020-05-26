@@ -16,7 +16,7 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate, Mo
     }
     @IBOutlet weak var btnHour: UIButton!
 
-    public weak var tableView: UITableView?
+    public var reloadData: (() -> Void)?
     public weak var module: Module?
     let toolbar = UIToolbar()
     let picker = UIDatePicker()
@@ -140,7 +140,7 @@ public class CalendarModuleController: UIViewController, UITextFieldDelegate, Mo
                 data.endDate = endDate
             }
         }
-        tableView?.reloadData()
+        reloadData?()
         self.dismiss(animated: true)
     }
 }

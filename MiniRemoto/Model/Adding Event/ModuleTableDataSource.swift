@@ -10,7 +10,7 @@ import UIKit
 
 public class ModuleTableViewDataSource: NSObject, UITableViewDataSource {
 
-    private var modules: [Module] = []
+    public private(set) var modules: [Module] = []
 
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1

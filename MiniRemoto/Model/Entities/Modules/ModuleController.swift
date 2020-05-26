@@ -10,5 +10,5 @@ import UIKit
 
 public protocol ModuleController: UIViewController {
     var module: Module? { get set }
-    var tableView: UITableView? { get set }
+    var reloadData: (() -> Void)? { get set }
 }
