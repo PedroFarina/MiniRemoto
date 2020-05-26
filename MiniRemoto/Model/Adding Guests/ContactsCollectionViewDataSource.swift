@@ -23,7 +23,7 @@ class ContactsCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CONTACTSCELL, for: indexPath) as? ContactCollectionViewCell
-        cell?.setup(for: contacts[indexPath.row])
+        cell?.contact = contacts[indexPath.row]
         return cell ?? ContactCollectionViewCell()
     }
 }

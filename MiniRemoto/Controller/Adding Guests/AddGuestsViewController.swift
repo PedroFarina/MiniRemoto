@@ -30,7 +30,6 @@ class AddGuestsViewController: UIViewController {
         setup()
         searchBar.setup(contacts: contacts, tableView: contactsTableView)
         searchBar.searchDelegate = tableViewDataSource
-        searchBar.passSearchRespDelegate = tableViewDelegate
     }
     
     func setupContacts()  {
@@ -42,7 +41,7 @@ class AddGuestsViewController: UIViewController {
         tableViewDataSource = ContactsTableViewDataSource(contacts: contacts)
 
         let sessions = tableViewDataSource?.getSections()
-        tableViewDelegate = ContactsTableViewDelegate(sections: sessions ?? [], collectionView: contactsCollectionView, textField: searchBar)
+        tableViewDelegate = ContactsTableViewDelegate(collectionView: contactsCollectionView, textField: searchBar)
 
         collectionViewDataSource = ContactsCollectionViewDataSource()
         collectionViewDelegate = ContactsCollectionViewDelegate(sections: sessions ?? [], tableView: contactsTableView)

@@ -17,7 +17,7 @@ class ContactsTableViewDataSource: NSObject, UITableViewDataSource {
 
     let CONTACTSCELL = "ContactsTableViewCell"
     var contacts: [Contact]
-    var searchResp: [Contact] = []
+    var searchRes: [Contact] = []
     var sections = [Section]()
     var isSearching: Bool = false
     let alphabet = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -62,10 +62,9 @@ class ContactsTableViewDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         switch isSearching {
         case true:
-            return searchResp.count
+            return searchRes.count
         case false:
             let contacts = sections[section].contacts
             return contacts.count
@@ -77,10 +76,10 @@ class ContactsTableViewDataSource: NSObject, UITableViewDataSource {
 
         switch isSearching {
         case true:
-            cell?.setup(for: searchResp[indexPath.row])
+            cell?.contact = searchRes[indexPath.row]
         case false:
             let contacts = sections[indexPath.section].contacts
-            cell?.setup(for: contacts[indexPath.row])
+            cell?.contact = contacts[indexPath.row]
         }
 
         return cell ?? ContactsTableViewCell()
@@ -106,7 +105,7 @@ extension ContactsTableViewDataSource: GetSearchResponse {
     }
 
     func getSearchResponse(searchRes: [Contact], isSearching: Bool) {
-        searchResp = searchRes
+        self.searchRes = searchRes
         self.isSearching = isSearching
     }
 }

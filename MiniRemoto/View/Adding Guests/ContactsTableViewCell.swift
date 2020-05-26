@@ -16,28 +16,52 @@ class ContactsTableViewCell: UITableViewCell {
     @IBOutlet weak var contactEmail: UILabel!
     @IBOutlet weak var check: UIImageView!
 
-    var cellIsSelected: Bool = false
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    public var initialsText: String? {
+        get {
+            return initials.text
+        } set {
+            initials.text = newValue
+        }
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    public var name: String? {
+        get {
+            return contatcName.text
+        }
+        set {
+            contatcName.text = newValue
+        }
     }
 
-    func setup(for contact: Contact) {
-        let nameInitial = String((contact.givenName).first ?? "A")
-        let familyNameInitial = String((contact.familyName).first ?? "A")
-        initials.text = nameInitial+familyNameInitial
+    public var email: String? {
+        get {
+            return contactEmail.text
+        }
+        set {
+            contactEmail.text = newValue
+        }
+    }
 
-        contatcName.text = contact.givenName + " " + contact.familyName
-        contactEmail.text = contact.email
-        purpleView.layer.cornerRadius = self.frame.height/2
+    public var contact: Contact? {
+        didSet {
+            guard let contact = contact else { return }
+
+            let nameInitial = String((contact.givenName).first ?? "A")
+            let familyNameInitial = String((contact.familyName).first ?? "A")
+
+            initialsText = nameInitial + familyNameInitial
+            email = contact.email
+            name = contact.givenName + " " + contact.familyName
+
+            purpleView.layer.cornerRadius = self.frame.height/2
+        }
+    }
+
+    var cellIsSelected: Bool {
+        return check.image == UIImage(named: "Check")
     }
 
     func selectCell() {
-        cellIsSelected = !cellIsSelected
-        check.image = cellIsSelected ? UIImage(named: "Check") : UIImage(named: "Unselected")
+        check.image = cellIsSelected ? UIImage(named: "Unselected") :  UIImage(named: "Check")
     }
 }
