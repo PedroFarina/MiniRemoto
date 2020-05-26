@@ -48,6 +48,8 @@
 		02E8FCB12476FAB8002B942D /* MiniRemotoDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E8FCAA2476FAB8002B942D /* MiniRemotoDatabase.framework */; };
 		02E8FCB22476FAB8002B942D /* MiniRemotoDatabase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02E8FCAA2476FAB8002B942D /* MiniRemotoDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		02E8FCBB2476FAEE002B942D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8FCBA2476FAEE002B942D /* DataController.swift */; };
+		02ED9BA2247D9E9F00534FEE /* CalendarModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02ED9BA1247D9E9F00534FEE /* CalendarModule.storyboard */; };
+		02ED9BA4247DA15200534FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02ED9BA3247DA15200534FEE /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		02E8FCAC2476FAB8002B942D /* MiniRemotoDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniRemotoDatabase.h; sourceTree = "<group>"; };
 		02E8FCAD2476FAB8002B942D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02E8FCBA2476FAEE002B942D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		02ED9BA1247D9E9F00534FEE /* CalendarModule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarModule.storyboard; sourceTree = "<group>"; };
+		02ED9BA3247DA15200534FEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,8 @@
 		0292E6022474564D002B5362 /* Adding Event */ = {
 			isa = PBXGroup;
 			children = (
+				02ED9BA3247DA15200534FEE /* Assets.xcassets */,
+				02ED9BA0247D9E7C00534FEE /* Calendar Module */,
 				0292E5FE24744DF1002B5362 /* AddEvent.storyboard */,
 				0292E60424745682002B5362 /* ColorCollectionViewCell.swift */,
 				0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */,
@@ -304,6 +310,14 @@
 				0217DADB24784C11003B6286 /* Item.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		02ED9BA0247D9E7C00534FEE /* Calendar Module */ = {
+			isa = PBXGroup;
+			children = (
+				02ED9BA1247D9E9F00534FEE /* CalendarModule.storyboard */,
+			);
+			path = "Calendar Module";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,8 +421,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02ED9BA4247DA15200534FEE /* Assets.xcassets in Resources */,
 				0292E61024745EC3002B5362 /* Montserrat-Regular.ttf in Resources */,
 				02748281246F086A0059876D /* LaunchScreen.storyboard in Resources */,
+				02ED9BA2247D9E9F00534FEE /* CalendarModule.storyboard in Resources */,
 				0292E60F24745EC3002B5362 /* Montserrat-Medium.ttf in Resources */,
 				0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */,
 				0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */,

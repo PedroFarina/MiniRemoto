@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XVB-YH-89O">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="nnn-aO-HwP">
+            <objects>
+                <viewController id="XVB-YH-89O" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xUc-AY-z3N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mF-Nq-SWE">
+                                <rect key="frame" x="15" y="59" width="61" height="30"/>
+                                <state key="normal" title="Cancelar"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DT-aT-uIq">
+                                <rect key="frame" x="356" y="59" width="43" height="30"/>
+                                <state key="normal" title="Salvar"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="20/04/2020" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Maa-cj-bMv" customClass="SlashedTextField" customModule="MiniRemoto" customModuleProvider="target">
+                                <rect key="frame" x="15" y="134" width="384" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" name="Action Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkS-gm-XMG">
+                                <rect key="frame" x="15" y="104" width="36" height="20"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" name="Action Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2a-hg-x22">
+                                <rect key="frame" x="20" y="176.5" width="149" height="20"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Adicionar horário" image="Plus">
+                                    <color key="titleColor" name="Action Color"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Maa-cj-bMv" firstAttribute="top" secondItem="UkS-gm-XMG" secondAttribute="bottom" constant="10" id="0Qg-o6-jb1"/>
+                            <constraint firstItem="UkS-gm-XMG" firstAttribute="top" secondItem="4mF-Nq-SWE" secondAttribute="bottom" constant="15" id="430-Gc-SyD"/>
+                            <constraint firstItem="g2a-hg-x22" firstAttribute="top" secondItem="Maa-cj-bMv" secondAttribute="bottom" constant="15" id="J4b-Uu-ehi"/>
+                            <constraint firstItem="arZ-54-r60" firstAttribute="trailing" secondItem="5DT-aT-uIq" secondAttribute="trailing" constant="15" id="Jc3-oT-613"/>
+                            <constraint firstItem="4mF-Nq-SWE" firstAttribute="leading" secondItem="arZ-54-r60" secondAttribute="leading" constant="15" id="KhN-dZ-63Q"/>
+                            <constraint firstItem="5DT-aT-uIq" firstAttribute="top" secondItem="arZ-54-r60" secondAttribute="top" constant="15" id="Uxg-9l-5eB"/>
+                            <constraint firstItem="arZ-54-r60" firstAttribute="trailing" secondItem="Maa-cj-bMv" secondAttribute="trailing" constant="15" id="WD4-2F-T4r"/>
+                            <constraint firstItem="Maa-cj-bMv" firstAttribute="leading" secondItem="arZ-54-r60" secondAttribute="leading" constant="15" id="WS2-ZW-byz"/>
+                            <constraint firstItem="4mF-Nq-SWE" firstAttribute="top" secondItem="arZ-54-r60" secondAttribute="top" constant="15" id="c9y-Jj-e6z"/>
+                            <constraint firstItem="g2a-hg-x22" firstAttribute="leading" secondItem="arZ-54-r60" secondAttribute="leading" constant="20" id="eFg-Wp-rrV"/>
+                            <constraint firstItem="UkS-gm-XMG" firstAttribute="leading" secondItem="arZ-54-r60" secondAttribute="leading" constant="15" id="trT-2h-4VH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="arZ-54-r60"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zhn-Qp-CQO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="4"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="Action Color"/>
+    <resources>
+        <image name="Plus" width="19" height="19"/>
+        <namedColor name="Action Color">
+            <color red="0.4309999942779541" green="0.31000000238418579" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
