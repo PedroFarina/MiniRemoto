@@ -40,20 +40,15 @@ public class LocationModuleController: UIViewController, UITextFieldDelegate, Mo
         txtAddress.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
     }
 
-    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField == txtAddress {
-            address = nil
-        }
-        return true
-    }
-
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        guard let text = textField.text else { return }
+        guard textField == txtAddress,
+            let text = textField.text else { return }
+        address = nil
         tableDataSource.searchForAddress(text) { (results) in
             DispatchQueue.main.async {
                 self.addressTableView.reloadData()
                 self.addressTableViewHeight.constant = CGFloat(56 * results)
-                UIView.animate(withDuration: 0.5) {
+                UIView.animate(withDuration: 0.4) {
                     self.view.layoutIfNeeded()
                 }
             }
@@ -65,7 +60,7 @@ public class LocationModuleController: UIViewController, UITextFieldDelegate, Mo
             textField.text = ""
         }
         self.addressTableViewHeight.constant = 0
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.4) {
             self.view.layoutIfNeeded()
         }
         checkSave()
@@ -79,6 +74,20 @@ public class LocationModuleController: UIViewController, UITextFieldDelegate, Mo
     public func didSelect(address: MKMapItem) {
         self.address = address
         txtAddress.text = address.name
-        txtAddress.endEditing(true)
+        view.endEditing(true)
+    }
+
+    @IBAction func cancelTap(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+
+    @IBAction func saveTap(_ sender: Any) {
+        guard let data = module as? LocationData else {
+            fatalError("Module was not Location Data")
+        }
+        data.location = address
+        data.addressLine2 = txtAddress2.text
+        reloadData?()
+        self.dismiss(animated: true)
     }
 }
