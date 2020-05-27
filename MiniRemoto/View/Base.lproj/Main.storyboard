@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="MiniRemoto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zY0-71-AQo">
-                                <rect key="frame" x="0.0" y="182.66666666666669" width="294" height="595.33333333333326"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rit-du-t9a">
-                                <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="121.66666666666669"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zY0-71-AQo" customClass="CardsController" customModule="MiniRemoto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="heightOffsetOfCards">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNf-GY-n9P">
                                 <rect key="frame" x="312" y="515" width="48" height="48"/>
@@ -30,30 +30,29 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="AddButton"/>
                                 <connections>
-                                    <segue destination="cpl-56-LXf" kind="presentation" id="jp2-cF-Quw"/>
+                                    <segue destination="9po-dr-EPe" kind="presentation" id="5Bx-Jo-SsO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Rit-du-t9a" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="E1X-7t-j2H"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zY0-71-AQo" secondAttribute="bottom" id="O8Y-Rd-s24"/>
-                            <constraint firstItem="zY0-71-AQo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Uhh-bf-N4B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zY0-71-AQo" secondAttribute="trailing" id="8oM-7z-zqw"/>
+                            <constraint firstItem="zY0-71-AQo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tta-bt-FEk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CNf-GY-n9P" secondAttribute="bottom" constant="215" id="VwB-iA-WZS"/>
-                            <constraint firstItem="CNf-GY-n9P" firstAttribute="leading" secondItem="zY0-71-AQo" secondAttribute="trailing" constant="18" id="ZNn-d4-GQV"/>
-                            <constraint firstItem="Rit-du-t9a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Zrf-HP-Yqo"/>
+                            <constraint firstItem="zY0-71-AQo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W2E-p7-8OO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CNf-GY-n9P" secondAttribute="trailing" constant="15" id="bfS-ge-Yqn"/>
-                            <constraint firstItem="zY0-71-AQo" firstAttribute="top" secondItem="Rit-du-t9a" secondAttribute="bottom" constant="17" id="cRS-tc-J29"/>
-                            <constraint firstItem="Rit-du-t9a" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="knH-k3-wO6"/>
-                            <constraint firstItem="Rit-du-t9a" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pz4-r3-yDo"/>
+                            <constraint firstItem="zY0-71-AQo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lDd-wG-531"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="events" destination="zY0-71-AQo" id="ENE-3x-CI7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+            <point key="canvasLocation" x="136.80000000000001" y="129.31034482758622"/>
         </scene>
         <!--AddEvent-->
         <scene sceneID="m81-hv-I4i">
@@ -62,14 +61,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciH-X0-Ure" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1138" y="129"/>
-        </scene>
-        <!--AddList-->
-        <scene sceneID="cK2-TR-vra">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AddList" id="cpl-56-LXf" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z5I-ha-x3J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1040" y="227"/>
         </scene>
     </scenes>
     <resources>

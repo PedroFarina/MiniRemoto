@@ -10,7 +10,7 @@ import UIKit
 
 public class ModuleTableViewDataSource: NSObject, UITableViewDataSource {
 
-    private var modules: [Module] = []
+    public private(set) var modules: [Module] = []
 
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -30,7 +30,14 @@ public class ModuleTableViewDataSource: NSObject, UITableViewDataSource {
     }
 
     public func didAdd(_ module: Module) {
-        modules.append(module)
+        var position: Int = modules.count
+        for i in 0 ..< modules.count {
+            if type(of: module).preferredRow < type(of: modules[i]).preferredRow {
+                position = i
+                break
+            }
+        }
+        modules.insert(module, at: position)
     }
 
     public func didRemove(_ module: Module) {
