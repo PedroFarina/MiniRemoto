@@ -24,7 +24,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tz-oD-tRv" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
                                 <rect key="frame" x="15" y="134" width="384" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-line1"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                         <color key="value" name="Action Color"/>
@@ -87,7 +87,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAI-Ke-6K4" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
                                 <rect key="frame" x="15" y="207.5" width="384" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="address-line2"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
                                         <color key="value" name="Action Color"/>
@@ -120,6 +120,7 @@
                     <connections>
                         <outlet property="addressTableView" destination="sfp-6Z-shg" id="mht-za-Z5C"/>
                         <outlet property="addressTableViewHeight" destination="ag5-VQ-Muk" id="43d-aR-yMJ"/>
+                        <outlet property="btnSave" destination="4Xa-Bb-Ugo" id="BCf-6G-NNa"/>
                         <outlet property="txtAddress" destination="1tz-oD-tRv" id="bqs-rs-s4o"/>
                         <outlet property="txtAddress2" destination="AAI-Ke-6K4" id="09x-hb-siJ"/>
                     </connections>

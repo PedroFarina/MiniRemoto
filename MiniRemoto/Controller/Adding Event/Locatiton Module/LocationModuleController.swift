@@ -11,8 +11,14 @@ import MapKit
 
 public class LocationModuleController: UIViewController, UITextFieldDelegate, ModuleController, AddressSelectedDelegate {
 
-    public var module: Module?
+
+    @IBOutlet weak var btnSave: UIButton!
+    private func checkSave() {
+        btnSave.isEnabled = address != nil
+    }
+
     public var reloadData: (() -> Void)?
+    public var module: Module?
     private var address: MKMapItem?
 
     @IBOutlet weak var addressTableView: UITableView!
@@ -55,10 +61,14 @@ public class LocationModuleController: UIViewController, UITextFieldDelegate, Mo
     }
 
     public func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == txtAddress && address == nil {
+            textField.text = ""
+        }
         self.addressTableViewHeight.constant = 0
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
+        checkSave()
     }
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -67,8 +77,8 @@ public class LocationModuleController: UIViewController, UITextFieldDelegate, Mo
     }
 
     public func didSelect(address: MKMapItem) {
-        txtAddress.endEditing(true)
-        txtAddress.text = address.name
         self.address = address
+        txtAddress.text = address.name
+        txtAddress.endEditing(true)
     }
 }
