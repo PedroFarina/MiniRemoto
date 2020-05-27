@@ -38,11 +38,20 @@ public class LocationModuleController: UIViewController, UITextFieldDelegate, Mo
         txtAddress.delegate = self
         txtAddress2.delegate = self
         txtAddress.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+
+        guard let locationModule = module as? LocationData else {
+            return
+        }
+        address = locationModule.location
+        txtAddress.text = locationModule.location?.placemark.name
+        txtAddress2.text = locationModule.addressLine2
+        checkSave()
     }
 
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
         guard textField == txtAddress,
             let text = textField.text else { return }
+        checkSave()
         address = nil
         tableDataSource.searchForAddress(text) { (results) in
             DispatchQueue.main.async {
