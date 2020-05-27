@@ -23,7 +23,7 @@ public class MainViewController: UIViewController, CardsControllerDataSource {
         let card = CardView()
         card.fillColor = .random()
         card.detail = "13:00"
-        card.title = "Festa \(index + 1)"
+        card.title = "Festa \(index)"
         card.subtitle = "Farina"
         return card
     }

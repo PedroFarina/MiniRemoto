@@ -40,7 +40,7 @@ class CardsController: UIView {
                 direction = .downOnly
                 return
             }
-            if newValue > (dataSource?.numberOfRows() ?? 0) - numberOfVisibleCards - 1  {
+            if newValue > (dataSource?.numberOfRows() ?? 0) - numberOfVisibleCards  {
                 direction = .upOnly
                 return
             }
@@ -70,7 +70,7 @@ class CardsController: UIView {
         }
 
         if index > previousIndex {
-            let card = dataSource.cardForIndex(index + numberOfVisibleCards)
+            let card = dataSource.cardForIndex(previousIndex + numberOfVisibleCards)
             card.fromTop = false
             visibleCards.removeFirst().removeFromSuperview()
             addSubview(card)

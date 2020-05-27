@@ -59,6 +59,11 @@
 		02E8FCBB2476FAEE002B942D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8FCBA2476FAEE002B942D /* DataController.swift */; };
 		02ED9BA2247D9E9F00534FEE /* CalendarModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02ED9BA1247D9E9F00534FEE /* CalendarModule.storyboard */; };
 		02ED9BA4247DA15200534FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02ED9BA3247DA15200534FEE /* Assets.xcassets */; };
+		324ECB71247ED7920090AB87 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ECB6F247ED7920090AB87 /* AddressTableViewCell.swift */; };
+		324ECB72247ED7920090AB87 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324ECB70247ED7920090AB87 /* AddressTableViewCell.xib */; };
+		324ECB75247ED7A10090AB87 /* TimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324ECB73247ED7A10090AB87 /* TimeTableViewCell.xib */; };
+		324ECB76247ED7A10090AB87 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ECB74247ED7A10090AB87 /* TimeTableViewCell.swift */; };
+		324ECB78247ED7BE0090AB87 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ECB77247ED7BE0090AB87 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +143,11 @@
 		02E8FCBA2476FAEE002B942D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		02ED9BA1247D9E9F00534FEE /* CalendarModule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarModule.storyboard; sourceTree = "<group>"; };
 		02ED9BA3247DA15200534FEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		324ECB6F247ED7920090AB87 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		324ECB70247ED7920090AB87 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		324ECB73247ED7A10090AB87 /* TimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeTableViewCell.xib; sourceTree = "<group>"; };
+		324ECB74247ED7A10090AB87 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
+		324ECB77247ED7BE0090AB87 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +183,7 @@
 		02046FA7247C602A00620FA9 /* Custom Cards */ = {
 			isa = PBXGroup;
 			children = (
+				324ECB6E247ED7840090AB87 /* CardCells */,
 				02046FA8247C603F00620FA9 /* CardView.swift */,
 				02046FAA247C60C000620FA9 /* CardsController.swift */,
 				02046FAC247C60EF00620FA9 /* CardsControllerDataSet.swift */,
@@ -288,6 +299,7 @@
 			children = (
 				02046FA7247C602A00620FA9 /* Custom Cards */,
 				0292E600247452C8002B5362 /* RoundView.swift */,
+				324ECB77247ED7BE0090AB87 /* RoundedButton.swift */,
 				0292E6072474597E002B5362 /* SlashedTextField.swift */,
 			);
 			path = UIViews;
@@ -369,6 +381,17 @@
 				020690C8247DD4C5004C7150 /* CalendarModuleHourView.swift */,
 			);
 			path = "Calendar Module";
+			sourceTree = "<group>";
+		};
+		324ECB6E247ED7840090AB87 /* CardCells */ = {
+			isa = PBXGroup;
+			children = (
+				324ECB6F247ED7920090AB87 /* AddressTableViewCell.swift */,
+				324ECB70247ED7920090AB87 /* AddressTableViewCell.xib */,
+				324ECB74247ED7A10090AB87 /* TimeTableViewCell.swift */,
+				324ECB73247ED7A10090AB87 /* TimeTableViewCell.xib */,
+			);
+			path = CardCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,7 +497,9 @@
 			files = (
 				02ED9BA4247DA15200534FEE /* Assets.xcassets in Resources */,
 				0292E61024745EC3002B5362 /* Montserrat-Regular.ttf in Resources */,
+				324ECB72247ED7920090AB87 /* AddressTableViewCell.xib in Resources */,
 				02748281246F086A0059876D /* LaunchScreen.storyboard in Resources */,
+				324ECB75247ED7A10090AB87 /* TimeTableViewCell.xib in Resources */,
 				02ED9BA2247D9E9F00534FEE /* CalendarModule.storyboard in Resources */,
 				0292E60F24745EC3002B5362 /* Montserrat-Medium.ttf in Resources */,
 				0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */,
@@ -524,16 +549,19 @@
 				02046FAB247C60C000620FA9 /* CardsController.swift in Sources */,
 				02046FA4247C4FC800620FA9 /* LocationData.swift in Sources */,
 				0260CE7824748B9100E16149 /* CalendarData.swift in Sources */,
+				324ECB78247ED7BE0090AB87 /* RoundedButton.swift in Sources */,
 				02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */,
 				0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */,
 				02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */,
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
 				02046FAF247C610000620FA9 /* CardsControllerDelegate.swift in Sources */,
+				324ECB71247ED7920090AB87 /* AddressTableViewCell.swift in Sources */,
 				02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
+				324ECB76247ED7A10090AB87 /* TimeTableViewCell.swift in Sources */,
 				02046FAD247C60EF00620FA9 /* CardsControllerDataSet.swift in Sources */,
 				0292E61D24746E3B002B5362 /* Module.swift in Sources */,
 				02046FB2247C617300620FA9 /* MainViewController.swift in Sources */,

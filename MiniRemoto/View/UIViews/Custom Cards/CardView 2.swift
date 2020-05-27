@@ -59,11 +59,12 @@ public class CardView: UIView {
     
     private let viewLayer = CAShapeLayer()
     private let contentView = UIView()
-    let moduleTableView = UITableView()
     
     let TIME_CELL = "TimeTableViewCell"
     let ADDRESS_CELL = "AddressTableViewCell"
-
+    
+    let moduleTableView = UITableView()
+    
     func setupView() {
         self.contentView.addSubview(lblTitle)
 
@@ -88,16 +89,15 @@ public class CardView: UIView {
             self.lblSubtitle.frame = CGRect(x: 0, y: 36, width: self.frame.width, height: 30)
             self.lblSubtitle.textAlignment = .center
             self.lblSubtitle.alpha = 1
-            
+        
             self.moduleTableView.frame = CGRect(x: 0, y: 70, width: self.frame.width, height: self.frame.height - 70)
             self.moduleTableView.backgroundColor = .clear
             self.moduleTableView.alpha = 1
-            
         }
-        
         self.setupTableView()
 
     }
+    
     
     func setupTableView() {
         self.moduleTableView.delegate = self
@@ -117,12 +117,10 @@ public class CardView: UIView {
             self.lblTitle.alpha = 0
             self.lblSubtitle.alpha = 0
             self.lblDetail.alpha = 0
-            self.moduleTableView.alpha = 0
         }) { (completion) in
             self.lblTitle.removeFromSuperview()
             self.lblDetail.removeFromSuperview()
             self.lblSubtitle.removeFromSuperview()
-            self.moduleTableView.removeFromSuperview()
         }
     }
 
@@ -239,7 +237,7 @@ public class CardView: UIView {
 //        if fromTop {
 //            removingFromTop()
 //        } else {
-        removingFromBottom()
+            removingFromBottom()
 //        }
     }
 }
