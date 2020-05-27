@@ -25,27 +25,3 @@ class AddListTableViewDelegate: NSObject, UITableViewDelegate {
         return CGFloat.leastNormalMagnitude
     }
 }
-
-//class AddListTableViewDelegate: NSObject, UITableViewDelegate {
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 28
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return CGFloat.leastNormalMagnitude
-//    }
-//
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("tap")
-//    }
-//
-//    func addRow(in tableView: UITableView, with height: NSLayoutConstraint) {
-//        let indexPath = IndexPath(row: items.count-1, section: 0)
-//        tableView.insertRows(at: [indexPath], with: .automatic)
-//        height.constant = tableView.contentSize.height
-//        tableView.reloadData()
-//        tableView.layoutIfNeeded()
-//    }
-//
-//}
