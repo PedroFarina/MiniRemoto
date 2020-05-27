@@ -19,7 +19,7 @@ public class LocationData: Module {
     public var subtitle: String? = "Complemento".localized()
 
     public func isFilled() -> Bool {
-        return false
+        return location != nil
     }
 
     public var location: MKMapItem? {
