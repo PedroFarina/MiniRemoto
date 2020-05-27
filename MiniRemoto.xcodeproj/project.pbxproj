@@ -32,6 +32,13 @@
 		0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */; };
 		0260CE7F24748C7000E16149 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7B24748C7000E16149 /* AddEventViewController.swift */; };
 		0260CE8024748C7000E16149 /* ModuleStateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */; };
+		026E80A7247EEAD700504AFB /* LocationModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026E80A6247EEAD700504AFB /* LocationModule.storyboard */; };
+		026E80AA247EEDD900504AFB /* LocationModuleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80A9247EEDD900504AFB /* LocationModuleController.swift */; };
+		026E80AC247EEDF600504AFB /* AddressTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80AB247EEDF600504AFB /* AddressTableDelegate.swift */; };
+		026E80AF247EEE0A00504AFB /* AddressTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80AE247EEE0A00504AFB /* AddressTableDataSource.swift */; };
+		026E80B1247EEF3C00504AFB /* AddressSelectedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80B0247EEF3C00504AFB /* AddressSelectedDelegate.swift */; };
+		026E80B9247EF8BD00504AFB /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80B8247EF8BD00504AFB /* LocationHelper.swift */; };
+		026E80BB247EFEBC00504AFB /* LocationModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80BA247EFEBC00504AFB /* LocationModuleTableViewCell.swift */; };
 		02748275246F08690059876D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02748274246F08690059876D /* AppDelegate.swift */; };
 		02748277246F08690059876D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02748276246F08690059876D /* SceneDelegate.swift */; };
 		0274827C246F08690059876D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0274827A246F08690059876D /* Main.storyboard */; };
@@ -105,6 +112,13 @@
 		0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTableDelegate.swift; sourceTree = "<group>"; };
 		0260CE7B24748C7000E16149 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleStateDelegate.swift; sourceTree = "<group>"; };
+		026E80A6247EEAD700504AFB /* LocationModule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationModule.storyboard; sourceTree = "<group>"; };
+		026E80A9247EEDD900504AFB /* LocationModuleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModuleController.swift; sourceTree = "<group>"; };
+		026E80AB247EEDF600504AFB /* AddressTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableDelegate.swift; sourceTree = "<group>"; };
+		026E80AE247EEE0A00504AFB /* AddressTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableDataSource.swift; sourceTree = "<group>"; };
+		026E80B0247EEF3C00504AFB /* AddressSelectedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSelectedDelegate.swift; sourceTree = "<group>"; };
+		026E80B8247EF8BD00504AFB /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		026E80BA247EFEBC00504AFB /* LocationModuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModuleTableViewCell.swift; sourceTree = "<group>"; };
 		02748271246F08680059876D /* Eve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02748274246F08690059876D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02748276246F08690059876D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +203,34 @@
 			path = "Calendar Module";
 			sourceTree = "<group>";
 		};
+		026E80A5247EEA8B00504AFB /* Location Module */ = {
+			isa = PBXGroup;
+			children = (
+				026E80A6247EEAD700504AFB /* LocationModule.storyboard */,
+				026E80BA247EFEBC00504AFB /* LocationModuleTableViewCell.swift */,
+			);
+			path = "Location Module";
+			sourceTree = "<group>";
+		};
+		026E80A8247EEDC300504AFB /* Locatiton Module */ = {
+			isa = PBXGroup;
+			children = (
+				026E80A9247EEDD900504AFB /* LocationModuleController.swift */,
+				026E80AB247EEDF600504AFB /* AddressTableDelegate.swift */,
+			);
+			path = "Locatiton Module";
+			sourceTree = "<group>";
+		};
+		026E80AD247EEDFC00504AFB /* LocationModule */ = {
+			isa = PBXGroup;
+			children = (
+				026E80AE247EEE0A00504AFB /* AddressTableDataSource.swift */,
+				026E80B0247EEF3C00504AFB /* AddressSelectedDelegate.swift */,
+				026E80B8247EF8BD00504AFB /* LocationHelper.swift */,
+			);
+			path = LocationModule;
+			sourceTree = "<group>";
+		};
 		02748268246F08680059876D = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +309,7 @@
 			children = (
 				02ED9BA3247DA15200534FEE /* Assets.xcassets */,
 				02ED9BA0247D9E7C00534FEE /* Calendar Module */,
+				026E80A5247EEA8B00504AFB /* Location Module */,
 				0292E5FE24744DF1002B5362 /* AddEvent.storyboard */,
 				0292E60424745682002B5362 /* ColorCollectionViewCell.swift */,
 				0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */,
@@ -289,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				020690CA247DD4E8004C7150 /* Calendar Module */,
+				026E80A8247EEDC300504AFB /* Locatiton Module */,
 				0260CE7B24748C7000E16149 /* AddEventViewController.swift */,
 				0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */,
 				0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */,
@@ -326,6 +370,7 @@
 		02B01ED32474701F0054587A /* Adding Event */ = {
 			isa = PBXGroup;
 			children = (
+				026E80AD247EEDFC00504AFB /* LocationModule */,
 				02B01ED4247470310054587A /* ModuleCollectionDataSource.swift */,
 				02B01ED6247470800054587A /* ModuleTableDataSource.swift */,
 			);
@@ -469,6 +514,7 @@
 				02ED9BA2247D9E9F00534FEE /* CalendarModule.storyboard in Resources */,
 				0292E60F24745EC3002B5362 /* Montserrat-Medium.ttf in Resources */,
 				0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */,
+				026E80A7247EEAD700504AFB /* LocationModule.storyboard in Resources */,
 				0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */,
 				02046F9A247C4C0600620FA9 /* Modules.xcassets in Resources */,
 				0274827E246F086A0059876D /* Assets.xcassets in Resources */,
@@ -492,23 +538,29 @@
 			files = (
 				02046FAB247C60C000620FA9 /* CardsController.swift in Sources */,
 				02046FA4247C4FC800620FA9 /* LocationData.swift in Sources */,
+				026E80B1247EEF3C00504AFB /* AddressSelectedDelegate.swift in Sources */,
 				0260CE7824748B9100E16149 /* CalendarData.swift in Sources */,
 				02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */,
 				0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */,
+				026E80AA247EEDD900504AFB /* LocationModuleController.swift in Sources */,
 				02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */,
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
 				02046FAF247C610000620FA9 /* CardsControllerDelegate.swift in Sources */,
 				02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
+				026E80B9247EF8BD00504AFB /* LocationHelper.swift in Sources */,
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
 				02046FAD247C60EF00620FA9 /* CardsControllerDataSet.swift in Sources */,
 				0292E61D24746E3B002B5362 /* Module.swift in Sources */,
+				026E80BB247EFEBC00504AFB /* LocationModuleTableViewCell.swift in Sources */,
+				026E80AC247EEDF600504AFB /* AddressTableDelegate.swift in Sources */,
 				02046FB2247C617300620FA9 /* MainViewController.swift in Sources */,
 				0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */,
 				020690C6247DD491004C7150 /* ModuleSelectorDelegate.swift in Sources */,
 				0260CE8024748C7000E16149 /* ModuleStateDelegate.swift in Sources */,
+				026E80AF247EEE0A00504AFB /* AddressTableDataSource.swift in Sources */,
 				020690C7247DD491004C7150 /* ModuleController.swift in Sources */,
 				02046FA9247C603F00620FA9 /* CardView.swift in Sources */,
 				020690C9247DD4C5004C7150 /* CalendarModuleHourView.swift in Sources */,
@@ -697,7 +749,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PGF.MiniRemoto;
 				PRODUCT_NAME = Eve;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -720,7 +772,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PGF.MiniRemoto;
 				PRODUCT_NAME = Eve;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

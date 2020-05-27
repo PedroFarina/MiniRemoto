@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 public class LocationData: Module {
     public static let storyboardName: String = "LocationModule"
@@ -18,6 +19,17 @@ public class LocationData: Module {
     public var subtitle: String? = "Complemento".localized()
 
     public func isFilled() -> Bool {
-        return false
+        return location != nil
+    }
+
+    public var location: MKMapItem? {
+        didSet {
+            title = location?.placemark.name ?? "Endereço".localized()
+        }
+    }
+    public var addressLine2: String? {
+        didSet {
+            subtitle = addressLine2 ?? "Complemento".localized()
+        }
     }
 }
