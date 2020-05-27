@@ -48,8 +48,8 @@ class ContactsManager {
 
     private func requestAcess() {
         contactStore.requestAccess(for: .contacts) { (success, error) in
-            if success {
-                print("Authorization Succsesfull")
+            if error != nil {
+                //TODO: tratamento de erro
             }
         }
     }
