@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import MapKit
 
-public class LocationModuleController: UIViewController, UITextFieldDelegate, ModuleController {
+public class LocationModuleController: UIViewController, UITextFieldDelegate, ModuleController, AddressSelectedDelegate {
+
     public var module: Module?
     public var reloadData: (() -> Void)?
-
+    private var address: MKMapItem?
 
     @IBOutlet weak var addressTableView: UITableView!
     private let tableDataSource = AddressTableDataSource()
@@ -19,25 +21,54 @@ public class LocationModuleController: UIViewController, UITextFieldDelegate, Mo
 
     @IBOutlet weak var addressTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var txtAddress: SlashedTextField!
-
+    @IBOutlet weak var txtAddress2: SlashedTextField!
+    
     public override func viewDidLoad() {
         addressTableView.dataSource = tableDataSource
         addressTableView.delegate = tableDelegate
+        tableDelegate.delegate = self
         addressTableView.tableFooterView = UIView()
 
         txtAddress.delegate = self
+        txtAddress2.delegate = self
         txtAddress.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
+    }
+
+    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == txtAddress {
+            address = nil
+        }
+        return true
     }
 
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
         guard let text = textField.text else { return }
         tableDataSource.searchForAddress(text) { (results) in
             DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.2) {
-                    self.addressTableView.reloadData()
-                    self.addressTableViewHeight.constant = CGFloat(56 * results)
+                self.addressTableView.reloadData()
+                self.addressTableViewHeight.constant = CGFloat(56 * results)
+                UIView.animate(withDuration: 0.5) {
+                    self.view.layoutIfNeeded()
                 }
             }
         }
+    }
+
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        self.addressTableViewHeight.constant = 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    public func didSelect(address: MKMapItem) {
+        txtAddress.endEditing(true)
+        txtAddress.text = address.name
+        self.address = address
     }
 }

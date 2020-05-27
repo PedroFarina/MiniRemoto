@@ -38,6 +38,7 @@
 		026E80AF247EEE0A00504AFB /* AddressTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80AE247EEE0A00504AFB /* AddressTableDataSource.swift */; };
 		026E80B1247EEF3C00504AFB /* AddressSelectedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80B0247EEF3C00504AFB /* AddressSelectedDelegate.swift */; };
 		026E80B9247EF8BD00504AFB /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80B8247EF8BD00504AFB /* LocationHelper.swift */; };
+		026E80BB247EFEBC00504AFB /* LocationModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80BA247EFEBC00504AFB /* LocationModuleTableViewCell.swift */; };
 		02748275246F08690059876D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02748274246F08690059876D /* AppDelegate.swift */; };
 		02748277246F08690059876D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02748276246F08690059876D /* SceneDelegate.swift */; };
 		0274827C246F08690059876D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0274827A246F08690059876D /* Main.storyboard */; };
@@ -123,6 +124,7 @@
 		026E80AE247EEE0A00504AFB /* AddressTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableDataSource.swift; sourceTree = "<group>"; };
 		026E80B0247EEF3C00504AFB /* AddressSelectedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSelectedDelegate.swift; sourceTree = "<group>"; };
 		026E80B8247EF8BD00504AFB /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		026E80BA247EFEBC00504AFB /* LocationModuleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModuleTableViewCell.swift; sourceTree = "<group>"; };
 		02748271246F08680059876D /* Eve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02748274246F08690059876D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02748276246F08690059876D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				026E80A6247EEAD700504AFB /* LocationModule.storyboard */,
+				026E80BA247EFEBC00504AFB /* LocationModuleTableViewCell.swift */,
 			);
 			path = "Location Module";
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
 				02046FAD247C60EF00620FA9 /* CardsControllerDataSet.swift in Sources */,
 				0292E61D24746E3B002B5362 /* Module.swift in Sources */,
+				026E80BB247EFEBC00504AFB /* LocationModuleTableViewCell.swift in Sources */,
 				026E80AC247EEDF600504AFB /* AddressTableDelegate.swift in Sources */,
 				02046FB2247C617300620FA9 /* MainViewController.swift in Sources */,
 				0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */,
@@ -776,7 +780,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PGF.MiniRemoto;
 				PRODUCT_NAME = Eve;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -799,7 +803,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PGF.MiniRemoto;
 				PRODUCT_NAME = Eve;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

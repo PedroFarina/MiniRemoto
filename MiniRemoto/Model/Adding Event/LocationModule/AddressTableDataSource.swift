@@ -17,11 +17,8 @@ public class AddressTableDataSource: NSObject, UITableViewDataSource {
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell") {
-            let item = addresses[indexPath.row].placemark
-            cell.textLabel?.text = item.name
-
-            cell.detailTextLabel?.text = LocationHelper.getFullAddress(from: item)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "addressCell") as? LocationModuleTableViewCell {
+            cell.mapItem = addresses[indexPath.row]
             return cell
         }
         return UITableViewCell()

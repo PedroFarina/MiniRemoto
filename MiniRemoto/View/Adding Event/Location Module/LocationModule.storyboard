@@ -45,13 +45,13 @@
                                 <color key="textColor" name="Action Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sfp-6Z-shg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sfp-6Z-shg">
                                 <rect key="frame" x="15" y="162.5" width="384" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="ag5-VQ-Muk"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addressCell" textLabel="Cba-Gr-YdI" detailTextLabel="fRP-tB-1RO" style="IBUITableViewCellStyleSubtitle" id="zcd-PU-7jc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addressCell" textLabel="Cba-Gr-YdI" detailTextLabel="fRP-tB-1RO" style="IBUITableViewCellStyleSubtitle" id="zcd-PU-7jc" customClass="LocationModuleTableViewCell" customModule="Eve" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="384" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zcd-PU-7jc" id="m8D-lk-nic">
@@ -121,6 +121,7 @@
                         <outlet property="addressTableView" destination="sfp-6Z-shg" id="mht-za-Z5C"/>
                         <outlet property="addressTableViewHeight" destination="ag5-VQ-Muk" id="43d-aR-yMJ"/>
                         <outlet property="txtAddress" destination="1tz-oD-tRv" id="bqs-rs-s4o"/>
+                        <outlet property="txtAddress2" destination="AAI-Ke-6K4" id="09x-hb-siJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6AP-Xl-jJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
