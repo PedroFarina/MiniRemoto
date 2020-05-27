@@ -53,6 +53,11 @@
 		02E8FCB12476FAB8002B942D /* MiniRemotoDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02E8FCAA2476FAB8002B942D /* MiniRemotoDatabase.framework */; };
 		02E8FCB22476FAB8002B942D /* MiniRemotoDatabase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 02E8FCAA2476FAB8002B942D /* MiniRemotoDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		02E8FCBB2476FAEE002B942D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8FCBA2476FAEE002B942D /* DataController.swift */; };
+		324ECB66247ED04D0090AB87 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ECB64247ED04D0090AB87 /* AddressTableViewCell.swift */; };
+		324ECB67247ED04D0090AB87 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324ECB65247ED04D0090AB87 /* AddressTableViewCell.xib */; };
+		324ECB6A247ED0550090AB87 /* TimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324ECB68247ED0550090AB87 /* TimeTableViewCell.xib */; };
+		324ECB6B247ED0550090AB87 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ECB69247ED0550090AB87 /* TimeTableViewCell.swift */; };
+		324ECB6D247ED13D0090AB87 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324ECB6C247ED13D0090AB87 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +131,11 @@
 		02E8FCAC2476FAB8002B942D /* MiniRemotoDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniRemotoDatabase.h; sourceTree = "<group>"; };
 		02E8FCAD2476FAB8002B942D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02E8FCBA2476FAEE002B942D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		324ECB64247ED04D0090AB87 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		324ECB65247ED04D0090AB87 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		324ECB68247ED0550090AB87 /* TimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeTableViewCell.xib; sourceTree = "<group>"; };
+		324ECB69247ED0550090AB87 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
+		324ECB6C247ED13D0090AB87 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +171,7 @@
 		02046FA7247C602A00620FA9 /* Custom Cards */ = {
 			isa = PBXGroup;
 			children = (
+				324ECB63247ED0370090AB87 /* Cells */,
 				02046FA8247C603F00620FA9 /* CardView.swift */,
 				02046FAA247C60C000620FA9 /* CardsController.swift */,
 				02046FAC247C60EF00620FA9 /* CardsControllerDataSet.swift */,
@@ -264,6 +275,7 @@
 		0292E60324745659002B5362 /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
+				324ECB6C247ED13D0090AB87 /* RoundedButton.swift */,
 				02046FA7247C602A00620FA9 /* Custom Cards */,
 				0292E600247452C8002B5362 /* RoundView.swift */,
 				0292E6072474597E002B5362 /* SlashedTextField.swift */,
@@ -335,6 +347,17 @@
 				0217DADB24784C11003B6286 /* Item.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		324ECB63247ED0370090AB87 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				324ECB64247ED04D0090AB87 /* AddressTableViewCell.swift */,
+				324ECB65247ED04D0090AB87 /* AddressTableViewCell.xib */,
+				324ECB69247ED0550090AB87 /* TimeTableViewCell.swift */,
+				324ECB68247ED0550090AB87 /* TimeTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,8 +462,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0292E61024745EC3002B5362 /* Montserrat-Regular.ttf in Resources */,
+				324ECB67247ED04D0090AB87 /* AddressTableViewCell.xib in Resources */,
 				02748281246F086A0059876D /* LaunchScreen.storyboard in Resources */,
 				0292E60F24745EC3002B5362 /* Montserrat-Medium.ttf in Resources */,
+				324ECB6A247ED0550090AB87 /* TimeTableViewCell.xib in Resources */,
 				0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */,
 				0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */,
 				02046F9A247C4C0600620FA9 /* Modules.xcassets in Resources */,
@@ -487,7 +512,9 @@
 			files = (
 				02046FAB247C60C000620FA9 /* CardsController.swift in Sources */,
 				02046FA4247C4FC800620FA9 /* LocationData.swift in Sources */,
+				324ECB66247ED04D0090AB87 /* AddressTableViewCell.swift in Sources */,
 				0260CE7824748B9100E16149 /* CalendarData.swift in Sources */,
+				324ECB6B247ED0550090AB87 /* TimeTableViewCell.swift in Sources */,
 				02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */,
 				0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */,
 				02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */,
@@ -496,6 +523,7 @@
 				02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
+				324ECB6D247ED13D0090AB87 /* RoundedButton.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
 				02046FAD247C60EF00620FA9 /* CardsControllerDataSet.swift in Sources */,
