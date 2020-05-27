@@ -6,4 +6,10 @@
 //  Copyright © 2020 Pedro Giuliano Farina. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public class AddressTableDelegate: NSObject, UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
