@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 
 public class AddressTableDataSource: NSObject, UITableViewDataSource {
+    let locationHelper = LocationHelper()
     private var addresses: [MKMapItem] = []
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return addresses.count
@@ -20,8 +21,7 @@ public class AddressTableDataSource: NSObject, UITableViewDataSource {
             let item = addresses[indexPath.row].placemark
             cell.textLabel?.text = item.name
 
-            let address = "\(item.thoroughfare ?? "") \(item.locality ?? ""), \(item.subLocality ?? ""), \(item.administrativeArea ?? ""), \(item.postalCode ?? ""), \(item.country ?? "")"
-            cell.detailTextLabel?.text = address
+            cell.detailTextLabel?.text = LocationHelper.getFullAddress(from: item)
             return cell
         }
         return UITableViewCell()
@@ -30,11 +30,14 @@ public class AddressTableDataSource: NSObject, UITableViewDataSource {
     public func searchForAddress(_ address: String, didFind: @escaping(Int) -> Void) {
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = address
+        if let region = locationHelper.currentRegion {
+            request.region = region
+        }
         let search = MKLocalSearch(request: request)
         search.start { (response, error) in
             if let response = response {
-                self.addresses = response.mapItems
-                didFind(response.mapItems.count)
+                self.addresses = Array(response.mapItems.prefix(5))
+                didFind(self.addresses.count)
             }
         }
     }

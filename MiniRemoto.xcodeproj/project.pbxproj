@@ -37,6 +37,7 @@
 		026E80AC247EEDF600504AFB /* AddressTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80AB247EEDF600504AFB /* AddressTableDelegate.swift */; };
 		026E80AF247EEE0A00504AFB /* AddressTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80AE247EEE0A00504AFB /* AddressTableDataSource.swift */; };
 		026E80B1247EEF3C00504AFB /* AddressSelectedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80B0247EEF3C00504AFB /* AddressSelectedDelegate.swift */; };
+		026E80B9247EF8BD00504AFB /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80B8247EF8BD00504AFB /* LocationHelper.swift */; };
 		02748275246F08690059876D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02748274246F08690059876D /* AppDelegate.swift */; };
 		02748277246F08690059876D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02748276246F08690059876D /* SceneDelegate.swift */; };
 		0274827C246F08690059876D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0274827A246F08690059876D /* Main.storyboard */; };
@@ -121,6 +122,7 @@
 		026E80AB247EEDF600504AFB /* AddressTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableDelegate.swift; sourceTree = "<group>"; };
 		026E80AE247EEE0A00504AFB /* AddressTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableDataSource.swift; sourceTree = "<group>"; };
 		026E80B0247EEF3C00504AFB /* AddressSelectedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSelectedDelegate.swift; sourceTree = "<group>"; };
+		026E80B8247EF8BD00504AFB /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		02748271246F08680059876D /* Eve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02748274246F08690059876D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02748276246F08690059876D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				026E80AE247EEE0A00504AFB /* AddressTableDataSource.swift */,
 				026E80B0247EEF3C00504AFB /* AddressSelectedDelegate.swift */,
+				026E80B8247EF8BD00504AFB /* LocationHelper.swift */,
 			);
 			path = LocationModule;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				02046FAF247C610000620FA9 /* CardsControllerDelegate.swift in Sources */,
 				02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
+				026E80B9247EF8BD00504AFB /* LocationHelper.swift in Sources */,
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
 				0292E601247452C8002B5362 /* RoundView.swift in Sources */,
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
