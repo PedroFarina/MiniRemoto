@@ -14,7 +14,7 @@ class AddListTableViewDataSource: NSObject, UITableViewDataSource {
     public var numberOfRows: Int {
         return amount
     }
-    var items: [UITextField] = []
+    var texts: [UITextField] = []
     var ADDLISTCELL = "AddListTableViewCell"
     var txtFieldDelegate: UITextFieldDelegate?
 
@@ -42,7 +42,7 @@ class AddListTableViewDataSource: NSObject, UITableViewDataSource {
                     tableView.endUpdates()
                 }
             })
-
+            texts.append(cell.txtItem)
             return cell
         }
 
