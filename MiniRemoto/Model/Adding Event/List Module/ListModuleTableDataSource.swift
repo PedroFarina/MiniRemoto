@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddListTableViewDataSource: NSObject, UITableViewDataSource {
+class ListModuleTableDataSource: NSObject, UITableViewDataSource {
 
     private var amount = 0
     public var numberOfRows: Int {
@@ -31,7 +31,7 @@ class AddListTableViewDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ADDLISTCELL) as? AddListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ADDLISTCELL) as? ListModuleTableViewCell
 
         if let delegate = txtFieldDelegate, let cell = cell {
             cell.setup(with: delegate)

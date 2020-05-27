@@ -32,6 +32,11 @@
 		0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */; };
 		0260CE7F24748C7000E16149 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7B24748C7000E16149 /* AddEventViewController.swift */; };
 		0260CE8024748C7000E16149 /* ModuleStateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */; };
+		026E80BF247F11D100504AFB /* ListModuleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80BD247F11D000504AFB /* ListModuleTableViewCell.swift */; };
+		026E80C0247F11D100504AFB /* ListModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026E80BE247F11D000504AFB /* ListModule.storyboard */; };
+		026E80C3247F11E300504AFB /* ListModuleTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80C2247F11E300504AFB /* ListModuleTableDataSource.swift */; };
+		026E80C7247F11FB00504AFB /* ListModuleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80C5247F11FB00504AFB /* ListModuleController.swift */; };
+		026E80C8247F11FB00504AFB /* ListModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026E80C6247F11FB00504AFB /* ListModuleTableDelegate.swift */; };
 		02748275246F08690059876D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02748274246F08690059876D /* AppDelegate.swift */; };
 		02748277246F08690059876D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02748276246F08690059876D /* SceneDelegate.swift */; };
 		0274827C246F08690059876D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0274827A246F08690059876D /* Main.storyboard */; };
@@ -111,6 +116,11 @@
 		0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTableDelegate.swift; sourceTree = "<group>"; };
 		0260CE7B24748C7000E16149 /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		0260CE7C24748C7000E16149 /* ModuleStateDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleStateDelegate.swift; sourceTree = "<group>"; };
+		026E80BD247F11D000504AFB /* ListModuleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModuleTableViewCell.swift; sourceTree = "<group>"; };
+		026E80BE247F11D000504AFB /* ListModule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListModule.storyboard; sourceTree = "<group>"; };
+		026E80C2247F11E300504AFB /* ListModuleTableDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModuleTableDataSource.swift; sourceTree = "<group>"; };
+		026E80C5247F11FB00504AFB /* ListModuleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModuleController.swift; sourceTree = "<group>"; };
+		026E80C6247F11FB00504AFB /* ListModuleTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListModuleTableDelegate.swift; sourceTree = "<group>"; };
 		02748271246F08680059876D /* Eve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02748274246F08690059876D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02748276246F08690059876D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +207,32 @@
 			path = "Calendar Module";
 			sourceTree = "<group>";
 		};
+		026E80BC247F11D000504AFB /* List Module */ = {
+			isa = PBXGroup;
+			children = (
+				026E80BE247F11D000504AFB /* ListModule.storyboard */,
+				026E80BD247F11D000504AFB /* ListModuleTableViewCell.swift */,
+			);
+			path = "List Module";
+			sourceTree = "<group>";
+		};
+		026E80C1247F11E300504AFB /* List Module */ = {
+			isa = PBXGroup;
+			children = (
+				026E80C2247F11E300504AFB /* ListModuleTableDataSource.swift */,
+			);
+			path = "List Module";
+			sourceTree = "<group>";
+		};
+		026E80C4247F11FB00504AFB /* List Module */ = {
+			isa = PBXGroup;
+			children = (
+				026E80C5247F11FB00504AFB /* ListModuleController.swift */,
+				026E80C6247F11FB00504AFB /* ListModuleTableDelegate.swift */,
+			);
+			path = "List Module";
+			sourceTree = "<group>";
+		};
 		02748268246F08680059876D = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				02ED9BA3247DA15200534FEE /* Assets.xcassets */,
+				026E80BC247F11D000504AFB /* List Module */,
 				02ED9BA0247D9E7C00534FEE /* Calendar Module */,
 				0292E5FE24744DF1002B5362 /* AddEvent.storyboard */,
 				0292E60424745682002B5362 /* ColorCollectionViewCell.swift */,
@@ -296,6 +333,7 @@
 		0292E6062474580A002B5362 /* Adding Event */ = {
 			isa = PBXGroup;
 			children = (
+				026E80C4247F11FB00504AFB /* List Module */,
 				020690CA247DD4E8004C7150 /* Calendar Module */,
 				0260CE7B24748C7000E16149 /* AddEventViewController.swift */,
 				0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */,
@@ -334,6 +372,7 @@
 		02B01ED32474701F0054587A /* Adding Event */ = {
 			isa = PBXGroup;
 			children = (
+				026E80C1247F11E300504AFB /* List Module */,
 				02B01ED4247470310054587A /* ModuleCollectionDataSource.swift */,
 				02B01ED6247470800054587A /* ModuleTableDataSource.swift */,
 			);
@@ -476,6 +515,7 @@
 				0292E61024745EC3002B5362 /* Montserrat-Regular.ttf in Resources */,
 				02748281246F086A0059876D /* LaunchScreen.storyboard in Resources */,
 				02ED9BA2247D9E9F00534FEE /* CalendarModule.storyboard in Resources */,
+				026E80C0247F11D100504AFB /* ListModule.storyboard in Resources */,
 				0292E60F24745EC3002B5362 /* Montserrat-Medium.ttf in Resources */,
 				0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */,
 				0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */,
@@ -529,6 +569,8 @@
 				02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */,
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
 				02046FAF247C610000620FA9 /* CardsControllerDelegate.swift in Sources */,
+				026E80C3247F11E300504AFB /* ListModuleTableDataSource.swift in Sources */,
+				026E80C7247F11FB00504AFB /* ListModuleController.swift in Sources */,
 				02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
 				0292E61324746230002B5362 /* ModuleCollectionViewCell.swift in Sources */,
@@ -540,12 +582,14 @@
 				0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */,
 				020690C6247DD491004C7150 /* ModuleSelectorDelegate.swift in Sources */,
 				0260CE8024748C7000E16149 /* ModuleStateDelegate.swift in Sources */,
+				026E80BF247F11D100504AFB /* ListModuleTableViewCell.swift in Sources */,
 				020690C7247DD491004C7150 /* ModuleController.swift in Sources */,
 				02046FA9247C603F00620FA9 /* CardView.swift in Sources */,
 				020690C9247DD4C5004C7150 /* CalendarModuleHourView.swift in Sources */,
 				0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */,
 				020690CC247DD4E8004C7150 /* CalendarModule.swift in Sources */,
 				0260CE7F24748C7000E16149 /* AddEventViewController.swift in Sources */,
+				026E80C8247F11FB00504AFB /* ListModuleTableDelegate.swift in Sources */,
 				02748277246F08690059876D /* SceneDelegate.swift in Sources */,
 				02B01ED5247470310054587A /* ModuleCollectionDataSource.swift in Sources */,
 				02046FA6247C500F00620FA9 /* ListData.swift in Sources */,

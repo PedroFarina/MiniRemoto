@@ -22,7 +22,7 @@
         <!--Calendar Module Controller-->
         <scene sceneID="nnn-aO-HwP">
             <objects>
-                <viewController storyboardIdentifier="main" id="XVB-YH-89O" customClass="CalendarModuleController" customModule="MiniRemoto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="XVB-YH-89O" customClass="CalendarModuleController" customModule="Eve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xUc-AY-z3N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
                                     <action selector="saveTap:" destination="XVB-YH-89O" eventType="touchUpInside" id="0GK-mz-DEZ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="20/04/2020" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Maa-cj-bMv" customClass="SlashedTextField" customModule="MiniRemoto" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="20/04/2020" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Maa-cj-bMv" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
                                 <rect key="frame" x="15" y="134" width="384" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -68,7 +68,7 @@
                                     <action selector="hourTap:" destination="XVB-YH-89O" eventType="touchUpInside" id="gPb-wP-MLU"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-Ji-XxW" customClass="CalendarModuleHourView" customModule="MiniRemoto" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-Ji-XxW" customClass="CalendarModuleHourView" customModule="Eve" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="196.5" width="414" height="166"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Começa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaE-RL-6HE">
@@ -77,7 +77,7 @@
                                         <color key="textColor" name="Action Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="13:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HE7-VZ-MSs" customClass="SlashedTextField" customModule="MiniRemoto" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="13:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HE7-VZ-MSs" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
                                         <rect key="frame" x="15" y="45" width="384" height="27.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -93,7 +93,7 @@
                                         <color key="textColor" name="Action Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="18:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdF-3W-0z0" customClass="SlashedTextField" customModule="MiniRemoto" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="18:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdF-3W-0z0" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
                                         <rect key="frame" x="15" y="117.5" width="384" height="27.5"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
                                         <textInputTraits key="textInputTraits"/>

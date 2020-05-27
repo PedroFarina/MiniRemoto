@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddListTableViewDelegate: NSObject, UITableViewDelegate {
+class ListModuleTableDelegate: NSObject, UITableViewDelegate {
 
     var lastIndexPathRow: Int = 0
     var tableViewHeight: NSLayoutConstraint?

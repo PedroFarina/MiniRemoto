@@ -8,14 +8,17 @@
 
 import UIKit
 
-class AddListViewController: UIViewController {
+class ListModuleViewController: UIViewController, ModuleController {
+    var module: Module?
+    var reloadData: (() -> Void)?
+
 
     @IBOutlet weak var txtListName: SlashedTextField!
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
 
-    var addListTableViewDataSource: AddListTableViewDataSource?
-    var addListTableViewDelegate: AddListTableViewDelegate?
+    var addListTableViewDataSource: ListModuleTableDataSource?
+    var addListTableViewDelegate: ListModuleTableDelegate?
     var shouldBeginCalledBeforeHand: Bool = false
 
     override func viewDidLoad() {
@@ -25,8 +28,8 @@ class AddListViewController: UIViewController {
     }
 
     func setupTableView() {
-        addListTableViewDataSource = AddListTableViewDataSource(txtFieldDelegate: self)
-        addListTableViewDelegate = AddListTableViewDelegate(tableViewHeight: tableViewHeight)
+        addListTableViewDataSource = ListModuleTableDataSource(txtFieldDelegate: self)
+        addListTableViewDelegate = ListModuleTableDelegate(tableViewHeight: tableViewHeight)
         listTableView.dataSource = addListTableViewDataSource
         listTableView.delegate = addListTableViewDelegate
     }
@@ -65,7 +68,7 @@ class AddListViewController: UIViewController {
 
 }
 
-extension AddListViewController: UITextFieldDelegate {
+extension ListModuleViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         addRow()

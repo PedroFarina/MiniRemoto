@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "02748270246F08680059876D"
-               BuildableName = "MiniRemoto.app"
+               BuildableName = "Eve.app"
                BlueprintName = "MiniRemoto"
                ReferencedContainer = "container:MiniRemoto.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02748270246F08680059876D"
-            BuildableName = "MiniRemoto.app"
+            BuildableName = "Eve.app"
             BlueprintName = "MiniRemoto"
             ReferencedContainer = "container:MiniRemoto.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02748270246F08680059876D"
-            BuildableName = "MiniRemoto.app"
+            BuildableName = "Eve.app"
             BlueprintName = "MiniRemoto"
             ReferencedContainer = "container:MiniRemoto.xcodeproj">
          </BuildableReference>

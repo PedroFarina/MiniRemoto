@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddListTableViewCell: UITableViewCell {
+class ListModuleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var txtItem: SlashedTextField!
     var textChanged: ((String) -> Void)?
