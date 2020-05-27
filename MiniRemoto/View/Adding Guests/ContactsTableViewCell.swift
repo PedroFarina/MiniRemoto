@@ -42,7 +42,7 @@ class ContactsTableViewCell: UITableViewCell {
         }
     }
 
-    public var contact: Contact? {
+    public var contact: SelectableContact? {
         didSet {
             guard let contact = contact else { return }
 
@@ -53,15 +53,13 @@ class ContactsTableViewCell: UITableViewCell {
             email = contact.email
             name = contact.givenName + " " + contact.familyName
 
+            selectCheckImage(isSelected: contact.isSelected)
+
             purpleView.layer.cornerRadius = self.frame.height/2
         }
     }
 
-    var cellIsSelected: Bool {
-        return check.image == UIImage(named: "Check")
-    }
-
-    func selectCell() {
-        check.image = cellIsSelected ? UIImage(named: "Unselected") :  UIImage(named: "Check")
+    func selectCheckImage(isSelected: Bool) {
+        check.image = isSelected ? UIImage(named: "Check") : UIImage(named: "Unselected")
     }
 }

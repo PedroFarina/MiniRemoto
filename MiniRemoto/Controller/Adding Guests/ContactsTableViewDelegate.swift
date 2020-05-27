@@ -9,8 +9,8 @@
 import UIKit
 
 protocol PassContactFromTableViewToCollectionView {
-    func pass(_ contact: Contact)
-    func remove(_ contact: Contact)
+    func pass(_ contact: SelectableContact)
+    func remove(_ contact: SelectableContact)
 }
 
 class ContactsTableViewDelegate: NSObject, UITableViewDelegate {
@@ -31,14 +31,16 @@ class ContactsTableViewDelegate: NSObject, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let cellForRow = tableView.cellForRow(at: indexPath) as? ContactsTableViewCell
-        guard let cell = cellForRow, let contact = cell.contact else { return }
+        guard let cell = cellForRow, var contact = cell.contact else { return }
 
-        if cell.cellIsSelected == true {
-            cell.selectCell()
+        if contact.isSelected == true {
+            contact.isSelected = false
+            cell.selectCheckImage(isSelected: false)
             delegate?.remove(contact)
 
         } else {
-            cell.selectCell()
+            contact.isSelected = true
+            cell.selectCheckImage(isSelected: true)
             delegate?.pass(contact)
         }
 

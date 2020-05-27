@@ -9,15 +9,15 @@
 import UIKit
 
 protocol GetSearchResponse {
-    func getSearchResponse(searchRes: [Contact], isSearching: Bool)
+    func getSearchResponse(searchRes: [SelectableContact], isSearching: Bool)
     func changeSearchStatus(isSearching: Bool)
 }
 
 class CustomSearchBar: UITextField {
 
     var tableView: UITableView?
-    var searchRes = [Contact]()
-    var contacts: [Contact] = []
+    var searchRes = [SelectableContact]()
+    var contacts: [SelectableContact] = []
     var searching: Bool = false
     var searchDelegate: GetSearchResponse?
  
@@ -29,7 +29,7 @@ class CustomSearchBar: UITextField {
         super.init(coder: coder)
     }
 
-    func setup(contacts: [Contact], tableView: UITableView){
+    func setup(contacts: [SelectableContact], tableView: UITableView){
         self.contacts = contacts
         self.tableView = tableView
         self.delegate = self

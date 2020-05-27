@@ -214,6 +214,7 @@
                     <navigationItem key="navigationItem" id="hXp-kX-Dac"/>
                     <connections>
                         <outlet property="contactsCollectionView" destination="DND-5a-PGS" id="XaN-Ue-Q2u"/>
+                        <outlet property="contactsCollectionViewHeight" destination="JLw-Fz-VxC" id="b5g-kI-ENN"/>
                         <outlet property="contactsTableView" destination="iW8-bL-QhC" id="udR-bP-bQH"/>
                         <outlet property="searchBar" destination="Loj-bG-MuJ" id="KjC-zu-XWc"/>
                     </connections>

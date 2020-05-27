@@ -10,26 +10,25 @@ import UIKit
 
 struct Section {
     let title: String
-    var contacts: [Contact]
+    var contacts: [SelectableContact]
 }
 
 class ContactsTableViewDataSource: NSObject, UITableViewDataSource {
 
     let CONTACTSCELL = "ContactsTableViewCell"
-    var contacts: [Contact]
-    var searchRes: [Contact] = []
+
+    var contacts: [SelectableContact]
+    var searchRes: [SelectableContact] = []
     var sections = [Section]()
+
     var isSearching: Bool = false
+
     let alphabet = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 
-    init(contacts: [Contact]) {
+    init(contacts: [SelectableContact]) {
         self.contacts = contacts
         super.init()
         setupSections()
-    }
-
-    func getSections() -> [Section]{
-        return sections
     }
 
     func setupSections() {
@@ -41,8 +40,9 @@ class ContactsTableViewDataSource: NSObject, UITableViewDataSource {
         }
     }
 
-    func groupBy(letter: String) -> [Contact] {
-        var alphabeticalGroup: [Contact] = []
+    func groupBy(letter: String) -> [SelectableContact] {
+        var alphabeticalGroup: [SelectableContact] = []
+
         contacts.forEach { (contact) in
             let firstLetterInFirstName = String(contact.givenName.first ?? Character("Z"))
             if firstLetterInFirstName == letter {
@@ -75,8 +75,10 @@ class ContactsTableViewDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CONTACTSCELL) as? ContactsTableViewCell
 
         switch isSearching {
+
         case true:
             cell?.contact = searchRes[indexPath.row]
+
         case false:
             let contacts = sections[indexPath.section].contacts
             cell?.contact = contacts[indexPath.row]
@@ -104,9 +106,21 @@ extension ContactsTableViewDataSource: GetSearchResponse {
         self.isSearching = isSearching
     }
 
-    func getSearchResponse(searchRes: [Contact], isSearching: Bool) {
+    func getSearchResponse(searchRes: [SelectableContact], isSearching: Bool) {
         self.searchRes = searchRes
         self.isSearching = isSearching
+    }
+}
+
+extension ContactsTableViewDataSource: UnselectContactInTableView {
+
+    func unselect(_ contact: SelectableContact, in tableView: UITableView) {
+        contacts.forEach { (arContact) in
+            if contact.id == arContact.id {
+                contact.isSelected = false
+                tableView.reloadData()
+            }
+        }
     }
 }
 

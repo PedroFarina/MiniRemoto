@@ -11,7 +11,12 @@ import UIKit
 class ContactsCollectionViewDataSource: NSObject, UICollectionViewDataSource {
 
     let CONTACTSCELL = "ContactCollectionViewCell"
-    var contacts = [Contact]()
+    var contacts = [SelectableContact]()
+    var collectionViewHeigh: NSLayoutConstraint?
+
+    init(collectionViewHeigh: NSLayoutConstraint) {
+        self.collectionViewHeigh = collectionViewHeigh
+    }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -26,15 +31,29 @@ class ContactsCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         cell?.contact = contacts[indexPath.row]
         return cell ?? ContactCollectionViewCell()
     }
+
+    func animateCollectionView() {
+        if self.contacts.count == 1 {
+            UIView.animate(withDuration: 0.3) {
+                self.collectionViewHeigh?.constant = 50.0
+            }
+        } else if self.contacts.count == 0 {
+            UIView.animate(withDuration: 0.3) {
+                self.collectionViewHeigh?.constant = 0.0
+            }
+        }
+    }
 }
 
 extension ContactsCollectionViewDataSource: PassContactFromTableViewToCollectionView {
 
-    func remove(_ contact: Contact) {
+    func remove(_ contact: SelectableContact) {
         contacts.removeAll { $0.id == contact.id }
+        animateCollectionView()
     }
 
-    func pass(_ contact: Contact) {
+    func pass(_ contact: SelectableContact) {
         contacts.append(contact)
+        animateCollectionView()
     }
 }

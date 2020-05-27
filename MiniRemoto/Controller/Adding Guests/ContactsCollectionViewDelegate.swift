@@ -8,14 +8,19 @@
 
 import UIKit
 
+protocol UnselectContactInTableView {
+    func unselect(_ contact: SelectableContact, in tableView: UITableView)
+}
+
 class ContactsCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    var sections: [Section]
     var tableView: UITableView?
+    var contacts: [SelectableContact]?
+    var delegate: UnselectContactInTableView?
 
-    init(sections: [Section], tableView: UITableView) {
+    init(tableView: UITableView, contacts: [SelectableContact]) {
         self.tableView = tableView
-        self.sections = sections
+        self.contacts = contacts
     }
 
     func collectionView(_ collectionView: UICollectionView,
@@ -25,5 +30,8 @@ class ContactsCollectionViewDelegate: NSObject, UICollectionViewDelegate, UIColl
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let contact = contacts?[indexPath.row], let tableView = tableView else { return }
+        delegate?.unselect(contact, in: tableView)
+        tableView.reloadData()
     }
 }

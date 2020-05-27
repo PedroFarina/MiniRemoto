@@ -21,13 +21,12 @@ class ContactCollectionViewCell: UICollectionViewCell {
         }
     }
 
-    public var contact: Contact? {
+    public var contact: SelectableContact? {
         didSet {
             guard let contact = contact else { return }
 
             let nameInitial = String((contact.givenName).first ?? "A")
             let familyNameInitial = String((contact.familyName).first ?? "A")
-
             initialsText = nameInitial+familyNameInitial
 
             purpleView.layer.cornerRadius = self.frame.height/2

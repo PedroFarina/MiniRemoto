@@ -43,11 +43,11 @@
 		758B2AAA247C43C2007F70D6 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AA9247C43C2007F70D6 /* ContactsTableViewCell.swift */; };
 		758B2AAC247C4751007F70D6 /* ContactsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AAB247C4751007F70D6 /* ContactsTableViewDataSource.swift */; };
 		758B2AAE247C4784007F70D6 /* ContactsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AAD247C4784007F70D6 /* ContactsTableViewDelegate.swift */; };
-		758B2AB0247C47CE007F70D6 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AAF247C47CE007F70D6 /* ContactController.swift */; };
 		758B2AB4247C50F9007F70D6 /* AddGuests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758B2AB3247C50F9007F70D6 /* AddGuests.storyboard */; };
 		758B2AB6247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AB5247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift */; };
 		758B2AB8247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2AB7247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift */; };
 		758B2ABB247CDE38007F70D6 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2ABA247CDE38007F70D6 /* CustomSearchBar.swift */; };
+		758B2ABD247EDE41007F70D6 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B2ABC247EDE41007F70D6 /* ContactsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -102,11 +102,11 @@
 		758B2AA9247C43C2007F70D6 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		758B2AAB247C4751007F70D6 /* ContactsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewDataSource.swift; sourceTree = "<group>"; };
 		758B2AAD247C4784007F70D6 /* ContactsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewDelegate.swift; sourceTree = "<group>"; };
-		758B2AAF247C47CE007F70D6 /* ContactController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
 		758B2AB3247C50F9007F70D6 /* AddGuests.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddGuests.storyboard; sourceTree = "<group>"; };
 		758B2AB5247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		758B2AB7247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		758B2ABA247CDE38007F70D6 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		758B2ABC247EDE41007F70D6 /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,8 +288,8 @@
 		758B2AA6247C42B1007F70D6 /* Adding Guests */ = {
 			isa = PBXGroup;
 			children = (
-				758B2AAF247C47CE007F70D6 /* ContactController.swift */,
 				758B2AA4247C42A4007F70D6 /* AddGuestsViewController.swift */,
+				758B2ABC247EDE41007F70D6 /* ContactsManager.swift */,
 				758B2AB7247C5DC5007F70D6 /* ContactsCollectionViewDelegate.swift */,
 				758B2AAD247C4784007F70D6 /* ContactsTableViewDelegate.swift */,
 			);
@@ -409,6 +409,7 @@
 				758B2AB6247C5D9D007F70D6 /* ContactsCollectionViewDataSource.swift in Sources */,
 				758B2AAA247C43C2007F70D6 /* ContactsTableViewCell.swift in Sources */,
 				0260CE7824748B9100E16149 /* MockupData.swift in Sources */,
+				758B2ABD247EDE41007F70D6 /* ContactsManager.swift in Sources */,
 				758B2AAC247C4751007F70D6 /* ContactsTableViewDataSource.swift in Sources */,
 				02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */,
 				0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */,
@@ -425,7 +426,6 @@
 				0292E61D24746E3B002B5362 /* Module.swift in Sources */,
 				758B2AA5247C42A4007F70D6 /* AddGuestsViewController.swift in Sources */,
 				758B2AAE247C4784007F70D6 /* ContactsTableViewDelegate.swift in Sources */,
-				758B2AB0247C47CE007F70D6 /* ContactController.swift in Sources */,
 				0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */,
 				758B2A942475ADD7007F70D6 /* AddListViewController.swift in Sources */,
 				0260CE8024748C7000E16149 /* ModuleStateDelegate.swift in Sources */,

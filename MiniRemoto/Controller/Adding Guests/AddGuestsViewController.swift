@@ -11,6 +11,7 @@ import UIKit
 class AddGuestsViewController: UIViewController {
     
     @IBOutlet weak var contactsCollectionView: UICollectionView!
+    @IBOutlet weak var contactsCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var contactsTableView: UITableView!
     @IBOutlet weak var searchBar: CustomSearchBar!
     
@@ -19,40 +20,39 @@ class AddGuestsViewController: UIViewController {
     var collectionViewDataSource: ContactsCollectionViewDataSource?
     var collectionViewDelegate: ContactsCollectionViewDelegate?
 
-    let contactsController = ContactsController()
-    var contacts = [Contact]()
-    var searchResp = [Contact]()
+    let contactsManager = ContactsManager()
+    var contacts = [SelectableContact]()
+    var searchResp = [SelectableContact]()
     var isSearching: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupContacts()
-        setup()
+        contacts = contactsManager.getSelectableContacts()
+        setupCollectionView()
+        setupTableView()
+        setupSearch()
+    }
+
+    func setupSearch() {
         searchBar.setup(contacts: contacts, tableView: contactsTableView)
         searchBar.searchDelegate = tableViewDataSource
     }
-    
-    func setupContacts()  {
-        contactsController.requestAccess()
-        contacts = contactsController.getContacts()
-    }
-    
-    func setup() {
+
+    func setupTableView() {
         tableViewDataSource = ContactsTableViewDataSource(contacts: contacts)
-
-        let sessions = tableViewDataSource?.getSections()
         tableViewDelegate = ContactsTableViewDelegate(collectionView: contactsCollectionView, textField: searchBar)
-
-        collectionViewDataSource = ContactsCollectionViewDataSource()
-        collectionViewDelegate = ContactsCollectionViewDelegate(sections: sessions ?? [], tableView: contactsTableView)
-
         tableViewDelegate?.delegate = collectionViewDataSource
-
         contactsTableView.dataSource = tableViewDataSource
         contactsTableView.delegate = tableViewDelegate
+    }
 
+    func setupCollectionView() {
+        collectionViewDataSource = ContactsCollectionViewDataSource(collectionViewHeigh: contactsCollectionViewHeight)
+        collectionViewDelegate = ContactsCollectionViewDelegate(tableView: contactsTableView, contacts: contacts)
+        collectionViewDelegate?.delegate = tableViewDataSource
         contactsCollectionView.dataSource = collectionViewDataSource
         contactsCollectionView.delegate = collectionViewDelegate
+        contactsCollectionViewHeight.constant = 0.0
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
