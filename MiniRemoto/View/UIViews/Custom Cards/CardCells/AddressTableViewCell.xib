@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="171" id="KGk-i7-Jjw" customClass="AddressTableViewCell" customModule="Eve" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Swm-RE-YGJ">
+                        <rect key="frame" x="16" y="16" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="TQ5-Tz-bn4"/>
+                            <constraint firstAttribute="width" constant="25" id="gPW-Pl-lW2"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lde-Vx-MSZ">
+                        <rect key="frame" x="57" y="45.5" width="247" height="50.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwn-Fp-mcL" customClass="RoundedButton" customModule="UtilidadeTeste" customModuleProvider="target">
+                        <rect key="frame" x="57" y="112" width="160" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="Aan-In-3Rb"/>
+                            <constraint firstAttribute="width" constant="160" id="ix1-ei-Ucm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="7" maxY="0.0"/>
+                        <state key="normal" title="Ride with the Uber " image="square.and.arrow.up" catalog="system"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="roundedCorner">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="strokeLine">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                <color key="value" red="0.1176470588" green="0.84313725490000002" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="didTapRide:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XuQ-1O-KwQ"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0e-Ra-GqV">
+                        <rect key="frame" x="57" y="19.5" width="247" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="Kwn-Fp-mcL" secondAttribute="bottom" constant="16" id="0HI-Z4-MMc"/>
+                    <constraint firstItem="Lde-Vx-MSZ" firstAttribute="top" secondItem="t0e-Ra-GqV" secondAttribute="bottom" constant="8" id="1kR-eC-OoX"/>
+                    <constraint firstItem="Kwn-Fp-mcL" firstAttribute="top" secondItem="Lde-Vx-MSZ" secondAttribute="bottom" constant="16" id="7Mo-NS-JMr"/>
+                    <constraint firstItem="t0e-Ra-GqV" firstAttribute="centerY" secondItem="Swm-RE-YGJ" secondAttribute="centerY" id="N2q-Ui-eZN"/>
+                    <constraint firstItem="Kwn-Fp-mcL" firstAttribute="leading" secondItem="Lde-Vx-MSZ" secondAttribute="leading" id="OkL-HQ-TPS"/>
+                    <constraint firstItem="t0e-Ra-GqV" firstAttribute="leading" secondItem="Swm-RE-YGJ" secondAttribute="trailing" constant="16" id="YHd-IO-M5Q"/>
+                    <constraint firstAttribute="trailing" secondItem="Lde-Vx-MSZ" secondAttribute="trailing" constant="16" id="akB-YI-Pic"/>
+                    <constraint firstAttribute="trailing" secondItem="t0e-Ra-GqV" secondAttribute="trailing" constant="16" id="qME-zO-6T9"/>
+                    <constraint firstItem="Swm-RE-YGJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="vSe-jl-qRf"/>
+                    <constraint firstItem="Swm-RE-YGJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="y33-Zh-F7R"/>
+                    <constraint firstItem="Lde-Vx-MSZ" firstAttribute="centerX" secondItem="t0e-Ra-GqV" secondAttribute="centerX" id="zZC-Mr-HXT"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressImageView" destination="Swm-RE-YGJ" id="vTg-0c-soM"/>
+                <outlet property="addressLabel" destination="Lde-Vx-MSZ" id="p45-60-JAS"/>
+                <outlet property="addressNameLabel" destination="t0e-Ra-GqV" id="aPM-QN-VGs"/>
+                <outlet property="rideButtonOutlet" destination="Kwn-Fp-mcL" id="Mwa-TN-YNI"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="195.87053571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+    </resources>
+</document>

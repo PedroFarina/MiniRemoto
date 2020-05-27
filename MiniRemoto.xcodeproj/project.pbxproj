@@ -76,6 +76,11 @@
 		02E8FCBB2476FAEE002B942D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E8FCBA2476FAEE002B942D /* DataController.swift */; };
 		02ED9BA2247D9E9F00534FEE /* CalendarModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02ED9BA1247D9E9F00534FEE /* CalendarModule.storyboard */; };
 		02ED9BA4247DA15200534FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02ED9BA3247DA15200534FEE /* Assets.xcassets */; };
+		32F99DCB247EE621008273D2 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F99DC9247EE621008273D2 /* AddressTableViewCell.swift */; };
+		32F99DCC247EE621008273D2 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F99DCA247EE621008273D2 /* AddressTableViewCell.xib */; };
+		32F99DCE247EE646008273D2 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F99DCD247EE646008273D2 /* RoundedButton.swift */; };
+		32F99DD1247EE791008273D2 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F99DCF247EE791008273D2 /* TimeTableViewCell.swift */; };
+		32F99DD2247EE791008273D2 /* TimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F99DD0247EE791008273D2 /* TimeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +177,11 @@
 		02E8FCBA2476FAEE002B942D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		02ED9BA1247D9E9F00534FEE /* CalendarModule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarModule.storyboard; sourceTree = "<group>"; };
 		02ED9BA3247DA15200534FEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32F99DC9247EE621008273D2 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		32F99DCA247EE621008273D2 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		32F99DCD247EE646008273D2 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		32F99DCF247EE791008273D2 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
+		32F99DD0247EE791008273D2 /* TimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +217,7 @@
 		02046FA7247C602A00620FA9 /* Custom Cards */ = {
 			isa = PBXGroup;
 			children = (
+				32F99DC8247EE585008273D2 /* CardCells */,
 				02046FA8247C603F00620FA9 /* CardView.swift */,
 				02046FAA247C60C000620FA9 /* CardsController.swift */,
 				02046FAC247C60EF00620FA9 /* CardsControllerDataSet.swift */,
@@ -384,6 +395,7 @@
 				02046FA7247C602A00620FA9 /* Custom Cards */,
 				0292E600247452C8002B5362 /* RoundView.swift */,
 				0292E6072474597E002B5362 /* SlashedTextField.swift */,
+				32F99DCD247EE646008273D2 /* RoundedButton.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -468,6 +480,17 @@
 				020690C8247DD4C5004C7150 /* CalendarModuleHourView.swift */,
 			);
 			path = "Calendar Module";
+			sourceTree = "<group>";
+		};
+		32F99DC8247EE585008273D2 /* CardCells */ = {
+			isa = PBXGroup;
+			children = (
+				32F99DC9247EE621008273D2 /* AddressTableViewCell.swift */,
+				32F99DCA247EE621008273D2 /* AddressTableViewCell.xib */,
+				32F99DCF247EE791008273D2 /* TimeTableViewCell.swift */,
+				32F99DD0247EE791008273D2 /* TimeTableViewCell.xib */,
+			);
+			path = CardCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -573,7 +596,9 @@
 			files = (
 				02ED9BA4247DA15200534FEE /* Assets.xcassets in Resources */,
 				0292E61024745EC3002B5362 /* Montserrat-Regular.ttf in Resources */,
+				32F99DCC247EE621008273D2 /* AddressTableViewCell.xib in Resources */,
 				02748281246F086A0059876D /* LaunchScreen.storyboard in Resources */,
+				32F99DD2247EE791008273D2 /* TimeTableViewCell.xib in Resources */,
 				02ED9BA2247D9E9F00534FEE /* CalendarModule.storyboard in Resources */,
 				0292E60F24745EC3002B5362 /* Montserrat-Medium.ttf in Resources */,
 				0292E61124745EC3002B5362 /* Montserrat-SemiBold.ttf in Resources */,
@@ -623,6 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02046FAB247C60C000620FA9 /* CardsController.swift in Sources */,
+				32F99DCE247EE646008273D2 /* RoundedButton.swift in Sources */,
 				02046FA4247C4FC800620FA9 /* LocationData.swift in Sources */,
 				026E80B1247EEF3C00504AFB /* AddressSelectedDelegate.swift in Sources */,
 				0291F448247F2C3700DEA569 /* InviteModuleController.swift in Sources */,
@@ -636,6 +662,7 @@
 				0291F451247F2C9D00DEA569 /* ContactCollectionViewCell.swift in Sources */,
 				02046FAF247C610000620FA9 /* CardsControllerDelegate.swift in Sources */,
 				0291F44A247F2C3700DEA569 /* ContactsManager.swift in Sources */,
+				32F99DCB247EE621008273D2 /* AddressTableViewCell.swift in Sources */,
 				02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
 				026E80B9247EF8BD00504AFB /* LocationHelper.swift in Sources */,
@@ -648,6 +675,7 @@
 				026E80BB247EFEBC00504AFB /* LocationModuleTableViewCell.swift in Sources */,
 				026E80AC247EEDF600504AFB /* AddressTableDelegate.swift in Sources */,
 				0291F453247F2C9D00DEA569 /* ContactsTableViewCell.swift in Sources */,
+				32F99DD1247EE791008273D2 /* TimeTableViewCell.swift in Sources */,
 				02046FB2247C617300620FA9 /* MainViewController.swift in Sources */,
 				0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */,
 				020690C6247DD491004C7150 /* ModuleSelectorDelegate.swift in Sources */,

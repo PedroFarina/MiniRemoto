@@ -58,7 +58,11 @@ public class CardView: UIView {
     }
     private let viewLayer = CAShapeLayer()
     private let contentView = UIView()
+    let moduleTableView = UITableView()
 
+    let TIME_CELL = "TimeTableViewCell"
+    let ADDRESS_CELL = "AddressTableViewCell"
+    
     func setupView() {
         self.contentView.addSubview(lblTitle)
 
@@ -66,29 +70,58 @@ public class CardView: UIView {
 
         self.contentView.addSubview(lblSubtitle)
         
+        self.moduleTableView.alpha = 0
+        self.moduleTableView.backgroundColor = .clear
+        self.contentView.addSubview(moduleTableView)
+        
+        
+        UIView.animate(withDuration: 0.3) {
 
-        self.lblDetail.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
-        self.lblDetail.textAlignment = .center
-        self.lblDetail.alpha = 1
+            self.lblDetail.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 20)
+            self.lblDetail.textAlignment = .center
+            self.lblDetail.alpha = 1
 
-        self.lblTitle.frame = CGRect(x: 0, y: 16, width: self.frame.width, height: 30)
-        self.lblTitle.textAlignment = .center
-        self.lblTitle.alpha = 1
+            self.lblTitle.frame = CGRect(x: 0, y: 16, width: self.frame.width, height: 30)
+            self.lblTitle.textAlignment = .center
+            self.lblTitle.alpha = 1
 
-        self.lblSubtitle.frame = CGRect(x: 0, y: 36, width: self.frame.width, height: 30)
-        self.lblSubtitle.textAlignment = .center
-        self.lblSubtitle.alpha = 1
+            self.lblSubtitle.frame = CGRect(x: 0, y: 36, width: self.frame.width, height: 30)
+            self.lblSubtitle.textAlignment = .center
+            self.lblSubtitle.alpha = 1
+            
+            self.moduleTableView.frame = CGRect(x: 0, y: 70, width: self.frame.width, height: self.frame.height - 70)
+            self.moduleTableView.backgroundColor = .clear
+            self.moduleTableView.alpha = 1
+        }
+        self.setupTableView()
     }
+    
+    func setupTableView() {
+           self.moduleTableView.delegate = self
+           self.moduleTableView.dataSource = self
+           self.moduleTableView.register(UINib(nibName: TIME_CELL, bundle: nil), forCellReuseIdentifier: TIME_CELL)
+           self.moduleTableView.register(UINib(nibName: ADDRESS_CELL, bundle: nil), forCellReuseIdentifier: ADDRESS_CELL)
+           
+           self.moduleTableView.separatorStyle = .none
+           self.moduleTableView.isScrollEnabled = false
+           //TODO:- TIREI A SELEÇ˜AO FAMILIA DA CELULA
+           self.moduleTableView.allowsSelection = false
+           //TODO:- TIREI A SELEÇ˜AO FAMILIA DA CELULA
+       }
 
     func removeContent() {
         UIView.animate(withDuration: 0.1, animations: {
             self.lblTitle.alpha = 0
             self.lblSubtitle.alpha = 0
             self.lblDetail.alpha = 0
+            self.moduleTableView.alpha = 0
+
         }) { (completion) in
             self.lblTitle.removeFromSuperview()
             self.lblDetail.removeFromSuperview()
             self.lblSubtitle.removeFromSuperview()
+            self.moduleTableView.removeFromSuperview()
+
         }
     }
 
@@ -207,5 +240,25 @@ public class CardView: UIView {
 //        } else {
             removingFromBottom()
 //        }
+    }
+}
+
+extension CardView: UITableViewDelegate, UITableViewDataSource {
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let timeCell = self.moduleTableView.dequeueReusableCell(withIdentifier: TIME_CELL, for: indexPath) as! TimeTableViewCell
+            timeCell.setup(dayAndTime: "28/06, segunda - 10:30 - 11:30")
+            return timeCell
+            
+        } else {
+            let addressCell = self.moduleTableView.dequeueReusableCell(withIdentifier: ADDRESS_CELL, for: indexPath) as! AddressTableViewCell
+            addressCell.setup(color: .white)
+            return addressCell
+        }
     }
 }
