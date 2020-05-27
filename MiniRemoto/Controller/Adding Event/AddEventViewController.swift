@@ -23,7 +23,6 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate {
         moduleCollectionView.dataSource = collectionDataSource
         moduleTableView.delegate = tableDelegate
         moduleTableView.dataSource = tableDataSource
-        
         moduleTableView.tableFooterView = UIView()
         collectionDelegate.delegate = self
     }

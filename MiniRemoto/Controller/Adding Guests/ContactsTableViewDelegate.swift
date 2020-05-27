@@ -18,20 +18,32 @@ class ContactsTableViewDelegate: NSObject, UITableViewDelegate {
     var delegate: PassContactFromTableViewToCollectionView?
     var collectionView: UICollectionView?
     var textField: CustomSearchBar?
+    var sections: [Section]?
 
-    init(collectionView: UICollectionView, textField: CustomSearchBar) {
+    init(collectionView: UICollectionView, textField: CustomSearchBar, sections: [Section]) {
         self.collectionView = collectionView
         self.textField = textField
+        self.sections = sections
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
 
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let contacts = sections?[section].contacts
+
+        if contacts?.count == 0 {
+            return 0
+        } else {
+            return 23
+        }
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let cellForRow = tableView.cellForRow(at: indexPath) as? ContactsTableViewCell
-        guard let cell = cellForRow, var contact = cell.contact else { return }
+        guard let cell = cellForRow, let contact = cell.contact else { return }
 
         if contact.isSelected == true {
             contact.isSelected = false

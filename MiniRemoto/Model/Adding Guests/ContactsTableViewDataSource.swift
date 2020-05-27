@@ -16,11 +16,9 @@ struct Section {
 class ContactsTableViewDataSource: NSObject, UITableViewDataSource {
 
     let CONTACTSCELL = "ContactsTableViewCell"
-
     var contacts: [SelectableContact]
     var searchRes: [SelectableContact] = []
     var sections = [Section]()
-
     var isSearching: Bool = false
 
     let alphabet = ["A", "B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -29,6 +27,10 @@ class ContactsTableViewDataSource: NSObject, UITableViewDataSource {
         self.contacts = contacts
         super.init()
         setupSections()
+    }
+
+    func getSections() -> [Section] {
+        return sections
     }
 
     func setupSections() {
@@ -98,6 +100,14 @@ class ContactsTableViewDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].title
     }
+
+    public func unselect(_ contact: SelectableContact) {
+        contacts.forEach { (arContact) in
+            if arContact.id == contact.id {
+                contact.isSelected = false
+            }
+        }
+    }
 }
 
 extension ContactsTableViewDataSource: GetSearchResponse {
@@ -115,10 +125,13 @@ extension ContactsTableViewDataSource: GetSearchResponse {
 extension ContactsTableViewDataSource: UnselectContactInTableView {
 
     func unselect(_ contact: SelectableContact, in tableView: UITableView) {
-        contacts.forEach { (arContact) in
-            if contact.id == arContact.id {
-                contact.isSelected = false
-                tableView.reloadData()
+        for section in sections {
+            section.contacts.forEach { (arContact) in
+                if contact.id == arContact.id {
+                    contact.isSelected = false
+                    print(contact.givenName, contact.isSelected)
+                    tableView.reloadData()
+                }
             }
         }
     }

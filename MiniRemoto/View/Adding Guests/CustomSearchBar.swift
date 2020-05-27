@@ -56,7 +56,7 @@ extension CustomSearchBar: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
         let searchText = (textField.text ?? "") + string
-        searchRes = contacts.filter({ $0.givenName.localizedCaseInsensitiveContains(searchText)})
+        searchRes = contacts.filter({ $0.givenName.localizedCaseInsensitiveContains(searchText) || $0.familyName.localizedCaseInsensitiveContains(searchText) })
 
         if searchRes.count == 0 || searchText == "" {
             searching = false

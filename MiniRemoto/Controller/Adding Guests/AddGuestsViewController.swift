@@ -40,7 +40,7 @@ class AddGuestsViewController: UIViewController {
 
     func setupTableView() {
         tableViewDataSource = ContactsTableViewDataSource(contacts: contacts)
-        tableViewDelegate = ContactsTableViewDelegate(collectionView: contactsCollectionView, textField: searchBar)
+        tableViewDelegate = ContactsTableViewDelegate(collectionView: contactsCollectionView, textField: searchBar, sections: tableViewDataSource?.sections ?? [Section]())
         tableViewDelegate?.delegate = collectionViewDataSource
         contactsTableView.dataSource = tableViewDataSource
         contactsTableView.delegate = tableViewDelegate
@@ -48,14 +48,24 @@ class AddGuestsViewController: UIViewController {
 
     func setupCollectionView() {
         collectionViewDataSource = ContactsCollectionViewDataSource(collectionViewHeigh: contactsCollectionViewHeight)
-        collectionViewDelegate = ContactsCollectionViewDelegate(tableView: contactsTableView, contacts: contacts)
-        collectionViewDelegate?.delegate = tableViewDataSource
+        collectionViewDelegate = ContactsCollectionViewDelegate(tableView: contactsTableView)
         contactsCollectionView.dataSource = collectionViewDataSource
         contactsCollectionView.delegate = collectionViewDelegate
         contactsCollectionViewHeight.constant = 0.0
+        collectionViewDelegate?.delegate = self
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+}
+
+extension AddGuestsViewController: UnselectContactInTableView {
+
+    func unselect(_ contact: SelectableContact) {
+        tableViewDataSource?.unselect(contact)
+        collectionViewDataSource?.remove(contact)
+        contactsTableView.reloadData()
+        contactsCollectionView.reloadData()
     }
 }
