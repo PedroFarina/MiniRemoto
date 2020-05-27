@@ -81,6 +81,7 @@
 		32F99DCE247EE646008273D2 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F99DCD247EE646008273D2 /* RoundedButton.swift */; };
 		32F99DD1247EE791008273D2 /* TimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F99DCF247EE791008273D2 /* TimeTableViewCell.swift */; };
 		32F99DD2247EE791008273D2 /* TimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F99DD0247EE791008273D2 /* TimeTableViewCell.xib */; };
+		32F99DD4247EED72008273D2 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F99DD3247EED72008273D2 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		32F99DCD247EE646008273D2 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		32F99DCF247EE791008273D2 /* TimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewCell.swift; sourceTree = "<group>"; };
 		32F99DD0247EE791008273D2 /* TimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableViewCell.xib; sourceTree = "<group>"; };
+		32F99DD3247EED72008273D2 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				02046F9E247C4E6000620FA9 /* StringExtension.swift */,
+				32F99DD3247EED72008273D2 /* Colors.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				020690C7247DD491004C7150 /* ModuleController.swift in Sources */,
 				02046FA9247C603F00620FA9 /* CardView.swift in Sources */,
 				020690C9247DD4C5004C7150 /* CalendarModuleHourView.swift in Sources */,
+				32F99DD4247EED72008273D2 /* Colors.swift in Sources */,
 				0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */,
 				0291F458247F2CAB00DEA569 /* ContactsCollectionViewDataSource.swift in Sources */,
 				020690CC247DD4E8004C7150 /* CalendarModule.swift in Sources */,

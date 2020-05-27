@@ -10,7 +10,7 @@ import UIKit
 
 class CardsController: UIView {
     public weak var dataSource: CardsControllerDataSource?
-    @IBInspectable public var heightOffsetOfCards: CGFloat = 100
+    private var heightOffsetOfCards: CGFloat = 70
     private let numberOfVisibleCards = 3
     private var visibleCards:[CardView] = []
 

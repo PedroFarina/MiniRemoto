@@ -16,9 +16,18 @@ class TimeTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.setupContent()
     }
 
+    func setupContent() {
+        timeLabel.font = UIFont(name: "Montserrat-Medium", size: 16)
+        timeLabel.textColor = .black50()
+        
+        self.timeImageView.image = UIImage(named: "clock")
+        self.timeImageView.tintColor = .black50()
+        
+    }
+    
        func setup(dayAndTime: String) {
          self.timeLabel.text = dayAndTime
      }

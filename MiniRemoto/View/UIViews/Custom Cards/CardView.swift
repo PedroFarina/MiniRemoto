@@ -14,6 +14,7 @@ public class CardView: UIView {
     private func makeLbl() -> UILabel {
         let lbl = UILabel()
         lbl.adjustsFontSizeToFitWidth = true
+        lbl.textColor = .black50()
         return lbl
     }
 
@@ -121,7 +122,6 @@ public class CardView: UIView {
             self.lblDetail.removeFromSuperview()
             self.lblSubtitle.removeFromSuperview()
             self.moduleTableView.removeFromSuperview()
-
         }
     }
 
@@ -132,9 +132,9 @@ public class CardView: UIView {
     public override func draw(_ rect: CGRect) {
 
         viewLayer.frame = rect
-        let path = CGRect(x: 0, y: 0, width: rect.width, height: rect.height)
-        let square = UIBezierPath(roundedRect: path, cornerRadius: 20)
-        contentView.frame = path
+//        let path = CGRect(x: 0, y: 0, width: rect.width, height: rect.height)
+        let square = UIBezierPath(roundedRect: viewLayer.frame, cornerRadius: 20)
+        contentView.frame = viewLayer.frame
 
         viewLayer.path = square.cgPath
         viewLayer.fillColor = fillColor.cgColor
@@ -257,7 +257,7 @@ extension CardView: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             let addressCell = self.moduleTableView.dequeueReusableCell(withIdentifier: ADDRESS_CELL, for: indexPath) as! AddressTableViewCell
-            addressCell.setup(color: .white)
+            addressCell.setup()
             return addressCell
         }
     }
