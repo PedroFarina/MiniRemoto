@@ -32,7 +32,7 @@ class AddressTableViewCell: UITableViewCell {
     func setupContent() {
         self.addressNameLabel.font = UIFont(name: "Montserrat-Medium", size: 16)
         self.addressLabel.font = UIFont(name: "Montserrat-Regular", size: 16)
-        self.rideButtonOutlet.titleLabel?.font = UIFont(name: "Montserrat-Medium", size: 13)
+        self.rideButtonOutlet.titleLabel?.font = UIFont(name: "Montserrat-SemiBold", size: 12)
         
         self.addressImageView.image = UIImage(named: "Location")
         self.addressImageView.tintColor = .black50()

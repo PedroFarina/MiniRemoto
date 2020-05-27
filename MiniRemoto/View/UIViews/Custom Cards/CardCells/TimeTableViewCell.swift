@@ -25,12 +25,9 @@ class TimeTableViewCell: UITableViewCell {
         
         self.timeImageView.image = UIImage(named: "clock")
         self.timeImageView.tintColor = .black50()
-        
     }
     
        func setup(dayAndTime: String) {
          self.timeLabel.text = dayAndTime
      }
-     
-    
 }

@@ -15,6 +15,16 @@ extension UIColor
     {
         return UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha:0.5)
     }
+    
+    class func black25() -> UIColor
+    {
+        return UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha:0.25)
+    }
+    
+    class func white50() -> UIColor
+    {
+        return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha:0.5)
+    }
 
     class func redCard() -> UIColor
     {
