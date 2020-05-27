@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
-        <!--AddGuests-->
+        <!--AddEvent-->
         <scene sceneID="BrZ-W6-n2y">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddGuests" id="Ogb-7Y-JpS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="AddEvent" id="Ogb-7Y-JpS" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="bwo-OU-EGO"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kiy-PE-TOQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
