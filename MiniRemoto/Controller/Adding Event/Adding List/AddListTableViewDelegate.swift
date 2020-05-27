@@ -42,18 +42,13 @@ class AddListTableViewDelegate: NSObject, UITableViewDelegate {
     }
 
     func addRow(tableView: UITableView, in row: Int) {
-        var indexPath = IndexPath()
+        let indexPath = IndexPath(row: row, section: 0)
+        
 
-        if row == 0 {
-            indexPath = IndexPath(row: row, section: 0)
-        } else {
-            indexPath = IndexPath(row: row-1, section: 0)
-        }
-
+        tableView.beginUpdates()
         tableView.insertRows(at: [indexPath], with: .automatic)
-        tableViewHeight?.constant = tableView.contentSize.height
-        tableView.reloadData()
-        tableView.layoutIfNeeded()
+        tableView.endUpdates()
+
     }
 }
 

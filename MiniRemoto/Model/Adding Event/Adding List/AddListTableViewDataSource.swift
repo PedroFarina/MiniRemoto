@@ -10,7 +10,7 @@ import UIKit
 
 class AddListTableViewDataSource: NSObject, UITableViewDataSource {
 
-    var items: [String] = []
+    var items: [UITextField] = []
     var ADDLISTCELL = "AddListTableViewCell"
     var txtFieldDelegate: UITextFieldDelegate?
 
@@ -45,16 +45,27 @@ class AddListTableViewDataSource: NSObject, UITableViewDataSource {
         return UITableViewCell()
     }
 
-    func add(item: String, at index: Int) {
-        if items.count == 0 {
-            items.append(item)
-            print(items)
-        } else {
-            items[index-1] = item
-            print(items)
-        }
-    }
+//    func add(item: String, at index: Int) {
+//        if items.count == 0 {
+//            items.append(item)
+//            print(items)
+//        } else {
+//            items[index-1] = item
+//            print(items)
+//        }
+//    }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 //
 //class AddListTableViewDataSource: NSObject, UITableViewDataSource, ListProtocol {

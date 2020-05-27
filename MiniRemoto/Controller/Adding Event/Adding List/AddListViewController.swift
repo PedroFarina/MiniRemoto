@@ -31,16 +31,18 @@ class AddListViewController: UIViewController {
         listTableView.delegate = addListTableViewDelegate
     }
 
-    func addRow(item: String) {
+    func addRow() {
         guard let row = addListTableViewDelegate?.getLastIndexPathRow() else { return }
         print(row)
-        addListTableViewDataSource?.add(item: item, at: row)
+        //addListTableViewDataSource?.add(item: item, at: row)
         addListTableViewDelegate?.addRow(tableView: listTableView, in: row)
     }
 
     @IBAction func addItemButton(_ sender: Any) {
-        addRow(item: "")
+        addRow()
     }
+    
+    
 }
 
 extension AddListViewController: UITextFieldDelegate {
@@ -48,7 +50,7 @@ extension AddListViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         addListTableViewDelegate?.updateLastIndexPathRow()
         listTableView.reloadData()
-        addRow(item: textField.text ?? "")
+        addRow()
         return false
     }
 
