@@ -42,6 +42,7 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
     }
 
     public func didSelect(_ module: Module) {
+        if type(of: module) != CalendarData.self { return }
         if let controller = UIStoryboard(name: type(of: module).storyboardName, bundle: nil).instantiateViewController(withIdentifier: "main") as? ModuleController {
             controller.module = module
             controller.reloadData = reloadData
