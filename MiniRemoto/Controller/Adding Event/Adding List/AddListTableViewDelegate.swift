@@ -24,32 +24,6 @@ class AddListTableViewDelegate: NSObject, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat.leastNormalMagnitude
     }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        updateLastIndexPathRow(newIndexPathRow: indexPath.row)
-    }
-
-    func getLastIndexPathRow() -> Int {
-        return lastIndexPathRow
-    }
-
-    func updateLastIndexPathRow(newIndexPathRow: Int) {
-        lastIndexPathRow = newIndexPathRow
-    }
-
-    func updateLastIndexPathRow() {
-        lastIndexPathRow += 1
-    }
-
-    func addRow(tableView: UITableView, in row: Int) {
-        let indexPath = IndexPath(row: row, section: 0)
-        
-
-        tableView.beginUpdates()
-        tableView.insertRows(at: [indexPath], with: .automatic)
-        tableView.endUpdates()
-
-    }
 }
 
 //class AddListTableViewDelegate: NSObject, UITableViewDelegate {
