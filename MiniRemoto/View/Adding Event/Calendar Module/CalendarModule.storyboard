@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="25/08/2020" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Maa-cj-bMv" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
-                                <rect key="frame" x="15" y="135" width="384" height="28.5"/>
+                                <rect key="frame" x="15" y="134" width="384" height="27.5"/>
                                 <color key="textColor" name="Writing Black"/>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -53,13 +53,13 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkS-gm-XMG">
-                                <rect key="frame" x="15" y="104" width="41.5" height="21"/>
+                                <rect key="frame" x="15" y="104" width="36" height="20"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                 <color key="textColor" name="Action Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2a-hg-x22">
-                                <rect key="frame" x="20" y="178.5" width="166" height="21"/>
+                                <rect key="frame" x="20" y="176.5" width="149" height="20"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Adicionar horário" image="Plus">
@@ -70,16 +70,16 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-Ji-XxW" customClass="CalendarModuleHourView" customModule="Eve" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="199.5" width="414" height="166"/>
+                                <rect key="frame" x="0.0" y="196.5" width="414" height="166"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Começa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaE-RL-6HE">
-                                        <rect key="frame" x="15" y="15" width="71.5" height="21"/>
+                                        <rect key="frame" x="15" y="15" width="64" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                         <color key="textColor" name="Action Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="19:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HE7-VZ-MSs" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="46" width="384" height="28.5"/>
+                                        <rect key="frame" x="15" y="45" width="384" height="27.5"/>
                                         <color key="textColor" name="Writing Black"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -90,13 +90,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Termina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiW-ja-Ksj">
-                                        <rect key="frame" x="15" y="89.5" width="71" height="21"/>
+                                        <rect key="frame" x="15" y="87.5" width="60" height="20"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                         <color key="textColor" name="Action Color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="23:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdF-3W-0z0" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="120.5" width="384" height="28.5"/>
+                                        <rect key="frame" x="15" y="117.5" width="384" height="27.5"/>
                                         <color key="textColor" name="Writing Black"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
                                         <textInputTraits key="textInputTraits"/>
