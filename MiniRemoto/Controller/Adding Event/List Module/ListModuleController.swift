@@ -13,7 +13,11 @@ class ListModuleViewController: UIViewController, ModuleController {
     var reloadData: (() -> Void)?
 
 
-    @IBOutlet weak var txtListName: SlashedTextField!
+    @IBOutlet weak var placeHolderAddListTip: UILabel!
+    @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var btnCheck: UIButton!
+    
+    
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
 
@@ -32,6 +36,9 @@ class ListModuleViewController: UIViewController, ModuleController {
         addListTableViewDelegate = ListModuleTableDelegate(tableViewHeight: tableViewHeight)
         listTableView.dataSource = addListTableViewDataSource
         listTableView.delegate = addListTableViewDelegate
+        
+        btnCheck.isHidden = true
+        btnSave.isEnabled = false
     }
 
     func addRow() {
@@ -44,10 +51,11 @@ class ListModuleViewController: UIViewController, ModuleController {
         var allUITextFieldsItems:[UITextField] = []
         allUITextFieldsItems.append(contentsOf: addListTableViewDataSource!.texts)
         
-        print(txtListName.text ?? "Lista sem nome")//nome da lista
         allUITextFieldsItems.forEach { (allTextsItems) in
             if let text = allTextsItems.text {
-                print(text)
+                if text != "" {
+                    print(text)
+                }
             }
         }
        }
@@ -55,6 +63,7 @@ class ListModuleViewController: UIViewController, ModuleController {
     
     @IBAction func addItemButton(_ sender: Any) {
         addRow()
+        placeHolderAddListTip.text = ""
     }
     
     @IBAction func confirmarButton(_ sender: Any) {
@@ -81,6 +90,10 @@ extension ListModuleViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            btnCheck.isHidden = false
+            btnSave.isEnabled = true
+        }
         return shouldBeginCalledBeforeHand
     }
 
