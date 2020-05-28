@@ -40,7 +40,12 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
     }
 
     public func didSelect(_ module: Module) {
-        guard type(of: module) == CalendarData.self || type(of: module) == LocationData.self else { return }
+        if type(of: module) == ListData.self {
+            let alert = UIAlertController(title: "Oops!".localized(), message: "Módulo não implementado", preferredStyle: .alert)
+            alert.addAction(.init(title: "OK", style: .cancel))
+            self.present(alert, animated: true)
+            return
+        }
         if let controller = UIStoryboard(name: type(of: module).storyboardName, bundle: nil).instantiateViewController(withIdentifier: "main") as? ModuleController {
             controller.module = module
             controller.reloadData = reloadData
