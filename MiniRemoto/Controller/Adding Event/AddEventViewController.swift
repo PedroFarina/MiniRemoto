@@ -12,7 +12,6 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
 
     @IBOutlet weak var btnDone: UIButton!
     @IBOutlet weak var txtEventName: SlashedTextField!
-
     @IBOutlet weak var moduleCollectionView: UICollectionView!
     let collectionDelegate = ModuleCollectionViewDelegate()
     let collectionDataSource = ModuleCollectionViewDataSource()
@@ -25,7 +24,6 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
         moduleCollectionView.dataSource = collectionDataSource
         moduleTableView.delegate = tableDelegate
         moduleTableView.dataSource = tableDataSource
-        
         moduleTableView.tableFooterView = UIView()
         collectionDelegate.delegate = self
         tableDelegate.delegate = self

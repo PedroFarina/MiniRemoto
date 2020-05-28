@@ -62,6 +62,8 @@
 	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Sua lista de contatos será usada para convidar pessoas</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

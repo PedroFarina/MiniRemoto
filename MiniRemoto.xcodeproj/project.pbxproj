@@ -44,6 +44,20 @@
 		0274827C246F08690059876D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0274827A246F08690059876D /* Main.storyboard */; };
 		0274827E246F086A0059876D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0274827D246F086A0059876D /* Assets.xcassets */; };
 		02748281246F086A0059876D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0274827F246F086A0059876D /* LaunchScreen.storyboard */; };
+		028A7246246F130D006F4B17 /* UberCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7245246F130D006F4B17 /* UberCore.framework */; };
+		028A7247246F130D006F4B17 /* UberCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7245246F130D006F4B17 /* UberCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		028A724A246F130F006F4B17 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7249246F130F006F4B17 /* UberRides.framework */; };
+		028A724B246F130F006F4B17 /* UberRides.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7249246F130F006F4B17 /* UberRides.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0291F447247F2C3700DEA569 /* ContactsCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F443247F2C3700DEA569 /* ContactsCollectionViewDelegate.swift */; };
+		0291F448247F2C3700DEA569 /* InviteModuleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F444247F2C3700DEA569 /* InviteModuleController.swift */; };
+		0291F449247F2C3700DEA569 /* ContactsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F445247F2C3700DEA569 /* ContactsTableViewDelegate.swift */; };
+		0291F44A247F2C3700DEA569 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F446247F2C3700DEA569 /* ContactsManager.swift */; };
+		0291F450247F2C9D00DEA569 /* InviteModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0291F44C247F2C9D00DEA569 /* InviteModule.storyboard */; };
+		0291F451247F2C9D00DEA569 /* ContactCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F44D247F2C9D00DEA569 /* ContactCollectionViewCell.swift */; };
+		0291F452247F2C9D00DEA569 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F44E247F2C9D00DEA569 /* CustomSearchBar.swift */; };
+		0291F453247F2C9D00DEA569 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F44F247F2C9D00DEA569 /* ContactsTableViewCell.swift */; };
+		0291F457247F2CAB00DEA569 /* ContactsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F455247F2CAB00DEA569 /* ContactsTableViewDataSource.swift */; };
+		0291F458247F2CAB00DEA569 /* ContactsCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F456247F2CAB00DEA569 /* ContactsCollectionViewDataSource.swift */; };
 		0292E5FF24744DF1002B5362 /* AddEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0292E5FE24744DF1002B5362 /* AddEvent.storyboard */; };
 		0292E601247452C8002B5362 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E600247452C8002B5362 /* RoundView.swift */; };
 		0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0292E60424745682002B5362 /* ColorCollectionViewCell.swift */; };
@@ -128,6 +142,16 @@
 		02748282246F086A0059876D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		028A7245246F130D006F4B17 /* UberCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberCore.framework; path = Carthage/Build/iOS/UberCore.framework; sourceTree = "<group>"; };
 		028A7249246F130F006F4B17 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
+		0291F443247F2C3700DEA569 /* ContactsCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		0291F444247F2C3700DEA569 /* InviteModuleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteModuleController.swift; sourceTree = "<group>"; };
+		0291F445247F2C3700DEA569 /* ContactsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewDelegate.swift; sourceTree = "<group>"; };
+		0291F446247F2C3700DEA569 /* ContactsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
+		0291F44C247F2C9D00DEA569 /* InviteModule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InviteModule.storyboard; sourceTree = "<group>"; };
+		0291F44D247F2C9D00DEA569 /* ContactCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCollectionViewCell.swift; sourceTree = "<group>"; };
+		0291F44E247F2C9D00DEA569 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		0291F44F247F2C9D00DEA569 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		0291F455247F2CAB00DEA569 /* ContactsTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewDataSource.swift; sourceTree = "<group>"; };
+		0291F456247F2CAB00DEA569 /* ContactsCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		0292E5FE24744DF1002B5362 /* AddEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEvent.storyboard; sourceTree = "<group>"; };
 		0292E600247452C8002B5362 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		0292E60424745682002B5362 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -304,12 +328,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0291F442247F2C3700DEA569 /* Invite Module */ = {
+			isa = PBXGroup;
+			children = (
+				0291F444247F2C3700DEA569 /* InviteModuleController.swift */,
+				0291F443247F2C3700DEA569 /* ContactsCollectionViewDelegate.swift */,
+				0291F445247F2C3700DEA569 /* ContactsTableViewDelegate.swift */,
+				0291F446247F2C3700DEA569 /* ContactsManager.swift */,
+			);
+			path = "Invite Module";
+			sourceTree = "<group>";
+		};
+		0291F44B247F2C9D00DEA569 /* Adding Guests */ = {
+			isa = PBXGroup;
+			children = (
+				0291F44C247F2C9D00DEA569 /* InviteModule.storyboard */,
+				0291F44D247F2C9D00DEA569 /* ContactCollectionViewCell.swift */,
+				0291F44E247F2C9D00DEA569 /* CustomSearchBar.swift */,
+				0291F44F247F2C9D00DEA569 /* ContactsTableViewCell.swift */,
+			);
+			path = "Adding Guests";
+			sourceTree = "<group>";
+		};
+		0291F454247F2CAB00DEA569 /* Invite Module */ = {
+			isa = PBXGroup;
+			children = (
+				0291F455247F2CAB00DEA569 /* ContactsTableViewDataSource.swift */,
+				0291F456247F2CAB00DEA569 /* ContactsCollectionViewDataSource.swift */,
+			);
+			path = "Invite Module";
+			sourceTree = "<group>";
+		};
 		0292E6022474564D002B5362 /* Adding Event */ = {
 			isa = PBXGroup;
 			children = (
 				02ED9BA3247DA15200534FEE /* Assets.xcassets */,
 				02ED9BA0247D9E7C00534FEE /* Calendar Module */,
 				026E80A5247EEA8B00504AFB /* Location Module */,
+				0291F44B247F2C9D00DEA569 /* Adding Guests */,
 				0292E5FE24744DF1002B5362 /* AddEvent.storyboard */,
 				0292E60424745682002B5362 /* ColorCollectionViewCell.swift */,
 				0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */,
@@ -333,6 +389,7 @@
 			children = (
 				020690CA247DD4E8004C7150 /* Calendar Module */,
 				026E80A8247EEDC300504AFB /* Locatiton Module */,
+				0291F442247F2C3700DEA569 /* Invite Module */,
 				0260CE7B24748C7000E16149 /* AddEventViewController.swift */,
 				0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */,
 				0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */,
@@ -371,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				026E80AD247EEDFC00504AFB /* LocationModule */,
+				0291F454247F2CAB00DEA569 /* Invite Module */,
 				02B01ED4247470310054587A /* ModuleCollectionDataSource.swift */,
 				02B01ED6247470800054587A /* ModuleTableDataSource.swift */,
 			);
@@ -519,6 +577,7 @@
 				02046F9A247C4C0600620FA9 /* Modules.xcassets in Resources */,
 				0274827E246F086A0059876D /* Assets.xcassets in Resources */,
 				0274827C246F08690059876D /* Main.storyboard in Resources */,
+				0291F450247F2C9D00DEA569 /* InviteModule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,13 +598,17 @@
 				02046FAB247C60C000620FA9 /* CardsController.swift in Sources */,
 				02046FA4247C4FC800620FA9 /* LocationData.swift in Sources */,
 				026E80B1247EEF3C00504AFB /* AddressSelectedDelegate.swift in Sources */,
+				0291F448247F2C3700DEA569 /* InviteModuleController.swift in Sources */,
+				0291F449247F2C3700DEA569 /* ContactsTableViewDelegate.swift in Sources */,
 				0260CE7824748B9100E16149 /* CalendarData.swift in Sources */,
 				02B01ED7247470800054587A /* ModuleTableDataSource.swift in Sources */,
 				0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */,
 				026E80AA247EEDD900504AFB /* LocationModuleController.swift in Sources */,
 				02046FA2247C4F8200620FA9 /* InviteData.swift in Sources */,
 				0292E6082474597E002B5362 /* SlashedTextField.swift in Sources */,
+				0291F451247F2C9D00DEA569 /* ContactCollectionViewCell.swift in Sources */,
 				02046FAF247C610000620FA9 /* CardsControllerDelegate.swift in Sources */,
+				0291F44A247F2C3700DEA569 /* ContactsManager.swift in Sources */,
 				02046F9F247C4E6000620FA9 /* StringExtension.swift in Sources */,
 				0292E60524745682002B5362 /* ColorCollectionViewCell.swift in Sources */,
 				026E80B9247EF8BD00504AFB /* LocationHelper.swift in Sources */,
@@ -554,8 +617,10 @@
 				02748275246F08690059876D /* AppDelegate.swift in Sources */,
 				02046FAD247C60EF00620FA9 /* CardsControllerDataSet.swift in Sources */,
 				0292E61D24746E3B002B5362 /* Module.swift in Sources */,
+				0291F452247F2C9D00DEA569 /* CustomSearchBar.swift in Sources */,
 				026E80BB247EFEBC00504AFB /* LocationModuleTableViewCell.swift in Sources */,
 				026E80AC247EEDF600504AFB /* AddressTableDelegate.swift in Sources */,
+				0291F453247F2C9D00DEA569 /* ContactsTableViewCell.swift in Sources */,
 				02046FB2247C617300620FA9 /* MainViewController.swift in Sources */,
 				0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */,
 				020690C6247DD491004C7150 /* ModuleSelectorDelegate.swift in Sources */,
@@ -565,8 +630,11 @@
 				02046FA9247C603F00620FA9 /* CardView.swift in Sources */,
 				020690C9247DD4C5004C7150 /* CalendarModuleHourView.swift in Sources */,
 				0292E61524746B20002B5362 /* ModuleTableViewCell.swift in Sources */,
+				0291F458247F2CAB00DEA569 /* ContactsCollectionViewDataSource.swift in Sources */,
 				020690CC247DD4E8004C7150 /* CalendarModule.swift in Sources */,
 				0260CE7F24748C7000E16149 /* AddEventViewController.swift in Sources */,
+				0291F457247F2CAB00DEA569 /* ContactsTableViewDataSource.swift in Sources */,
+				0291F447247F2C3700DEA569 /* ContactsCollectionViewDelegate.swift in Sources */,
 				02748277246F08690059876D /* SceneDelegate.swift in Sources */,
 				02B01ED5247470310054587A /* ModuleCollectionDataSource.swift in Sources */,
 				02046FA6247C500F00620FA9 /* ListData.swift in Sources */,
@@ -666,7 +734,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -720,7 +788,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
