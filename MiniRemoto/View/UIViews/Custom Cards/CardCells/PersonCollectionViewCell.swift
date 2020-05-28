@@ -23,14 +23,13 @@ class PersonCollectionViewCell: UICollectionViewCell {
         self.circleView.backgroundColor = .white50()
         self.initialsLabel.textColor = .black50()
         
-        self.initialsLabel.font = UIFont(name: "Montserrat-Medium", size: 14)
+        self.initialsLabel.font = UIFont(name: "Montserrat-Medium", size: 16)
     }
     
     func setupShadow() {
         self.circleView.layer.shadowRadius = 3
         self.circleView.layer.shadowColor = UIColor.black25().cgColor
+        self.circleView.layer.shadowOpacity = 0.5
         self.circleView.layer.shadowOffset = .zero
-        
     }
-
 }

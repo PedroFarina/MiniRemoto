@@ -63,6 +63,8 @@ public class CardView: UIView {
 
     let TIME_CELL = "TimeTableViewCell"
     let ADDRESS_CELL = "AddressTableViewCell"
+    let INVITE_CELL = "InviteTableViewCell"
+    let SHOPPING_CELL = "ShoppingListTableViewCell"
     
     func setupView() {
         self.contentView.addSubview(lblTitle)
@@ -102,7 +104,10 @@ public class CardView: UIView {
            self.moduleTableView.dataSource = self
            self.moduleTableView.register(UINib(nibName: TIME_CELL, bundle: nil), forCellReuseIdentifier: TIME_CELL)
            self.moduleTableView.register(UINib(nibName: ADDRESS_CELL, bundle: nil), forCellReuseIdentifier: ADDRESS_CELL)
-           
+           self.moduleTableView.register(UINib(nibName: INVITE_CELL, bundle: nil), forCellReuseIdentifier: INVITE_CELL)
+        self.moduleTableView.register(UINib(nibName: SHOPPING_CELL, bundle: nil), forCellReuseIdentifier: SHOPPING_CELL)
+
+
            self.moduleTableView.separatorStyle = .none
            self.moduleTableView.isScrollEnabled = false
            //TODO:- TIREI A SELEÇ˜AO FAMILIA DA CELULA
@@ -246,7 +251,7 @@ public class CardView: UIView {
 extension CardView: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -255,10 +260,18 @@ extension CardView: UITableViewDelegate, UITableViewDataSource {
             timeCell.setup(dayAndTime: "28/06, segunda - 10:30 - 11:30")
             return timeCell
             
-        } else {
+        } else if indexPath.row == 1 {
             let addressCell = self.moduleTableView.dequeueReusableCell(withIdentifier: ADDRESS_CELL, for: indexPath) as! AddressTableViewCell
             addressCell.setup()
             return addressCell
+        } else if indexPath.row == 2{
+            let inviteCell = self.moduleTableView.dequeueReusableCell(withIdentifier: INVITE_CELL, for: indexPath) as! InviteTableViewCell
+            inviteCell.setup()
+            return inviteCell
+        } else {
+            let listCell = self.moduleTableView.dequeueReusableCell(withIdentifier: SHOPPING_CELL, for: indexPath) as! ShoppingListTableViewCell
+            listCell.setup()
+            return listCell
         }
     }
 }
