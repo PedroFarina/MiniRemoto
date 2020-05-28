@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddGuestsViewController: UIViewController, ModuleController {
+class InviteModuleController: UIViewController, ModuleController {
     
     var module: Module?
     var reloadData: (() -> Void)?
@@ -124,7 +124,7 @@ class AddGuestsViewController: UIViewController, ModuleController {
     }
 }
 
-extension AddGuestsViewController: UnselectContactInTableView {
+extension InviteModuleController: UnselectContactInTableView {
     
     func unselect(_ contact: SelectableContact) {
         tableViewDataSource?.unselect(contact)
