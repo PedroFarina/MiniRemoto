@@ -335,8 +335,8 @@
 		0291F442247F2C3700DEA569 /* Invite Module */ = {
 			isa = PBXGroup;
 			children = (
-				0291F443247F2C3700DEA569 /* ContactsCollectionViewDelegate.swift */,
 				0291F444247F2C3700DEA569 /* InviteModuleController.swift */,
+				0291F443247F2C3700DEA569 /* ContactsCollectionViewDelegate.swift */,
 				0291F445247F2C3700DEA569 /* ContactsTableViewDelegate.swift */,
 				0291F446247F2C3700DEA569 /* ContactsManager.swift */,
 			);

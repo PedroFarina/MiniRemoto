@@ -117,19 +117,15 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObW-F2-fcb">
                                 <rect key="frame" x="15" y="59" width="61" height="30"/>
-                                <state key="normal" title="Cancelar">
-                                    <color key="titleColor" name="Action Color"/>
-                                </state>
+                                <state key="normal" title="Cancelar"/>
                                 <connections>
                                     <action selector="cancel:" destination="aDp-Ga-ND2" eventType="touchUpInside" id="8W5-cu-u0h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IY5-Iy-Q7L">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IY5-Iy-Q7L">
                                 <rect key="frame" x="356" y="59" width="43" height="30"/>
                                 <color key="tintColor" name="Action Color"/>
-                                <state key="normal" title="Salvar">
-                                    <color key="titleColor" name="Action Color"/>
-                                </state>
+                                <state key="normal" title="Salvar"/>
                                 <connections>
                                     <action selector="saveData:" destination="aDp-Ga-ND2" eventType="touchUpInside" id="Lc8-Yc-TIF"/>
                                 </connections>
@@ -234,6 +230,7 @@
             <point key="canvasLocation" x="327.536231884058" y="127.90178571428571"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="Action Color"/>
     <resources>
         <image name="SearchBar" width="335" height="40"/>
         <image name="Unselected" width="21" height="21"/>
