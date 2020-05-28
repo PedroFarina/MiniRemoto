@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HAa-ex-dbw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -20,32 +20,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="1fO-59-b0c">
-            <objects>
-                <navigationController id="HAa-ex-dbw" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BEv-lP-Uqe">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="aDp-Ga-ND2" kind="relationship" relationship="rootViewController" id="itn-SS-f8E"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nq2-ik-o7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-571" y="128"/>
-        </scene>
-        <!--Add Guests View Controller-->
+        <!--InviteModule-->
         <scene sceneID="bKT-Q1-Yc5">
             <objects>
-                <viewController storyboardIdentifier="AddGuestsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aDp-Ga-ND2" customClass="AddGuestsViewController" customModule="Eve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" title="InviteModule" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aDp-Ga-ND2" customClass="AddGuestsViewController" customModule="Eve" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MIa-Jw-svV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Busque um contato" textAlignment="natural" minimumFontSize="17" background="SearchBar" translatesAutoresizingMaskIntoConstraints="NO" id="Loj-bG-MuJ" customClass="CustomSearchBar" customModule="Eve" customModuleProvider="target">
-                                <rect key="frame" x="20" y="100" width="374" height="40"/>
+                                <rect key="frame" x="20" y="123" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="I02-5h-V3g"/>
                                 </constraints>
@@ -53,7 +37,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iW8-bL-QhC">
-                                <rect key="frame" x="0.0" y="232" width="414" height="630"/>
+                                <rect key="frame" x="0.0" y="237" width="414" height="708"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,8 +115,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObW-F2-fcb">
+                                <rect key="frame" x="15" y="59" width="61" height="30"/>
+                                <state key="normal" title="Cancelar">
+                                    <color key="titleColor" name="Action Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel:" destination="aDp-Ga-ND2" eventType="touchUpInside" id="8W5-cu-u0h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IY5-Iy-Q7L">
+                                <rect key="frame" x="356" y="59" width="43" height="30"/>
+                                <color key="tintColor" name="Action Color"/>
+                                <state key="normal" title="Salvar">
+                                    <color key="titleColor" name="Action Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveData:" destination="aDp-Ga-ND2" eventType="touchUpInside" id="Lc8-Yc-TIF"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DND-5a-PGS">
-                                <rect key="frame" x="12" y="158" width="390" height="58"/>
+                                <rect key="frame" x="12" y="171" width="390" height="58"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="JLw-Fz-VxC"/>
@@ -198,16 +201,20 @@
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iW8-bL-QhC" firstAttribute="trailing" secondItem="cW1-Ms-fFN" secondAttribute="trailing" id="1S0-sq-c7d"/>
-                            <constraint firstItem="DND-5a-PGS" firstAttribute="top" secondItem="cW1-Ms-fFN" secondAttribute="top" constant="70" id="6Wn-kR-bXU"/>
-                            <constraint firstItem="Loj-bG-MuJ" firstAttribute="top" secondItem="cW1-Ms-fFN" secondAttribute="top" constant="12" id="72d-2n-dUf"/>
-                            <constraint firstItem="iW8-bL-QhC" firstAttribute="top" secondItem="DND-5a-PGS" secondAttribute="bottom" constant="16" id="86P-tG-FEu"/>
+                            <constraint firstItem="DND-5a-PGS" firstAttribute="top" secondItem="cW1-Ms-fFN" secondAttribute="top" constant="127" id="6Wn-kR-bXU"/>
+                            <constraint firstItem="IY5-Iy-Q7L" firstAttribute="top" secondItem="cW1-Ms-fFN" secondAttribute="top" constant="15" id="6pG-iu-fRh"/>
+                            <constraint firstItem="Loj-bG-MuJ" firstAttribute="top" secondItem="cW1-Ms-fFN" secondAttribute="top" constant="79" id="72d-2n-dUf"/>
+                            <constraint firstItem="iW8-bL-QhC" firstAttribute="top" secondItem="DND-5a-PGS" secondAttribute="bottom" constant="8" id="86P-tG-FEu"/>
+                            <constraint firstItem="ObW-F2-fcb" firstAttribute="top" secondItem="cW1-Ms-fFN" secondAttribute="top" constant="15" id="C18-JS-nXU"/>
                             <constraint firstItem="cW1-Ms-fFN" firstAttribute="trailing" secondItem="DND-5a-PGS" secondAttribute="trailing" constant="12" id="FNP-uD-0Dn"/>
+                            <constraint firstItem="cW1-Ms-fFN" firstAttribute="trailing" secondItem="IY5-Iy-Q7L" secondAttribute="trailing" constant="15" id="KhC-ZF-1ow"/>
                             <constraint firstItem="DND-5a-PGS" firstAttribute="leading" secondItem="cW1-Ms-fFN" secondAttribute="leading" constant="12" id="Q6m-1W-wWg"/>
                             <constraint firstItem="cW1-Ms-fFN" firstAttribute="trailing" secondItem="Loj-bG-MuJ" secondAttribute="trailing" constant="20" id="RTg-we-Tgz"/>
-                            <constraint firstItem="iW8-bL-QhC" firstAttribute="bottom" secondItem="cW1-Ms-fFN" secondAttribute="bottom" id="SM0-OI-wlc"/>
+                            <constraint firstItem="ObW-F2-fcb" firstAttribute="leading" secondItem="cW1-Ms-fFN" secondAttribute="leading" constant="15" id="Roi-PT-Rfy"/>
+                            <constraint firstItem="iW8-bL-QhC" firstAttribute="bottom" secondItem="cW1-Ms-fFN" secondAttribute="bottom" constant="83" id="SM0-OI-wlc"/>
                             <constraint firstItem="iW8-bL-QhC" firstAttribute="leading" secondItem="cW1-Ms-fFN" secondAttribute="leading" id="bef-m7-h9U"/>
                             <constraint firstItem="Loj-bG-MuJ" firstAttribute="leading" secondItem="cW1-Ms-fFN" secondAttribute="leading" constant="20" id="bew-YA-NiL"/>
-                            <constraint firstItem="cW1-Ms-fFN" firstAttribute="bottom" secondItem="iW8-bL-QhC" secondAttribute="bottom" id="f2n-MW-ZL3"/>
+                            <constraint firstItem="cW1-Ms-fFN" firstAttribute="bottom" secondItem="iW8-bL-QhC" secondAttribute="bottom" constant="-83" id="f2n-MW-ZL3"/>
                             <constraint firstItem="cW1-Ms-fFN" firstAttribute="trailing" secondItem="iW8-bL-QhC" secondAttribute="trailing" id="nXX-hd-aHc"/>
                             <constraint firstItem="iW8-bL-QhC" firstAttribute="leading" secondItem="cW1-Ms-fFN" secondAttribute="leading" id="nwF-ew-E7F"/>
                         </constraints>
@@ -218,6 +225,7 @@
                         <outlet property="contactsCollectionView" destination="DND-5a-PGS" id="XaN-Ue-Q2u"/>
                         <outlet property="contactsCollectionViewHeight" destination="JLw-Fz-VxC" id="b5g-kI-ENN"/>
                         <outlet property="contactsTableView" destination="iW8-bL-QhC" id="udR-bP-bQH"/>
+                        <outlet property="save" destination="IY5-Iy-Q7L" id="lVg-Tc-HDO"/>
                         <outlet property="searchBar" destination="Loj-bG-MuJ" id="KjC-zu-XWc"/>
                     </connections>
                 </viewController>
@@ -230,6 +238,9 @@
         <image name="SearchBar" width="335" height="40"/>
         <image name="Unselected" width="21" height="21"/>
         <image name="close" width="13" height="13"/>
+        <namedColor name="Action Color">
+            <color red="0.4309999942779541" green="0.31000000238418579" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Label Gray">
             <color red="0.54100000858306885" green="0.54100000858306885" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

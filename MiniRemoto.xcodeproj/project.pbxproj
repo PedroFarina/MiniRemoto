@@ -52,7 +52,7 @@
 		0291F448247F2C3700DEA569 /* AddGuestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F444247F2C3700DEA569 /* AddGuestsViewController.swift */; };
 		0291F449247F2C3700DEA569 /* ContactsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F445247F2C3700DEA569 /* ContactsTableViewDelegate.swift */; };
 		0291F44A247F2C3700DEA569 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F446247F2C3700DEA569 /* ContactsManager.swift */; };
-		0291F450247F2C9D00DEA569 /* AddGuests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0291F44C247F2C9D00DEA569 /* AddGuests.storyboard */; };
+		0291F450247F2C9D00DEA569 /* InviteModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0291F44C247F2C9D00DEA569 /* InviteModule.storyboard */; };
 		0291F451247F2C9D00DEA569 /* ContactCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F44D247F2C9D00DEA569 /* ContactCollectionViewCell.swift */; };
 		0291F452247F2C9D00DEA569 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F44E247F2C9D00DEA569 /* CustomSearchBar.swift */; };
 		0291F453247F2C9D00DEA569 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0291F44F247F2C9D00DEA569 /* ContactsTableViewCell.swift */; };
@@ -148,7 +148,7 @@
 		0291F444247F2C3700DEA569 /* AddGuestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGuestsViewController.swift; sourceTree = "<group>"; };
 		0291F445247F2C3700DEA569 /* ContactsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewDelegate.swift; sourceTree = "<group>"; };
 		0291F446247F2C3700DEA569 /* ContactsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
-		0291F44C247F2C9D00DEA569 /* AddGuests.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddGuests.storyboard; sourceTree = "<group>"; };
+		0291F44C247F2C9D00DEA569 /* InviteModule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InviteModule.storyboard; sourceTree = "<group>"; };
 		0291F44D247F2C9D00DEA569 /* ContactCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCollectionViewCell.swift; sourceTree = "<group>"; };
 		0291F44E247F2C9D00DEA569 /* CustomSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		0291F44F247F2C9D00DEA569 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
@@ -346,7 +346,7 @@
 		0291F44B247F2C9D00DEA569 /* Adding Guests */ = {
 			isa = PBXGroup;
 			children = (
-				0291F44C247F2C9D00DEA569 /* AddGuests.storyboard */,
+				0291F44C247F2C9D00DEA569 /* InviteModule.storyboard */,
 				0291F44D247F2C9D00DEA569 /* ContactCollectionViewCell.swift */,
 				0291F44E247F2C9D00DEA569 /* CustomSearchBar.swift */,
 				0291F44F247F2C9D00DEA569 /* ContactsTableViewCell.swift */,
@@ -582,7 +582,7 @@
 				02046F9A247C4C0600620FA9 /* Modules.xcassets in Resources */,
 				0274827E246F086A0059876D /* Assets.xcassets in Resources */,
 				0274827C246F08690059876D /* Main.storyboard in Resources */,
-				0291F450247F2C9D00DEA569 /* AddGuests.storyboard in Resources */,
+				0291F450247F2C9D00DEA569 /* InviteModule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,7 +761,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -815,7 +815,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
