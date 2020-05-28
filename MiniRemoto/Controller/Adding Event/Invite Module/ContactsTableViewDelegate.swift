@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol PassContactFromTableViewToCollectionView {
-    func pass(_ contact: SelectableContact)
-    func remove(_ contact: SelectableContact)
+protocol ContactTableViewSelectorDelegate {
+    func didSelect(_ contact: SelectableContact)
+    func didUnselect(_ contact: SelectableContact)
 }
 
 class ContactsTableViewDelegate: NSObject, UITableViewDelegate {
 
-    var delegate: PassContactFromTableViewToCollectionView?
+    var delegate: ContactTableViewSelectorDelegate?
     var collectionView: UICollectionView?
     var textField: CustomSearchBar?
     var sections: [Section]?
@@ -48,12 +48,12 @@ class ContactsTableViewDelegate: NSObject, UITableViewDelegate {
         if contact.isSelected == true {
             contact.isSelected = false
             cell.selectCheckImage(isSelected: false)
-            delegate?.remove(contact)
+            delegate?.didUnselect(contact)
 
         } else {
             contact.isSelected = true
             cell.selectCheckImage(isSelected: true)
-            delegate?.pass(contact)
+            delegate?.didSelect(contact)
         }
 
         tableView.reloadData()

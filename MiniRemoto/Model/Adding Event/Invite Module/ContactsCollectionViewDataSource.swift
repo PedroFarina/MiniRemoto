@@ -43,16 +43,13 @@ class ContactsCollectionViewDataSource: NSObject, UICollectionViewDataSource {
             }
         }
     }
-}
-
-extension ContactsCollectionViewDataSource: PassContactFromTableViewToCollectionView {
 
     func remove(_ contact: SelectableContact) {
         contacts.removeAll { $0.id == contact.id }
         animateCollectionView()
     }
 
-    func pass(_ contact: SelectableContact) {
+    func add(_ contact: SelectableContact) {
         contacts.append(contact)
         animateCollectionView()
     }

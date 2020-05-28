@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InviteModuleController: UIViewController, ModuleController {
+class InviteModuleController: UIViewController, ModuleController, ContactTableViewSelectorDelegate  {
     
     var module: Module?
     var reloadData: (() -> Void)?
@@ -20,7 +20,6 @@ class InviteModuleController: UIViewController, ModuleController {
     @IBOutlet weak var save: UIButton!
 
     private func checkSave() {
-
         if returnGuestsIds().count == 0 {
             save.isEnabled = false
         } else {
@@ -69,7 +68,7 @@ class InviteModuleController: UIViewController, ModuleController {
     func setupTableView() {
         tableViewDataSource = ContactsTableViewDataSource(contacts: contacts)
         tableViewDelegate = ContactsTableViewDelegate(collectionView: contactsCollectionView, textField: searchBar, sections: tableViewDataSource?.sections ?? [Section]())
-        tableViewDelegate?.delegate = collectionViewDataSource
+        tableViewDelegate?.delegate = self
         contactsTableView.dataSource = tableViewDataSource
         contactsTableView.delegate = tableViewDelegate
     }
@@ -81,6 +80,16 @@ class InviteModuleController: UIViewController, ModuleController {
         contactsCollectionView.delegate = collectionViewDelegate
         contactsCollectionViewHeight.constant = 0.0
         collectionViewDelegate?.delegate = self
+    }
+
+    func didSelect(_ contact: SelectableContact) {
+        checkSave()
+        collectionViewDataSource?.add(contact)
+    }
+
+    func didUnselect(_ contact: SelectableContact) {
+        checkSave()
+        collectionViewDataSource?.remove(contact)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -124,7 +133,7 @@ class InviteModuleController: UIViewController, ModuleController {
     }
 }
 
-extension InviteModuleController: UnselectContactInTableView {
+extension InviteModuleController: ContactCollectionViewSelectorDelegate {
     
     func unselect(_ contact: SelectableContact) {
         tableViewDataSource?.unselect(contact)

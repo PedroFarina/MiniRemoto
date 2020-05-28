@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol UnselectContactInTableView {
+protocol ContactCollectionViewSelectorDelegate {
     func unselect(_ contact: SelectableContact)
 }
 
 class ContactsCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     var tableView: UITableView?
-    var delegate: UnselectContactInTableView?
+    var delegate: ContactCollectionViewSelectorDelegate?
 
     init(tableView: UITableView) {
         self.tableView = tableView

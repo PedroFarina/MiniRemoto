@@ -122,7 +122,7 @@ extension ContactsTableViewDataSource: GetSearchResponse {
     }
 }
 
-extension ContactsTableViewDataSource: UnselectContactInTableView {
+extension ContactsTableViewDataSource: ContactCollectionViewSelectorDelegate {
 
     func unselect(_ contact: SelectableContact, in tableView: UITableView) {
         for section in sections {
