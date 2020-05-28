@@ -48,12 +48,17 @@ public class LocationModuleController: UIViewController, UITextFieldDelegate, Mo
         checkSave()
     }
 
+    var lockSuggestion = false
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        lockSuggestion = false
+    }
+
     @objc private func textFieldEditingChanged(_ textField: UITextField) {
-        guard textField == txtAddress,
-            let text = textField.text else { return }
+        guard let text = textField.text else { return }
         checkSave()
         address = nil
         tableDataSource.searchForAddress(text) { (results) in
+            if self.lockSuggestion { return }
             DispatchQueue.main.async {
                 self.addressTableView.reloadData()
                 self.addressTableViewHeight.constant = CGFloat(56 * results)
@@ -65,6 +70,7 @@ public class LocationModuleController: UIViewController, UITextFieldDelegate, Mo
     }
 
     public func textFieldDidEndEditing(_ textField: UITextField) {
+        lockSuggestion = true
         if textField == txtAddress && address == nil {
             textField.text = ""
         }
@@ -76,6 +82,11 @@ public class LocationModuleController: UIViewController, UITextFieldDelegate, Mo
     }
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let index = IndexPath(item: 0, section: 0)
+        if addressTableView.cellForRow(at: index) != nil {
+            addressTableView.selectRow(at: index, animated: true, scrollPosition: .top)
+            tableDelegate.tableView(addressTableView, didSelectRowAt: index)
+        }
         textField.resignFirstResponder()
         return true
     }
