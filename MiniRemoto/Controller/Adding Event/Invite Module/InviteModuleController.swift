@@ -71,6 +71,9 @@ class InviteModuleController: UIViewController, ModuleController, ContactTableVi
         tableViewDelegate?.delegate = self
         contactsTableView.dataSource = tableViewDataSource
         contactsTableView.delegate = tableViewDelegate
+
+        contactsTableView.tableFooterView = UIView()
+        contactsTableView.backgroundColor = .systemBackground
     }
     
     func setupCollectionView() {

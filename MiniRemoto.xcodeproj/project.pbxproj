@@ -236,23 +236,23 @@
 			path = "Location Module";
 			sourceTree = "<group>";
 		};
-		026E80A8247EEDC300504AFB /* Locatiton Module */ = {
+		026E80A8247EEDC300504AFB /* Location Module */ = {
 			isa = PBXGroup;
 			children = (
 				026E80A9247EEDD900504AFB /* LocationModuleController.swift */,
 				026E80AB247EEDF600504AFB /* AddressTableDelegate.swift */,
 			);
-			path = "Locatiton Module";
+			path = "Location Module";
 			sourceTree = "<group>";
 		};
-		026E80AD247EEDFC00504AFB /* LocationModule */ = {
+		026E80AD247EEDFC00504AFB /* Location Module */ = {
 			isa = PBXGroup;
 			children = (
 				026E80AE247EEE0A00504AFB /* AddressTableDataSource.swift */,
 				026E80B0247EEF3C00504AFB /* AddressSelectedDelegate.swift */,
 				026E80B8247EF8BD00504AFB /* LocationHelper.swift */,
 			);
-			path = LocationModule;
+			path = "Location Module";
 			sourceTree = "<group>";
 		};
 		02748268246F08680059876D = {
@@ -339,7 +339,7 @@
 			path = "Invite Module";
 			sourceTree = "<group>";
 		};
-		0291F44B247F2C9D00DEA569 /* Adding Guests */ = {
+		0291F44B247F2C9D00DEA569 /* Invite Module */ = {
 			isa = PBXGroup;
 			children = (
 				0291F44C247F2C9D00DEA569 /* InviteModule.storyboard */,
@@ -347,7 +347,7 @@
 				0291F44E247F2C9D00DEA569 /* CustomSearchBar.swift */,
 				0291F44F247F2C9D00DEA569 /* ContactsTableViewCell.swift */,
 			);
-			path = "Adding Guests";
+			path = "Invite Module";
 			sourceTree = "<group>";
 		};
 		0291F454247F2CAB00DEA569 /* Invite Module */ = {
@@ -365,7 +365,7 @@
 				02ED9BA3247DA15200534FEE /* Assets.xcassets */,
 				02ED9BA0247D9E7C00534FEE /* Calendar Module */,
 				026E80A5247EEA8B00504AFB /* Location Module */,
-				0291F44B247F2C9D00DEA569 /* Adding Guests */,
+				0291F44B247F2C9D00DEA569 /* Invite Module */,
 				0292E5FE24744DF1002B5362 /* AddEvent.storyboard */,
 				0292E60424745682002B5362 /* ColorCollectionViewCell.swift */,
 				0292E61224746230002B5362 /* ModuleCollectionViewCell.swift */,
@@ -388,7 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				020690CA247DD4E8004C7150 /* Calendar Module */,
-				026E80A8247EEDC300504AFB /* Locatiton Module */,
+				026E80A8247EEDC300504AFB /* Location Module */,
 				0291F442247F2C3700DEA569 /* Invite Module */,
 				0260CE7B24748C7000E16149 /* AddEventViewController.swift */,
 				0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */,
@@ -427,7 +427,7 @@
 		02B01ED32474701F0054587A /* Adding Event */ = {
 			isa = PBXGroup;
 			children = (
-				026E80AD247EEDFC00504AFB /* LocationModule */,
+				026E80AD247EEDFC00504AFB /* Location Module */,
 				0291F454247F2CAB00DEA569 /* Invite Module */,
 				02B01ED4247470310054587A /* ModuleCollectionDataSource.swift */,
 				02B01ED6247470800054587A /* ModuleTableDataSource.swift */,

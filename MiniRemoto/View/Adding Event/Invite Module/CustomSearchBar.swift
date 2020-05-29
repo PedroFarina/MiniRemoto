@@ -13,7 +13,13 @@ protocol GetSearchResponse {
     func changeSearchStatus(isSearching: Bool)
 }
 
-class CustomSearchBar: UITextField {
+@IBDesignable class CustomSearchBar: UITextField {
+
+    @IBInspectable public var radius: CGFloat = 0 {
+        didSet {
+            self.layer.cornerRadius = radius
+        }
+    }
 
     var tableView: UITableView?
     var searchRes = [SelectableContact]()
@@ -34,6 +40,14 @@ class CustomSearchBar: UITextField {
         self.tableView = tableView
         self.delegate = self
         self.layer.cornerRadius = self.frame.height/2
+    }
+
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: 15, dy: 0)
+    }
+
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: 15, dy: 0)
     }
 }
 
