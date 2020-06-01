@@ -21,4 +21,16 @@ import UIKit
             self.layer.cornerRadius = radius
         }
     }
+    
+    @IBInspectable var strokeLine: CGFloat = 0 {
+          didSet {
+              self.layer.borderWidth = strokeLine
+          }
+      }
+      
+      @IBInspectable var strokeColor: UIColor = .white {
+          didSet {
+              self.layer.borderColor = strokeColor.cgColor
+          }
+      }
 }
