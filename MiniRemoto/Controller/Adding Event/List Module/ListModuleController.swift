@@ -46,6 +46,7 @@ class ListModuleViewController: UIViewController, ModuleController {
         let index = IndexPath(row: row, section: 0)
         addListTableViewDataSource?.addRow(in: listTableView, at: index)
         tableViewHeight.constant += 28
+        listTableView.scrollToRow(at: index, at: UITableView.ScrollPosition.bottom, animated: true)
     }
     func getAllListItems(){
         var allUITextFieldsItems:[UITextField] = []
