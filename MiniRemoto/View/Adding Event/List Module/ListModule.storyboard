@@ -22,11 +22,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-Dw-ARk">
-                                <rect key="frame" x="15" y="122" width="384" height="300"/>
+                                <rect key="frame" x="15" y="122" width="384" height="662"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="OQD-FS-n8s"/>
-                                </constraints>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddListTableViewCell" id="3i7-Ir-z5q" customClass="ListModuleTableViewCell" customModule="Eve" customModuleProvider="target">
@@ -59,7 +56,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lM-DL-8Po">
-                                <rect key="frame" x="15" y="821" width="114" height="21"/>
+                                <rect key="frame" x="15" y="821" width="104" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="puH-lm-0rP"/>
                                 </constraints>
@@ -112,6 +109,7 @@
                         <constraints>
                             <constraint firstItem="Qw8-cj-Fik" firstAttribute="bottom" secondItem="1lM-DL-8Po" secondAttribute="bottom" constant="20" id="6kE-h2-nKl"/>
                             <constraint firstItem="t4G-Dw-ARk" firstAttribute="top" secondItem="oRj-bI-o7I" secondAttribute="bottom" constant="30" id="7qn-uV-zvp"/>
+                            <constraint firstItem="DU6-Js-Bnc" firstAttribute="top" secondItem="t4G-Dw-ARk" secondAttribute="bottom" constant="10" id="8Ue-ca-TFH"/>
                             <constraint firstItem="2eq-p5-gfh" firstAttribute="centerY" secondItem="CVc-Et-JF5" secondAttribute="centerY" multiplier="0.5" id="CIG-uR-Wrt"/>
                             <constraint firstItem="Qw8-cj-Fik" firstAttribute="trailing" secondItem="DU6-Js-Bnc" secondAttribute="trailing" constant="15" id="Nug-Xz-OxG"/>
                             <constraint firstItem="oRj-bI-o7I" firstAttribute="leading" secondItem="Qw8-cj-Fik" secondAttribute="leading" constant="15" id="QZd-Qp-IoH"/>
@@ -132,7 +130,6 @@
                         <outlet property="btnSave" destination="EVw-Ck-P2z" id="BEY-3k-0WO"/>
                         <outlet property="listTableView" destination="t4G-Dw-ARk" id="qhY-CM-MAR"/>
                         <outlet property="placeHolderAddListTip" destination="2eq-p5-gfh" id="Hg7-0X-rrA"/>
-                        <outlet property="tableViewHeight" destination="OQD-FS-n8s" id="x6d-sR-ufq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojx-tK-1o8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

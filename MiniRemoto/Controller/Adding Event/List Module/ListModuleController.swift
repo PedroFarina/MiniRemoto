@@ -19,10 +19,8 @@ class ListModuleViewController: UIViewController, ModuleController {
     
     
     @IBOutlet weak var listTableView: UITableView!
-    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
 
     var addListTableViewDataSource: ListModuleTableDataSource?
-    var addListTableViewDelegate: ListModuleTableDelegate?
     var shouldBeginCalledBeforeHand: Bool = false
 
     override func viewDidLoad() {
@@ -33,9 +31,7 @@ class ListModuleViewController: UIViewController, ModuleController {
 
     func setupTableView() {
         addListTableViewDataSource = ListModuleTableDataSource(txtFieldDelegate: self)
-        addListTableViewDelegate = ListModuleTableDelegate(tableViewHeight: tableViewHeight)
         listTableView.dataSource = addListTableViewDataSource
-        listTableView.delegate = addListTableViewDelegate
         
         btnCheck.isHidden = true
         btnSave.isEnabled = false
@@ -45,7 +41,6 @@ class ListModuleViewController: UIViewController, ModuleController {
         let row = addListTableViewDataSource?.numberOfRows ??  0
         let index = IndexPath(row: row, section: 0)
         addListTableViewDataSource?.addRow(in: listTableView, at: index)
-        tableViewHeight.constant += 28
         listTableView.scrollToRow(at: index, at: .middle, animated: true)
     }
     func getAllListItems(){
