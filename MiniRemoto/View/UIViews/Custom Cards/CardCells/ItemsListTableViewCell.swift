@@ -38,7 +38,7 @@ class ItemsListTableViewCell: UITableViewCell {
             self.personNameLabel.isHidden = true
         } else {
             self.selectionButtonOutlet.strokeColor = .clear
-            self.selectionButtonOutlet.setImage(UIImage(named: "check"), for: .normal)
+            self.selectionButtonOutlet.setImage(UIImage(named: "check_item"), for: .normal)
             self.personNameLabel.isHidden = false
         }
     }

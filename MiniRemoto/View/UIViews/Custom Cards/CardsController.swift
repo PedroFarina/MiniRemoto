@@ -11,7 +11,7 @@ import UIKit
 class CardsController: UIView {
     public weak var dataSource: CardsControllerDataSource?
     private var heightOffsetOfCards: CGFloat = 70
-    private let numberOfVisibleCards = 3
+    private let numberOfVisibleCards = 1
     private var visibleCards:[CardView] = []
 
     private var panGesture: UIPanGestureRecognizer?

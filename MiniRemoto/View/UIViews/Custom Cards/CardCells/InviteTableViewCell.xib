@@ -24,16 +24,16 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2b-He-XBD">
-                        <rect key="frame" x="40" y="2" width="326" height="44"/>
+                        <rect key="frame" x="40" y="13.5" width="326" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="H2q-it-Wxu">
-                        <rect key="frame" x="0.0" y="54" width="382" height="50"/>
+                        <rect key="frame" x="0.0" y="42.5" width="382" height="61.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="Tgf-Gg-FWc"/>
+                            <constraint firstAttribute="height" constant="61.5" id="1ZU-ff-yCd"/>
                         </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BG0-Td-3wq">
                             <size key="itemSize" width="128" height="128"/>
