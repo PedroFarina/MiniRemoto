@@ -11,7 +11,7 @@ import UIKit
 class CardsController: UIView {
     public weak var dataSource: CardsControllerDataSource?
     private var heightOffsetOfCards: CGFloat = 70
-    private let numberOfVisibleCards = 1
+    private let numberOfVisibleCards = 3
     private var visibleCards:[CardView] = []
 
     private var panGesture: UIPanGestureRecognizer?
@@ -36,7 +36,7 @@ class CardsController: UIView {
             if newValue == _index {
                 return
             }
-            if newValue < 0 {
+            if newValue < -2 {
                 direction = .downOnly
                 return
             }
@@ -70,20 +70,27 @@ class CardsController: UIView {
         }
 
         if index > previousIndex {
+            if index > 0 {
+                visibleCards.removeFirst().removeFromSuperview()
+            }
             let card = dataSource.cardForIndex(previousIndex + numberOfVisibleCards)
             card.fromTop = false
-            visibleCards.removeFirst().removeFromSuperview()
             addSubview(card)
             visibleCards.append(card)
         } else {
-            let card = dataSource.cardForIndex(index)
-            card.fromTop = true
             visibleCards.removeLast().removeFromSuperview()
-            addSubview(card)
-            sendSubviewToBack(card)
-            visibleCards.insert(card, at: 0)
+            if index >= 0 {
+                let card = dataSource.cardForIndex(index)
+                card.fromTop = true
+                addSubview(card)
+                sendSubviewToBack(card)
+                visibleCards.insert(card, at: 0)
+            }
         }
 
+        if visibleCards.count == 1 {
+            return
+        }
         for i in 0 ..< visibleCards.count {
             let card = visibleCards[i]
             card.frame = CGRect(x: 0, y: heightOffsetOfCards + (CGFloat(i) * heightOffsetOfCards), width: frame.width, height: frame.height)
@@ -91,7 +98,7 @@ class CardsController: UIView {
     }
 
     private var initalPoint: CGPoint?
-    private var direction: ScrollDirection = .downOnly
+    private var direction: ScrollDirection = .upDown
     @objc func handleSwipe(_ panGesture: UIPanGestureRecognizer) {
         var velocity = abs(panGesture.velocity(in: self).y)
         if velocity > 8{
