@@ -27,6 +27,9 @@ class ListModuleViewController: UIViewController, ModuleController {
         super.viewDidLoad()
         setupTableView()
         hideKeyboardWhenTappedAround()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     func setupTableView() {
@@ -43,6 +46,21 @@ class ListModuleViewController: UIViewController, ModuleController {
         addListTableViewDataSource?.addRow(in: listTableView, at: index)
         listTableView.scrollToRow(at: index, at: .bottom, animated: true)
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if listTableView.frame.origin.y == 0 {
+                listTableView.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if listTableView.frame.origin.y != 0 {
+            listTableView.frame.origin.y = 0
+        }
+    }
+    
     func getAllListItems(){
         var allUITextFieldsItems:[UITextField] = []
         allUITextFieldsItems.append(contentsOf: addListTableViewDataSource!.texts)
