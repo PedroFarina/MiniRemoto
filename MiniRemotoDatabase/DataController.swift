@@ -10,7 +10,7 @@ import CloudKit
 import EndpointsRequests
 
 internal struct Response: Codable {
-    var success: Bool
+    var result: Bool
 }
 
 public class DataController {
@@ -25,7 +25,7 @@ public class DataController {
         return _shared
     }
 
-    private static let hostaddress = "localhost:8000"
+    private static let hostaddress = "https://evedb.herokuapp.com"
     public private(set) var user: User?
     public private(set) var events: [Event] = []
 
