@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URc-5M-P6j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URc-5M-P6j">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -21,40 +21,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-Dw-ARk">
-                                <rect key="frame" x="15" y="122" width="384" height="28"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-Dw-ARk">
+                                <rect key="frame" x="15" y="122" width="384" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="OQD-FS-n8s"/>
+                                    <constraint firstAttribute="height" constant="300" id="OQD-FS-n8s"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="AddListTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddListTableViewCell" id="fA4-S2-bjk" customClass="ListModuleTableViewCell" customModule="Eve" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="384" height="28.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddListTableViewCell" id="3i7-Ir-z5q" customClass="ListModuleTableViewCell" customModule="Eve" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="384" height="33.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fA4-S2-bjk" id="WQ1-wC-DxP">
-                                            <rect key="frame" x="0.0" y="0.0" width="384" height="28.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3i7-Ir-z5q" id="z79-Sd-I1h">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="33.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="boF-x8-2UV" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="384" height="28.5"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTS-dH-www" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="0.0" width="374" height="30.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="boF-x8-2UV" secondAttribute="height" multiplier="96:7" id="Se0-a9-MnX"/>
-                                                        <constraint firstAttribute="height" constant="28" id="i7b-Hp-wyI"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Eb6-lw-YYI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="boF-x8-2UV" firstAttribute="top" secondItem="WQ1-wC-DxP" secondAttribute="top" id="Nkm-4s-kFb"/>
-                                                <constraint firstItem="boF-x8-2UV" firstAttribute="leading" secondItem="WQ1-wC-DxP" secondAttribute="leading" id="g1J-vp-nej"/>
-                                                <constraint firstAttribute="bottom" secondItem="boF-x8-2UV" secondAttribute="bottom" id="oVv-mT-LBK"/>
-                                                <constraint firstAttribute="trailing" secondItem="boF-x8-2UV" secondAttribute="trailing" id="qLy-Je-wJU"/>
+                                                <constraint firstItem="fTS-dH-www" firstAttribute="top" secondItem="z79-Sd-I1h" secondAttribute="top" id="DMc-VJ-wW3"/>
+                                                <constraint firstItem="fTS-dH-www" firstAttribute="leading" secondItem="z79-Sd-I1h" secondAttribute="leading" constant="5" id="QMf-1E-Del"/>
+                                                <constraint firstAttribute="trailing" secondItem="fTS-dH-www" secondAttribute="trailing" constant="5" id="eby-pN-fYe"/>
+                                                <constraint firstAttribute="bottom" secondItem="fTS-dH-www" secondAttribute="bottom" constant="3" id="xTd-G2-tih"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="txtItem" destination="boF-x8-2UV" id="ieC-wj-vqg"/>
+                                            <outlet property="txtItem" destination="fTS-dH-www" id="ZVz-eN-mn8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
