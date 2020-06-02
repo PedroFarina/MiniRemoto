@@ -26,11 +26,22 @@ public class DataController {
     }
 
     private static let hostaddress = "https://evedb.herokuapp.com"
+    public weak var delegate: DBErrorDelegate?
+    private var observers: [DBObserver] = []
+    public func registerAsObserver(_ observer: DBObserver) {
+        observers.append(observer)
+    }
+    public func removeAsObserver(_ observer: DBObserver) {
+        if let index = observers.firstIndex(where: {$0 === observer}) {
+            observers.remove(at: index)
+        }
+    }
+    
     public private(set) var user: User?
     public private(set) var events: [Event] = []
 
-    internal func fetchEvent(with id: String) {
-        EndpointsRequests.Requests.getRequest(url: "\(DataController.hostaddress)/getEvents/\(id)", decodableType: Event.self) { (answer) in
+    internal func fetchEvents() {
+        EndpointsRequests.Requests.getRequest(url: "\(DataController.hostaddress)/getEvents/\(user?.id ?? "")", decodableType: Event.self) { (answer) in
             //TODO: Feed events array
             switch answer {
             case .result(let result):
