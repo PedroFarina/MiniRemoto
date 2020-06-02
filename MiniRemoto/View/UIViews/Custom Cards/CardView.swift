@@ -14,7 +14,7 @@ public class CardView: UIView {
     private func makeLbl() -> UILabel {
         let lbl = UILabel()
         lbl.adjustsFontSizeToFitWidth = true
-        lbl.textColor = .black50()
+        lbl.textColor = .black50
         return lbl
     }
 

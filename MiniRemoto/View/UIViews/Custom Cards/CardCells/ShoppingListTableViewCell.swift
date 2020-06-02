@@ -40,9 +40,9 @@ class ShoppingListTableViewCell: UITableViewCell {
     }
     
     func setupContent() {
-        self.roundedView.strokeColor = .black50()
+        self.roundedView.strokeColor = .black50
         self.shoppingListNameLabel.font = UIFont(name: "Montserrat-Medium", size: 16)
-        self.shoppingListNameLabel.textColor = .black50()
+        self.shoppingListNameLabel.textColor = .black50
     }
     
     func setup() {

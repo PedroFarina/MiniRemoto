@@ -28,11 +28,11 @@ class InviteTableViewCell: UITableViewCell {
     
     func setupContent() {
         self.inviteLabel.font = UIFont(name: "Montserrat-Medium", size: 16)
-        self.inviteLabel.textColor = .black50()
+        self.inviteLabel.textColor = .black50
         self.inviteLabel.text = "Convidados"
         
         self.inviteImageView.image = UIImage(named: "invite")
-        self.inviteImageView.tintColor = .black50()
+        self.inviteImageView.tintColor = .black50
     }
     
     func setupCollectionView() {

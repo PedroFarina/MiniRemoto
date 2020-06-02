@@ -35,16 +35,16 @@ class AddressTableViewCell: UITableViewCell {
         self.rideButtonOutlet.titleLabel?.font = UIFont(name: "Montserrat-SemiBold", size: 12)
         
         self.addressImageView.image = UIImage(named: "Location")
-        self.addressImageView.tintColor = .black50()
+        self.addressImageView.tintColor = .black50
         
-        self.addressNameLabel.textColor = .black50()
-        self.addressLabel.textColor = .black50()
-        self.rideButtonOutlet.strokeColor = .black50()
-        self.rideButtonOutlet.setTitleColor(.black50(), for: .normal)
+        self.addressNameLabel.textColor = .black50
+        self.addressLabel.textColor = .black50
+        self.rideButtonOutlet.strokeColor = .black50
+        self.rideButtonOutlet.setTitleColor(.black50, for: .normal)
         
 //        self.rideButtonOutlet.imageView = UIImage(named: "uber")
         self.rideButtonOutlet.setImage(UIImage(named: "uber"), for: .normal)
-        self.rideButtonOutlet.imageView?.tintColor = .black50()
+        self.rideButtonOutlet.imageView?.tintColor = .black50
     }
     
 }

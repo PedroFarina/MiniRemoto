@@ -11,48 +11,57 @@ import UIKit
 
 extension UIColor
 {
-    class func black50() -> UIColor
+    static var black50: UIColor
     {
         return UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha:0.5)
     }
     
-    class func black25() -> UIColor
+    static var black25: UIColor
     {
         return UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha:0.25)
     }
     
-    class func white50() -> UIColor
+    static var white50: UIColor
     {
         return UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha:0.5)
     }
 
-    class func redCard() -> UIColor
+    static var redCard: UIColor
     {
         return UIColor(red: 231.0/255.0, green: 80.0/255.0, blue: 70.0/255.0, alpha:1.0)
     }
     
-    class func orangeCard() -> UIColor
+    static var orangeCard: UIColor
     {
         return UIColor(red: 242.0/255.0, green: 160.0/255.0, blue: 57.0/255.0, alpha:1.0)
     }
     
-    class func blueCard() -> UIColor
+    static var blueCard: UIColor
     {
         return UIColor(red: 129.0/255.0, green: 197.0/255.0, blue: 190.0/255.0, alpha:1.0)
     }
     
-    class func pinkCard() -> UIColor
+    static var pinkCard: UIColor
     {
         return UIColor(red: 242.0/255.0, green: 169.0/255.0, blue: 157.0/255.0, alpha:1.0)
     }
     
-    class func yellowCard() -> UIColor
+    static var yellowCard: UIColor
     {
         return UIColor(red: 236.0/255.0, green: 206.0/255.0, blue: 74.0/255.0, alpha:1.0)
     }
     
-    class func lightBlueCard() -> UIColor
+    static var lightBlueCard: UIColor
     {
         return UIColor(red: 131.0/255.0, green: 165.0/255.0, blue: 141.0/255.0, alpha:1.0)
     }
+}
+
+public enum AppColor: String {
+    case red
+    case orange
+    case blue
+    case pink
+    case yellow
+    case lightBlue
 }
