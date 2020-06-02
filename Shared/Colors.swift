@@ -55,6 +55,23 @@ extension UIColor
     {
         return UIColor(red: 131.0/255.0, green: 165.0/255.0, blue: 141.0/255.0, alpha:1.0)
     }
+
+    static func getColorFrom(_ color: AppColor) -> UIColor {
+        switch color {
+        case .blue:
+            return .blueCard
+        case .lightBlue:
+            return .lightBlueCard
+        case .orange:
+            return .orangeCard
+        case .pink:
+            return .pinkCard
+        case .yellow:
+            return .yellowCard
+        case .red:
+            return .redCard
+        }
+    }
 }
 
 public enum AppColor: String {

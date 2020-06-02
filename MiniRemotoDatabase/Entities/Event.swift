@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Event: Codable {
-    internal init(ownerID: String?, name: String?, id: String?, color: String?, date: String?, shoppingListName: String?, shoppingList: [Item]?, location: Location?) {
+    internal init(ownerID: String?, name: String?, id: String?, color: String?, date: String?, startHour: String?, endHour: String?, shoppingList: [Item]?, location: Location?) {
         self.ownerID = ownerID
         self.name = name
         self.id = id
@@ -23,6 +23,8 @@ public struct Event: Codable {
     public var id: String?
     public var color: String?
     public var date: String?
+    public var startHour: String?
+    public var endHour: String?
     public var shoppingList: [Item]?
     public var location: Location?
 }
