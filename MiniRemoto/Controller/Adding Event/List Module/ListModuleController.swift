@@ -47,17 +47,19 @@ class ListModuleViewController: UIViewController, ModuleController {
         listTableView.scrollToRow(at: index, at: .bottom, animated: true)
     }
     
+
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if listTableView.frame.origin.y == 0 {
+            if listTableView.frame.origin.y == 78 && addListTableViewDataSource!.numberOfRows >= 12 {
                 listTableView.frame.origin.y -= keyboardSize.height
+                print(addListTableViewDataSource!.texts)
             }
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
         if listTableView.frame.origin.y != 0 {
-            listTableView.frame.origin.y = 0
+            listTableView.frame.origin.y = 78
         }
     }
     
@@ -72,7 +74,7 @@ class ListModuleViewController: UIViewController, ModuleController {
                 }
             }
         }
-       }
+    }
 
     
     @IBAction func addItemButton(_ sender: Any) {
