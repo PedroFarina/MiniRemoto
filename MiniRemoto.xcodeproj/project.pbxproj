@@ -46,6 +46,8 @@
 		02748281246F086A0059876D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0274827F246F086A0059876D /* LaunchScreen.storyboard */; };
 		027E7FB62486D67000A9B68F /* DBErrorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E7FB52486D67000A9B68F /* DBErrorDelegate.swift */; };
 		027E7FB82486D6C800A9B68F /* DBObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E7FB72486D6C800A9B68F /* DBObserver.swift */; };
+		027E7FBA2486D9C700A9B68F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E7FB92486D9C700A9B68F /* Response.swift */; };
+		027E7FBB2486DC4B00A9B68F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F99DD3247EED72008273D2 /* Colors.swift */; };
 		028A7246246F130D006F4B17 /* UberCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7245246F130D006F4B17 /* UberCore.framework */; };
 		028A7247246F130D006F4B17 /* UberCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7245246F130D006F4B17 /* UberCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		028A724A246F130F006F4B17 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7249246F130F006F4B17 /* UberRides.framework */; };
@@ -162,6 +164,7 @@
 		02748282246F086A0059876D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		027E7FB52486D67000A9B68F /* DBErrorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBErrorDelegate.swift; sourceTree = "<group>"; };
 		027E7FB72486D6C800A9B68F /* DBObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObserver.swift; sourceTree = "<group>"; };
+		027E7FB92486D9C700A9B68F /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		028A7245246F130D006F4B17 /* UberCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberCore.framework; path = Carthage/Build/iOS/UberCore.framework; sourceTree = "<group>"; };
 		028A7249246F130F006F4B17 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
 		0291F443247F2C3700DEA569 /* ContactsCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewDelegate.swift; sourceTree = "<group>"; };
@@ -482,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				02E8FCBA2476FAEE002B942D /* DataController.swift */,
+				027E7FB92486D9C700A9B68F /* Response.swift */,
 				027E7FB52486D67000A9B68F /* DBErrorDelegate.swift */,
 				027E7FB72486D6C800A9B68F /* DBObserver.swift */,
 				02E8FCB62476FACE002B942D /* Entities */,
@@ -751,9 +755,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				027E7FB62486D67000A9B68F /* DBErrorDelegate.swift in Sources */,
+				027E7FBB2486DC4B00A9B68F /* Colors.swift in Sources */,
 				027E7FB82486D6C800A9B68F /* DBObserver.swift in Sources */,
 				0217DADC24784C11003B6286 /* Item.swift in Sources */,
 				0217DAD624783EF7003B6286 /* User.swift in Sources */,
+				027E7FBA2486D9C700A9B68F /* Response.swift in Sources */,
 				02046FA0247C4F2700620FA9 /* StringExtension.swift in Sources */,
 				0217DAD8247845BF003B6286 /* Event.swift in Sources */,
 				0217DADA24784607003B6286 /* Location.swift in Sources */,

@@ -6,12 +6,7 @@
 //  Copyright © 2020 Pedro Giuliano Farina. All rights reserved.
 //
 
-import CloudKit
 import EndpointsRequests
-
-internal struct Response: Codable {
-    var result: Bool
-}
 
 public class DataController {
     private init() {
@@ -48,12 +43,17 @@ public class DataController {
     internal func fetchEvents() {
         EndpointsRequests.Requests.getRequest(url: "\(DataController.hostaddress)/getEvents/\(user?.id ?? "")", decodableType: Event.self) { (answer) in
             switch answer {
-            case .result(let result):
-                //TODO: Feed events array
-                print(result)
-                self.notifyObservers()
+            case .result(let result as Response):
+                if result.result {
+                    //TODO: Feed events array
+                    self.notifyObservers()
+                } else {
+                    self.delegate?.didOccur(ResponseError(kind: .fetchingEvent))
+                }
             case .error(let err):
                 self.delegate?.didOccur(err)
+            default:
+                self.delegate?.didOccur(ResponseError(kind: .internalError))
             }
         }
     }
@@ -63,12 +63,17 @@ public class DataController {
         let user = User(id: id, name: name)
         EndpointsRequests.Requests.postRequest(url: "\(DataController.hostaddress)/createUser", params: user, decodableType: Response.self) { (answer) in
             switch answer {
-            case .result(let result):
-                //TODO: Save user(id) in App Group User Defaults
-                print(result)
-                self.notifyObservers()
+            case .result(let result as Response):
+                if result.result {
+                    //TODO: Save user(id) in App Group User Defaults
+                    self.notifyObservers()
+                } else {
+                    self.delegate?.didOccur(ResponseError(kind: .creatingUser))
+                }
             case .error(let err):
                 self.delegate?.didOccur(err)
+            default:
+                self.delegate?.didOccur(ResponseError(kind: .internalError))
             }
         }
 
@@ -77,12 +82,18 @@ public class DataController {
     public func createEvent(_ event: Event) {
         EndpointsRequests.Requests.postRequest(url: "\(DataController.hostaddress)/createEvent", params: event, decodableType: Response.self) { (answer) in
             switch answer {
-            case .result(let result):
-                //TODO: Rollback if not success
-                print(result)
-                self.notifyObservers()
+            case .result(let result as Response):
+                if result.result {
+                    //TODO: Add event to array?
+                    self.notifyObservers()
+                } else {
+                    //TODO: Rollback?
+                    self.delegate?.didOccur(ResponseError(kind: .creatingEvent))
+                }
             case .error(let err):
                 self.delegate?.didOccur(err)
+            default:
+                self.delegate?.didOccur(ResponseError(kind: .internalError))
             }
         }
     }
