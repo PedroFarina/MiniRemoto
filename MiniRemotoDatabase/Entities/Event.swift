@@ -9,6 +9,15 @@
 import Foundation
 
 public struct Event: Codable {
+    internal init(ownerID: String?, name: String?, id: String?, color: String?, date: Date?, shoppingListName: String?, shoppingList: [Item]?, location: Location?) {
+        self.ownerID = ownerID
+        self.name = name
+        self.id = id
+        self.color = color
+        self.date = date
+        self.shoppingList = shoppingList
+        self.location = location
+    }
     public var ownerID: String?
     public var name: String?
     public var id: String?
@@ -16,5 +25,5 @@ public struct Event: Codable {
     public var date: Date?
     public var shoppingListName: String?
     public var shoppingList: [Item]?
-    public var location: Location
+    public var location: Location?
 }
