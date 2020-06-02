@@ -7,24 +7,43 @@
 //
 
 import UIKit
+import MiniRemotoDatabase
 
-public class MainViewController: UIViewController, CardsControllerDataSource {
+public class MainViewController: UIViewController, CardsControllerDataSource, DBObserver, DBErrorDelegate {
+    public func didUpdateData() {
+        events.reloadData()
+    }
+
+    public func didOccur(_ error: Error) {
+        print(error.localizedDescription)
+    }
+
     @IBOutlet weak var events: CardsController!
 
     public override func viewDidLoad() {
         events.dataSource = self
+        DataController.shared().registerAsObserver(self)
+        DataController.shared().delegate = self
+        DataController.shared().createUser()
+    }
+    deinit {
+        DataController.shared().removeAsObserver(self)
     }
 
     public func numberOfRows() -> Int {
-        return 10
+        return DataController.shared().events.count
     }
 
     public func cardForIndex(_ index: Int) -> CardView {
         let card = CardView()
-        card.fillColor = .random()
-        card.detail = "13:00"
-        card.title = "Festa \(index)"
-        card.subtitle = "Farina"
+        if let color = DataController.shared().events[index].color,
+            let colorEnum = AppColor(rawValue: color) {
+            card.fillColor = .getColorFrom(colorEnum)
+        } else {
+            card.fillColor = .random()
+        }
+        card.detail = DataController.shared().events[index].startHour
+        card.title = DataController.shared().events[index].name
         return card
     }
 }

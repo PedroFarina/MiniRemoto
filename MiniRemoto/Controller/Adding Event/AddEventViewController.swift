@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MiniRemotoDatabase
 
 public class AddEventViewController: UIViewController, ModuleStateDelegate, ModuleSelectorDelegate, UITextFieldDelegate {
 
@@ -87,6 +88,7 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
     @IBAction func doneTap(_ sender: Any) {
         //TODO: Save event
         #warning("Save event not implemented yet")
+        DataController.shared().createEvent(name: txtEventName.text!, color: .orange, startDate: Date(), endDate: nil, items: nil, location: nil)
         self.dismiss(animated: true)
     }
     @IBAction func cancelTap(_ sender: Any) {
