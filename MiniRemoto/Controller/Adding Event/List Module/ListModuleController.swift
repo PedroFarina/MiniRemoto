@@ -12,12 +12,9 @@ class ListModuleViewController: UIViewController, ModuleController {
     var module: Module?
     var reloadData: (() -> Void)?
 
-
     @IBOutlet weak var placeHolderAddListTip: UILabel!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnCheck: UIButton!
-    
-    
     @IBOutlet weak var listTableView: UITableView!
 
     var addListTableViewDataSource: ListModuleTableDataSource?

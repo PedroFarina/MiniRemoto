@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class AddEventViewController: UIViewController, ModuleStateDelegate, ModuleSelectorDelegate {
+public class AddEventViewController: UIViewController, ModuleStateDelegate, ModuleSelectorDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var btnDone: UIButton!
     @IBOutlet weak var txtEventName: SlashedTextField!
@@ -20,14 +20,20 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
     let tableDataSource = ModuleTableViewDataSource()
 
     public override func viewDidLoad() {
+        txtEventName.delegate = self
+
         moduleCollectionView.delegate = collectionDelegate
         moduleCollectionView.dataSource = collectionDataSource
         moduleTableView.delegate = tableDelegate
         moduleTableView.dataSource = tableDataSource
-        
         moduleTableView.tableFooterView = UIView()
         collectionDelegate.delegate = self
         tableDelegate.delegate = self
+    }
+
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     public func didAdd(_ module: Module) {

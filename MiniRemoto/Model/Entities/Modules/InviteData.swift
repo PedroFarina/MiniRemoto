@@ -9,6 +9,7 @@
 import UIKit
 
 public class InviteData: Module {
+
     public static let storyboardName: String = "InviteModule"
     public static let preferredRow: Int = 2
     public var addImage: UIImage? = UIImage(named: "InviteAddModule")
@@ -18,6 +19,16 @@ public class InviteData: Module {
     public var subtitle: String?
 
     public func isFilled() -> Bool {
-        return false
+        return guestsIds != nil
+    }
+
+    public var guestsIds: [String]? {
+        didSet {
+            if guestsIds?.count==1 {
+                title = "1 Convidado"
+            } else {
+                title = "\(guestsIds?.count ?? 0) Convidados"
+            }
+        }
     }
 }

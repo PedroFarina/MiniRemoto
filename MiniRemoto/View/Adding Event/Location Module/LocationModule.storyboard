@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0zM-Md-3es">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Location Module Controller-->
+        <scene sceneID="KyA-Be-Xz0">
+            <objects>
+                <viewController storyboardIdentifier="main" id="0zM-Md-3es" customClass="LocationModuleController" customModule="Eve" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gm3-C7-OLZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Av. Paulista 430" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tz-oD-tRv" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
+                                <rect key="frame" x="15" y="134" width="384" height="27.5"/>
+                                <color key="textColor" name="Writing Black"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" textContentType="address-line1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" name="Action Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fkg-BR-pAY">
+                                <rect key="frame" x="15" y="59" width="61" height="30"/>
+                                <state key="normal" title="Cancelar"/>
+                                <connections>
+                                    <action selector="cancelTap:" destination="0zM-Md-3es" eventType="touchUpInside" id="EVB-FY-gJ0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xa-Bb-Ugo">
+                                <rect key="frame" x="356" y="59" width="43" height="30"/>
+                                <state key="normal" title="Salvar"/>
+                                <connections>
+                                    <action selector="saveTap:" destination="0zM-Md-3es" eventType="touchUpInside" id="vDl-DY-a2t"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gS8-dD-JrD">
+                                <rect key="frame" x="15" y="104" width="72.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" name="Action Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sfp-6Z-shg">
+                                <rect key="frame" x="15" y="171.5" width="384" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="ag5-VQ-Muk"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addressCell" textLabel="Cba-Gr-YdI" detailTextLabel="fRP-tB-1RO" style="IBUITableViewCellStyleSubtitle" id="zcd-PU-7jc" customClass="LocationModuleTableViewCell" customModule="Eve" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="384" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zcd-PU-7jc" id="m8D-lk-nic">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cba-Gr-YdI">
+                                                    <rect key="frame" x="15" y="9" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fRP-tB-1RO">
+                                                    <rect key="frame" x="15" y="31.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complemento (opcional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQg-FG-2bf">
+                                <rect key="frame" x="15" y="186.5" width="186.5" height="20"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" name="Action Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apto 15" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAI-Ke-6K4" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
+                                <rect key="frame" x="15" y="216.5" width="384" height="27.5"/>
+                                <color key="textColor" name="Writing Black"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" textContentType="address-line2"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" name="Action Color"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4Xa-Bb-Ugo" firstAttribute="top" secondItem="3Vq-85-38k" secondAttribute="top" constant="15" id="0wt-u6-34s"/>
+                            <constraint firstItem="Fkg-BR-pAY" firstAttribute="leading" secondItem="3Vq-85-38k" secondAttribute="leading" constant="15" id="4JY-0S-eZ2"/>
+                            <constraint firstItem="gS8-dD-JrD" firstAttribute="top" secondItem="Fkg-BR-pAY" secondAttribute="bottom" constant="15" id="5B8-fg-5Ez"/>
+                            <constraint firstItem="1tz-oD-tRv" firstAttribute="top" secondItem="gS8-dD-JrD" secondAttribute="bottom" constant="10" id="7T4-eO-g3m"/>
+                            <constraint firstItem="sfp-6Z-shg" firstAttribute="top" secondItem="1tz-oD-tRv" secondAttribute="bottom" constant="10" id="BI5-VG-jtL"/>
+                            <constraint firstItem="YQg-FG-2bf" firstAttribute="top" secondItem="sfp-6Z-shg" secondAttribute="bottom" constant="15" id="CgB-p8-ZZd"/>
+                            <constraint firstItem="AAI-Ke-6K4" firstAttribute="leading" secondItem="3Vq-85-38k" secondAttribute="leading" constant="15" id="Cqh-nX-H5O"/>
+                            <constraint firstItem="1tz-oD-tRv" firstAttribute="leading" secondItem="3Vq-85-38k" secondAttribute="leading" constant="15" id="FNO-GP-hHB"/>
+                            <constraint firstItem="YQg-FG-2bf" firstAttribute="leading" secondItem="3Vq-85-38k" secondAttribute="leading" constant="15" id="aia-vC-7EN"/>
+                            <constraint firstItem="3Vq-85-38k" firstAttribute="trailing" secondItem="1tz-oD-tRv" secondAttribute="trailing" constant="15" id="bm0-QX-dZS"/>
+                            <constraint firstItem="Fkg-BR-pAY" firstAttribute="top" secondItem="3Vq-85-38k" secondAttribute="top" constant="15" id="cQp-nu-CxG"/>
+                            <constraint firstItem="3Vq-85-38k" firstAttribute="trailing" secondItem="sfp-6Z-shg" secondAttribute="trailing" constant="15" id="dZb-7R-fa8"/>
+                            <constraint firstItem="3Vq-85-38k" firstAttribute="trailing" secondItem="AAI-Ke-6K4" secondAttribute="trailing" constant="15" id="ezq-cR-jCt"/>
+                            <constraint firstItem="3Vq-85-38k" firstAttribute="trailing" secondItem="4Xa-Bb-Ugo" secondAttribute="trailing" constant="15" id="h9w-iT-EML"/>
+                            <constraint firstItem="sfp-6Z-shg" firstAttribute="leading" secondItem="3Vq-85-38k" secondAttribute="leading" constant="15" id="jJ2-QF-GQZ"/>
+                            <constraint firstItem="AAI-Ke-6K4" firstAttribute="top" secondItem="YQg-FG-2bf" secondAttribute="bottom" constant="10" id="q0p-X3-rcl"/>
+                            <constraint firstItem="gS8-dD-JrD" firstAttribute="leading" secondItem="3Vq-85-38k" secondAttribute="leading" constant="15" id="tHG-Zk-zAU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Vq-85-38k"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressTableView" destination="sfp-6Z-shg" id="mht-za-Z5C"/>
+                        <outlet property="addressTableViewHeight" destination="ag5-VQ-Muk" id="43d-aR-yMJ"/>
+                        <outlet property="btnSave" destination="4Xa-Bb-Ugo" id="BCf-6G-NNa"/>
+                        <outlet property="txtAddress" destination="1tz-oD-tRv" id="bqs-rs-s4o"/>
+                        <outlet property="txtAddress2" destination="AAI-Ke-6K4" id="09x-hb-siJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6AP-Xl-jJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="Action Color"/>
+    <resources>
+        <namedColor name="Action Color">
+            <color red="0.4309999942779541" green="0.31000000238418579" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Writing Black">
+            <color red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
