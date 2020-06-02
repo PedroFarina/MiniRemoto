@@ -7,5 +7,5 @@
 //
 
 public protocol DBErrorDelegate: class {
-    func didOccur(_ error: NSError)
+    func didOccur(_ error: Error)
 }

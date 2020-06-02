@@ -36,18 +36,24 @@ public class DataController {
             observers.remove(at: index)
         }
     }
+    private func notifyObservers() {
+        for observer in observers {
+            observer.didUpdateData()
+        }
+    }
     
     public private(set) var user: User?
     public private(set) var events: [Event] = []
 
     internal func fetchEvents() {
         EndpointsRequests.Requests.getRequest(url: "\(DataController.hostaddress)/getEvents/\(user?.id ?? "")", decodableType: Event.self) { (answer) in
-            //TODO: Feed events array
             switch answer {
             case .result(let result):
+                //TODO: Feed events array
                 print(result)
+                self.notifyObservers()
             case .error(let err):
-                print(err.localizedDescription)
+                self.delegate?.didOccur(err)
             }
         }
     }
@@ -56,24 +62,27 @@ public class DataController {
         let id = UUID().uuidString
         let user = User(id: id, name: name)
         EndpointsRequests.Requests.postRequest(url: "\(DataController.hostaddress)/createUser", params: user, decodableType: Response.self) { (answer) in
-            //TODO: Save user(id) in App Group User Defaults
             switch answer {
             case .result(let result):
+                //TODO: Save user(id) in App Group User Defaults
                 print(result)
+                self.notifyObservers()
             case .error(let err):
-                print(err.localizedDescription)
+                self.delegate?.didOccur(err)
             }
         }
+
     }
 
     public func createEvent(_ event: Event) {
         EndpointsRequests.Requests.postRequest(url: "\(DataController.hostaddress)/createEvent", params: event, decodableType: Response.self) { (answer) in
-            //TODO: Rollback if not success
             switch answer {
             case .result(let result):
+                //TODO: Rollback if not success
                 print(result)
+                self.notifyObservers()
             case .error(let err):
-                print(err.localizedDescription)
+                self.delegate?.didOccur(err)
             }
         }
     }
