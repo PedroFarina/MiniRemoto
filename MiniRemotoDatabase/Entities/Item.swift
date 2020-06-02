@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Item: Codable {
-    internal init(itemName: String?, whoBrings: String?) {
+    public init(itemName: String?, whoBrings: String?) {
         self.itemName = itemName
         self.whoBrings = whoBrings
     }

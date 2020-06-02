@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Location: Codable {
-    internal init(id: String?, latitude: Double?, longitude: Double?, addressLine: String?, addressLine2: String?) {
+    public init(id: String?, latitude: Double?, longitude: Double?, addressLine: String?, addressLine2: String?) {
         self.id = id
         self.latitude = latitude
         self.longitude = longitude
