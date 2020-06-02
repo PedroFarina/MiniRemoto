@@ -41,15 +41,11 @@ public class DataController {
     public private(set) var events: [Event] = []
 
     internal func fetchEvents() {
-        EndpointsRequests.Requests.getRequest(url: "\(DataController.hostaddress)/getEvents/\(user?.id ?? "")", decodableType: Event.self) { (answer) in
+        EndpointsRequests.Requests.getRequest(url: "\(DataController.hostaddress)/getEvents/\(user?.id ?? "")", decodableType: [Event].self) { (answer) in
             switch answer {
-            case .result(let result as Response):
-                if result.result {
-                    //TODO: Feed events array
-                    self.notifyObservers()
-                } else {
-                    self.delegate?.didOccur(ResponseError(kind: .fetchingEvent))
-                }
+            case .result(let result as [Event]):
+                self.events = result
+                self.notifyObservers()
             case .error(let err):
                 self.delegate?.didOccur(err)
             default:
@@ -58,15 +54,15 @@ public class DataController {
         }
     }
 
-    public func createUser(with name: String) {
+    public func createUser() {
         let id = UUID().uuidString
-        let user = User(id: id, name: name)
+        let user = User(id: id, name: nil)
         EndpointsRequests.Requests.postRequest(url: "\(DataController.hostaddress)/createUser", params: user, decodableType: Response.self) { (answer) in
             switch answer {
             case .result(let result as Response):
                 if result.result {
                     //TODO: Save user(id) in App Group User Defaults
-                    self.notifyObservers()
+                    self.user = user
                 } else {
                     self.delegate?.didOccur(ResponseError(kind: .creatingUser))
                 }
@@ -97,10 +93,9 @@ public class DataController {
             switch answer {
             case .result(let result as Response):
                 if result.result {
-                    //TODO: Add event to array?
+                    self.events.append(event)
                     self.notifyObservers()
                 } else {
-                    //TODO: Rollback?
                     self.delegate?.didOccur(ResponseError(kind: .creatingEvent))
                 }
             case .error(let err):
