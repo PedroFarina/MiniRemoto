@@ -18,6 +18,7 @@ class ListModuleViewController: UIViewController, ModuleController {
     var tbBottomConstant: CGFloat = 0.0
 
     var addListTableViewDataSource: ListModuleTableDataSource?
+    var shouldBeginCalledBeforeHand: Bool = false
     var module: Module?
     var reloadData: (() -> Void)?
 
@@ -101,7 +102,8 @@ extension ListModuleViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return true
+        shouldBeginCalledBeforeHand = true
+        return shouldBeginCalledBeforeHand
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -109,18 +111,22 @@ extension ListModuleViewController: UITextFieldDelegate {
             btnCheck.isHidden = false
             btnSave.isEnabled = true
         }
+        shouldBeginCalledBeforeHand = false
         return true
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        shouldBeginCalledBeforeHand = true
     }
 
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
 
     @objc func dismissKeyboard() {
+        shouldBeginCalledBeforeHand = true
         view.endEditing(true)
     }
 }
