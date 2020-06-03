@@ -66,6 +66,9 @@ public class DataController {
                 } else {
                     self.delegate?.didOccur(ResponseError(kind: .creatingUser))
                 }
+            case .result(let result as Data):
+                print(String(bytes: result, encoding: .utf8) ?? "")
+                self.delegate?.didOccur(ResponseError(kind: .internalError))
             case .error(let err):
                 self.delegate?.didOccur(err)
             default:
@@ -81,23 +84,30 @@ public class DataController {
         var date: String? = nil
         var startHour: String? = nil
         var endHour: String? = nil
-        if let startDate = startDate, let endDate = endDate {
+        if let startDate = startDate {
             date = df.string(from: startDate)
             df.dateFormat = "hh:mm"
             startHour = df.string(from: startDate)
+        }
+        if let endDate = endDate {
+            df.dateFormat = "hh:mm"
             endHour = df.string(from: endDate)
         }
 
-        let event = Event(ownerID: user?.id, name: name, id: UUID().uuidString, color: color.rawValue, date: date, startHour: startHour, endHour: endHour, shoppingList: items, location: location)
+        let info = EventInformation(ownerID: user?.id, name: name, id: UUID().uuidString, color: color.rawValue, date: date, startHour: startHour, endHour: endHour)
+        let event = Event(info: info, shoppingList: items, location: location)
         EndpointsRequests.Requests.postRequest(url: "\(DataController.hostaddress)/createEvent", params: event, decodableType: Response.self) { (answer) in
             switch answer {
-            case .result(let result as Response):
-                if result.result {
+            case .result(let response as Response):
+                if response.result {
                     self.events.append(event)
                     self.notifyObservers()
                 } else {
                     self.delegate?.didOccur(ResponseError(kind: .creatingEvent))
                 }
+            case .result(let result as Data):
+                print(String(bytes: result, encoding: .utf8) ?? "")
+                self.delegate?.didOccur(ResponseError(kind: .internalError))
             case .error(let err):
                 self.delegate?.didOccur(err)
             default:

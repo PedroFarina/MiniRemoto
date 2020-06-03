@@ -11,11 +11,17 @@ import MiniRemotoDatabase
 
 public class MainViewController: UIViewController, CardsControllerDataSource, DBObserver, DBErrorDelegate {
     public func didUpdateData() {
-        events.reloadData()
+        DispatchQueue.main.async {
+            self.events.reloadData()
+        }
     }
 
     public func didOccur(_ error: Error) {
-        print(error.localizedDescription)
+        if let err = error as? ResponseError {
+            print(err.description)
+        } else {
+            print(error.localizedDescription)
+        }
     }
 
     @IBOutlet weak var events: CardsController!
@@ -36,14 +42,14 @@ public class MainViewController: UIViewController, CardsControllerDataSource, DB
 
     public func cardForIndex(_ index: Int) -> CardView {
         let card = CardView()
-        if let color = DataController.shared().events[index].color,
+        if let color = DataController.shared().events[index].event?.color,
             let colorEnum = AppColor(rawValue: color) {
             card.fillColor = .getColorFrom(colorEnum)
         } else {
             card.fillColor = .random()
         }
-        card.detail = DataController.shared().events[index].startHour
-        card.title = DataController.shared().events[index].name
+        card.detail = DataController.shared().events[index].event?.startHour
+        card.title = DataController.shared().events[index].event?.name
         return card
     }
 }

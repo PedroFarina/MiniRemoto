@@ -19,7 +19,7 @@ public struct ResponseError: Error {
     }
 
     public var kind: ErrorKind
-    public var localizedDescription: String {
+    public var description: String {
         switch kind {
         case .creatingEvent:
             return "Couldn't create event".localized()
