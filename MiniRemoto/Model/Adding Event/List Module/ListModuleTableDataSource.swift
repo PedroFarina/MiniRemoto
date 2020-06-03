@@ -52,8 +52,8 @@ class ListModuleTableDataSource: NSObject, UITableViewDataSource {
 
     func addRow(in tableView: UITableView, at indexPath: IndexPath) {
         tableView.beginUpdates()
+        tableView.insertRows(at: [indexPath], with: .bottom)
         amount += 1
-        tableView.insertRows(at: [indexPath], with: .automatic)
         tableView.endUpdates()
     }
 }

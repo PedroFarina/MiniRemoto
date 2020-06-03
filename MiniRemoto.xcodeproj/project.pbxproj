@@ -96,6 +96,7 @@
 		32F99DDC247F043D008273D2 /* PersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32F99DDA247F043D008273D2 /* PersonCollectionViewCell.xib */; };
 		75AE157C2486D394000E5D81 /* ListModuleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AE157B2486D394000E5D81 /* ListModuleController.swift */; };
 		75AE157E2486D3F7000E5D81 /* CalendarModule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75AE157D2486D3F7000E5D81 /* CalendarModule.storyboard */; };
+		75AE158024881FEB000E5D81 /* ListModuleTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AE157F24881FEB000E5D81 /* ListModuleTableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +213,7 @@
 		32F99DDA247F043D008273D2 /* PersonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCollectionViewCell.xib; sourceTree = "<group>"; };
 		75AE157B2486D394000E5D81 /* ListModuleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListModuleController.swift; path = "MiniRemoto/Controller/Adding Event/List Module/ListModuleController.swift"; sourceTree = SOURCE_ROOT; };
 		75AE157D2486D3F7000E5D81 /* CalendarModule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CalendarModule.storyboard; sourceTree = "<group>"; };
+		75AE157F24881FEB000E5D81 /* ListModuleTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModuleTableViewDelegate.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				75AE157B2486D394000E5D81 /* ListModuleController.swift */,
+				75AE157F24881FEB000E5D81 /* ListModuleTableViewDelegate.swift */,
 			);
 			path = "List Module";
 			sourceTree = "<unknown>";
@@ -726,6 +729,7 @@
 				02046FAB247C60C000620FA9 /* CardsController.swift in Sources */,
 				32F99DCE247EE646008273D2 /* RoundedButton.swift in Sources */,
 				02046FA4247C4FC800620FA9 /* LocationData.swift in Sources */,
+				75AE158024881FEB000E5D81 /* ListModuleTableViewDelegate.swift in Sources */,
 				026E80B1247EEF3C00504AFB /* AddressSelectedDelegate.swift in Sources */,
 				0291F448247F2C3700DEA569 /* InviteModuleController.swift in Sources */,
 				0291F449247F2C3700DEA569 /* ContactsTableViewDelegate.swift in Sources */,

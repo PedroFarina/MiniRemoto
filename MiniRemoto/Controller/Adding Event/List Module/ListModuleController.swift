@@ -18,6 +18,7 @@ class ListModuleViewController: UIViewController, ModuleController {
     var tbBottomConstant: CGFloat = 0.0
 
     var addListTableViewDataSource: ListModuleTableDataSource?
+    var addListTableViewDelegate: ListModuleTableViewDelegate?
     var shouldBeginCalledBeforeHand: Bool = false
     var module: Module?
     var reloadData: (() -> Void)?
@@ -32,9 +33,12 @@ class ListModuleViewController: UIViewController, ModuleController {
     }
 
     func setupTableView() {
+       
         tbBottomConstant = tbBottomConstraint.constant
         addListTableViewDataSource = ListModuleTableDataSource(txtFieldDelegate: self)
+        addListTableViewDelegate = ListModuleTableViewDelegate(view: self.view)
         listTableView.dataSource = addListTableViewDataSource
+        listTableView.delegate = addListTableViewDelegate
         btnCheck.isHidden = true
         btnSave.isEnabled = false
     }
@@ -62,6 +66,7 @@ class ListModuleViewController: UIViewController, ModuleController {
     func animateTableView(constant: CGFloat) {
         UIView.animate(withDuration: 0.3) {
             self.tbBottomConstraint.constant = constant
+            self.view.layoutIfNeeded()
         }
     }
 
@@ -91,6 +96,8 @@ class ListModuleViewController: UIViewController, ModuleController {
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+
+    
 
 }
 
