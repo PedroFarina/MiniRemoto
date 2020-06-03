@@ -9,16 +9,17 @@
 import UIKit
 
 class ListModuleViewController: UIViewController, ModuleController {
-    var module: Module?
-    var reloadData: (() -> Void)?
 
     @IBOutlet weak var placeHolderAddListTip: UILabel!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnCheck: UIButton!
     @IBOutlet weak var listTableView: UITableView!
+    @IBOutlet weak var tbBottomConstraint: NSLayoutConstraint!
+    var tbBottomConstant: CGFloat = 0.0
 
     var addListTableViewDataSource: ListModuleTableDataSource?
-    var shouldBeginCalledBeforeHand: Bool = false
+    var module: Module?
+    var reloadData: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +31,9 @@ class ListModuleViewController: UIViewController, ModuleController {
     }
 
     func setupTableView() {
+        tbBottomConstant = tbBottomConstraint.constant
         addListTableViewDataSource = ListModuleTableDataSource(txtFieldDelegate: self)
         listTableView.dataSource = addListTableViewDataSource
-        
         btnCheck.isHidden = true
         btnSave.isEnabled = false
     }
@@ -41,23 +42,7 @@ class ListModuleViewController: UIViewController, ModuleController {
         let row = addListTableViewDataSource?.numberOfRows ??  0
         let index = IndexPath(row: row, section: 0)
         addListTableViewDataSource?.addRow(in: listTableView, at: index)
-        listTableView.scrollToRow(at: index, at: .bottom, animated: true)
-    }
-    
-
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if listTableView.frame.origin.y == 78 && addListTableViewDataSource!.numberOfRows >= 12 {
-                listTableView.frame.origin.y -= keyboardSize.height
-                print(addListTableViewDataSource!.texts)
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if listTableView.frame.origin.y != 0 {
-            listTableView.frame.origin.y = 78
-        }
+        listTableView.scrollToRow(at: index, at: .bottom, animated: false)
     }
     
     func getAllListItems(){
@@ -73,7 +58,25 @@ class ListModuleViewController: UIViewController, ModuleController {
         }
     }
 
-    
+    func animateTableView(constant: CGFloat) {
+        UIView.animate(withDuration: 0.3) {
+            self.tbBottomConstraint.constant = constant
+        }
+    }
+
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+
+            animateTableView(constant: keyboardHeight)
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        animateTableView(constant: tbBottomConstant)
+    }
+
     @IBAction func addItemButton(_ sender: Any) {
         addRow()
         placeHolderAddListTip.text = ""
@@ -98,8 +101,7 @@ extension ListModuleViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        shouldBeginCalledBeforeHand = true
-        return shouldBeginCalledBeforeHand
+        return true
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -107,20 +109,18 @@ extension ListModuleViewController: UITextFieldDelegate {
             btnCheck.isHidden = false
             btnSave.isEnabled = true
         }
-        return shouldBeginCalledBeforeHand
+        return true
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        shouldBeginCalledBeforeHand = false
     }
+
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
 
     @objc func dismissKeyboard() {
-        shouldBeginCalledBeforeHand = true
         view.endEditing(true)
     }
 }

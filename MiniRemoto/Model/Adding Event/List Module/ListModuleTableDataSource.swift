@@ -42,6 +42,7 @@ class ListModuleTableDataSource: NSObject, UITableViewDataSource {
                     tableView.endUpdates()
                 }
             })
+
             texts.append(cell.txtItem)
             return cell
         }
