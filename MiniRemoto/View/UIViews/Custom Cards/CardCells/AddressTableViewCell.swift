@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MiniRemotoDatabase
 
 class AddressTableViewCell: UITableViewCell {
 
@@ -26,7 +27,9 @@ class AddressTableViewCell: UITableViewCell {
         setupContent()
     }
     
-    func setup() {
+    func setup(address: Location) {
+        self.addressLabel.text = address.addressLine2
+        self.addressNameLabel.text = address.addressLine
     }
     
     func setupContent() {
