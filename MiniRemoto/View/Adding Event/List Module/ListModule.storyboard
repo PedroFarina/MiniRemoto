@@ -63,6 +63,9 @@
                                                             <color key="value" name="Label Gray"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="valueDidChanged:" destination="3i7-Ir-z5q" eventType="valueChanged" id="yta-eU-az6"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -133,7 +136,7 @@
                     <connections>
                         <outlet property="btnCheck" destination="DU6-Js-Bnc" id="IFe-I5-XOc"/>
                         <outlet property="btnSave" destination="EVw-Ck-P2z" id="BEY-3k-0WO"/>
-                        <outlet property="listTableView" destination="t4G-Dw-ARk" id="qhY-CM-MAR"/>
+                        <outlet property="listTableView" destination="t4G-Dw-ARk" id="ann-2j-y3V"/>
                         <outlet property="placeHolderAddListTip" destination="2eq-p5-gfh" id="Hg7-0X-rrA"/>
                         <outlet property="tbBottomConstraint" destination="VLc-ns-sLs" id="8lJ-Fa-1be"/>
                     </connections>

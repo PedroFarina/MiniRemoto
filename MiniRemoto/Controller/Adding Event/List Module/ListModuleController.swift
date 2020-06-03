@@ -10,86 +10,31 @@ import UIKit
 
 class ListModuleViewController: UIViewController, ModuleController {
 
+    var module: Module?
+    var reloadData: (() -> Void)?
+
     @IBOutlet weak var placeHolderAddListTip: UILabel!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnCheck: UIButton!
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var tbBottomConstraint: NSLayoutConstraint!
-    var tbBottomConstant: CGFloat = 0.0
-
-    var addListTableViewDataSource: ListModuleTableDataSource?
-    var addListTableViewDelegate: ListModuleTableViewDelegate?
     var shouldBeginCalledBeforeHand: Bool = false
-    var module: Module?
-    var reloadData: (() -> Void)?
+
+    var texts: [String] = []
+    var rows: Int = 0
+    let identifier: String = "AddListTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
-        hideKeyboardWhenTappedAround()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-
-    func setupTableView() {
-       
-        tbBottomConstant = tbBottomConstraint.constant
-        addListTableViewDataSource = ListModuleTableDataSource(txtFieldDelegate: self)
-        addListTableViewDelegate = ListModuleTableViewDelegate(view: self.view)
-        listTableView.dataSource = addListTableViewDataSource
-        listTableView.delegate = addListTableViewDelegate
-        btnCheck.isHidden = true
-        btnSave.isEnabled = false
-    }
-
-    func addRow() {
-        let row = addListTableViewDataSource?.numberOfRows ??  0
-        let index = IndexPath(row: row, section: 0)
-        addListTableViewDataSource?.addRow(in: listTableView, at: index)
-        listTableView.scrollToRow(at: index, at: .bottom, animated: false)
-    }
-    
-    func getAllListItems(){
-        var allUITextFieldsItems:[UITextField] = []
-        allUITextFieldsItems.append(contentsOf: addListTableViewDataSource!.texts)
-        
-        allUITextFieldsItems.forEach { (allTextsItems) in
-            if let text = allTextsItems.text {
-                if text != "" {
-                    print(text)
-                }
-            }
-        }
-    }
-
-    func animateTableView(constant: CGFloat) {
-        UIView.animate(withDuration: 0.3) {
-            self.tbBottomConstraint.constant = constant
-            self.view.layoutIfNeeded()
-        }
-    }
-
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-
-            animateTableView(constant: keyboardHeight)
-        }
-    }
-
-    @objc func keyboardWillHide(notification: NSNotification) {
-        animateTableView(constant: tbBottomConstant)
+        listTableView.dataSource = self
+        listTableView.delegate = self
     }
 
     @IBAction func addItemButton(_ sender: Any) {
         addRow()
-        placeHolderAddListTip.text = ""
     }
     
     @IBAction func confirmarButton(_ sender: Any) {
-        getAllListItems()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -97,8 +42,29 @@ class ListModuleViewController: UIViewController, ModuleController {
         self.dismiss(animated: true, completion: nil)
     }
 
-    
+    func addRow() {
+        texts.append("")
+        listTableView.reloadData()
+    }
+}
 
+extension ListModuleViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return texts.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellForRow = tableView.dequeueReusableCell(withIdentifier: identifier) as? ListModuleTableViewCell
+
+        guard let cell = cellForRow else { return UITableViewCell() }
+        cell.setup(with: self)
+        return cell
+    }
 }
 
 extension ListModuleViewController: UITextFieldDelegate {
@@ -114,16 +80,11 @@ extension ListModuleViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if textField.text != "" {
-            btnCheck.isHidden = false
-            btnSave.isEnabled = true
-        }
-        shouldBeginCalledBeforeHand = false
-        return true
+        return shouldBeginCalledBeforeHand
     }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        shouldBeginCalledBeforeHand = true
+        shouldBeginCalledBeforeHand = false
     }
 
     func hideKeyboardWhenTappedAround() {
@@ -133,7 +94,7 @@ extension ListModuleViewController: UITextFieldDelegate {
     }
 
     @objc func dismissKeyboard() {
-        shouldBeginCalledBeforeHand = true
+        shouldBeginCalledBeforeHand = false
         view.endEditing(true)
     }
 }

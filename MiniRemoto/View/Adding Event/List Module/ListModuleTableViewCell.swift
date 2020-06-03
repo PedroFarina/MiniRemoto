@@ -11,26 +11,14 @@ import UIKit
 class ListModuleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var txtItem: SlashedTextField!
-    var textChanged: ((String) -> Void)?
+    var isFirstTime: Bool = true
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
     func setup(with delegate: UITextFieldDelegate) {
         txtItem.delegate = delegate
         txtItem.becomeFirstResponder()
-    }
-
-    func textChanged(action: @escaping (String) -> Void) {
-        self.textChanged = action
-    }
-
-    func textViewDidChange(_ textView: UITextView) {
-        textChanged?(textView.text)
     }
 }

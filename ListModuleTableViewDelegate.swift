@@ -9,14 +9,17 @@
 import UIKit
 
 class ListModuleTableViewDelegate: NSObject, UITableViewDelegate {
-
-    var view: UIView
-
-    init(view: UIView) {
-        self.view = view
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        view.endEditing(false)
-    }
 }
+
+//class ListModuleTableViewDelegate: NSObject, UITableViewDelegate {
+//
+//    var view: UIView
+//
+//    init(view: UIView) {
+//        self.view = view
+//    }
+//
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        view.endEditing(false)
+//    }
+//}
