@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -24,11 +24,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNf-GY-n9P">
-                                <rect key="frame" x="312" y="64" width="48" height="48"/>
+                                <rect key="frame" x="302" y="704" width="58" height="58"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="2jG-XR-FqJ"/>
+                                    <constraint firstAttribute="height" constant="58" id="TLT-e1-0yw"/>
                                     <constraint firstAttribute="width" secondItem="CNf-GY-n9P" secondAttribute="height" multiplier="1:1" id="t6D-kL-9T5"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="AddButton"/>
+                                <state key="normal" backgroundImage="NewAddButton"/>
                                 <connections>
                                     <segue destination="9po-dr-EPe" kind="presentation" id="5Bx-Jo-SsO"/>
                                 </connections>
@@ -38,9 +40,9 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zY0-71-AQo" secondAttribute="trailing" id="8oM-7z-zqw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CNf-GY-n9P" secondAttribute="bottom" constant="16" id="PI7-vx-Ed3"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tta-bt-FEk"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W2E-p7-8OO"/>
-                            <constraint firstItem="CNf-GY-n9P" firstAttribute="top" secondItem="zY0-71-AQo" secondAttribute="top" constant="20" id="WND-G3-ESj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CNf-GY-n9P" secondAttribute="trailing" constant="15" id="bfS-ge-Yqn"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lDd-wG-531"/>
                         </constraints>
@@ -64,6 +66,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AddButton" width="48" height="48"/>
+        <image name="NewAddButton" width="48" height="48"/>
     </resources>
 </document>
