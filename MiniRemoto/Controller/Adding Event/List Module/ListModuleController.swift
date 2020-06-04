@@ -35,6 +35,7 @@ class ListModuleViewController: UIViewController, ModuleController {
         bottomConstraint = tbBottomConstraint.constant
         btnCheck.isHidden = true
         hideKeyboardWhenTappedAround()
+        print("AAAAAA")
 
         NotificationCenter.default.addObserver(
             self,
@@ -84,14 +85,21 @@ class ListModuleViewController: UIViewController, ModuleController {
         addRow()
     }
     
-    @IBAction func confirmarButton(_ sender: Any) {
-        getAllListItems()
+    @IBAction func okBtnAction(_ sender: Any) {
+        //getAllListItems()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func checkBtnAction(_ sender: Any) {
+        //getAllListItems()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
 }
 
 extension ListModuleViewController: UITableViewDataSource, UITableViewDelegate {
