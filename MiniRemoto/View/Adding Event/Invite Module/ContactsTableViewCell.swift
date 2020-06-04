@@ -55,7 +55,7 @@ class ContactsTableViewCell: UITableViewCell {
 
             selectCheckImage(isSelected: contact.isSelected)
 
-            purpleView.layer.cornerRadius = self.frame.height/2
+            purpleView.layer.cornerRadius = purpleView.frame.height/2
         }
     }
 
