@@ -19,13 +19,11 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNf-GY-n9P">
-                                <rect key="frame" x="302" y="704" width="58" height="58"/>
+                                <rect key="frame" x="312" y="44" width="48" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="58" id="2jG-XR-FqJ"/>
-                                    <constraint firstAttribute="height" constant="58" id="TLT-e1-0yw"/>
                                     <constraint firstAttribute="width" secondItem="CNf-GY-n9P" secondAttribute="height" multiplier="1:1" id="t6D-kL-9T5"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="NewAddButton"/>
+                                <state key="normal" backgroundImage="AddButton"/>
                                 <connections>
                                     <segue destination="9po-dr-EPe" kind="presentation" id="5Bx-Jo-SsO"/>
                                 </connections>
@@ -34,8 +32,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="CNf-GY-n9P" firstAttribute="top" secondItem="zY0-71-AQo" secondAttribute="top" id="4Br-Wy-UY6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zY0-71-AQo" secondAttribute="trailing" id="8oM-7z-zqw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CNf-GY-n9P" secondAttribute="bottom" constant="16" id="PI7-vx-Ed3"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tta-bt-FEk"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W2E-p7-8OO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CNf-GY-n9P" secondAttribute="trailing" constant="15" id="bfS-ge-Yqn"/>
@@ -61,6 +59,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NewAddButton" width="48" height="48"/>
+        <image name="AddButton" width="48" height="48"/>
     </resources>
 </document>
