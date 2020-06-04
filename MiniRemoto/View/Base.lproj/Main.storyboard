@@ -3,6 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,6 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você ainda não tem eventos. Toque em '+' para começar." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHg-uc-cpz">
+                                <rect key="frame" x="15" y="390.66666666666669" width="345" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Label Gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zY0-71-AQo" customClass="CardsController" customModule="Eve" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </view>
@@ -34,15 +41,19 @@
                         <constraints>
                             <constraint firstItem="CNf-GY-n9P" firstAttribute="top" secondItem="zY0-71-AQo" secondAttribute="top" id="4Br-Wy-UY6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zY0-71-AQo" secondAttribute="trailing" id="8oM-7z-zqw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CHg-uc-cpz" secondAttribute="trailing" constant="15" id="MgJ-F1-r1Y"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tta-bt-FEk"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W2E-p7-8OO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CNf-GY-n9P" secondAttribute="trailing" constant="15" id="bfS-ge-Yqn"/>
+                            <constraint firstItem="CHg-uc-cpz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="edj-pS-dyN"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lDd-wG-531"/>
+                            <constraint firstItem="CHg-uc-cpz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="r8A-7x-lXd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="events" destination="zY0-71-AQo" id="ENE-3x-CI7"/>
+                        <outlet property="lblPlaceholder" destination="CHg-uc-cpz" id="Iya-Da-hWr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -60,5 +71,8 @@
     </scenes>
     <resources>
         <image name="AddButton" width="48" height="48"/>
+        <namedColor name="Label Gray">
+            <color red="0.54100000858306885" green="0.54100000858306885" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
