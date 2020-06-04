@@ -10,74 +10,69 @@ import UIKit
 
 
 class ListModuleViewController: UIViewController, ModuleController {
-
     var module: Module?
     var reloadData: (() -> Void)?
+
 
     @IBOutlet weak var placeHolderAddListTip: UILabel!
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnCheck: UIButton!
     @IBOutlet weak var listTableView: UITableView!
-    @IBOutlet weak var tbBottomConstraint: NSLayoutConstraint!
-    var bottomConstraint: CGFloat = 0.0
 
+
+    var addListTableViewDataSource: ListModuleTableDataSource?
     var shouldBeginCalledBeforeHand: Bool = false
-    var textsFields: [UITextField] = []
-    var texts: [String] = []
-    var rows: Int = 0
-    let identifier: String = "AddListTableViewCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        listTableView.dataSource = self
-        listTableView.delegate = self
-        listTableView.setContentOffset(.zero, animated: true)
-        bottomConstraint = tbBottomConstraint.constant
-        btnCheck.isHidden = true
+        setupTableView()
         hideKeyboardWhenTappedAround()
-        print("AAAAAA")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil
-        )
+    func setupTableView() {
+        addListTableViewDataSource = ListModuleTableDataSource(txtFieldDelegate: self)
+        listTableView.dataSource = addListTableViewDataSource
+        
+        btnCheck.isHidden = true
+        btnSave.isEnabled = false
+    }
 
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardDidHide),
-            name: UIResponder.keyboardDidHideNotification,
-            object: nil
-        )
+    func addRow() {
+        let row = addListTableViewDataSource?.numberOfRows ??  0
+        let index = IndexPath(row: row, section: 0)
+        addListTableViewDataSource?.addRow(in: listTableView, at: index)
+        listTableView.scrollToRow(at: index, at: .bottom, animated: true)
     }
     
-    func getAllListItems(){
-         var allUITextFieldsItems:[UITextField] = []
-         allUITextFieldsItems.append(contentsOf: textsFields)
-         allUITextFieldsItems.forEach { (allTextsItems) in
-             if let text = allTextsItems.text {
-                 print(text)
-             }
-         }
-    }
 
-    @objc func keyboardWillShow(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            animateTableView(constant: keyboardHeight)
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if listTableView.frame.origin.y == 78 && addListTableViewDataSource!.numberOfRows >= 12 {
+                listTableView.frame.origin.y -= keyboardSize.height
+                print(addListTableViewDataSource!.texts)
+            }
         }
     }
 
-    @objc func keyboardDidHide(_ notification: Notification) {
-        animateTableView(constant: bottomConstraint)
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if listTableView.frame.origin.y != 0 {
+            listTableView.frame.origin.y = 78
+        }
     }
-
-    func animateTableView(constant: CGFloat) {
-        UIView.animate(withDuration: 0.3) {
-            self.tbBottomConstraint.constant = constant
-            self.view.layoutIfNeeded()
+    
+    func getAllListItems(){
+        var allUITextFieldsItems:[UITextField] = []
+        allUITextFieldsItems.append(contentsOf: addListTableViewDataSource!.texts)
+        
+        allUITextFieldsItems.forEach { (allTextsItems) in
+            if let text = allTextsItems.text {
+                if text != "" {
+                    print(text)
+                }
+            }
         }
     }
 
@@ -102,43 +97,6 @@ class ListModuleViewController: UIViewController, ModuleController {
     
 }
 
-extension ListModuleViewController: UITableViewDataSource, UITableViewDelegate {
-
-    func addRow() {
-        placeHolderAddListTip.isHidden = true
-        listTableView.beginUpdates()
-        texts.append("")
-        var indexPath = IndexPath()
-        indexPath = IndexPath(row: rows, section: 0)
-        rows += 1
-        listTableView.insertRows(at: [indexPath], with: .bottom)
-        listTableView.endUpdates()
-        listTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
-    }
-
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rows
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellForRow = tableView.dequeueReusableCell(withIdentifier: identifier) as? ListModuleTableViewCell
-        guard let cell = cellForRow else { return UITableViewCell() }
-
-        cell.setup(with: self)
-        textsFields.append(cell.txtItem)
-
-        return cell
-    }
-
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        shouldBeginCalledBeforeHand = true
-    }
-}
-
 extension ListModuleViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -152,7 +110,6 @@ extension ListModuleViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        texts.append(textField.text ?? "")
          if textField.text != "" {
                     btnCheck.isHidden = false
                     btnSave.isEnabled = true
@@ -163,7 +120,6 @@ extension ListModuleViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         shouldBeginCalledBeforeHand = false
     }
-
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -171,7 +127,7 @@ extension ListModuleViewController: UITextFieldDelegate {
     }
 
     @objc func dismissKeyboard() {
-        shouldBeginCalledBeforeHand = false
+        shouldBeginCalledBeforeHand = true
         view.endEditing(true)
     }
 }
