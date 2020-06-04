@@ -11,8 +11,7 @@ import UIKit
 class ListModuleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var txtItem: SlashedTextField!
-    var isFirstTime: Bool = true
-
+ 
     override func awakeFromNib() {
         super.awakeFromNib()
     }

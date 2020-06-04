@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ListModuleViewController: UIViewController, ModuleController {
 
     var module: Module?
@@ -18,8 +19,9 @@ class ListModuleViewController: UIViewController, ModuleController {
     @IBOutlet weak var btnCheck: UIButton!
     @IBOutlet weak var listTableView: UITableView!
     @IBOutlet weak var tbBottomConstraint: NSLayoutConstraint!
-    var shouldBeginCalledBeforeHand: Bool = false
+    var bottomConstraint: CGFloat = 0.0
 
+    var shouldBeginCalledBeforeHand: Bool = false
     var texts: [String] = []
     var rows: Int = 0
     let identifier: String = "AddListTableViewCell"
@@ -28,6 +30,48 @@ class ListModuleViewController: UIViewController, ModuleController {
         super.viewDidLoad()
         listTableView.dataSource = self
         listTableView.delegate = self
+        listTableView.setContentOffset(.zero, animated: true)
+        bottomConstraint = tbBottomConstraint.constant
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardDidHide),
+            name: UIResponder.keyboardDidHideNotification,
+            object: nil
+        )
+    }
+
+    @objc func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            animateTableView(constant: keyboardHeight)
+        }
+    }
+
+    @objc func keyboardDidHide(_ notification: Notification) {
+        animateTableView(constant: bottomConstraint)
+    }
+
+    func animateTableView(constant: CGFloat) {
+        UIView.animate(withDuration: 0.3) {
+            self.tbBottomConstraint.constant = constant
+            self.view.layoutIfNeeded()
+        }
     }
 
     @IBAction func addItemButton(_ sender: Any) {
@@ -41,29 +85,41 @@ class ListModuleViewController: UIViewController, ModuleController {
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
-    func addRow() {
-        texts.append("")
-        listTableView.reloadData()
-    }
 }
 
 extension ListModuleViewController: UITableViewDataSource, UITableViewDelegate {
+
+    func addRow() {
+        listTableView.beginUpdates()
+        texts.append("")
+        var indexPath = IndexPath()
+        indexPath = IndexPath(row: rows, section: 0)
+        rows += 1
+        listTableView.insertRows(at: [indexPath], with: .bottom)
+        listTableView.endUpdates()
+        listTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return texts.count
+        return rows
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellForRow = tableView.dequeueReusableCell(withIdentifier: identifier) as? ListModuleTableViewCell
-
         guard let cell = cellForRow else { return UITableViewCell() }
+
         cell.setup(with: self)
+        cell.txtItem.text = texts[indexPath.row]
+
         return cell
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        shouldBeginCalledBeforeHand = true
     }
 }
 
@@ -80,6 +136,7 @@ extension ListModuleViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        texts.append(textField.text ?? "")
         return shouldBeginCalledBeforeHand
     }
 
@@ -98,3 +155,4 @@ extension ListModuleViewController: UITextFieldDelegate {
         view.endEditing(true)
     }
 }
+
