@@ -20,7 +20,7 @@ class InviteModuleController: UIViewController, ModuleController, ContactTableVi
     @IBOutlet weak var save: UIButton!
 
     private func checkSave() {
-        if returnGuestsIds().count == 0 {
+        if returnGuests().count == 0 {
             save.isEnabled = false
         } else {
             save.isEnabled = true
@@ -48,11 +48,11 @@ class InviteModuleController: UIViewController, ModuleController, ContactTableVi
     }
 
     func setupModule() {
-        guard let inviteModule = module as? InviteData, let ids = inviteModule.guestsIds else { return }
+        guard let inviteModule = module as? InviteData, let guests = inviteModule.guests else { return }
 
-        for id in ids {
+        for guest in guests {
             contacts.forEach { (contact) in
-                if contact.id == id {
+                if contact.id == guest.id {
                     contact.isSelected = true
                 }
             }
@@ -99,16 +99,16 @@ class InviteModuleController: UIViewController, ModuleController, ContactTableVi
         view.endEditing(true)
     }
 
-    func returnGuestsIds() -> [String] {
-        var ids: [String] = []
+    func returnGuests() -> [SelectableContact] {
+        var guests: [SelectableContact] = []
 
         contacts.forEach { (contact) in
             if contact.isSelected == true {
-                ids.append(contact.id)
+                guests.append(contact)
             }
         }
 
-        return ids
+        return guests
     }
 
     func setGuestsSelection() {
@@ -129,7 +129,7 @@ class InviteModuleController: UIViewController, ModuleController, ContactTableVi
             fatalError("Module was not InviteData")
         }
 
-        data.guestsIds = returnGuestsIds()
+        data.guests = returnGuests()
 
         reloadData?()
         self.dismiss(animated: true)
