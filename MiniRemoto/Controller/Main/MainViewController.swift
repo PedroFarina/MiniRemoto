@@ -13,8 +13,10 @@ public class MainViewController: UIViewController, CardsControllerDataSource, DB
     public func didUpdateData() {
         DispatchQueue.main.async {
             self.events.reloadData()
+            self.lblPlaceholder.isHidden = !DataController.shared().events.isEmpty
         }
     }
+    @IBOutlet weak var lblPlaceholder: UILabel!
 
     public func didOccur(_ error: Error) {
         if let err = error as? ResponseError {
@@ -30,6 +32,7 @@ public class MainViewController: UIViewController, CardsControllerDataSource, DB
         events.dataSource = self
         DataController.shared().registerAsObserver(self)
         DataController.shared().delegate = self
+        lblPlaceholder.isHidden = !DataController.shared().events.isEmpty
         DataController.shared().createUser()
     }
     deinit {

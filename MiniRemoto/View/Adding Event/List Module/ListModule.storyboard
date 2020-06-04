@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URc-5M-P6j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URc-5M-P6j">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,7 +82,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lM-DL-8Po">
-                                <rect key="frame" x="15" y="821" width="124" height="21"/>
+                                <rect key="frame" x="15" y="821" width="104" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="puH-lm-0rP"/>
                                 </constraints>
@@ -95,7 +95,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU6-Js-Bnc">
-                                <rect key="frame" x="303" y="746" width="96" height="96"/>
+                                <rect key="frame" x="351" y="794" width="48" height="48"/>
                                 <state key="normal" image="CheckButton">
                                     <color key="titleColor" name="Action Color"/>
                                 </state>
@@ -146,6 +146,7 @@
             <point key="canvasLocation" x="1044.9275362318842" y="-794.19642857142856"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="Action Color"/>
     <resources>
         <image name="CheckButton" width="48" height="48"/>
         <image name="plus" width="20" height="20"/>
@@ -156,5 +157,4 @@
             <color red="0.54100000858306885" green="0.54100000858306885" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <color key="tintColor" name="Action Color"/>
 </document>
