@@ -22,6 +22,7 @@ class ListModuleViewController: UIViewController, ModuleController {
     var bottomConstraint: CGFloat = 0.0
 
     var shouldBeginCalledBeforeHand: Bool = false
+    var textsFields: [UITextField] = []
     var texts: [String] = []
     var rows: Int = 0
     let identifier: String = "AddListTableViewCell"
@@ -32,13 +33,8 @@ class ListModuleViewController: UIViewController, ModuleController {
         listTableView.delegate = self
         listTableView.setContentOffset(.zero, animated: true)
         bottomConstraint = tbBottomConstraint.constant
-
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(keyboardWillShow),
-            name: UIResponder.keyboardWillShowNotification,
-            object: nil
-        )
+        btnCheck.isHidden = true
+        hideKeyboardWhenTappedAround()
 
         NotificationCenter.default.addObserver(
             self,
@@ -53,6 +49,16 @@ class ListModuleViewController: UIViewController, ModuleController {
             name: UIResponder.keyboardDidHideNotification,
             object: nil
         )
+    }
+    
+    func getAllListItems(){
+         var allUITextFieldsItems:[UITextField] = []
+         allUITextFieldsItems.append(contentsOf: textsFields)
+         allUITextFieldsItems.forEach { (allTextsItems) in
+             if let text = allTextsItems.text {
+                 print(text)
+             }
+         }
     }
 
     @objc func keyboardWillShow(_ notification: Notification) {
@@ -79,6 +85,7 @@ class ListModuleViewController: UIViewController, ModuleController {
     }
     
     @IBAction func confirmarButton(_ sender: Any) {
+        getAllListItems()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -90,6 +97,7 @@ class ListModuleViewController: UIViewController, ModuleController {
 extension ListModuleViewController: UITableViewDataSource, UITableViewDelegate {
 
     func addRow() {
+        placeHolderAddListTip.isHidden = true
         listTableView.beginUpdates()
         texts.append("")
         var indexPath = IndexPath()
@@ -113,7 +121,7 @@ extension ListModuleViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = cellForRow else { return UITableViewCell() }
 
         cell.setup(with: self)
-        cell.txtItem.text = texts[indexPath.row]
+        textsFields.append(cell.txtItem)
 
         return cell
     }
@@ -137,6 +145,10 @@ extension ListModuleViewController: UITextFieldDelegate {
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         texts.append(textField.text ?? "")
+         if textField.text != "" {
+                    btnCheck.isHidden = false
+                    btnSave.isEnabled = true
+        }
         return shouldBeginCalledBeforeHand
     }
 
