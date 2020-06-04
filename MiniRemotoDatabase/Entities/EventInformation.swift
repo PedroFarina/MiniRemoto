@@ -9,7 +9,7 @@
 import Foundation
 
 public struct EventInformation: Codable {
-    internal init(ownerID: String?, name: String?, id: String?, color: String?, date: String?, startHour: String?, endHour: String?) {
+    public init(ownerID: String?, name: String?, id: String?, color: String?, date: String?, startHour: String?, endHour: String?) {
         self.ownerID = ownerID
         self.name = name
         self.id = id

@@ -14,6 +14,15 @@ public struct Event: Codable {
         self.shoppingList = shoppingList
         self.location = location
     }
+    mutating func changeInfo(to newInformation: EventInformation?) {
+        event = newInformation
+    }
+    mutating func changeShoppingList(to newShoppingList: [Item]?) {
+        shoppingList = newShoppingList
+    }
+    mutating func changeLocation(to newLocation: Location?) {
+        location = newLocation
+    }
     public var event: EventInformation?
     public var shoppingList: [Item]?
     public var location: Location?

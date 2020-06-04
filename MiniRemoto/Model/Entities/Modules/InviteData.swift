@@ -25,9 +25,9 @@ public class InviteData: Module {
     public var guestsIds: [String]? {
         didSet {
             if guestsIds?.count==1 {
-                title = "1 Convidado"
+                title = "1 " + "Convidado".localized()
             } else {
-                title = "\(guestsIds?.count ?? 0) Convidados"
+                title = "\(guestsIds?.count ?? 0) " + "Convidados".localized()
             }
         }
     }
