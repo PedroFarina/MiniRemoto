@@ -112,8 +112,12 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
                     items.append(Item(itemName: item, whoBrings: nil))
                 }
                 list = items
-            } else if let inviteData = module as? InviteData {
+            } else if let inviteData = module as? InviteData,
+                let guests = inviteData.guests {
                 invitees = []
+                for guest in guests {
+                    invitees?.append(Invitee(name: guest.givenName, address: guest.email))
+                }
             }
         }
         DataController.shared().createEvent(name: txtEventName.text ?? "Evento".localized(), color: MiniRemotoDatabase.AppColor.getRandom(), startDate: startDate, startHour: startHour, endHour: endHour, items: list, location: location, invitees: invitees)
