@@ -19,15 +19,15 @@ public class InviteData: Module {
     public var subtitle: String?
 
     public func isFilled() -> Bool {
-        return guestsIds != nil
+        return guests != nil
     }
 
-    public var guestsIds: [String]? {
+    public var guests: [SelectableContact]? {
         didSet {
-            if guestsIds?.count==1 {
-                title = "1 " + "Convidado".localized()
+            if guests?.count==1 {
+                title = "1 Convidado"
             } else {
-                title = "\(guestsIds?.count ?? 0) " + "Convidados".localized()
+                title = "\(guests?.count ?? 0) Convidados"
             }
         }
     }

@@ -18,7 +18,7 @@ struct Contact {
     let number: String
 }
 
-class SelectableContact {
+public class SelectableContact {
     var id: String = ""
     var givenName: String = ""
     var familyName: String = ""
@@ -108,6 +108,10 @@ class ContactsManager {
 
     func getSelectableContacts() -> [SelectableContact] {
         return createSelectableContacts()
+    }
+
+    func getContacts() -> [Contact] {
+        return contacts
     }
 }
 
