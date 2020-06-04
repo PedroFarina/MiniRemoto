@@ -18,8 +18,8 @@ class ListModuleViewController: UIViewController, ModuleController {
     @IBOutlet weak var btnSave: UIButton!
     @IBOutlet weak var btnCheck: UIButton!
     @IBOutlet weak var listTableView: UITableView!
-
-
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    var bottomValue: CGFloat = 0.0
     var addListTableViewDataSource: ListModuleTableDataSource?
     var shouldBeginCalledBeforeHand: Bool = false
 
@@ -27,6 +27,7 @@ class ListModuleViewController: UIViewController, ModuleController {
         super.viewDidLoad()
         setupTableView()
         hideKeyboardWhenTappedAround()
+        bottomValue = bottomConstraint.constant
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -47,21 +48,23 @@ class ListModuleViewController: UIViewController, ModuleController {
         addListTableViewDataSource?.addRow(in: listTableView, at: index)
         listTableView.scrollToRow(at: index, at: .bottom, animated: true)
     }
-    
+
+    func animate(constant: CGFloat) {
+        UIView.animate(withDuration: 0.3) {
+            self.bottomConstraint.constant = constant
+            self.view.layoutIfNeeded()
+        }
+    }
 
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if listTableView.frame.origin.y == 78 && addListTableViewDataSource!.numberOfRows >= 12 {
-                listTableView.frame.origin.y -= keyboardSize.height
-                print(addListTableViewDataSource!.texts)
-            }
+            let keyboardHeigh = keyboardSize.height
+            animate(constant: keyboardHeigh)
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if listTableView.frame.origin.y != 0 {
-            listTableView.frame.origin.y = 78
-        }
+        animate(constant: bottomValue)
     }
     
     func getAllListItems(){

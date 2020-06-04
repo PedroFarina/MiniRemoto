@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URc-5M-P6j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URc-5M-P6j">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-Dw-ARk">
-                                <rect key="frame" x="15" y="122" width="384" height="614"/>
+                                <rect key="frame" x="15" y="122" width="384" height="700"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -82,7 +82,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lM-DL-8Po">
-                                <rect key="frame" x="15" y="821" width="114" height="21"/>
+                                <rect key="frame" x="15" y="821" width="124" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="puH-lm-0rP"/>
                                 </constraints>
@@ -95,7 +95,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU6-Js-Bnc">
-                                <rect key="frame" x="351" y="794" width="48" height="48"/>
+                                <rect key="frame" x="303" y="746" width="96" height="96"/>
                                 <state key="normal" image="CheckButton">
                                     <color key="titleColor" name="Action Color"/>
                                 </state>
@@ -117,8 +117,8 @@
                         <constraints>
                             <constraint firstItem="Qw8-cj-Fik" firstAttribute="bottom" secondItem="1lM-DL-8Po" secondAttribute="bottom" constant="20" id="6kE-h2-nKl"/>
                             <constraint firstItem="t4G-Dw-ARk" firstAttribute="top" secondItem="oRj-bI-o7I" secondAttribute="bottom" constant="30" id="7qn-uV-zvp"/>
-                            <constraint firstItem="DU6-Js-Bnc" firstAttribute="top" secondItem="t4G-Dw-ARk" secondAttribute="bottom" constant="10" id="8Ue-ca-TFH"/>
                             <constraint firstItem="2eq-p5-gfh" firstAttribute="centerY" secondItem="CVc-Et-JF5" secondAttribute="centerY" multiplier="0.5" id="CIG-uR-Wrt"/>
+                            <constraint firstItem="Qw8-cj-Fik" firstAttribute="bottom" secondItem="t4G-Dw-ARk" secondAttribute="bottom" constant="40" id="Ink-2u-fHt"/>
                             <constraint firstItem="Qw8-cj-Fik" firstAttribute="trailing" secondItem="DU6-Js-Bnc" secondAttribute="trailing" constant="15" id="Nug-Xz-OxG"/>
                             <constraint firstItem="oRj-bI-o7I" firstAttribute="leading" secondItem="Qw8-cj-Fik" secondAttribute="leading" constant="15" id="QZd-Qp-IoH"/>
                             <constraint firstItem="Qw8-cj-Fik" firstAttribute="trailing" secondItem="t4G-Dw-ARk" secondAttribute="trailing" constant="15" id="VCY-k1-c5c"/>
@@ -134,6 +134,7 @@
                         <viewLayoutGuide key="safeArea" id="Qw8-cj-Fik"/>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="Ink-2u-fHt" id="yvI-qP-986"/>
                         <outlet property="btnCheck" destination="DU6-Js-Bnc" id="IFe-I5-XOc"/>
                         <outlet property="btnSave" destination="EVw-Ck-P2z" id="BEY-3k-0WO"/>
                         <outlet property="listTableView" destination="t4G-Dw-ARk" id="ann-2j-y3V"/>
@@ -145,7 +146,6 @@
             <point key="canvasLocation" x="1044.9275362318842" y="-794.19642857142856"/>
         </scene>
     </scenes>
-    <color key="tintColor" name="Action Color"/>
     <resources>
         <image name="CheckButton" width="48" height="48"/>
         <image name="plus" width="20" height="20"/>
@@ -156,4 +156,5 @@
             <color red="0.54100000858306885" green="0.54100000858306885" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <color key="tintColor" name="Action Color"/>
 </document>
