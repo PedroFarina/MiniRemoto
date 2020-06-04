@@ -80,7 +80,7 @@ public class DataController {
 
     public func createEvent(name: String, color: AppColor, startDate: String?, startHour: String?, endHour: String?, items: [Item]?, location: Location?, invitees: [Invitee]?) {
 
-        let info = EventInformation(ownerID: user?.id, name: name, id: UUID().uuidString, color: color.rawValue, date: startDate, startHour: startHour, endHour: endHour)
+        let info = EventInformation(ownerId: user?.id, name: name, id: UUID().uuidString, color: color.rawValue, date: startDate, startHour: startHour, endHour: endHour)
         let event = Event(info: info, shoppingList: items, location: location, invitees: invitees)
         EndpointsRequests.Requests.postRequest(url: "\(DataController.hostaddress)/createEvent", params: event, decodableType: Response.self) { (answer) in
             switch answer {
