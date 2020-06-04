@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MiniRemotoDatabase
 
 public class AddEventViewController: UIViewController, ModuleStateDelegate, ModuleSelectorDelegate, UITextFieldDelegate {
 
@@ -29,6 +30,8 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
         moduleTableView.tableFooterView = UIView()
         collectionDelegate.delegate = self
         tableDelegate.delegate = self
+
+        txtEventName.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
     }
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -56,7 +59,15 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
 
     private func reloadData() {
         moduleTableView.reloadData()
-        var check: Bool = true
+        checkDone()
+    }
+
+    @objc func textChanged(_ sender: UITextField) {
+        checkDone()
+    }
+
+    @objc func checkDone() {
+        var check: Bool = !(txtEventName.text?.isEmpty ?? true)
         tableDataSource.modules.forEach { (mod) in
             check = check && mod.isFilled()
         }
@@ -85,8 +96,31 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
         self.present(failAlert, animated: true)
     }
     @IBAction func doneTap(_ sender: Any) {
-        //TODO: Save event
-        #warning("Save event not implemented yet")
+        var startDate: String? = nil, startHour: String? = nil, endHour: String? = nil, list: [Item]? = nil, location: Location? = nil, invitees: [Invitee]? = nil
+        for module in tableDataSource.modules {
+            if let calendarData = module as? CalendarData {
+                startDate = calendarData.sDate
+                startHour = calendarData.sHour
+                endHour = calendarData.eHour
+            } else if let locationData = module as? LocationData,
+                let coordinates = locationData.location?.placemark.coordinate {
+                location = Location(latitude: coordinates.latitude, longitude: coordinates.longitude, addressLine: locationData.title, addressLine2: locationData.addressLine2)
+            } else if let listData = module as? ListData,
+                let itemList = listData.itemList {
+                var items: [Item] = []
+                for item in itemList {
+                    items.append(Item(itemName: item, whoBrings: nil))
+                }
+                list = items
+            } else if let inviteData = module as? InviteData,
+                let guests = inviteData.guests {
+                invitees = []
+                for guest in guests {
+                    invitees?.append(Invitee(name: guest.givenName, email: guest.email))
+                }
+            }
+        }
+        DataController.shared().createEvent(name: txtEventName.text ?? "Evento".localized(), color: MiniRemotoDatabase.AppColor.getRandom(), startDate: startDate, startHour: startHour, endHour: endHour, items: list, location: location, invitees: invitees)
         self.dismiss(animated: true)
     }
     @IBAction func cancelTap(_ sender: Any) {

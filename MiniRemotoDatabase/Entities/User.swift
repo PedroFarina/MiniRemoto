@@ -9,6 +9,11 @@
 import Foundation
 
 public struct User: Codable {
+    internal init(id: String?, name: String?, events: [Event]? = nil) {
+        self.id = id
+        self.name = name
+    }
     var id: String?
     var name: String?
+    var events: [Event]?
 }

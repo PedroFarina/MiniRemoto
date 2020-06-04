@@ -19,9 +19,9 @@ class MoreTableViewCell: UITableViewCell {
     }
     
     func setupContent() {
-        self.backView.backgroundColor = .black25()
+        self.backView.backgroundColor = .black25
         self.moreLabel.font = UIFont(name: "Montserrat-SemiBold", size: 12)
-        self.moreLabel.textColor = .black50()
+        self.moreLabel.textColor = .black50
         self.moreLabel.text = "Ver mais"
     }
 

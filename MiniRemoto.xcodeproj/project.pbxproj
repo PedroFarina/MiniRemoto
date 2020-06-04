@@ -24,9 +24,11 @@
 		020690CC247DD4E8004C7150 /* CalendarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020690CB247DD4E8004C7150 /* CalendarModule.swift */; };
 		0217DAD4247834C7003B6286 /* EndpointsRequests in Frameworks */ = {isa = PBXBuildFile; productRef = 0217DAD3247834C7003B6286 /* EndpointsRequests */; };
 		0217DAD624783EF7003B6286 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD524783EF7003B6286 /* User.swift */; };
-		0217DAD8247845BF003B6286 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD7247845BF003B6286 /* Event.swift */; };
 		0217DADA24784607003B6286 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DAD924784607003B6286 /* Location.swift */; };
 		0217DADC24784C11003B6286 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DADB24784C11003B6286 /* Item.swift */; };
+		0249F70524881029006F26E9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249F70424881029006F26E9 /* Event.swift */; };
+		0249F70724881048006F26E9 /* EventInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249F70624881048006F26E9 /* EventInformation.swift */; };
+		0249F7092489A691006F26E9 /* Invitee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249F7082489A691006F26E9 /* Invitee.swift */; };
 		0260CE7824748B9100E16149 /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7724748B9100E16149 /* CalendarData.swift */; };
 		0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */; };
 		0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */; };
@@ -47,6 +49,10 @@
 		0274827C246F08690059876D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0274827A246F08690059876D /* Main.storyboard */; };
 		0274827E246F086A0059876D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0274827D246F086A0059876D /* Assets.xcassets */; };
 		02748281246F086A0059876D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0274827F246F086A0059876D /* LaunchScreen.storyboard */; };
+		027E7FB62486D67000A9B68F /* DBErrorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E7FB52486D67000A9B68F /* DBErrorDelegate.swift */; };
+		027E7FB82486D6C800A9B68F /* DBObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E7FB72486D6C800A9B68F /* DBObserver.swift */; };
+		027E7FBA2486D9C700A9B68F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027E7FB92486D9C700A9B68F /* Response.swift */; };
+		027E7FBB2486DC4B00A9B68F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F99DD3247EED72008273D2 /* Colors.swift */; };
 		028A7246246F130D006F4B17 /* UberCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7245246F130D006F4B17 /* UberCore.framework */; };
 		028A7247246F130D006F4B17 /* UberCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7245246F130D006F4B17 /* UberCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		028A724A246F130F006F4B17 /* UberRides.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A7249246F130F006F4B17 /* UberRides.framework */; };
@@ -140,9 +146,11 @@
 		020690C8247DD4C5004C7150 /* CalendarModuleHourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModuleHourView.swift; sourceTree = "<group>"; };
 		020690CB247DD4E8004C7150 /* CalendarModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModule.swift; sourceTree = "<group>"; };
 		0217DAD524783EF7003B6286 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		0217DAD7247845BF003B6286 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0217DAD924784607003B6286 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0217DADB24784C11003B6286 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0249F70424881029006F26E9 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0249F70624881048006F26E9 /* EventInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInformation.swift; sourceTree = "<group>"; };
+		0249F7082489A691006F26E9 /* Invitee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitee.swift; sourceTree = "<group>"; };
 		0260CE7724748B9100E16149 /* CalendarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarData.swift; sourceTree = "<group>"; };
 		0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionDelegate.swift; sourceTree = "<group>"; };
 		0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTableDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +173,9 @@
 		0274827D246F086A0059876D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02748280246F086A0059876D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02748282246F086A0059876D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		027E7FB52486D67000A9B68F /* DBErrorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBErrorDelegate.swift; sourceTree = "<group>"; };
+		027E7FB72486D6C800A9B68F /* DBObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBObserver.swift; sourceTree = "<group>"; };
+		027E7FB92486D9C700A9B68F /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		028A7245246F130D006F4B17 /* UberCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberCore.framework; path = Carthage/Build/iOS/UberCore.framework; sourceTree = "<group>"; };
 		028A7249246F130F006F4B17 /* UberRides.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UberRides.framework; path = Carthage/Build/iOS/UberRides.framework; sourceTree = "<group>"; };
 		0291F443247F2C3700DEA569 /* ContactsCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsCollectionViewDelegate.swift; sourceTree = "<group>"; };
@@ -514,6 +525,9 @@
 			isa = PBXGroup;
 			children = (
 				02E8FCBA2476FAEE002B942D /* DataController.swift */,
+				027E7FB92486D9C700A9B68F /* Response.swift */,
+				027E7FB52486D67000A9B68F /* DBErrorDelegate.swift */,
+				027E7FB72486D6C800A9B68F /* DBObserver.swift */,
 				02E8FCB62476FACE002B942D /* Entities */,
 				02E8FCAC2476FAB8002B942D /* MiniRemotoDatabase.h */,
 				02E8FCAD2476FAB8002B942D /* Info.plist */,
@@ -525,9 +539,11 @@
 			isa = PBXGroup;
 			children = (
 				0217DAD524783EF7003B6286 /* User.swift */,
-				0217DAD7247845BF003B6286 /* Event.swift */,
 				0217DAD924784607003B6286 /* Location.swift */,
 				0217DADB24784C11003B6286 /* Item.swift */,
+				0249F70424881029006F26E9 /* Event.swift */,
+				0249F70624881048006F26E9 /* EventInformation.swift */,
+				0249F7082489A691006F26E9 /* Invitee.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -784,10 +800,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				027E7FB62486D67000A9B68F /* DBErrorDelegate.swift in Sources */,
+				027E7FBB2486DC4B00A9B68F /* Colors.swift in Sources */,
+				027E7FB82486D6C800A9B68F /* DBObserver.swift in Sources */,
 				0217DADC24784C11003B6286 /* Item.swift in Sources */,
+				0249F70524881029006F26E9 /* Event.swift in Sources */,
 				0217DAD624783EF7003B6286 /* User.swift in Sources */,
+				027E7FBA2486D9C700A9B68F /* Response.swift in Sources */,
+				0249F70724881048006F26E9 /* EventInformation.swift in Sources */,
+				0249F7092489A691006F26E9 /* Invitee.swift in Sources */,
 				02046FA0247C4F2700620FA9 /* StringExtension.swift in Sources */,
-				0217DAD8247845BF003B6286 /* Event.swift in Sources */,
 				0217DADA24784607003B6286 /* Location.swift in Sources */,
 				02E8FCBB2476FAEE002B942D /* DataController.swift in Sources */,
 			);
@@ -873,7 +895,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -927,7 +949,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -943,7 +965,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DHAN829484;
+				DEVELOPMENT_TEAM = BVZY57RJZG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -966,7 +988,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DHAN829484;
+				DEVELOPMENT_TEAM = BVZY57RJZG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -987,10 +1009,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = DHAN829484;
+				DEVELOPMENT_TEAM = BVZY57RJZG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1017,10 +1040,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = DHAN829484;
+				DEVELOPMENT_TEAM = BVZY57RJZG;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

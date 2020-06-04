@@ -7,14 +7,46 @@
 //
 
 import UIKit
+import MiniRemotoDatabase
 
 @IBDesignable
 public class CardView: UIView {
+    
+    var numberOfRows = 0
+    
+    var dateForCell: String?
+    var locationForCell: Location?
+    var shoppingListForCell: [Item]?
+    
+    public var event: Event? {
+        didSet {
+            DispatchQueue.main.async {
+                self.title = self.event?.event?.name
+                self.detail = self.event?.event?.startHour
+                self.subtitle = self.event?.event?.date
+                
+                if let date = self.event?.event?.date {
+                    self.dateForCell = date
+                    self.numberOfRows += 1
+                }
+                if let location = self.event?.location {
+                    self.locationForCell = location
+                    self.numberOfRows += 1
+                }
+                if let shoppingList = self.event?.shoppingList {
+                    self.shoppingListForCell = shoppingList
+                    self.numberOfRows += 1
+                }
+            }
+            
+        }
+        
+    }
 
     private func makeLbl() -> UILabel {
         let lbl = UILabel()
         lbl.adjustsFontSizeToFitWidth = true
-        lbl.textColor = .black50()
+        lbl.textColor = .black50
         return lbl
     }
 
@@ -130,7 +162,7 @@ public class CardView: UIView {
         }
     }
 
-    @IBInspectable public var fillColor: UIColor = .white
+    @IBInspectable public var fillColor: UIColor = .green
 
     var fromTop = true
 
@@ -251,27 +283,33 @@ public class CardView: UIView {
 extension CardView: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.numberOfRows
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        
+        if let time = dateForCell {
             let timeCell = self.moduleTableView.dequeueReusableCell(withIdentifier: TIME_CELL, for: indexPath) as! TimeTableViewCell
-            timeCell.setup(dayAndTime: "28/06, segunda - 10:30 - 11:30")
+            timeCell.setup(dayAndTime: time)
+            dateForCell = nil
             return timeCell
-            
-        } else if indexPath.row == 1 {
+        }
+        
+        if let address = locationForCell {
             let addressCell = self.moduleTableView.dequeueReusableCell(withIdentifier: ADDRESS_CELL, for: indexPath) as! AddressTableViewCell
-            addressCell.setup()
+            addressCell.setup(address: address)
+            locationForCell = nil
             return addressCell
-        } else if indexPath.row == 2{
-            let inviteCell = self.moduleTableView.dequeueReusableCell(withIdentifier: INVITE_CELL, for: indexPath) as! InviteTableViewCell
-            inviteCell.setup()
-            return inviteCell
-        } else {
+        }
+        
+        if let shoppingList = shoppingListForCell {
             let listCell = self.moduleTableView.dequeueReusableCell(withIdentifier: SHOPPING_CELL, for: indexPath) as! ShoppingListTableViewCell
             listCell.setup()
+            shoppingListForCell = nil
             return listCell
         }
+        
+        return UITableViewCell()
+        
     }
 }

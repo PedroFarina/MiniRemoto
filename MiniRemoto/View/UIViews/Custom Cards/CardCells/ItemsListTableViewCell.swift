@@ -26,14 +26,14 @@ class ItemsListTableViewCell: UITableViewCell {
 
     func setupContent() {
         self.nameLabel.font = UIFont(name: "Montserrat-Medium", size: 14)
-        self.nameLabel.textColor = .black50()
-        self.lineView.backgroundColor = .black50()
+        self.nameLabel.textColor = .black50
+        self.lineView.backgroundColor = .black50
         self.personNameLabel.font = UIFont(name: "Montserrat-Medium", size: 10)
-        self.personNameLabel.textColor = .black50()
-        self.selectionButtonOutlet.tintColor = .black50()
+        self.personNameLabel.textColor = .black50
+        self.selectionButtonOutlet.tintColor = .black50
         
         if alreadySelected {
-            self.selectionButtonOutlet.strokeColor = .black50()
+            self.selectionButtonOutlet.strokeColor = .black50
             self.selectionButtonOutlet.setImage(nil, for: .normal)
             self.personNameLabel.isHidden = true
         } else {

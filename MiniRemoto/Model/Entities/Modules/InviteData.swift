@@ -25,9 +25,9 @@ public class InviteData: Module {
     public var guests: [SelectableContact]? {
         didSet {
             if guests?.count==1 {
-                title = "1 Convidado"
+                title = "1 " + "Convidado".localized()
             } else {
-                title = "\(guests?.count ?? 0) Convidados"
+                title = "\(guests?.count ?? 0) " + "Convidados".localized()
             }
         }
     }

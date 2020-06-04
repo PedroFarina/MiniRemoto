@@ -9,6 +9,10 @@
 import Foundation
 
 public struct Item: Codable {
+    public init(itemName: String?, whoBrings: String?) {
+        self.itemName = itemName
+        self.whoBrings = whoBrings
+    }
     public var itemName: String?
     public var whoBrings: String?
 }

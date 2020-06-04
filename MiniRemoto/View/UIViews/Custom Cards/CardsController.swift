@@ -64,6 +64,14 @@ class CardsController: UIView {
         }
     }
 
+    func reloadData() {
+        for cards in visibleCards {
+            cards.removeFromSuperview()
+        }
+        visibleCards = []
+        createAllCards()
+    }
+
     fileprivate func updateVisibleCards() {
         guard let dataSource = dataSource else  {
             return

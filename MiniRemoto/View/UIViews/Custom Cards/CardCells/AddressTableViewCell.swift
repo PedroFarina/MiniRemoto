@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MiniRemotoDatabase
 
 class AddressTableViewCell: UITableViewCell {
 
@@ -26,7 +27,9 @@ class AddressTableViewCell: UITableViewCell {
         setupContent()
     }
     
-    func setup() {
+    func setup(address: Location) {
+        self.addressLabel.text = address.addressLine2
+        self.addressNameLabel.text = address.addressLine
     }
     
     func setupContent() {
@@ -35,16 +38,16 @@ class AddressTableViewCell: UITableViewCell {
         self.rideButtonOutlet.titleLabel?.font = UIFont(name: "Montserrat-SemiBold", size: 12)
         
         self.addressImageView.image = UIImage(named: "Location")
-        self.addressImageView.tintColor = .black50()
+        self.addressImageView.tintColor = .black50
         
-        self.addressNameLabel.textColor = .black50()
-        self.addressLabel.textColor = .black50()
-        self.rideButtonOutlet.strokeColor = .black50()
-        self.rideButtonOutlet.setTitleColor(.black50(), for: .normal)
+        self.addressNameLabel.textColor = .black50
+        self.addressLabel.textColor = .black50
+        self.rideButtonOutlet.strokeColor = .black50
+        self.rideButtonOutlet.setTitleColor(.black50, for: .normal)
         
 //        self.rideButtonOutlet.imageView = UIImage(named: "uber")
         self.rideButtonOutlet.setImage(UIImage(named: "uber"), for: .normal)
-        self.rideButtonOutlet.imageView?.tintColor = .black50()
+        self.rideButtonOutlet.imageView?.tintColor = .black50
     }
     
 }
