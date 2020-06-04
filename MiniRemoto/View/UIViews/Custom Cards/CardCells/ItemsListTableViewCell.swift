@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MiniRemotoDatabase
 
 class ItemsListTableViewCell: UITableViewCell {
     
@@ -43,8 +44,9 @@ class ItemsListTableViewCell: UITableViewCell {
         }
     }
     
-    func setup() {
-        
+    func setup(item: Item) {
+        self.nameLabel.text = item.itemName
+        self.personNameLabel.text = item.whoBrings
     }
     
     
