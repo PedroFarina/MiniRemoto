@@ -32,7 +32,6 @@ class ListModuleViewController: UIViewController, ModuleController {
         hideKeyboardWhenTappedAround()
         bottomValue = bottomConstraint.constant
         setupModule()
-        print(moduleItems.count)
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -93,7 +92,6 @@ class ListModuleViewController: UIViewController, ModuleController {
                 }
             }
         }
-        print(arrayFinal)
     }
 
     @IBAction func addItemButton(_ sender: Any) {
@@ -106,7 +104,7 @@ class ListModuleViewController: UIViewController, ModuleController {
     
     @IBAction func okBtnAction(_ sender: Any) {
         getAllListItems()
-        guard let data = module as? ListData else { return print("Module was not listdata")}
+        guard let data = module as? ListData else { fatalError("Module was not ListData") }
         data.itemList = arrayFinal
         reloadData?()
         self.dismiss(animated: true, completion: nil)
@@ -114,7 +112,7 @@ class ListModuleViewController: UIViewController, ModuleController {
     
     @IBAction func checkBtnAction(_ sender: Any) {
         getAllListItems()
-        guard let data = module as? ListData else { return print("Module was not listdata")}
+        guard let data = module as? ListData else { fatalError("Module was not ListData") }
         data.itemList = arrayFinal
         reloadData?()
         self.dismiss(animated: true, completion: nil)

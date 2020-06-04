@@ -43,6 +43,9 @@ public class MainViewController: UIViewController, CardsControllerDataSource, DB
     public func cardForIndex(_ index: Int) -> CardView {
         let card = CardView()
         card.event = DataController.shared().events[index]
+        if let color = DataController.shared().events[index].event?.color, let colorEnum = AppColor(rawValue: color) {
+            card.fillColor = .getColorFrom(colorEnum)
+        }
         return card
     }
 }

@@ -24,10 +24,6 @@ public class CardView: UIView {
                 self.title = self.event?.event?.name
                 self.detail = self.event?.event?.startHour
                 self.subtitle = self.event?.event?.date
-                self.fillColor = .blue
-                if let color = self.event?.event?.color, let colorEnum = AppColor(rawValue: color) {
-                    self.fillColor = .getColorFrom(colorEnum)
-                }
                 
                 if let date = self.event?.event?.date {
                     self.dateForCell = date
@@ -166,7 +162,7 @@ public class CardView: UIView {
         }
     }
 
-    @IBInspectable public var fillColor: UIColor = .white
+    @IBInspectable public var fillColor: UIColor = .green
 
     var fromTop = true
 

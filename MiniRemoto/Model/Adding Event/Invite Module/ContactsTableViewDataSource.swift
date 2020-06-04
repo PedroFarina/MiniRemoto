@@ -129,7 +129,6 @@ extension ContactsTableViewDataSource: ContactCollectionViewSelectorDelegate {
             section.contacts.forEach { (arContact) in
                 if contact.id == arContact.id {
                     contact.isSelected = false
-                    print(contact.givenName, contact.isSelected)
                     tableView.reloadData()
                 }
             }
