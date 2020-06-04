@@ -11,13 +11,23 @@ import UIKit
 class ListModuleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var txtItem: SlashedTextField!
- 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+        var textChanged: ((String) -> Void)?
 
-    func setup(with delegate: UITextFieldDelegate) {
-        txtItem.delegate = delegate
-        txtItem.becomeFirstResponder()
+        override func awakeFromNib() {
+            super.awakeFromNib()
+        }
+
+
+        func setup(with delegate: UITextFieldDelegate) {
+            txtItem.delegate = delegate
+            txtItem.becomeFirstResponder()
+        }
+
+        func textChanged(action: @escaping (String) -> Void) {
+            self.textChanged = action
+        }
+
+        func textViewDidChange( textView: UITextView) {
+            textChanged?(textView.text)
+        }
     }
-}
