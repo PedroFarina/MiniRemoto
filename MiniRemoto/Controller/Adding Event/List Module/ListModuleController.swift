@@ -22,15 +22,26 @@ class ListModuleViewController: UIViewController, ModuleController {
     var bottomValue: CGFloat = 0.0
     var addListTableViewDataSource: ListModuleTableDataSource?
     var shouldBeginCalledBeforeHand: Bool = false
+    
+    var arrayFinal:[String] = []
+    var moduleItems:[String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         hideKeyboardWhenTappedAround()
         bottomValue = bottomConstraint.constant
+        setupModule()
+        print(moduleItems.count)
 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func setupModule(){
+        guard let data = module as? ListData else { return }
+        moduleItems = data.itemList ?? []
+        addListTableViewDataSource?.moduleItems = moduleItems
     }
 
     func setupTableView() {
@@ -71,16 +82,19 @@ class ListModuleViewController: UIViewController, ModuleController {
         var allUITextFieldsItems:[UITextField] = []
         allUITextFieldsItems.append(contentsOf: addListTableViewDataSource!.texts)
         
+        
         allUITextFieldsItems.forEach { (allTextsItems) in
             if let text = allTextsItems.text {
                 if text != "" {
-                    print(text)
+                    arrayFinal.append(text)
                 }
             }
         }
+        print(arrayFinal)
     }
 
     @IBAction func addItemButton(_ sender: Any) {
+        placeHolderAddListTip.isHidden = true
         guard let rows = addListTableViewDataSource?.numberOfRows else {return}
         if rows <= 12 {
             addRow()
@@ -89,11 +103,17 @@ class ListModuleViewController: UIViewController, ModuleController {
     
     @IBAction func okBtnAction(_ sender: Any) {
         getAllListItems()
+        guard let data = module as? ListData else { return print("Module was not listdata")}
+        data.itemList = arrayFinal
+        reloadData?()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func checkBtnAction(_ sender: Any) {
         getAllListItems()
+        guard let data = module as? ListData else { return print("Module was not listdata")}
+        data.itemList = arrayFinal
+        reloadData?()
         self.dismiss(animated: true, completion: nil)
     }
     

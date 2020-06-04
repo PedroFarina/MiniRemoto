@@ -17,21 +17,32 @@ class ListModuleTableDataSource: NSObject, UITableViewDataSource {
     var texts: [UITextField] = []
     var ADDLISTCELL = "AddListTableViewCell"
     var txtFieldDelegate: UITextFieldDelegate?
-
+    
+    var moduleItems:[String] = []
+    
     init(txtFieldDelegate: UITextFieldDelegate) {
         self.txtFieldDelegate = txtFieldDelegate
     }
+    
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return amount
+        if moduleItems.count != 0{
+            return moduleItems.count
+        } else {
+            return amount
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ADDLISTCELL) as? ListModuleTableViewCell
+        
+        if moduleItems.count != 0 {
+            cell?.txtItem.text = moduleItems[indexPath.row]
+        }
 
         if let delegate = txtFieldDelegate, let cell = cell {
             cell.setup(with: delegate)
