@@ -42,6 +42,9 @@ class ListModuleViewController: UIViewController, ModuleController {
         guard let data = module as? ListData else { return }
         moduleItems = data.itemList ?? []
         addListTableViewDataSource?.moduleItems = moduleItems
+        if addListTableViewDataSource?.moduleItems.count != 0 {
+            placeHolderAddListTip.isHidden = true
+        }
     }
 
     func setupTableView() {
