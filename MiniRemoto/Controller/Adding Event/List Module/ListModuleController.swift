@@ -27,7 +27,7 @@ class ListModuleViewController: UIViewController, ModuleController {
         super.viewDidLoad()
         setupTableView()
         hideKeyboardWhenTappedAround()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
@@ -41,6 +41,7 @@ class ListModuleViewController: UIViewController, ModuleController {
     }
 
     func addRow() {
+        checkRowCount()
         let row = addListTableViewDataSource?.numberOfRows ??  0
         let index = IndexPath(row: row, section: 0)
         addListTableViewDataSource?.addRow(in: listTableView, at: index)
@@ -77,30 +78,45 @@ class ListModuleViewController: UIViewController, ModuleController {
     }
 
     @IBAction func addItemButton(_ sender: Any) {
-        addRow()
+        guard let rows = addListTableViewDataSource?.numberOfRows else {return}
+        if rows <= 12 {
+            addRow()
+        }
     }
     
     @IBAction func okBtnAction(_ sender: Any) {
-        //getAllListItems()
+        getAllListItems()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func checkBtnAction(_ sender: Any) {
-        //getAllListItems()
+        getAllListItems()
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
+
+    func checkRowCount() {
+        guard let rows = addListTableViewDataSource?.numberOfRows else {return}
+        if rows >= 12 {
+            let alert = UIAlertController(title: "Alerta", message: "O número máximo de itens nessa lista é \(rows)", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
 
 extension ListModuleViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        addRow()
+        guard let rows = addListTableViewDataSource?.numberOfRows else {return false}
+
+        if rows <= 12 {
+            addRow()
+        }
+
         return false
     }
 
@@ -110,9 +126,9 @@ extension ListModuleViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-         if textField.text != "" {
-                    btnCheck.isHidden = false
-                    btnSave.isEnabled = true
+        if textField.text != "" {
+            btnCheck.isHidden = false
+            btnSave.isEnabled = true
         }
         return shouldBeginCalledBeforeHand
     }
