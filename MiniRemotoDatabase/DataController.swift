@@ -78,23 +78,9 @@ public class DataController {
 
     }
 
-    public func createEvent(name: String, color: AppColor, startDate: Date?, endDate: Date?, items: [Item]?, location: Location?) {
-        let df = DateFormatter()
-        df.dateFormat = "dd/MM/yyyy"
-        var date: String? = nil
-        var startHour: String? = nil
-        var endHour: String? = nil
-        if let startDate = startDate {
-            date = df.string(from: startDate)
-            df.dateFormat = "hh:mm"
-            startHour = df.string(from: startDate)
-        }
-        if let endDate = endDate {
-            df.dateFormat = "hh:mm"
-            endHour = df.string(from: endDate)
-        }
+    public func createEvent(name: String, color: AppColor, startDate: String?, startHour: String?, endHour: String?, items: [Item]?, location: Location?) {
 
-        let info = EventInformation(ownerID: user?.id, name: name, id: UUID().uuidString, color: color.rawValue, date: date, startHour: startHour, endHour: endHour)
+        let info = EventInformation(ownerID: user?.id, name: name, id: UUID().uuidString, color: color.rawValue, date: startDate, startHour: startHour, endHour: endHour)
         let event = Event(info: info, shoppingList: items, location: location)
         EndpointsRequests.Requests.postRequest(url: "\(DataController.hostaddress)/createEvent", params: event, decodableType: Response.self) { (answer) in
             switch answer {

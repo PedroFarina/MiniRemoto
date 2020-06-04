@@ -22,12 +22,12 @@ public class CalendarData: Module {
 
     private static let hourDF: DateFormatter = {
         let df = DateFormatter()
-        df.dateFormat =  "HH:mm"
+        df.dateFormat =  "HH:mm".localized()
         return df
     }()
     private static let dateDF: DateFormatter = {
         let df = DateFormatter()
-        df.dateFormat = "dd/MM/yyyy"
+        df.dateFormat = "dd/MM/yyyy".localized()
         return df
     }()
 
@@ -48,4 +48,25 @@ public class CalendarData: Module {
     }
     public var endDate: Date?
     public var allDay: Bool = false
+
+    public var sDate: String? {
+        if let date = startDate {
+            return CalendarData.dateDF.string(from: date)
+        }
+        return nil
+    }
+    public var sHour: String? {
+        if allDay {
+            return "Dia todo".localized()
+        } else if let date = startDate {
+            return CalendarData.hourDF.string(from: date)
+        }
+        return nil
+    }
+    public var eHour:String? {
+        if !allDay, let date = endDate {
+            return CalendarData.hourDF.string(from: date)
+        }
+        return nil
+    }
 }

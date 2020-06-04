@@ -86,9 +86,19 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
         self.present(failAlert, animated: true)
     }
     @IBAction func doneTap(_ sender: Any) {
-        //TODO: Save event
-        #warning("Save event not implemented yet")
-        DataController.shared().createEvent(name: txtEventName.text!, color: .orange, startDate: Date(), endDate: nil, items: nil, location: nil)
+        #warning("Missing list and invitees")
+        var startDate: String? = nil, startHour: String? = nil, endHour: String? = nil, list: [Item]? = nil, location: Location? = nil
+        for module in tableDataSource.modules {
+            if let calendarData = module as? CalendarData {
+                startDate = calendarData.sDate
+                startHour = calendarData.sHour
+                endHour = calendarData.eHour
+            } else if let locationData = module as? LocationData,
+                let coordinates = locationData.location?.placemark.coordinate {
+                location = Location(latitude: coordinates.latitude, longitude: coordinates.longitude, addressLine: locationData.title, addressLine2: locationData.addressLine2)
+            }
+        }
+        DataController.shared().createEvent(name: txtEventName.text ?? "Evento".localized(), color: MiniRemotoDatabase.AppColor.getRandom(), startDate: startDate, startHour: startHour, endHour: endHour, items: list, location: location)
         self.dismiss(animated: true)
     }
     @IBAction func cancelTap(_ sender: Any) {

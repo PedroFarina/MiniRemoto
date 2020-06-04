@@ -82,7 +82,7 @@ public enum AppColor: String {
     case yellow
     case lightBlue
 
-    static func getRandom() -> AppColor {
+    public static func getRandom() -> AppColor {
         let arr: [AppColor] = [.red, .orange, .blue, .pink, .yellow, .lightBlue]
         if let color = arr.randomElement() {
             return color
