@@ -60,6 +60,6 @@ class ContactsTableViewCell: UITableViewCell {
     }
 
     func selectCheckImage(isSelected: Bool) {
-        check.image = isSelected ? UIImage(named: "Check") : UIImage(named: "Unselected")
+        check.image = isSelected ? UIImage(named: "CheckButton") : UIImage(named: "Unselected")
     }
 }
