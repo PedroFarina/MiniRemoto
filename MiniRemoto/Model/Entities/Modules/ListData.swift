@@ -19,8 +19,6 @@ public class ListData: Module {
     
     public var itemList: [String]? {
         didSet {
-            //mudar desenho na tableview
-            
             if itemList?.count == 1 {
                 title = "1 Item"
             } else if (itemList?.count ?? 12) >= 1 {
