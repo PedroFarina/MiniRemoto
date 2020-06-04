@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNf-GY-n9P">
-                                <rect key="frame" x="312" y="515" width="48" height="48"/>
+                                <rect key="frame" x="312" y="44" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CNf-GY-n9P" secondAttribute="height" multiplier="1:1" id="t6D-kL-9T5"/>
                                 </constraints>
@@ -32,9 +32,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="CNf-GY-n9P" firstAttribute="top" secondItem="zY0-71-AQo" secondAttribute="top" id="4Br-Wy-UY6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zY0-71-AQo" secondAttribute="trailing" id="8oM-7z-zqw"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tta-bt-FEk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CNf-GY-n9P" secondAttribute="bottom" constant="215" id="VwB-iA-WZS"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W2E-p7-8OO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CNf-GY-n9P" secondAttribute="trailing" constant="15" id="bfS-ge-Yqn"/>
                             <constraint firstItem="zY0-71-AQo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lDd-wG-531"/>
