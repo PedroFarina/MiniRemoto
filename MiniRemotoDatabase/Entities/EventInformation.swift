@@ -9,8 +9,8 @@
 import Foundation
 
 public struct EventInformation: Codable {
-    public init(ownerID: String?, name: String?, id: String?, color: String?, date: String?, startHour: String?, endHour: String?) {
-        self.ownerID = ownerID
+    public init(ownerId: String?, name: String?, id: String?, color: String?, date: String?, startHour: String?, endHour: String?) {
+        self.ownerId = ownerId
         self.name = name
         self.id = id
         self.color = color
@@ -19,7 +19,7 @@ public struct EventInformation: Codable {
         self.endHour = endHour
     }
     
-    public var ownerID: String?
+    public var ownerId: String?
     public var name: String?
     public var id: String?
     public var color: String?
