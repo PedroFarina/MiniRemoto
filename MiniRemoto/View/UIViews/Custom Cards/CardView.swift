@@ -41,7 +41,6 @@ public class CardView: UIView {
                     self.shoppingListForCell = shoppingList
                     self.numberOfRows += 1
                 }
-//                if let _ = self.event?.event.
             }
             
         }
@@ -315,17 +314,6 @@ extension CardView: UITableViewDelegate, UITableViewDataSource {
         }
         
         return UITableViewCell()
-//
-//        if indexPath.row == 0 {
-//
-//
-//        } else if indexPath.row == 1 {
-//
-//        } else if indexPath.row == 2{
-//            let inviteCell = self.moduleTableView.dequeueReusableCell(withIdentifier: INVITE_CELL, for: indexPath) as! InviteTableViewCell
-//            inviteCell.setup()
-//            return inviteCell
-//        } else {
         
     }
 }
