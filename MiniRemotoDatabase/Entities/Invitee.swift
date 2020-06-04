@@ -9,11 +9,11 @@
 import Foundation
 
 public struct Invitee: Codable {
-    public init(name: String, address: String) {
+    public init(name: String, email: String) {
         self.name = name
-        self.address = address
+        self.email = email
     }
 
     public var name: String?
-    public var address: String?
+    public var email: String?
 }

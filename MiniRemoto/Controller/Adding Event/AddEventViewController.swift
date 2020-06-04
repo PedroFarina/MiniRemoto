@@ -116,7 +116,7 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
                 let guests = inviteData.guests {
                 invitees = []
                 for guest in guests {
-                    invitees?.append(Invitee(name: guest.givenName, address: guest.email))
+                    invitees?.append(Invitee(name: guest.givenName, email: guest.email))
                 }
             }
         }
