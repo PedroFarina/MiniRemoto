@@ -28,6 +28,7 @@
 		0217DADC24784C11003B6286 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0217DADB24784C11003B6286 /* Item.swift */; };
 		0249F70524881029006F26E9 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249F70424881029006F26E9 /* Event.swift */; };
 		0249F70724881048006F26E9 /* EventInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249F70624881048006F26E9 /* EventInformation.swift */; };
+		0249F7092489A691006F26E9 /* Invitee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0249F7082489A691006F26E9 /* Invitee.swift */; };
 		0260CE7824748B9100E16149 /* CalendarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7724748B9100E16149 /* CalendarData.swift */; };
 		0260CE7D24748C7000E16149 /* ModuleCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */; };
 		0260CE7E24748C7000E16149 /* ModuleTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */; };
@@ -149,6 +150,7 @@
 		0217DADB24784C11003B6286 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0249F70424881029006F26E9 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0249F70624881048006F26E9 /* EventInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInformation.swift; sourceTree = "<group>"; };
+		0249F7082489A691006F26E9 /* Invitee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitee.swift; sourceTree = "<group>"; };
 		0260CE7724748B9100E16149 /* CalendarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarData.swift; sourceTree = "<group>"; };
 		0260CE7924748C6F00E16149 /* ModuleCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleCollectionDelegate.swift; sourceTree = "<group>"; };
 		0260CE7A24748C6F00E16149 /* ModuleTableDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTableDelegate.swift; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 				0217DADB24784C11003B6286 /* Item.swift */,
 				0249F70424881029006F26E9 /* Event.swift */,
 				0249F70624881048006F26E9 /* EventInformation.swift */,
+				0249F7082489A691006F26E9 /* Invitee.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -805,6 +808,7 @@
 				0217DAD624783EF7003B6286 /* User.swift in Sources */,
 				027E7FBA2486D9C700A9B68F /* Response.swift in Sources */,
 				0249F70724881048006F26E9 /* EventInformation.swift in Sources */,
+				0249F7092489A691006F26E9 /* Invitee.swift in Sources */,
 				02046FA0247C4F2700620FA9 /* StringExtension.swift in Sources */,
 				0217DADA24784607003B6286 /* Location.swift in Sources */,
 				02E8FCBB2476FAEE002B942D /* DataController.swift in Sources */,

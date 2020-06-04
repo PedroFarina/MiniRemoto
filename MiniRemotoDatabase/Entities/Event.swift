@@ -9,10 +9,11 @@
 import Foundation
 
 public struct Event: Codable {
-    internal init(info: EventInformation?, shoppingList: [Item]?, location: Location?) {
+    internal init(info: EventInformation?, shoppingList: [Item]?, location: Location?, invitees: [Invitee]?) {
         self.event = info
         self.shoppingList = shoppingList
         self.location = location
+        self.invitees = invitees
     }
     mutating func changeInfo(to newInformation: EventInformation?) {
         event = newInformation
@@ -26,4 +27,5 @@ public struct Event: Codable {
     public var event: EventInformation?
     public var shoppingList: [Item]?
     public var location: Location?
+    public var invitees: [Invitee]?
 }

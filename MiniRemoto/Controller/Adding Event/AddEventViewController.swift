@@ -96,7 +96,7 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
         self.present(failAlert, animated: true)
     }
     @IBAction func doneTap(_ sender: Any) {
-        var startDate: String? = nil, startHour: String? = nil, endHour: String? = nil, list: [Item]? = nil, location: Location? = nil
+        var startDate: String? = nil, startHour: String? = nil, endHour: String? = nil, list: [Item]? = nil, location: Location? = nil, invitees: [Invitee]? = nil
         for module in tableDataSource.modules {
             if let calendarData = module as? CalendarData {
                 startDate = calendarData.sDate
@@ -113,10 +113,10 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
                 }
                 list = items
             } else if let inviteData = module as? InviteData {
-
+                invitees = []
             }
         }
-        DataController.shared().createEvent(name: txtEventName.text ?? "Evento".localized(), color: MiniRemotoDatabase.AppColor.getRandom(), startDate: startDate, startHour: startHour, endHour: endHour, items: list, location: location)
+        DataController.shared().createEvent(name: txtEventName.text ?? "Evento".localized(), color: MiniRemotoDatabase.AppColor.getRandom(), startDate: startDate, startHour: startHour, endHour: endHour, items: list, location: location, invitees: invitees)
         self.dismiss(animated: true)
     }
     @IBAction func cancelTap(_ sender: Any) {
