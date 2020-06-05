@@ -19,7 +19,7 @@ class ShoppingListTableViewCell: UITableViewCell {
     let ITEM_CELL = "ItemsListTableViewCell"
     
     let fixCell = 1
-    let contentNumberOfRows = 3
+//    let contentNumberOfRows = 3
     
     var items = [Item]()
     
@@ -60,7 +60,7 @@ extension ShoppingListTableViewCell: UITableViewDelegate, UITableViewDataSource 
 //        if contentNumberOfRows < 3 {
 //            return 2 //Retorna .cont do datasource
 //        } else {
-            return contentNumberOfRows + fixCell
+        return items.count + fixCell
 //        }
     }
     
