@@ -45,8 +45,7 @@ class ItemsListTableViewCell: UITableViewCell {
     }
     
     func setup(item: Item) {
-        self.nameLabel.text = item.itemName
-        self.personNameLabel.text = item.whoBrings
+        self.nameLabel.text = item.name
     }
     
     

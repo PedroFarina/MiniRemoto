@@ -70,7 +70,9 @@ extension ShoppingListTableViewCell: UITableViewDelegate, UITableViewDataSource 
             return moreCell
         } else {
             let itemCell = shoppingListTableView.dequeueReusableCell(withIdentifier: ITEM_CELL, for: indexPath) as! ItemsListTableViewCell
-            itemCell.setup(item: items[indexPath.row])
+            if indexPath.row < items.count {
+                itemCell.setup(item: items[indexPath.row])
+            }
             return itemCell
         }
     }

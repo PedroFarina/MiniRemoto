@@ -34,11 +34,11 @@ public class CardView: UIView {
                     self.locationForCell = location
                     self.numberOfRows += 1
                 }
-                if let shoppingList = self.event?.shoppingList {
+                if let shoppingList = self.event?.shoppingList?.array as? [Item] {
                     self.shoppingListForCell = shoppingList
                     self.numberOfRows += 1
                 }
-                if let contactList = self.event?.invitees {
+                if let contactList = self.event?.invitees?.array as? [Invitee] {
                     self.inviteesForCell = contactList
                     self.numberOfRows += 1
                 }
