@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MiniRemotoDatabase
 
 class ShoppingListTableViewCell: UITableViewCell {
     
@@ -18,7 +19,9 @@ class ShoppingListTableViewCell: UITableViewCell {
     let ITEM_CELL = "ItemsListTableViewCell"
     
     let fixCell = 1
-    let contentNumberOfRows = 3
+//    let contentNumberOfRows = 3
+    
+    var items = [Item]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,7 +48,8 @@ class ShoppingListTableViewCell: UITableViewCell {
         self.shoppingListNameLabel.textColor = .black50
     }
     
-    func setup() {
+    func setup(shoppingList: [Item]) {
+        self.items = shoppingList
         self.setupTableView()
     }
 }
@@ -53,11 +57,11 @@ class ShoppingListTableViewCell: UITableViewCell {
 extension ShoppingListTableViewCell: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if contentNumberOfRows < 3 {
-            return 2 //Retorna .cont do datasource
-        } else {
-            return contentNumberOfRows + fixCell
-        }
+//        if contentNumberOfRows < 3 {
+//            return 2 //Retorna .cont do datasource
+//        } else {
+        return items.count + fixCell
+//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,7 +70,9 @@ extension ShoppingListTableViewCell: UITableViewDelegate, UITableViewDataSource 
             return moreCell
         } else {
             let itemCell = shoppingListTableView.dequeueReusableCell(withIdentifier: ITEM_CELL, for: indexPath) as! ItemsListTableViewCell
-            itemCell.setup()
+            if indexPath.row < items.count {
+                itemCell.setup(item: items[indexPath.row])
+            }
             return itemCell
         }
     }

@@ -33,7 +33,6 @@ public class MainViewController: UIViewController, CardsControllerDataSource, DB
         DataController.shared().registerAsObserver(self)
         DataController.shared().delegate = self
         lblPlaceholder.isHidden = !DataController.shared().events.isEmpty
-        DataController.shared().createUser()
     }
     deinit {
         DataController.shared().removeAsObserver(self)

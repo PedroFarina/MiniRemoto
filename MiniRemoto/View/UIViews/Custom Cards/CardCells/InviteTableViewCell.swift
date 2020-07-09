@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MiniRemotoDatabase
 
 class InviteTableViewCell: UITableViewCell {
     
@@ -15,15 +16,16 @@ class InviteTableViewCell: UITableViewCell {
     @IBOutlet weak var inviteCollectionView: UICollectionView!
     
     let PERSON_CELL = "PersonCollectionViewCell"
+    var invitees = [Invitee]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupContent()
-        self.setupCollectionView()
     }
 
-    func setup() {
-        
+    func setup(invitees: [Invitee]) {
+        self.invitees = invitees
+        self.setupCollectionView()
     }
     
     func setupContent() {
@@ -47,11 +49,12 @@ class InviteTableViewCell: UITableViewCell {
 extension InviteTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return invitees.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.inviteCollectionView.dequeueReusableCell(withReuseIdentifier: PERSON_CELL, for: indexPath) as! PersonCollectionViewCell
+        cell.setup(invitee: invitees[indexPath.row])
         return cell
     }
     

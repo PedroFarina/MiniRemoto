@@ -30,9 +30,11 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSContactsUsageDescription</key>
+	<string>Sua lista de contatos será usada para convidar pessoas</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Sua localização será usada para melhorar os resultados da busca por endereço</string>
 	<key>UIAppFonts</key>
@@ -62,8 +64,6 @@
 	</dict>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>NSContactsUsageDescription</key>
-	<string>Sua lista de contatos será usada para convidar pessoas</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

@@ -17,6 +17,7 @@ public class CardView: UIView {
     var dateForCell: String?
     var locationForCell: Location?
     var shoppingListForCell: [Item]?
+    var inviteesForCell: [Invitee]?
     
     public var event: Event? {
         didSet {
@@ -33,8 +34,12 @@ public class CardView: UIView {
                     self.locationForCell = location
                     self.numberOfRows += 1
                 }
-                if let shoppingList = self.event?.shoppingList {
+                if let shoppingList = self.event?.shoppingList?.array as? [Item] {
                     self.shoppingListForCell = shoppingList
+                    self.numberOfRows += 1
+                }
+                if let contactList = self.event?.invitees?.array as? [Invitee] {
+                    self.inviteesForCell = contactList
                     self.numberOfRows += 1
                 }
             }
@@ -304,9 +309,16 @@ extension CardView: UITableViewDelegate, UITableViewDataSource {
         
         if let shoppingList = shoppingListForCell {
             let listCell = self.moduleTableView.dequeueReusableCell(withIdentifier: SHOPPING_CELL, for: indexPath) as! ShoppingListTableViewCell
-            listCell.setup()
+            listCell.setup(shoppingList: shoppingList)
             shoppingListForCell = nil
             return listCell
+        }
+        
+        if let contactList = inviteesForCell {
+            let contactCell = self.moduleTableView.dequeueReusableCell(withIdentifier: INVITE_CELL, for: indexPath) as! InviteTableViewCell
+            contactCell.setup(invitees: contactList)
+            inviteesForCell = nil
+            return contactCell
         }
         
         return UITableViewCell()

@@ -103,20 +103,31 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
                 startHour = calendarData.sHour
                 endHour = calendarData.eHour
             } else if let locationData = module as? LocationData,
-                let coordinates = locationData.location?.placemark.coordinate {
-                location = Location(latitude: coordinates.latitude, longitude: coordinates.longitude, addressLine: locationData.title, addressLine2: locationData.addressLine2)
+                let coordinates = locationData.location?.placemark.coordinate,
+                let location = DataController.shared().makeLocation() {
+                location.latitude = coordinates.latitude
+                location.longitude = coordinates.longitude
+                location.addressLine = locationData.title
+                location.addressLine2 = locationData.addressLine2
             } else if let listData = module as? ListData,
                 let itemList = listData.itemList {
                 var items: [Item] = []
-                for item in itemList {
-                    items.append(Item(itemName: item, whoBrings: nil))
+                for itemName in itemList {
+                    if let itemObject = DataController.shared().makeItem() {
+                        itemObject.name = itemName
+                        items.append(itemObject)
+                    }
                 }
                 list = items
             } else if let inviteData = module as? InviteData,
                 let guests = inviteData.guests {
                 invitees = []
                 for guest in guests {
-                    invitees?.append(Invitee(name: guest.givenName, email: guest.email))
+                    if let invitee = DataController.shared().makeInvitee() {
+                        invitee.name = guest.givenName
+                        invitee.email = guest.email
+                        invitees?.append(invitee)
+                    }
                 }
             }
         }
