@@ -25,7 +25,7 @@ public class CalendarData: Module {
         df.dateFormat =  "HH:mm".localized()
         return df
     }()
-    private static let dateDF: DateFormatter = {
+    static let dateDF: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "dd/MM/yyyy".localized()
         return df
