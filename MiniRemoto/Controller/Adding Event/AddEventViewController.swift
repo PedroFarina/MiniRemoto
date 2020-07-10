@@ -8,6 +8,7 @@
 
 import UIKit
 import MiniRemotoDatabase
+import EventKit
 
 public class AddEventViewController: UIViewController, ModuleStateDelegate, ModuleSelectorDelegate, UITextFieldDelegate {
 
@@ -19,6 +20,8 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
     @IBOutlet weak var moduleTableView: UITableView!
     let tableDelegate = ModuleTableViewDelegate()
     let tableDataSource = ModuleTableViewDataSource()
+
+    var eventStore = EKEventStore()
 
     public override func viewDidLoad() {
         txtEventName.delegate = self
@@ -32,6 +35,16 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
         tableDelegate.delegate = self
 
         txtEventName.addTarget(self, action: #selector(textChanged(_:)), for: .editingChanged)
+    }
+
+    func requestAuthorization() {
+        eventStore.requestAccess(to: .event) { (sucess, err) in
+            if !sucess {
+                print(err?.localizedDescription)
+            } else {
+                print("usuário concedeu acesso")
+            }
+        }
     }
 
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -97,11 +110,18 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
     }
     @IBAction func doneTap(_ sender: Any) {
         var startDate: String? = nil, startHour: String? = nil, endHour: String? = nil, list: [Item]? = nil, location: Location? = nil, invitees: [Invitee]? = nil
+
+        var calendarLocation: String = ""
+        var calendarStartDate: Date = Date()
+        var calendarEmails: [String] = []
+
         for module in tableDataSource.modules {
             if let calendarData = module as? CalendarData {
                 startDate = calendarData.sDate
                 startHour = calendarData.sHour
                 endHour = calendarData.eHour
+                calendarStartDate = calendarData.startDate ?? Date()
+
             } else if let locationData = module as? LocationData,
                 let coordinates = locationData.location?.placemark.coordinate,
                 let location = DataController.shared().makeLocation() {
@@ -109,6 +129,8 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
                 location.longitude = coordinates.longitude
                 location.addressLine = locationData.title
                 location.addressLine2 = locationData.addressLine2
+                calendarLocation = "\(String(describing: locationData.title)) \(String(describing: locationData.addressLine2))"
+
             } else if let listData = module as? ListData,
                 let itemList = listData.itemList {
                 var items: [Item] = []
@@ -127,13 +149,57 @@ public class AddEventViewController: UIViewController, ModuleStateDelegate, Modu
                         invitee.name = guest.givenName
                         invitee.email = guest.email
                         invitees?.append(invitee)
+                        calendarEmails.append(guest.email)
                     }
                 }
             }
         }
+
         DataController.shared().createEvent(name: txtEventName.text ?? "Evento".localized(), color: MiniRemotoDatabase.AppColor.getRandom(), startDate: startDate, startHour: startHour, endHour: endHour, items: list, location: location, invitees: invitees)
+
+
+        requestAuthorization()
+        createEventInCalendar(eventTitle: txtEventName.text ?? "Evento".localized(), location: calendarLocation, startDate: calendarStartDate, guests: calendarEmails)
+
         self.dismiss(animated: true)
     }
+
+
+    func createEventInCalendar(eventTitle: String, location: String, startDate: Date, guests: [String]) {
+
+        let event = EKEvent(eventStore: eventStore)
+        event.title = eventTitle
+        event.location = location
+        event.startDate = startDate
+        event.endDate = startDate
+        event.calendar = eventStore.defaultCalendarForNewEvents
+
+        var attendees = [EKParticipant]()
+        for email in guests {
+            if let attendee = createParticipant(email: email) {
+                attendees.append(attendee)
+            }
+        }
+
+        event.setValue(attendees, forKey: "attendees")
+
+        do {
+            try eventStore.save(event, span: .thisEvent)
+        } catch let err {
+            print(err.localizedDescription)
+        }
+    }
+
+    private func createParticipant(email: String) -> EKParticipant? {
+        let clazz: AnyClass? = NSClassFromString("EKAttendee")
+        if let type = clazz as? NSObject.Type {
+            let attendee = type.init()
+            attendee.setValue(email, forKey: "emailAddress")
+            return attendee as? EKParticipant
+        }
+        return nil
+    }
+
     @IBAction func cancelTap(_ sender: Any) {
         self.dismiss(animated: true)
     }

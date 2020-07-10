@@ -18,7 +18,6 @@ class ItemsListTableViewCell: UITableViewCell {
     
     var alreadySelected = false
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupContent()

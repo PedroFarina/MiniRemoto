@@ -37,6 +37,8 @@
 	<string>Sua lista de contatos será usada para convidar pessoas</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Sua localização será usada para melhorar os resultados da busca por endereço</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Seu calendário será usado para criar eventos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-SemiBold.ttf</string>
