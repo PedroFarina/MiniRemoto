@@ -17,19 +17,19 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pe6-VG-Exu">
-                        <rect key="frame" x="16" y="23.5" width="42" height="21"/>
+                        <rect key="frame" x="16" y="23.5" width="70" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hek-s9-28x">
-                        <rect key="frame" x="0.0" y="67" width="192" height="1"/>
+                        <rect key="frame" x="0.0" y="67" width="320" height="1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="jwB-9p-qn8"/>
                         </constraints>
                     </view>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjS-6S-aLu" customClass="RoundedButton" customModule="Eve" customModuleProvider="target">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjS-6S-aLu" customClass="RoundedButton" customModule="Eve" customModuleProvider="target">
                         <rect key="frame" x="274" y="19" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="2Fg-Nc-ID6"/>
@@ -44,7 +44,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yP-cF-QU9">
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yP-cF-QU9">
                         <rect key="frame" x="216" y="23.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -58,7 +58,7 @@
                     <constraint firstAttribute="bottom" secondItem="Hek-s9-28x" secondAttribute="bottom" id="TGU-cc-H8A"/>
                     <constraint firstItem="Hek-s9-28x" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="iKM-pq-mA2"/>
                     <constraint firstItem="hjS-6S-aLu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="idn-s2-xHc"/>
-                    <constraint firstAttribute="trailing" secondItem="Hek-s9-28x" secondAttribute="trailing" constant="128" id="k6v-H1-EkM"/>
+                    <constraint firstAttribute="trailing" secondItem="Hek-s9-28x" secondAttribute="trailing" id="k6v-H1-EkM"/>
                     <constraint firstAttribute="trailing" secondItem="hjS-6S-aLu" secondAttribute="trailing" constant="16" id="kJE-Ml-7kD"/>
                     <constraint firstItem="pe6-VG-Exu" firstAttribute="width" secondItem="Hek-s9-28x" secondAttribute="width" multiplier="0.21875" id="qPx-Zf-wXD"/>
                     <constraint firstItem="hjS-6S-aLu" firstAttribute="leading" secondItem="8yP-cF-QU9" secondAttribute="trailing" constant="16" id="zIa-RH-JgB"/>

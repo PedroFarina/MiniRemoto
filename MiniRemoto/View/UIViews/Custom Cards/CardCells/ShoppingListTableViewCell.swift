@@ -51,6 +51,7 @@ class ShoppingListTableViewCell: UITableViewCell {
     func setup(shoppingList: [Item]) {
         self.items = shoppingList
         self.setupTableView()
+        self.isUserInteractionEnabled = false
     }
 }
 
@@ -60,12 +61,12 @@ extension ShoppingListTableViewCell: UITableViewDelegate, UITableViewDataSource 
 //        if contentNumberOfRows < 3 {
 //            return 2 //Retorna .cont do datasource
 //        } else {
-        return items.count + fixCell
+        return items.count
 //        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == self.shoppingListTableView.numberOfRows(inSection: 0) - 1 {
+        if indexPath.row == self.shoppingListTableView.numberOfRows(inSection: 0) {
             let moreCell = shoppingListTableView.dequeueReusableCell(withIdentifier: MORE_CELL, for: indexPath) as! MoreTableViewCell
             return moreCell
         } else {

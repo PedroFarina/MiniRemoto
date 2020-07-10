@@ -24,6 +24,8 @@ class MoreTableViewCell: UITableViewCell {
         self.moreLabel.textColor = .black50
         self.moreLabel.text = "Ver mais"
     }
+    
+    
 
     
 }

@@ -36,13 +36,15 @@ class CardsController: UIView {
             if newValue == _index {
                 return
             }
-            if newValue < -2 {
+            let rows = dataSource?.numberOfRows() ?? 0
+            if newValue < max(-2, visibleCards.count * -1) {
                 direction = .downOnly
                 return
-            }
-            if newValue > (dataSource?.numberOfRows() ?? 0) - numberOfVisibleCards  {
-                direction = .upOnly
-                return
+            } else if newValue > rows - numberOfVisibleCards {
+                if (rows >= numberOfVisibleCards) || rows == 2 && newValue > 0 || rows == 1 {
+                    direction = .upOnly
+                    return
+                }
             }
             direction = .upDown
             previousIndex = _index
@@ -78,10 +80,16 @@ class CardsController: UIView {
         }
 
         if index > previousIndex {
+            let dsIndex: Int
             if index > 0 {
                 visibleCards.removeFirst().removeFromSuperview()
             }
-            let card = dataSource.cardForIndex(previousIndex + numberOfVisibleCards)
+            if index <= 0 {
+                dsIndex = previousIndex + dataSource.numberOfRows()
+            } else {
+                dsIndex = previousIndex + numberOfVisibleCards
+            }
+            let card = dataSource.cardForIndex(dsIndex)
             card.fromTop = false
             addSubview(card)
             visibleCards.append(card)
