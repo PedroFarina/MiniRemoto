@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Event" representedClassName="Event" syncable="YES">
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventInformation" inverseName="event" inverseEntity="EventInformation"/>
+        <relationship name="invitees" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Invitee" inverseName="event" inverseEntity="Invitee"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location"/>
+        <relationship name="shoppingList" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Item" inverseName="event" inverseEntity="Item"/>
+    </entity>
+    <entity name="EventInformation" representedClassName="EventInformation" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="endHour" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="startHour" optional="YES" attributeType="String"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="event" inverseEntity="Event"/>
+    </entity>
+    <entity name="Invitee" representedClassName="Invitee" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="invitees" inverseEntity="Event"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="shoppingList" inverseEntity="Event"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="addressLine" optional="YES" attributeType="String"/>
+        <attribute name="addressLine2" optional="YES" attributeType="String"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="event" inverseEntity="Location"/>
+    </entity>
+    <elements>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Invitee" positionX="-54" positionY="-9" width="128" height="88"/>
+        <element name="EventInformation" positionX="-36" positionY="18" width="128" height="133"/>
+        <element name="Item" positionX="-18" positionY="63" width="128" height="73"/>
+        <element name="Location" positionX="0" positionY="72" width="128" height="118"/>
+    </elements>
+</model>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="URc-5M-P6j">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--List Module View Controller-->
+        <scene sceneID="Hwl-Zm-ywb">
+            <objects>
+                <viewController storyboardIdentifier="main" id="URc-5M-P6j" customClass="ListModuleViewController" customModule="Eve" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CVc-Et-JF5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRj-bI-o7I">
+                                <rect key="frame" x="15" y="59" width="68" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Cancelar">
+                                    <color key="titleColor" name="Action Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButton:" destination="URc-5M-P6j" eventType="touchUpInside" id="vEB-TE-h5E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVw-Ck-P2z">
+                                <rect key="frame" x="369" y="59" width="30" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Ok"/>
+                                <connections>
+                                    <action selector="okBtnAction:" destination="URc-5M-P6j" eventType="touchUpInside" id="q7J-Ky-Ogy"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t4G-Dw-ARk">
+                                <rect key="frame" x="15" y="122" width="384" height="700"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddListTableViewCell" id="3i7-Ir-z5q" customClass="ListModuleTableViewCell" customModule="Eve" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="384" height="33"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3i7-Ir-z5q" id="z79-Sd-I1h">
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="33"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fTS-dH-www" customClass="SlashedTextField" customModule="Eve" customModuleProvider="target">
+                                                    <rect key="frame" x="5" y="0.0" width="374" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Eb6-lw-YYI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                            <color key="value" name="Label Gray"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="valueDidChanged:" destination="3i7-Ir-z5q" eventType="valueChanged" id="yta-eU-az6"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fTS-dH-www" firstAttribute="top" secondItem="z79-Sd-I1h" secondAttribute="top" id="DMc-VJ-wW3"/>
+                                                <constraint firstItem="fTS-dH-www" firstAttribute="leading" secondItem="z79-Sd-I1h" secondAttribute="leading" constant="5" id="QMf-1E-Del"/>
+                                                <constraint firstAttribute="trailing" secondItem="fTS-dH-www" secondAttribute="trailing" constant="5" id="eby-pN-fYe"/>
+                                                <constraint firstAttribute="bottom" secondItem="fTS-dH-www" secondAttribute="bottom" constant="3" id="xTd-G2-tih"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="txtItem" destination="fTS-dH-www" id="ZVz-eN-mn8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lM-DL-8Po">
+                                <rect key="frame" x="15" y="821" width="104" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="puH-lm-0rP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                <state key="normal" title=" Novo Item" image="plus">
+                                    <color key="titleColor" name="Action Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="addItemButton:" destination="URc-5M-P6j" eventType="touchUpInside" id="BdO-gL-vV7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DU6-Js-Bnc">
+                                <rect key="frame" x="351" y="794" width="48" height="48"/>
+                                <state key="normal" image="CheckButton">
+                                    <color key="titleColor" name="Action Color"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkBtnAction:" destination="URc-5M-P6j" eventType="touchUpInside" id="GGO-Hh-XUW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não há nenhum  item na lista. Toque em '+ Novo item' para adicionar." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eq-p5-gfh">
+                                <rect key="frame" x="40" y="199" width="334" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xmJ-3f-JWl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Label Gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Qw8-cj-Fik" firstAttribute="bottom" secondItem="1lM-DL-8Po" secondAttribute="bottom" constant="20" id="6kE-h2-nKl"/>
+                            <constraint firstItem="t4G-Dw-ARk" firstAttribute="top" secondItem="oRj-bI-o7I" secondAttribute="bottom" constant="30" id="7qn-uV-zvp"/>
+                            <constraint firstItem="2eq-p5-gfh" firstAttribute="centerY" secondItem="CVc-Et-JF5" secondAttribute="centerY" multiplier="0.5" id="CIG-uR-Wrt"/>
+                            <constraint firstItem="Qw8-cj-Fik" firstAttribute="bottom" secondItem="t4G-Dw-ARk" secondAttribute="bottom" constant="40" id="Ink-2u-fHt"/>
+                            <constraint firstItem="Qw8-cj-Fik" firstAttribute="trailing" secondItem="DU6-Js-Bnc" secondAttribute="trailing" constant="15" id="Nug-Xz-OxG"/>
+                            <constraint firstItem="oRj-bI-o7I" firstAttribute="leading" secondItem="Qw8-cj-Fik" secondAttribute="leading" constant="15" id="QZd-Qp-IoH"/>
+                            <constraint firstItem="Qw8-cj-Fik" firstAttribute="trailing" secondItem="t4G-Dw-ARk" secondAttribute="trailing" constant="15" id="VCY-k1-c5c"/>
+                            <constraint firstItem="Qw8-cj-Fik" firstAttribute="trailing" secondItem="2eq-p5-gfh" secondAttribute="trailing" constant="40" id="Z1V-gX-j4L"/>
+                            <constraint firstItem="EVw-Ck-P2z" firstAttribute="top" secondItem="Qw8-cj-Fik" secondAttribute="top" constant="15" id="ZFZ-U0-KpV"/>
+                            <constraint firstItem="t4G-Dw-ARk" firstAttribute="leading" secondItem="Qw8-cj-Fik" secondAttribute="leading" constant="15" id="a3u-Wb-CzB"/>
+                            <constraint firstItem="1lM-DL-8Po" firstAttribute="leading" secondItem="Qw8-cj-Fik" secondAttribute="leading" constant="15" id="bqC-jN-Fth"/>
+                            <constraint firstItem="2eq-p5-gfh" firstAttribute="leading" secondItem="Qw8-cj-Fik" secondAttribute="leading" constant="40" id="eeO-Q9-HHq"/>
+                            <constraint firstItem="Qw8-cj-Fik" firstAttribute="trailing" secondItem="EVw-Ck-P2z" secondAttribute="trailing" constant="15" id="flm-Hm-qKn"/>
+                            <constraint firstItem="Qw8-cj-Fik" firstAttribute="bottom" secondItem="DU6-Js-Bnc" secondAttribute="bottom" constant="20" id="gHv-BR-ykl"/>
+                            <constraint firstItem="oRj-bI-o7I" firstAttribute="top" secondItem="Qw8-cj-Fik" secondAttribute="top" constant="15" id="jIM-Xx-9Yk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qw8-cj-Fik"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="Ink-2u-fHt" id="yvI-qP-986"/>
+                        <outlet property="btnCheck" destination="DU6-Js-Bnc" id="IFe-I5-XOc"/>
+                        <outlet property="btnSave" destination="EVw-Ck-P2z" id="BEY-3k-0WO"/>
+                        <outlet property="listTableView" destination="t4G-Dw-ARk" id="ann-2j-y3V"/>
+                        <outlet property="placeHolderAddListTip" destination="2eq-p5-gfh" id="Hg7-0X-rrA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ojx-tK-1o8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="-794.19642857142856"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="Action Color"/>
+    <resources>
+        <image name="CheckButton" width="48" height="48"/>
+        <image name="plus" width="20" height="20"/>
+        <namedColor name="Action Color">
+            <color red="0.4309999942779541" green="0.31000000238418579" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Label Gray">
+            <color red="0.54100000858306885" green="0.54100000858306885" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

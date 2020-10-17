@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Eve" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você ainda não tem eventos. Toque em '+' para começar." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHg-uc-cpz">
+                                <rect key="frame" x="15" y="390.66666666666669" width="345" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Label Gray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zY0-71-AQo" customClass="CardsController" customModule="Eve" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNf-GY-n9P">
+                                <rect key="frame" x="312" y="44" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CNf-GY-n9P" secondAttribute="height" multiplier="1:1" id="t6D-kL-9T5"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="AddButton"/>
+                                <connections>
+                                    <segue destination="9po-dr-EPe" kind="presentation" id="5Bx-Jo-SsO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="CNf-GY-n9P" firstAttribute="top" secondItem="zY0-71-AQo" secondAttribute="top" id="4Br-Wy-UY6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zY0-71-AQo" secondAttribute="trailing" id="8oM-7z-zqw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CHg-uc-cpz" secondAttribute="trailing" constant="15" id="MgJ-F1-r1Y"/>
+                            <constraint firstItem="zY0-71-AQo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tta-bt-FEk"/>
+                            <constraint firstItem="zY0-71-AQo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W2E-p7-8OO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CNf-GY-n9P" secondAttribute="trailing" constant="15" id="bfS-ge-Yqn"/>
+                            <constraint firstItem="CHg-uc-cpz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="edj-pS-dyN"/>
+                            <constraint firstItem="zY0-71-AQo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lDd-wG-531"/>
+                            <constraint firstItem="CHg-uc-cpz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="r8A-7x-lXd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="events" destination="zY0-71-AQo" id="ENE-3x-CI7"/>
+                        <outlet property="lblPlaceholder" destination="CHg-uc-cpz" id="Iya-Da-hWr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="129.31034482758622"/>
+        </scene>
+        <!--AddEvent-->
+        <scene sceneID="m81-hv-I4i">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddEvent" id="9po-dr-EPe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciH-X0-Ure" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="129"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AddButton" width="48" height="48"/>
+        <namedColor name="Label Gray">
+            <color red="0.54100000858306885" green="0.54100000858306885" blue="0.54100000858306885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
